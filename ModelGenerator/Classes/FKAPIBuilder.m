@@ -12,7 +12,6 @@
 @interface FKAPIBuilder ()
 @property (nonatomic, retain) NSString *factoryOutputPath;
 @property (nonatomic, retain) NSString *outputPath;
-@property (nonatomic, retain) NSArray *allMethods;
 @end
 
 @implementation FKAPIBuilder
@@ -31,18 +30,19 @@
 - (id) init {
     self = [super init];
     if (self) {
-        NSString *baseOutputPath = @"/Users/dave/Developer/GIT/FlickrKit/FlickrKit/Classes/Model/";
 		
-		//flickrKit.outputPath = @"/Users/Dave/Developer/GIT/bitbucket/FlickrKIT/FlickrKit/Classes/Model/Generated/";
+		// We find out the base dir at compile time from a run script so we know where to write the class files
+		NSString *baseDir = [self baseDir];				
+		self.factoryOutputPath = [NSString stringWithFormat:@"%@/Classes/Model/", baseDir];
+		self.outputPath = [NSString stringWithFormat:@"%@/Classes/Model/Generated/", baseDir];
 		
-		self.factoryOutputPath = baseOutputPath;
-		self.outputPath = [NSString stringWithFormat:@"%@Generated/", baseOutputPath];
-		
+		// Lets assert this output exists
 		BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:self.outputPath];
 		NSAssert(exists, @"Ouput folder doesn't exist - you need to set this in the code");
 		
-		NSString *apiKey = nil;
-		NSString *secret = nil;
+		// We call Flickr to 'reflect' on it's API, so we need an API key.
+		NSString *apiKey = @"348ea26ca45d5f9d3da7fff4822a7fd1";
+		NSString *secret = @"471cc96b04e60f27";
 		NSAssert(apiKey, @"You need to enter your own API key and secret");
 		
 		[[FlickrKit sharedFlickrKit] initializeWithAPIKey:apiKey sharedSecret:secret];
@@ -50,35 +50,33 @@
     return self;
 }
 
+// Triggered from UI button to start the process
 - (BOOL) buildAPI {
-    [self findAllMethods];
-    return YES;
-}
-
-- (void) findAllMethods {
+	// First call flickr to get a list of all the API methods available
     [[FlickrKit sharedFlickrKit] call:@"flickr.reflection.getMethods" args:nil completion:^(NSDictionary *response, NSError *error) {
         if (response) {
-            self.allMethods = [response valueForKeyPath:@"methods.method._content"];
-            NSLog(@"All methods %@", self.allMethods);
-            [self createClassFiles];
+            NSArray *allMethods = [response valueForKeyPath:@"methods.method._content"];
+            NSLog(@"All methods %@", allMethods);
+            [self createClassFilesFromMethods:allMethods];
         }
     }];
+	return YES;
 }
 
-- (void) createClassFiles {
+
+- (void) createClassFilesFromMethods:(NSArray *)allMethods {
 	
-	NSMutableArray *enumNames = [NSMutableArray array];
+	// We also create 
+	NSMutableArray *allClassNames = [NSMutableArray array];
 	
 	dispatch_group_t group = dispatch_group_create();
 	
     __block int count = 1;
-    for (NSString *method in self.allMethods) {
-        
+    for (NSString *method in allMethods) {        
 		dispatch_group_enter(group);
 		
-		NSMutableString *enumName = [[NSMutableString alloc] init];		
-        NSMutableString *subCategory = [[NSMutableString alloc] init];
-        
+		// Create a class name
+        NSMutableString *subCategory = [[NSMutableString alloc] init];        
         NSMutableString *className = [[NSMutableString alloc] initWithString:@"FK"];
         NSArray *components = [method componentsSeparatedByString:@"."];
         int index = 1;
@@ -88,58 +86,53 @@
             if (index != 1 && (index < components.count)) {
                 [subCategory appendFormat:@"%@/", camelCase];
             }
-			if (index != 1) {
-                [enumName appendFormat:@"%@", camelCase];
-            }
             index++;
         }
-		
-		// Add the enum name
-		[enumNames addObject:enumName];
+		[allClassNames addObject:className];
         
-        // Create subCategory folder
+        // Create subCategory folder to store the class in
         NSString *subPath = [NSString stringWithFormat:@"%@%@", self.outputPath, subCategory];
         BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:subPath];
         if (!exists) {
             [[NSFileManager defaultManager] createDirectoryAtPath:subPath withIntermediateDirectories:YES attributes:nil error:nil];
         }
         
+		// Find the method info from flickr reflection
         NSDictionary *args = @{@"method_name": method};
         [[FlickrKit sharedFlickrKit] call:@"flickr.reflection.getMethodInfo" args:args completion:^(NSDictionary *response, NSError *error) {                        
             [self writeHeaderForClass:className withData:response path:subPath];
             [self writeImplementationForClass:className withData:response path:subPath];
-            NSLog(@"Written Class Files for %@. %i Remaining", method, self.allMethods.count - count);
+            NSLog(@"Written Class Files for %@. %i Remaining", method, allMethods.count - count);
             count++;
 			dispatch_group_leave(group);
         }];
         
     }
+		
+	// Create the imports
+	[self createTheImportsFromClassNames:allClassNames];
 	
-	
+	// Wait for completion
+	dispatch_group_wait(group, DISPATCH_TIME_FOREVER);	
+	exit(0);	
+}
+
+#pragma mark - Create the imports
+
+- (void) createTheImportsFromClassNames:(NSArray *)allClassNames {
 	// Create the factory class
 	NSMutableString *imports = [[NSMutableString alloc] init];
-	for (NSString *e in enumNames) {
-		[imports appendFormat:@"#import \"FKFlickr%@.h\"\n", e];
+	for (NSString *e in allClassNames) {
+		[imports appendFormat:@"#import \"%@.h\"\n", e];
 	}
 	NSString *header = [self templateForFactoryHeader];
 	header = [header stringByReplacingOccurrencesOfString:@"#IMPORTS#" withString:imports];
 	NSString *outputPath = [NSString stringWithFormat:@"%@FKAPIMethods.h", self.factoryOutputPath];
-	[self writeString:header toFileAtPath:outputPath];	
-	
-	
-	dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
-	
-	exit(0);	
+	[self writeString:header toFileAtPath:outputPath];
 }
 
-- (NSDateFormatter *) dateFormatter {
-    static NSDateFormatter *dateFormat = nil;
-    if (!dateFormat) {
-        dateFormat = [[NSDateFormatter alloc] init];
-        [dateFormat setDateFormat:@"dd MMM, yyyy 'at' HH:mm"];
-    }
-    return dateFormat;
-}
+
+#pragma mark - Write the header file
 
 - (void) writeHeaderForClass:(NSString *)className withData:(NSDictionary *)data path:(NSString *)path {
     NSString *header = [self templateForHeader];
@@ -206,6 +199,7 @@
     }
 }
 
+#pragma mark - Write the implementation file
 
 - (void) writeImplementationForClass:(NSString *)className withData:(NSDictionary *)data path:(NSString *)path {
     NSString *implementation = [self templateForImplementation];
@@ -297,6 +291,14 @@
 
 #pragma mark - File Util
 
+- (NSString *) baseDir {
+	NSString *baseDirFile = [[NSBundle mainBundle] pathForResource:@"basedir" ofType:@"txt"];
+    NSError *error = nil;
+    NSString *baseDir = [[NSString alloc] initWithContentsOfFile:baseDirFile encoding:NSUTF8StringEncoding error:&error];
+	baseDir = [baseDir substringToIndex:[baseDir rangeOfString:@"/ModelGenerator"].location];
+    return baseDir;
+}
+
 - (NSString *) templateForFactoryHeader {
     NSString *headerPath = [[NSBundle mainBundle] pathForResource:@"FKAPIMethods" ofType:@"header"];
     NSError *error = nil;
@@ -318,12 +320,25 @@
     return implementation;
 }
 
+#pragma mark - Writing to file
+
 - (void) writeString:(NSString *)string toFileAtPath:(NSString *)outputPath {
     [[NSFileManager defaultManager] createFileAtPath:outputPath contents:[string dataUsingEncoding:NSUTF8StringEncoding] attributes:nil];
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:outputPath]) {
         NSLog(@"Could not write file at path %@", outputPath);
     }
+}
+
+#pragma mark - Dates
+
+- (NSDateFormatter *) dateFormatter {
+    static NSDateFormatter *dateFormat = nil;
+    if (!dateFormat) {
+        dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat:@"dd MMM, yyyy 'at' HH:mm"];
+    }
+    return dateFormat;
 }
 
 @end

@@ -23,6 +23,7 @@
 		55B206D41768F9A600A19A12 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55B206D11768F9A600A19A12 /* Default@2x.png */; };
 		55B206DD1768FA2E00A19A12 /* libFlickrKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B206BD1768F96C00A19A12 /* libFlickrKit.a */; };
 		55B206E11768FAD200A19A12 /* FKViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55B206E01768FAD200A19A12 /* FKViewController_iPhone.xib */; };
+		55B207051769C42F00A19A12 /* basedir.txt in Resources */ = {isa = PBXBuildFile; fileRef = 55B207041769C42F00A19A12 /* basedir.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		55B206DE1768FA7100A19A12 /* FlickrKitModelGenerator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlickrKitModelGenerator-Info.plist"; sourceTree = SOURCE_ROOT; };
 		55B206DF1768FA7100A19A12 /* FlickrKitModelGenerator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlickrKitModelGenerator-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		55B206E01768FAD200A19A12 /* FKViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FKViewController_iPhone.xib; path = Classes/FKViewController_iPhone.xib; sourceTree = "<group>"; };
+		55B207041769C42F00A19A12 /* basedir.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = basedir.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		55B2069A1768F83000A19A12 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				55B207041769C42F00A19A12 /* basedir.txt */,
 				55B206C01768F99F00A19A12 /* FKAPIBuilder.h */,
 				55B206C11768F99F00A19A12 /* FKAPIBuilder.m */,
 				55B206C31768F99F00A19A12 /* FKAppDelegate.h */,
@@ -177,6 +180,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55B2065B1768CEB000A19A12 /* Build configuration list for PBXNativeTarget "FlickrKitModelGenerator" */;
 			buildPhases = (
+				55B207021769C26000A19A12 /* ShellScript */,
 				55B2061C1768CEB000A19A12 /* Sources */,
 				55B2061D1768CEB000A19A12 /* Frameworks */,
 				55B2061E1768CEB000A19A12 /* Resources */,
@@ -253,10 +257,28 @@
 				55B206D31768F9A600A19A12 /* Default.png in Resources */,
 				55B206D41768F9A600A19A12 /* Default@2x.png in Resources */,
 				55B206E11768FAD200A19A12 /* FKViewController_iPhone.xib in Resources */,
+				55B207051769C42F00A19A12 /* basedir.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55B207021769C26000A19A12 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ROOT_DIR=\"$SOURCE_ROOT\"\necho $ROOT_DIR > basedir.txt";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		55B2061C1768CEB000A19A12 /* Sources */ = {
