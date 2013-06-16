@@ -27,7 +27,7 @@ NSString *FKEscapedURLString(NSString *string) {
 
 NSString *FKEscapedURLStringPlus(NSString *string) {
 	CFStringRef escaped = CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)string, NULL, (CFStringRef)@"`~!@#$^&*()=+[]\\{}|;':\",/<>?", kCFStringEncodingUTF8);
-	return (__bridge NSString *)escaped;
+	return (__bridge_transfer NSString *)escaped;
 }
 
 #pragma mark - Unique ID
@@ -36,7 +36,7 @@ NSString *FKGenerateUUID(void) {
 	CFUUIDRef uuid = CFUUIDCreate(NULL);
     CFStringRef uuidStr = CFUUIDCreateString(NULL, uuid);
     CFRelease(uuid);
-	return (__bridge NSString *)uuidStr;
+	return (__bridge_transfer NSString *)uuidStr;
 }
 
 #pragma mark - OAuthExtraction
