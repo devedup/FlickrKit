@@ -140,39 +140,53 @@
 		
 	FKDUNetworkOperation *op = [[FKDUNetworkOperation alloc] initWithURL:requestURL];
 	[op sendAsyncRequestOnCompletion:^(NSURLResponse *response, NSData *data, NSError *error) {
-		if (response) {
+		if (response && !error) {
 			
 			NSString *response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-			NSLog(@"respnse %@", response);
 			response = [response stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-			NSLog(@"respnse %@", response);
-			
-			NSDictionary *params = FKQueryParamDictionaryFromQueryString(response);
-			
-			NSString *fn = params[@"fullname"];
-			NSString *oat = params[@"oauth_token"];
-			NSString *oats = params[@"oauth_token_secret"];
-			NSString *nsid = params[@"user_nsid"];
-			NSString *un = params[@"username"];
-			if (!fn || !oat || !oats || !nsid || !un) {
+			if ([response hasPrefix:@"oauth_problem="]) {
+				self.beginAuthURL = nil;
+				self.authorized = NO;
+				self.authToken = nil;
+				self.authSecret = nil;
+				NSString *response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: response};
 				NSError *error = [NSError errorWithDomain:FKFlickrKitErrorDomain code:FKErrorAuthenticating userInfo:userInfo];
 				if (completion) {
 					completion(nil, nil, nil, error);
 				}
+				
 			} else {
-				[[NSUserDefaults standardUserDefaults] setValue:oat forKey:kFKStoredTokenKey];
-				[[NSUserDefaults standardUserDefaults] setValue:oats forKey:kFKStoredTokenSecret];
-				[[NSUserDefaults standardUserDefaults] synchronize];
-				self.authorized = YES;
-				self.authToken = oat;
-				self.authSecret = oats;
-				self.beginAuthURL = nil;
-				if (completion) {
-					completion(un, nsid, fn, nil);
+				NSDictionary *params = FKQueryParamDictionaryFromQueryString(response);
+				
+				NSString *fn = params[@"fullname"];
+				NSString *oat = params[@"oauth_token"];
+				NSString *oats = params[@"oauth_token_secret"];
+				NSString *nsid = params[@"user_nsid"];
+				NSString *un = params[@"username"];
+				if (!fn || !oat || !oats || !nsid || !un) {
+					NSDictionary *userInfo = @{NSLocalizedDescriptionKey: response};
+					NSError *error = [NSError errorWithDomain:FKFlickrKitErrorDomain code:FKErrorAuthenticating userInfo:userInfo];
+					if (completion) {
+						completion(nil, nil, nil, error);
+					}
+				} else {
+					[[NSUserDefaults standardUserDefaults] setValue:oat forKey:kFKStoredTokenKey];
+					[[NSUserDefaults standardUserDefaults] setValue:oats forKey:kFKStoredTokenSecret];
+					[[NSUserDefaults standardUserDefaults] synchronize];
+					self.authorized = YES;
+					self.authToken = oat;
+					self.authSecret = oats;
+					self.beginAuthURL = nil;
+					if (completion) {
+						completion(un, nsid, fn, nil);
+					}
 				}
 			}
+			
 		} else {
+			self.beginAuthURL = nil;
+			
 			NSString *response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 			NSDictionary *userInfo = @{NSLocalizedDescriptionKey: response};
 			NSError *error = [NSError errorWithDomain:FKFlickrKitErrorDomain code:FKErrorAuthenticating userInfo:userInfo];
