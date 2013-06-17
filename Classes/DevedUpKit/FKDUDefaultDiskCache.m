@@ -69,7 +69,7 @@
 
 - (BOOL) isDate:(NSDate *)date moreThanMinutesAgo:(NSInteger)minutes {
     NSTimeInterval intervalFromNow = fabs([date timeIntervalSinceNow]);
-    if(intervalFromNow > minutes) {
+    if(intervalFromNow > (minutes * 60)) {
         return YES;
     } else {
         return NO;
