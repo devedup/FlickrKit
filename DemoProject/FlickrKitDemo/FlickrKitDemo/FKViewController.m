@@ -46,8 +46,15 @@
 	}];
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+}
+
 - (void) viewWillDisappear:(BOOL)animated {	
 	//Cancel any operations when you leave views
+    self.navigationController.navigationBarHidden = NO;
+    
     [self.todaysInterestingOp cancel];
 	[self.myPhotostreamOp cancel];
 	[self.completeAuthOp cancel];
