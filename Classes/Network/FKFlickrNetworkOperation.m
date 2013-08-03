@@ -116,6 +116,8 @@
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection {
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 		
+        NSData *data = self.receivedData;
+        
 		static NSInteger prefixBytes = -1;
 		static NSInteger suffixBytes = 1;
 		if (-1 == prefixBytes) {
@@ -123,16 +125,26 @@
 			prefixBytes = [responsePrefix length];
 		}
 		
-		NSData *subData = [self.receivedData subdataWithRange:NSMakeRange(prefixBytes, self.receivedData.length - prefixBytes - suffixBytes)];
+		NSData *subData = nil;
+        if (data.length > prefixBytes) {
+            subData =[data subdataWithRange:NSMakeRange(prefixBytes, data.length - prefixBytes - suffixBytes)];
+        }
 		
 		//Cache the response
-		if (self.receivedData) {
+		if (data && data.length > 0) {
 			if (0 != self.maxAgeMinutes) {
 				[self.diskCache storeData:subData forKey:self.cacheKey];
 			}
-		}
+            [self processResponseData:subData];
+		} else {
+            NSString *errorString = @"No data was returned from Flickr to process";
+			NSDictionary *userInfo = @{NSLocalizedDescriptionKey: errorString};
+			NSError *error = [NSError errorWithDomain:FKFlickrKitErrorDomain code:FKErrorEmptyResponse userInfo:userInfo];
+			if (self.completion) {
+				self.completion(nil, error);
+			}
+        }
 		
-		[self processResponseData:subData];
 	});
 }
 

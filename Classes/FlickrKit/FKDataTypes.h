@@ -19,6 +19,7 @@ extern NSString *const FKFlickrAPIErrorDomain; // Error originating from Flickr 
 typedef enum {
 	FKErrorURLParsing		= 100,
 	FKErrorResponseParsing  = 101,
+    FKErrorEmptyResponse    = 102,
 	
 	FKErrorNoInternet		= 200,
 	
