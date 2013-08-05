@@ -7,6 +7,7 @@
 //
 
 #import "FlickrKit.h"
+#import "FKDUNetworkController.h"
 
 @implementation FlickrKit (PhotoUpload)
 
