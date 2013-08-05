@@ -11,9 +11,6 @@
 #import "FKDUDefaultDiskCache.h"
 #import "FKDUReachability.h"
 #import "FKFlickrNetworkOperation.h"
-#import "FlickrKit+ImageURL.m"
-#import "FlickrKit+Authentication.m"
-#import "FlickrKit+PhotoUpload.m"
 
 @interface FlickrKit ()
 @property (nonatomic, strong) NSString *apiKey;
