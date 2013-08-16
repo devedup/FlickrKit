@@ -115,8 +115,9 @@
 
 	// Get the file size
     NSDictionary *fileInfo = [[NSFileManager defaultManager] attributesOfItemAtPath:tempFileName error:error];
+    NSNumber *fileSize = nil;
     if (fileInfo) {
-        NSNumber *fileSize = [fileInfo objectForKey:NSFileSize];
+        fileSize = [fileInfo objectForKey:NSFileSize];
         self.fileSize = [fileSize integerValue];
     } else {
         //we have the error populated
@@ -130,7 +131,8 @@
 	[request setHTTPMethod:@"POST"];
 	[request setHTTPBodyStream:inputStream];
 	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", multipartBoundary];
-	[request setValue:contentType forHTTPHeaderField: @"Content-Type"];
+	[request setValue:contentType forHTTPHeaderField:@"Content-Type"];
+    [request setValue:[fileSize stringValue] forHTTPHeaderField:@"Content-Length"];
     
     return request;
 }

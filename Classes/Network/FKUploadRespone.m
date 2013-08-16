@@ -22,6 +22,11 @@
     self = [super init];
     if (self) {
         self.data = data;
+        
+#ifdef DEBUG
+        NSString *dataString = [NSString.alloc initWithData:self.data encoding:NSUTF8StringEncoding];
+        NSLog(@"%@", dataString);
+#endif
     }
     return self;
 }
