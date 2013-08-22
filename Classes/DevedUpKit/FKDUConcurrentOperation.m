@@ -62,4 +62,8 @@
     [self didChangeValueForKey:@"isFinished"];
 }
 
+- (void) canel {
+    [self finish];
+}
+
 @end
