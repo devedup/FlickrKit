@@ -442,13 +442,10 @@
 		55A5B669176613F900745C71 /* FKDUStreamUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B667176613F900745C71 /* FKDUStreamUtil.m */; };
 		55AD484B175CA188004AF85C /* FKDataTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD484A175CA188004AF85C /* FKDataTypes.m */; };
 		55AD484C175CA188004AF85C /* FKDataTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD484A175CA188004AF85C /* FKDataTypes.m */; };
-		55AD48D5175E1FB3004AF85C /* FlickrKit+ImageURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD48D3175E1FB3004AF85C /* FlickrKit+ImageURL.m */; };
 		55AD48E2175E7561004AF85C /* FlickrKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD48E1175E7561004AF85C /* FlickrKit.m */; };
 		55AD48E3175E7561004AF85C /* FlickrKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD48E1175E7561004AF85C /* FlickrKit.m */; };
-		55AD48E6175E7567004AF85C /* FlickrKit+Authentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD48E4175E7567004AF85C /* FlickrKit+Authentication.m */; };
 		55AD48E9175F3217004AF85C /* FKDUNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD48E8175F3217004AF85C /* FKDUNetworkOperation.m */; };
 		55AD48EA175F3217004AF85C /* FKDUNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD48E8175F3217004AF85C /* FKDUNetworkOperation.m */; };
-		55AD48EE175F6405004AF85C /* FlickrKit+PhotoUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD48EC175F6405004AF85C /* FlickrKit+PhotoUpload.m */; };
 		55AD49061760DBE5004AF85C /* FKImageUploadNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD49051760DBE5004AF85C /* FKImageUploadNetworkOperation.m */; };
 		55AD49071760DBE5004AF85C /* FKImageUploadNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD49051760DBE5004AF85C /* FKImageUploadNetworkOperation.m */; };
 		55AD490A1760E547004AF85C /* FKUploadRespone.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD49091760E546004AF85C /* FKUploadRespone.m */; };
@@ -934,12 +931,9 @@
 		55A5B667176613F900745C71 /* FKDUStreamUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKDUStreamUtil.m; sourceTree = "<group>"; };
 		55AD4849175CA188004AF85C /* FKDataTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKDataTypes.h; path = FlickrKit/FKDataTypes.h; sourceTree = "<group>"; };
 		55AD484A175CA188004AF85C /* FKDataTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKDataTypes.m; path = FlickrKit/FKDataTypes.m; sourceTree = "<group>"; };
-		55AD48D3175E1FB3004AF85C /* FlickrKit+ImageURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FlickrKit+ImageURL.m"; path = "FlickrKit/FlickrKit+ImageURL.m"; sourceTree = "<group>"; };
 		55AD48E1175E7561004AF85C /* FlickrKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlickrKit.m; path = FlickrKit/FlickrKit.m; sourceTree = "<group>"; };
-		55AD48E4175E7567004AF85C /* FlickrKit+Authentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FlickrKit+Authentication.m"; path = "FlickrKit/FlickrKit+Authentication.m"; sourceTree = "<group>"; };
 		55AD48E7175F3217004AF85C /* FKDUNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKDUNetworkOperation.h; sourceTree = "<group>"; };
 		55AD48E8175F3217004AF85C /* FKDUNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKDUNetworkOperation.m; sourceTree = "<group>"; };
-		55AD48EC175F6405004AF85C /* FlickrKit+PhotoUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FlickrKit+PhotoUpload.m"; path = "FlickrKit/FlickrKit+PhotoUpload.m"; sourceTree = "<group>"; };
 		55AD49041760DBE4004AF85C /* FKImageUploadNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKImageUploadNetworkOperation.h; sourceTree = "<group>"; };
 		55AD49051760DBE5004AF85C /* FKImageUploadNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKImageUploadNetworkOperation.m; sourceTree = "<group>"; };
 		55AD49081760E545004AF85C /* FKUploadRespone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKUploadRespone.h; sourceTree = "<group>"; };
@@ -1849,9 +1843,6 @@
 			isa = PBXGroup;
 			children = (
 				55AD48E1175E7561004AF85C /* FlickrKit.m */,
-				55AD48E4175E7567004AF85C /* FlickrKit+Authentication.m */,
-				55AD48D3175E1FB3004AF85C /* FlickrKit+ImageURL.m */,
-				55AD48EC175F6405004AF85C /* FlickrKit+PhotoUpload.m */,
 				55AD4849175CA188004AF85C /* FKDataTypes.h */,
 				55AD484A175CA188004AF85C /* FKDataTypes.m */,
 			);
@@ -2206,11 +2197,8 @@
 				55AEEF511756646400B61A3C /* FKUtilities.m in Sources */,
 				55AEEF58175766D500B61A3C /* FKDUReachability.m in Sources */,
 				55AD484C175CA188004AF85C /* FKDataTypes.m in Sources */,
-				55AD48D5175E1FB3004AF85C /* FlickrKit+ImageURL.m in Sources */,
 				55AD48E3175E7561004AF85C /* FlickrKit.m in Sources */,
-				55AD48E6175E7567004AF85C /* FlickrKit+Authentication.m in Sources */,
 				55AD48EA175F3217004AF85C /* FKDUNetworkOperation.m in Sources */,
-				55AD48EE175F6405004AF85C /* FlickrKit+PhotoUpload.m in Sources */,
 				55AD49071760DBE5004AF85C /* FKImageUploadNetworkOperation.m in Sources */,
 				55AD490B1760E547004AF85C /* FKUploadRespone.m in Sources */,
 				55A5B669176613F900745C71 /* FKDUStreamUtil.m in Sources */,
