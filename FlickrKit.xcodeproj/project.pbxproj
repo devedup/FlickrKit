@@ -22,8 +22,6 @@
 		552D92031754AE8A00BE3FEA /* FKFlickrNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91F21754AE8A00BE3FEA /* FKFlickrNetworkOperation.m */; };
 		552D92041754AE8A00BE3FEA /* FKURLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91F41754AE8A00BE3FEA /* FKURLBuilder.m */; };
 		552D92051754AE8A00BE3FEA /* FKURLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91F41754AE8A00BE3FEA /* FKURLBuilder.m */; };
-		552D92061754AE8A00BE3FEA /* FKOFHMACSha1Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91F71754AE8A00BE3FEA /* FKOFHMACSha1Base64.m */; };
-		552D92071754AE8A00BE3FEA /* FKOFHMACSha1Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91F71754AE8A00BE3FEA /* FKOFHMACSha1Base64.m */; };
 		552D92181754DBAC00BE3FEA /* FKDUDefaultDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D92171754DBAC00BE3FEA /* FKDUDefaultDiskCache.m */; };
 		552D92191754DBAC00BE3FEA /* FKDUDefaultDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D92171754DBAC00BE3FEA /* FKDUDefaultDiskCache.m */; };
 		555F2EEB17678A9800E84674 /* FKFlickrActivityUserComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D2917678A9700E84674 /* FKFlickrActivityUserComments.m */; };
@@ -457,6 +455,7 @@
 		55AEEF58175766D500B61A3C /* FKDUReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEEF56175766D500B61A3C /* FKDUReachability.m */; };
 		55AEEF5A175766F000B61A3C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AEEF59175766EF00B61A3C /* SystemConfiguration.framework */; };
 		55AEEF5B17576A3D00B61A3C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AEEF59175766EF00B61A3C /* SystemConfiguration.framework */; };
+		55EA68AD17CAABD40017DDD1 /* FKOFHMACSha1Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EA68AC17CAABD40017DDD1 /* FKOFHMACSha1Base64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -507,8 +506,6 @@
 		552D91F21754AE8A00BE3FEA /* FKFlickrNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFlickrNetworkOperation.m; sourceTree = "<group>"; };
 		552D91F31754AE8A00BE3FEA /* FKURLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKURLBuilder.h; sourceTree = "<group>"; };
 		552D91F41754AE8A00BE3FEA /* FKURLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKURLBuilder.m; sourceTree = "<group>"; };
-		552D91F61754AE8A00BE3FEA /* FKOFHMACSha1Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKOFHMACSha1Base64.h; path = ObjectiveFlickr/FKOFHMACSha1Base64.h; sourceTree = "<group>"; };
-		552D91F71754AE8A00BE3FEA /* FKOFHMACSha1Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKOFHMACSha1Base64.m; path = ObjectiveFlickr/FKOFHMACSha1Base64.m; sourceTree = "<group>"; };
 		552D92161754DBAC00BE3FEA /* FKDUDefaultDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKDUDefaultDiskCache.h; sourceTree = "<group>"; };
 		552D92171754DBAC00BE3FEA /* FKDUDefaultDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKDUDefaultDiskCache.m; sourceTree = "<group>"; };
 		552D921A1754DC6500BE3FEA /* FKDUDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKDUDiskCache.h; sourceTree = "<group>"; };
@@ -950,6 +947,8 @@
 		55B206EA176903DB00A19A12 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		55B206EB176903E300A19A12 /* Source Code License.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Source Code License.rtf"; sourceTree = "<group>"; };
 		55EA68A917CAA6B90017DDD1 /* FlickrKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FlickrKit.podspec; sourceTree = "<group>"; };
+		55EA68AB17CAABD40017DDD1 /* FKOFHMACSha1Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKOFHMACSha1Base64.h; path = Utilities/FKOFHMACSha1Base64.h; sourceTree = "<group>"; };
+		55EA68AC17CAABD40017DDD1 /* FKOFHMACSha1Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKOFHMACSha1Base64.m; path = Utilities/FKOFHMACSha1Base64.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1856,8 +1855,8 @@
 			children = (
 				55AEEF4E1756646400B61A3C /* FKUtilities.h */,
 				55AEEF4F1756646400B61A3C /* FKUtilities.m */,
-				552D91F61754AE8A00BE3FEA /* FKOFHMACSha1Base64.h */,
-				552D91F71754AE8A00BE3FEA /* FKOFHMACSha1Base64.m */,
+				55EA68AB17CAABD40017DDD1 /* FKOFHMACSha1Base64.h */,
+				55EA68AC17CAABD40017DDD1 /* FKOFHMACSha1Base64.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -1965,7 +1964,6 @@
 				552D91FC1754AE8A00BE3FEA /* FKDUNetworkController.m in Sources */,
 				552D92021754AE8A00BE3FEA /* FKFlickrNetworkOperation.m in Sources */,
 				552D92041754AE8A00BE3FEA /* FKURLBuilder.m in Sources */,
-				552D92061754AE8A00BE3FEA /* FKOFHMACSha1Base64.m in Sources */,
 				552D92181754DBAC00BE3FEA /* FKDUDefaultDiskCache.m in Sources */,
 				55AEEF501756646400B61A3C /* FKUtilities.m in Sources */,
 				55AEEF57175766D500B61A3C /* FKDUReachability.m in Sources */,
@@ -1997,6 +1995,7 @@
 				555F2F1117678A9800E84674 /* FKFlickrContactsGetTaggingSuggestions.m in Sources */,
 				555F2F1317678A9800E84674 /* FKFlickrFavoritesAdd.m in Sources */,
 				555F2F1517678A9800E84674 /* FKFlickrFavoritesGetContext.m in Sources */,
+				55EA68AD17CAABD40017DDD1 /* FKOFHMACSha1Base64.m in Sources */,
 				555F2F1717678A9800E84674 /* FKFlickrFavoritesGetList.m in Sources */,
 				555F2F1917678A9800E84674 /* FKFlickrFavoritesGetPublicList.m in Sources */,
 				555F2F1B17678A9800E84674 /* FKFlickrFavoritesRemove.m in Sources */,
@@ -2193,7 +2192,6 @@
 				552D91FD1754AE8A00BE3FEA /* FKDUNetworkController.m in Sources */,
 				552D92031754AE8A00BE3FEA /* FKFlickrNetworkOperation.m in Sources */,
 				552D92051754AE8A00BE3FEA /* FKURLBuilder.m in Sources */,
-				552D92071754AE8A00BE3FEA /* FKOFHMACSha1Base64.m in Sources */,
 				552D92191754DBAC00BE3FEA /* FKDUDefaultDiskCache.m in Sources */,
 				55AEEF4C175661C100B61A3C /* FlickrKitUtilTests.m in Sources */,
 				55AEEF511756646400B61A3C /* FKUtilities.m in Sources */,
