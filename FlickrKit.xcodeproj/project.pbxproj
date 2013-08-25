@@ -949,6 +949,7 @@
 		55B206E51769008300A19A12 /* FlickrKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "FlickrKit-Prefix.pch"; path = "Resources/FlickrKit-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		55B206EA176903DB00A19A12 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		55B206EB176903E300A19A12 /* Source Code License.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Source Code License.rtf"; sourceTree = "<group>"; };
+		55EA68A917CAA6B90017DDD1 /* FlickrKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FlickrKit.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -979,6 +980,7 @@
 		552D910D1753951300BE3FEA = {
 			isa = PBXGroup;
 			children = (
+				55EA68A917CAA6B90017DDD1 /* FlickrKit.podspec */,
 				55B206EA176903DB00A19A12 /* README.md */,
 				55B206EB176903E300A19A12 /* Source Code License.rtf */,
 				552D91E41754AE8900BE3FEA /* Classes */,
