@@ -84,8 +84,12 @@
 	
 	// File name
 	NSString *inFilename = [self.args valueForKey:@"title"];
-    inFilename = [inFilename stringByReplacingOccurrencesOfString:@" " withString:@""];
-	
+	if (!inFilename) {
+        inFilename = @" "; // Leave space so that the below still uploads a file
+    } else {
+        inFilename = [inFilename stringByReplacingOccurrencesOfString:@" " withString:@""];
+    }
+    
     // The multipart opening string
 	NSMutableString *multipartOpeningString = [NSMutableString string];
 	for (NSString *key in args.allKeys) {
