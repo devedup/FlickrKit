@@ -62,4 +62,11 @@
     [self didChangeValueForKey:@"isFinished"];
 }
 
+- (void) cancel {
+	[super cancel];
+    if (self.isExecuting) {
+        [self finish];
+    }
+}
+
 @end
