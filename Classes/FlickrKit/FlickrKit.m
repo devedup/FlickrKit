@@ -295,9 +295,9 @@
 						completion(nil, nil, nil, error);
 					}
 				} else {
-					[[NSUserDefaults standardUserDefaults] setValue:oat forKey:kFKStoredTokenKey];
-					[[NSUserDefaults standardUserDefaults] setValue:oats forKey:kFKStoredTokenSecret];
-					[[NSUserDefaults standardUserDefaults] setValue:@(self.permissionGranted) forKey:kFKStoredTokenPermission];
+					[[NSUserDefaults standardUserDefaults] setObject:oat forKey:kFKStoredTokenKey];
+					[[NSUserDefaults standardUserDefaults] setObject:oats forKey:kFKStoredTokenSecret];
+					[[NSUserDefaults standardUserDefaults] setObject:@(self.permissionGranted) forKey:kFKStoredTokenPermission];
 					[[NSUserDefaults standardUserDefaults] synchronize];
 					self.authorized = YES;
 					self.authToken = oat;
