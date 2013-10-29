@@ -34,7 +34,24 @@
 - (void) initializeWithAPIKey:(NSString *)apiKey sharedSecret:(NSString *)secret;
 
 #pragma mark - Flickr Data Requests - using basic string and dictionary
+
+/*! Call the Flickr API using a string apiMethod passing any requestArgs
+ *
+ *  \param apiMethod The Flickr method you want to call
+ *  \param requestArgs An NSDictionary of arguments to pass to the method
+ *  \param completion The completion block of code to execute on completion of the network call
+ *  \returns The FKFlickrNetworkOperation created
+ */
 - (FKFlickrNetworkOperation *) call:(NSString * )apiMethod args:(NSDictionary *)requestArgs completion:(FKAPIRequestCompletion)completion; //doesn't use the cache
+
+/*! Call the Flickr API using a string apiMethod passing any requestArgs
+ *
+ *  \param apiMethod The Flickr method you want to call
+ *  \param requestArgs An NSDictionary of arguments to pass to the method
+ *  \param maxAge The maximum age the cached response can be around for.
+ *  \param completion The completion block of code to execute on completion of the network call
+ *  \returns The FKFlickrNetworkOperation created
+ */
 - (FKFlickrNetworkOperation *) call:(NSString *)apiMethod args:(NSDictionary *)requestArgs maxCacheAge:(FKDUMaxAge)maxAge completion:(FKAPIRequestCompletion)completion; //with caching specified
 
 #pragma mark - Flickr Using the Model Objects
