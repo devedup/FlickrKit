@@ -2,6 +2,8 @@
 // Prefix header for all source files of the 'FlickrKit' target in the 'FlickrKit' project
 //
 
+#import <TargetConditionals.h>
+
 #ifdef __OBJC__
 	#import <Foundation/Foundation.h>
 #endif

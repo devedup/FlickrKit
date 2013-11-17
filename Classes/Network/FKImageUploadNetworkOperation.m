@@ -13,8 +13,17 @@
 #import "FKUploadRespone.h"
 #import "FKDUStreamUtil.h"
 
+#if TARGET_OS_IPHONE
+#else
+#import "NSImageJPEGRepresentation.h"
+#endif
+
 @interface FKImageUploadNetworkOperation ()
+#if TARGET_OS_IPHONE
 @property (nonatomic, strong) UIImage *image;
+#else
+@property (nonatomic, strong) NSImage *image;
+#endif
 @property (nonatomic, retain) NSString *tempFile;
 @property (nonatomic, copy) FKAPIImageUploadCompletion completion;
 @property (nonatomic, retain) NSDictionary *args;
@@ -24,6 +33,7 @@
 
 @implementation FKImageUploadNetworkOperation
 
+#if TARGET_OS_IPHONE
 - (id) initWithImage:(UIImage *)image arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion; {
     self = [super init];
     if (self) {
@@ -33,6 +43,17 @@
     }
     return self;
 }
+#elif TARGET_OS_MAC
+- (id) initWithImage:(NSImage *)image arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion; {
+    self = [super init];
+    if (self) {
+		self.image = image;
+		self.args = args;
+		self.completion = completion;
+    }
+    return self;
+}
+#endif
 
 #pragma mark - DUOperation methods
 
@@ -111,7 +132,11 @@
     [outputStream open];
 	
 	// Input stream is the image
-	NSData *imgData = UIImageJPEGRepresentation(self.image, 1.0);
+#if TARGET_OS_IPHONE
+    NSData *imgData = UIImageJPEGRepresentation(self.image, 1.0);
+#elif TARGET_OS_MAC
+    NSData *imgData = NSImageJPEGRepresentation(self.image, 1.0);
+#endif
 	NSInputStream *inImageStream = [[NSInputStream alloc] initWithData:imgData];
 	
 	// Write the contents to the streams... don't cross the streams !
@@ -178,8 +203,8 @@
     self.uploadProgress = (CGFloat) totalBytesWritten / (CGFloat) self.fileSize;
     
 #ifdef DEBUG
-    NSLog(@"file size is %i", self.fileSize);
-	NSLog(@"Sent %i, total Sent %i, expected total %i", bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
+    NSLog(@"file size is %lu", (unsigned long)self.fileSize);
+	NSLog(@"Sent %li, total Sent %li, expected total %li", (long)bytesWritten, (long)totalBytesWritten, (long)totalBytesExpectedToWrite);
     NSLog(@"Upload progress is %f", self.uploadProgress);
 #endif
 }
