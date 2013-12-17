@@ -1907,7 +1907,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = FK;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "DevedUp Ltd";
 			};
 			buildConfigurationList = 552D91111753951300BE3FEA /* Build configuration list for PBXProject "FlickrKit" */;
@@ -2494,7 +2494,6 @@
 		552D91AB1753F8F100BE3FEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/FlickrKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Resources/FlickrKit-Prefix.pch";
@@ -2507,7 +2506,6 @@
 		552D91AC1753F8F100BE3FEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/FlickrKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Resources/FlickrKit-Prefix.pch";
