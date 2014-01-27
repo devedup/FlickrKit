@@ -8,7 +8,7 @@
 #import "FKDUNetworkController.h"
 
 @interface FKDUNetworkController ()
-@property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (nonatomic, strong) NSOperationQueue *operationQueue;
 @end
 
 @implementation FKDUNetworkController

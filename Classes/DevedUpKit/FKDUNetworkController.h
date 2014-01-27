@@ -16,6 +16,8 @@ typedef enum {
 
 @interface FKDUNetworkController : NSObject
 
+@property (nonatomic, strong, readonly) NSOperationQueue *operationQueue;
+
 + (FKDUNetworkController *) sharedController;
 
 - (void) execute:(NSOperation *)operation;
