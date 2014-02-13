@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AEBD0E218ACFD2A00CAD038 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEBD0E118ACFD2A00CAD038 /* AssetsLibrary.framework */; };
 		5535613F1767604100F00F50 /* libFlickrKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 553561381767602A00F00F50 /* libFlickrKit.a */; };
 		55AD485A175CA257004AF85C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD4859175CA257004AF85C /* UIKit.framework */; };
 		55AD485C175CA257004AF85C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD485B175CA257004AF85C /* Foundation.framework */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3AEBD0E118ACFD2A00CAD038 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		553561311767602A00F00F50 /* FlickrKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FlickrKit.xcodeproj; path = ../../FlickrKit.xcodeproj; sourceTree = "<group>"; };
 		55AD4856175CA257004AF85C /* FlickrKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55AD4859175CA257004AF85C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -83,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AEBD0E218ACFD2A00CAD038 /* AssetsLibrary.framework in Frameworks */,
 				55AD48BC175CF055004AF85C /* SystemConfiguration.framework in Frameworks */,
 				55AD485A175CA257004AF85C /* UIKit.framework in Frameworks */,
 				55AD485C175CA257004AF85C /* Foundation.framework in Frameworks */,
@@ -126,6 +129,7 @@
 		55AD4858175CA257004AF85C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3AEBD0E118ACFD2A00CAD038 /* AssetsLibrary.framework */,
 				55AD4859175CA257004AF85C /* UIKit.framework */,
 				55AD485B175CA257004AF85C /* Foundation.framework */,
 				55AD485D175CA257004AF85C /* CoreGraphics.framework */,
