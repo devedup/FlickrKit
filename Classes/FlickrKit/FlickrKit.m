@@ -415,12 +415,22 @@
 	
 	//Find possible secret
 	NSString *secret = [photoDict valueForKey:@"secret"];
-	
-	
-	return [self photoURLForSize:size photoID:photoID server:server secret:secret farm:farm];
+    NSString *extension = @"jpg";
+    if (size == FKPhotoSizeOriginal) {
+        // Original photos behave differently, see note here: https://www.flickr.com/services/api/misc.urls.html
+        // You may have to pass extras: original_format to your request in order to have these values in your response dictionary
+        secret = [photoDict valueForKey:@"originalsecret"];
+        extension = [photoDict valueForKey:@"originalformat"];
+    }
+
+	return [self photoURLForSize:size photoID:photoID server:server secret:secret farm:farm extension:extension];
 }
 
 - (NSURL *) photoURLForSize:(FKPhotoSize)size photoID:(NSString *)photoID server:(NSString *)server secret:(NSString *)secret farm:(NSString *)farm {
+    return [self photoURLForSize:size photoID:photoID server:server secret:secret farm:farm extension:@"jpg"];
+}
+
+- (NSURL *) photoURLForSize:(FKPhotoSize)size photoID:(NSString *)photoID server:(NSString *)server secret:(NSString *)secret farm:(NSString *)farm extension:(NSString *)extension {
     // http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}_[mstb].jpg
 	// http://farm{farm-id}.static.flickr.com/{server-id}/{id}_{secret}.jpg
     
@@ -438,7 +448,7 @@
 	[URLString appendFormat:@"%@/%@_%@", server, photoID, secret];
 	
 	NSString *sizeKey = FKIdentifierForSize(size);
-	[URLString appendFormat:@"_%@.jpg", sizeKey];
+	[URLString appendFormat:@"_%@.%@", sizeKey, extension];
     
 	return [NSURL URLWithString:URLString];
 }

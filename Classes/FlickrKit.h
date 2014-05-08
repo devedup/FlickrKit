@@ -84,6 +84,7 @@
 
 // Build your own from the components required
 - (NSURL *) photoURLForSize:(FKPhotoSize)size photoID:(NSString *)photoID server:(NSString *)server secret:(NSString *)secret farm:(NSString *)farm;
+- (NSURL *) photoURLForSize:(FKPhotoSize)size photoID:(NSString *)photoID server:(NSString *)server secret:(NSString *)secret farm:(NSString *)farm extension:(NSString *)extension;
 // Utility methods to extract the photoID/server/secret/farm from the input
 - (NSURL *) photoURLForSize:(FKPhotoSize)size fromPhotoDictionary:(NSDictionary *)photoDict;
 - (NSURL *) buddyIconURLForUser:(NSString *)userID;
