@@ -15,7 +15,7 @@ NSString *const FKFlickrAPIErrorDomain = @"com.devedup.flickrapi.ErrorDomain";
 
 #pragma mark - Flickr API Endpoint
 
-NSString *const FKFlickrRESTAPI = @"http://api.flickr.com/services/rest/";
+NSString *const FKFlickrRESTAPI = @"https://api.flickr.com/services/rest/";
 
 NSString *FKPermissionStringForPermission(FKPermission permission) {
 	switch (permission) {
