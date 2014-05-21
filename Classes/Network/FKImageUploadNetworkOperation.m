@@ -77,7 +77,7 @@
     
     // Build a URL to the upload service
 	FKURLBuilder *urlBuilder = [[FKURLBuilder alloc] init];
-	NSDictionary *args = [urlBuilder signedArgsFromParameters:newArgs method:FKHttpMethodPOST url:[NSURL URLWithString:@"http://api.flickr.com/services/upload/"]];
+	NSDictionary *args = [urlBuilder signedArgsFromParameters:newArgs method:FKHttpMethodPOST url:[NSURL URLWithString:@"https://api.flickr.com/services/upload/"]];
 	
 	// Form multipart needs a boundary 
 	NSString *multipartBoundary = FKGenerateUUID();
@@ -131,7 +131,7 @@
     // Now the input stream for the request is the file just created
 	NSInputStream *inputStream = [NSInputStream inputStreamWithFileAtPath:tempFileName];	
 	
-	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://api.flickr.com/services/upload/"]];
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://api.flickr.com/services/upload/"]];
 	[request setHTTPMethod:@"POST"];
 	[request setHTTPBodyStream:inputStream];
 	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", multipartBoundary];
