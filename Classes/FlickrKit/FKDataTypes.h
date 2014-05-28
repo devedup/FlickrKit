@@ -64,6 +64,7 @@ typedef enum {
 } FKPermission;
 
 NSString *FKPermissionStringForPermission(FKPermission permission);
+FKPermission FKPermissionForStringPermission(NSString* string);
 
 NSString *FKIdentifierForSize(FKPhotoSize size);
 

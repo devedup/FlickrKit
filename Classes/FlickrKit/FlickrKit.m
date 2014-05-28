@@ -157,19 +157,7 @@
 - (NSURL *)userAuthorizationURLWithRequestToken:(NSString *)inRequestToken requestedPermission:(FKPermission)permission {
     NSString *perms = @"";
 	
-	NSString *permissionString = nil;
-	switch (permission) {
-		case FKPermissionRead:
-			permissionString = @"read";
-			break;
-		case FKPermissionWrite:
-			permissionString = @"write";
-			break;
-		case FKPermissionDelete:
-			permissionString = @"delete";
-			break;
-	}
-    
+	NSString *permissionString = FKPermissionStringForPermission(permission);
 	self.permissionGranted = permission;
 	
 	perms = [NSString stringWithFormat:@"&perms=%@", permissionString];
@@ -355,6 +343,7 @@
 				NSString *fullname = [response valueForKeyPath:@"oauth.user.fullname"];
 				
 				self.authorized = YES;
+				self.permissionGranted = FKPermissionForStringPermission([response valueForKeyPath:@"oauth.perms._content"]);
 				
 				if (completion) {
 					completion(username, userid, fullname, nil);
