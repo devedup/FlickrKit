@@ -212,7 +212,12 @@
 			NSString *oats = params[@"oauth_token_secret"];
 			if (!oat || !oats) {
 				
-				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: response};
+				NSInteger statusCode = -1;
+				if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+					statusCode = ((NSHTTPURLResponse*)response).statusCode;
+				}
+				NSString* errorDescription = [NSString stringWithFormat:@"Unexpected response from server: %d", (int)statusCode];
+				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: errorDescription};
 				NSError *error = [NSError errorWithDomain:FKFlickrKitErrorDomain code:FKErrorAuthenticating userInfo:userInfo];
 				if (completion) {
 					completion(nil, error);
