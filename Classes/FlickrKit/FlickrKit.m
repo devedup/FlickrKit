@@ -157,7 +157,7 @@
 - (NSURL *)userAuthorizationURLWithRequestToken:(NSString *)inRequestToken requestedPermission:(FKPermission)permission {
     NSString *perms = @"";
 	
-	NSString *permissionString = FKPermissionStringForPermission(permission);
+	NSString *permissionString = FKPermissionStringForPermission(permission).lowercaseString;
 	self.permissionGranted = permission;
 	
 	perms = [NSString stringWithFormat:@"&perms=%@", permissionString];
