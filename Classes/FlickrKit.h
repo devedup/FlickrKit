@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 DevedUp Ltd. All rights reserved. http://www.devedup.com
 //
 
-#import <UIKit/UIKit.h>
 #import "FKDUDiskCache.h"
 #import "FKDataTypes.h"
 #import "FKFlickrNetworkOperation.h"
@@ -94,7 +93,9 @@
 #pragma mark - Photo Upload
 @interface FlickrKit (PhotoUpload)
 
+#if TARGET_OS_IPHONE
 - (FKImageUploadNetworkOperation *) uploadImage:(UIImage *)image args:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;
+#endif
 
 @end
 
