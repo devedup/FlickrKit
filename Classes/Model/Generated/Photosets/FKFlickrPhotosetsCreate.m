@@ -11,6 +11,7 @@
 #import "FKFlickrPhotosetsCreate.h" 
 
 @implementation FKFlickrPhotosetsCreate
+@synthesize description = _description;
 
 - (BOOL) needsLogin {
     return YES;

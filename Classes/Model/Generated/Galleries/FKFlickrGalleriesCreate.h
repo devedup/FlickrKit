@@ -46,7 +46,7 @@ Response:
 @property (nonatomic, strong) NSString *title; /* (Required) */
 
 /* A short description for the gallery */
-@property (nonatomic, strong) NSString *description; /* (Required) */
+@property (copy) NSString *description; /* (Required) */
 
 /* The first photo to add to your gallery */
 @property (nonatomic, strong) NSString *primary_photo_id;

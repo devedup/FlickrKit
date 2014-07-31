@@ -43,7 +43,7 @@ Set the meta information for a photo.
 @property (nonatomic, strong) NSString *title; /* (Required) */
 
 /* The description for the photo. */
-@property (nonatomic, strong) NSString *description; /* (Required) */
+@property (copy) NSString *description; /* (Required) */
 
 
 @end

@@ -11,6 +11,7 @@
 #import "FKFlickrBlogsPostPhoto.h" 
 
 @implementation FKFlickrBlogsPostPhoto
+@synthesize description = _description;
 
 - (BOOL) needsLogin {
     return YES;

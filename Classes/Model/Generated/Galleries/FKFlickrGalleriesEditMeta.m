@@ -11,6 +11,8 @@
 #import "FKFlickrGalleriesEditMeta.h" 
 
 @implementation FKFlickrGalleriesEditMeta
+@synthesize description = _description;
+
 
 - (BOOL) needsLogin {
     return YES;
