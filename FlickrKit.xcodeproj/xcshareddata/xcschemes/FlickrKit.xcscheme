@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "552D91991753F8F000BE3FEA"
-               BuildableName = "FlickrKitTests.octest"
+               BuildableName = "FlickrKitTests.xctest"
                BlueprintName = "FlickrKitTests"
                ReferencedContainer = "container:FlickrKit.xcodeproj">
             </BuildableReference>

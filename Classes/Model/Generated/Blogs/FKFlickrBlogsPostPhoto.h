@@ -49,7 +49,7 @@ typedef enum {
 @property (nonatomic, strong) NSString *title; /* (Required) */
 
 /* The blog post body */
-@property (nonatomic, strong) NSString *description; /* (Required) */
+@property (copy) NSString *description; /* (Required) */
 
 /* The password for the blog (used when the blog does not have a stored password). */
 @property (nonatomic, strong) NSString *blog_password;

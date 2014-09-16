@@ -44,7 +44,7 @@ Modify the meta-data for a gallery.
 @property (nonatomic, strong) NSString *title; /* (Required) */
 
 /* The new description for the gallery. */
-@property (nonatomic, strong) NSString *description;
+@property (copy) NSString *description;
 
 
 @end

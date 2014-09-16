@@ -45,7 +45,7 @@ Response:
 @property (nonatomic, strong) NSString *title; /* (Required) */
 
 /* A description of the photoset. May contain limited html. */
-@property (nonatomic, strong) NSString *description;
+@property (copy) NSString *description;
 
 /* The id of the photo to represent this set. The photo must belong to the calling user. */
 @property (nonatomic, strong) NSString *primary_photo_id; /* (Required) */

@@ -11,6 +11,7 @@
 #import "FKFlickrGalleriesCreate.h" 
 
 @implementation FKFlickrGalleriesCreate
+@synthesize description = _description;
 
 - (BOOL) needsLogin {
     return YES;

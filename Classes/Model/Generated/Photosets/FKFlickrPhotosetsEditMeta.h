@@ -44,7 +44,7 @@ Modify the meta-data for a photoset.
 @property (nonatomic, strong) NSString *title; /* (Required) */
 
 /* A description of the photoset. May contain limited html. */
-@property (nonatomic, strong) NSString *description;
+@property (copy) NSString *description;
 
 
 @end

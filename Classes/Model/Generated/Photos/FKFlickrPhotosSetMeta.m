@@ -11,6 +11,7 @@
 #import "FKFlickrPhotosSetMeta.h" 
 
 @implementation FKFlickrPhotosSetMeta
+@synthesize description = _description;
 
 - (BOOL) needsLogin {
     return YES;

@@ -203,8 +203,8 @@
     self.uploadProgress = (CGFloat) totalBytesWritten / (CGFloat) self.fileSize;
     
 #ifdef DEBUG
-    NSLog(@"file size is %i", self.fileSize);
-	NSLog(@"Sent %i, total Sent %i, expected total %i", bytesWritten, totalBytesWritten, totalBytesExpectedToWrite);
+    NSLog(@"file size is %lu", (unsigned long)self.fileSize);
+	NSLog(@"Sent %li, total Sent %li, expected total %li", (long)bytesWritten, (long)totalBytesWritten, (long)totalBytesExpectedToWrite);
     NSLog(@"Upload progress is %f", self.uploadProgress);
 #endif
 }
