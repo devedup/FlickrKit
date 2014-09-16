@@ -242,11 +242,13 @@
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 	UIImage *imagePicked = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    NSURL* imageurl = [info objectForKey:UIImagePickerControllerReferenceURL];
 	
     NSDictionary *uploadArgs = @{@"title": @"Test Photo", @"description": @"A Test Photo via FlickrKitDemo", @"is_public": @"0", @"is_friend": @"0", @"is_family": @"0", @"hidden": @"2"};
     
     self.progress.progress = 0.0;
-	self.uploadOp =  [[FlickrKit sharedFlickrKit] uploadImage:imagePicked args:uploadArgs completion:^(NSString *imageID, NSError *error) {
+	self.uploadOp =  [[FlickrKit sharedFlickrKit] uploadAssetURL:imageurl args:uploadArgs completion:^(NSString *imageID, NSError *error) {
 		dispatch_async(dispatch_get_main_queue(), ^{
 			if (error) {
 				UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];

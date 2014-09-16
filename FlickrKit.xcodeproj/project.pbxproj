@@ -481,6 +481,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3AEBD0DF18ACFD0C00CAD038 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		552D91191753951300BE3FEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		552D911B1753951300BE3FEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		552D911D1753951300BE3FEA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1002,6 +1003,7 @@
 		552D91181753951300BE3FEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3AEBD0DF18ACFD0C00CAD038 /* AssetsLibrary.framework */,
 				55AEEF59175766EF00B61A3C /* SystemConfiguration.framework */,
 				552D91191753951300BE3FEA /* UIKit.framework */,
 				552D911B1753951300BE3FEA /* Foundation.framework */,
