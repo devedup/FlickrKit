@@ -12,6 +12,8 @@
 
 @implementation #CLASS_NAME#
 
+#SYNTHESIZED_PROPERTIES#
+
 - (BOOL) needsLogin {
     return #NEEDS_LOGIN#;
 }

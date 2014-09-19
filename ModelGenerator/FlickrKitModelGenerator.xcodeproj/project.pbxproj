@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55826E2F19CC2D15008EB81B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55826E2E19CC2D15008EB81B /* AssetsLibrary.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		55B206241768CEB000A19A12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B206231768CEB000A19A12 /* UIKit.framework */; };
 		55B206261768CEB000A19A12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B206251768CEB000A19A12 /* Foundation.framework */; };
 		55B206281768CEB000A19A12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B206271768CEB000A19A12 /* CoreGraphics.framework */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55826E2E19CC2D15008EB81B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		55B206201768CEB000A19A12 /* FlickrKitModelGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrKitModelGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55B206231768CEB000A19A12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		55B206251768CEB000A19A12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55826E2F19CC2D15008EB81B /* AssetsLibrary.framework in Frameworks */,
 				55B206911768D39300A19A12 /* SystemConfiguration.framework in Frameworks */,
 				55B206241768CEB000A19A12 /* UIKit.framework in Frameworks */,
 				55B206261768CEB000A19A12 /* Foundation.framework in Frameworks */,
@@ -116,6 +119,7 @@
 		55B206221768CEB000A19A12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				55826E2E19CC2D15008EB81B /* AssetsLibrary.framework */,
 				55B206901768D39300A19A12 /* SystemConfiguration.framework */,
 				55B206231768CEB000A19A12 /* UIKit.framework */,
 				55B206251768CEB000A19A12 /* Foundation.framework */,

@@ -102,7 +102,7 @@
         [[FlickrKit sharedFlickrKit] call:@"flickr.reflection.getMethodInfo" args:args completion:^(NSDictionary *response, NSError *error) {                        
             [self writeHeaderForClass:className withData:response path:subPath];
             [self writeImplementationForClass:className withData:response path:subPath];
-            NSLog(@"Written Class Files for %@. %i Remaining", method, allMethods.count - count);
+            NSLog(@"Written Class Files for %@. %lu Remaining", method, allMethods.count - count);
             count++;
 			dispatch_group_leave(group);
         }];
@@ -166,7 +166,11 @@
                 continue;
             }
             [argString appendFormat:@"/* %@ */\n", [arg valueForKey:@"_content"]];
-            [argString appendFormat:@"@property (nonatomic, strong) NSString *%@;", argName];
+            if ([argName isEqualToString:@"description"]) {
+                [argString appendFormat:@"@property (copy) NSString *%@;", argName];
+            } else {
+                [argString appendFormat:@"@property (nonatomic, copy) NSString *%@;", argName];
+            }            
             BOOL optional = [[arg valueForKey:@"optional"] boolValue];
             if (!optional) {
                 [argString appendString:@" /* (Required) */"];                
@@ -185,7 +189,7 @@
 			NSString *enumTitle = [self errorEnumTitleForError:message];			
 			
             NSInteger code = [[error valueForKey:@"code"] integerValue];
-            [errorString appendFormat:@"\t%@Error_%@ = %i,\t\t /* %@ */\n", className, enumTitle, code, desc];
+            [errorString appendFormat:@"\t%@Error_%@ = %lu,\t\t /* %@ */\n", className, enumTitle, (unsigned long)code, desc];
         }
         header = [header stringByReplacingOccurrencesOfString:@"#ERROR_CODES#" withString:errorString];
         
@@ -215,6 +219,19 @@
         
         NSArray *args = [data valueForKeyPath:@"arguments.argument"];
         
+        if ([className isEqualToString:@"FKFlickrBlogsPostPhoto"]) {
+            NSLog(@"hello");
+        }
+        
+        for (NSDictionary *arg in args) {
+            NSString *argName = [arg valueForKey:@"name"];
+            if ([argName isEqualToString:@"description"]) {
+                implementation = [implementation stringByReplacingOccurrencesOfString:@"#SYNTHESIZED_PROPERTIES#" withString:@"\n@synthesize description = _description;"];
+            }
+            continue;
+        }
+        implementation = [implementation stringByReplacingOccurrencesOfString:@"#SYNTHESIZED_PROPERTIES#" withString:@""];
+                
         for (NSDictionary *arg in args) {
             NSString *argName = [arg valueForKey:@"name"];
             if ([argName isEqualToString:@"api_key"]) {
@@ -259,7 +276,7 @@
         // Other bool values
         NSString *needsLogin = [[data valueForKeyPath:@"method.needslogin"] integerValue] ? @"YES" : @"NO";
         NSString *needsSigning = [[data valueForKeyPath:@"method.needslogin"] integerValue] ? @"YES" : @"NO";
-        NSString *requiredPerms = [NSString stringWithFormat:@"%i", [[data valueForKeyPath:@"method.requiredperms"] integerValue] - 1];
+        NSString *requiredPerms = [NSString stringWithFormat:@"%li", [[data valueForKeyPath:@"method.requiredperms"] integerValue] - 1];
         implementation = [implementation stringByReplacingOccurrencesOfString:@"#NEEDS_LOGIN#" withString:needsLogin];
         implementation = [implementation stringByReplacingOccurrencesOfString:@"#NEEDS_SIGNING#" withString:needsSigning];
         implementation = [implementation stringByReplacingOccurrencesOfString:@"#REQUIRED_PERMS#" withString:requiredPerms];
