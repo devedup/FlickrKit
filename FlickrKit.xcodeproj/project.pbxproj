@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		552D918D1753F8EF00BE3FEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552D911B1753951300BE3FEA /* Foundation.framework */; };
-		552D919B1753F8F000BE3FEA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552D91371753951300BE3FEA /* SenTestingKit.framework */; };
 		552D919C1753F8F000BE3FEA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552D91191753951300BE3FEA /* UIKit.framework */; };
 		552D919D1753F8F000BE3FEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552D911B1753951300BE3FEA /* Foundation.framework */; };
 		552D91A01753F8F000BE3FEA /* libFlickrKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 552D918C1753F8EF00BE3FEA /* libFlickrKit.a */; };
@@ -436,6 +435,7 @@
 		555F308517678A9800E84674 /* FKFlickrUrlsLookupGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EE817678A9800E84674 /* FKFlickrUrlsLookupGroup.m */; };
 		555F308617678A9800E84674 /* FKFlickrUrlsLookupUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EEA17678A9800E84674 /* FKFlickrUrlsLookupUser.m */; };
 		555F308717678A9800E84674 /* FKFlickrUrlsLookupUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EEA17678A9800E84674 /* FKFlickrUrlsLookupUser.m */; };
+		55826E3719CC3C0F008EB81B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEBD0DF18ACFD0C00CAD038 /* AssetsLibrary.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		55A5B668176613F900745C71 /* FKDUStreamUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B667176613F900745C71 /* FKDUStreamUtil.m */; };
 		55A5B669176613F900745C71 /* FKDUStreamUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B667176613F900745C71 /* FKDUStreamUtil.m */; };
 		55AD484B175CA188004AF85C /* FKDataTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD484A175CA188004AF85C /* FKDataTypes.m */; };
@@ -485,7 +485,6 @@
 		552D91191753951300BE3FEA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		552D911B1753951300BE3FEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		552D911D1753951300BE3FEA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		552D91371753951300BE3FEA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		552D913F1753951300BE3FEA /* FlickrKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlickrKitTests-Info.plist"; sourceTree = "<group>"; };
 		552D91411753951300BE3FEA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		552D91431753951300BE3FEA /* FlickrKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrKitTests.h; sourceTree = "<group>"; };
@@ -966,8 +965,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55826E3719CC3C0F008EB81B /* AssetsLibrary.framework in Frameworks */,
 				55AEEF5B17576A3D00B61A3C /* SystemConfiguration.framework in Frameworks */,
-				552D919B1753F8F000BE3FEA /* SenTestingKit.framework in Frameworks */,
 				552D919C1753F8F000BE3FEA /* UIKit.framework in Frameworks */,
 				552D919D1753F8F000BE3FEA /* Foundation.framework in Frameworks */,
 				552D91A01753F8F000BE3FEA /* libFlickrKit.a in Frameworks */,
@@ -1008,7 +1007,6 @@
 				552D91191753951300BE3FEA /* UIKit.framework */,
 				552D911B1753951300BE3FEA /* Foundation.framework */,
 				552D911D1753951300BE3FEA /* CoreGraphics.framework */,
-				552D91371753951300BE3FEA /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1900,7 +1898,7 @@
 			name = FlickrKitTests;
 			productName = FlickrKitTests;
 			productReference = 552D919A1753F8F000BE3FEA /* FlickrKitTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -1909,6 +1907,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = FK;
+				LastTestingUpgradeCheck = 0600;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "DevedUp Ltd";
 			};
@@ -2523,12 +2522,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FlickrKit/FlickrKit-Prefix.pch";
+				GCC_PREFIX_HEADER = "Resources/FlickrKit-Prefix.pch";
 				INFOPLIST_FILE = "FlickrKitTests/FlickrKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -2538,12 +2537,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FlickrKit/FlickrKit-Prefix.pch";
+				GCC_PREFIX_HEADER = "Resources/FlickrKit-Prefix.pch";
 				INFOPLIST_FILE = "FlickrKitTests/FlickrKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

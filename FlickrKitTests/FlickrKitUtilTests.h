@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 DevedUp Ltd. All rights reserved. http://www.devedup.com
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface FlickrKitUtilTests : SenTestCase
+@interface FlickrKitUtilTests : XCTestCase
 
 @end
