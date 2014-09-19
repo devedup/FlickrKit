@@ -241,8 +241,6 @@
 #pragma mark - UIImagePickerControllerDelegate
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-	UIImage *imagePicked = [info objectForKey:UIImagePickerControllerOriginalImage];
-    
     NSURL* imageurl = [info objectForKey:UIImagePickerControllerReferenceURL];
 	
     NSDictionary *uploadArgs = @{@"title": @"Test Photo", @"description": @"A Test Photo via FlickrKitDemo", @"is_public": @"0", @"is_friend": @"0", @"is_family": @"0", @"hidden": @"2"};

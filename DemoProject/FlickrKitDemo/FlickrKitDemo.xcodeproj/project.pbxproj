@@ -110,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				553561311767602A00F00F50 /* FlickrKit.xcodeproj */,
-				55AD48BB175CF055004AF85C /* SystemConfiguration.framework */,
 				55AD485F175CA257004AF85C /* FlickrKitDemo */,
 				55AD4860175CA257004AF85C /* Supporting Files */,
 				55AD4858175CA257004AF85C /* Frameworks */,
@@ -129,6 +128,7 @@
 		55AD4858175CA257004AF85C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				55AD48BB175CF055004AF85C /* SystemConfiguration.framework */,
 				3AEBD0E118ACFD2A00CAD038 /* AssetsLibrary.framework */,
 				55AD4859175CA257004AF85C /* UIKit.framework */,
 				55AD485B175CA257004AF85C /* Foundation.framework */,
