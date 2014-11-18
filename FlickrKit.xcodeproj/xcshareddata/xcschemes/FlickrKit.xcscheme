@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "552D91991753F8F000BE3FEA"
-               BuildableName = "FlickrKitTests.octest"
+               BuildableName = "FlickrKitTests.xctest"
                BlueprintName = "FlickrKitTests"
                ReferencedContainer = "container:FlickrKit.xcodeproj">
             </BuildableReference>
@@ -49,6 +49,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "552D918B1753F8EF00BE3FEA"
+            BuildableName = "libFlickrKit.a"
+            BlueprintName = "FlickrKit"
+            ReferencedContainer = "container:FlickrKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
