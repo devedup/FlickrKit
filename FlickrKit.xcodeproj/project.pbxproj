@@ -494,7 +494,7 @@
 		552D916A1753C5C900BE3FEA /* FlickrAuthTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAuthTests.h; sourceTree = "<group>"; };
 		552D916B1753C5C900BE3FEA /* FlickrAuthTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrAuthTests.m; sourceTree = "<group>"; };
 		552D918C1753F8EF00BE3FEA /* libFlickrKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFlickrKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		552D919A1753F8F000BE3FEA /* FlickrKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		552D919A1753F8F000BE3FEA /* FlickrKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FlickrKitTests.octest; path = FlickrKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		552D91E61754AE8A00BE3FEA /* FKDUBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKDUBlocks.h; sourceTree = "<group>"; };
 		552D91E71754AE8A00BE3FEA /* FKDUBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKDUBlocks.m; sourceTree = "<group>"; };
 		552D91E81754AE8A00BE3FEA /* FKDUConcurrentOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKDUConcurrentOperation.h; sourceTree = "<group>"; };
@@ -945,7 +945,7 @@
 		55B206E41769008300A19A12 /* FlickrKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FlickrKit-Info.plist"; path = "Resources/FlickrKit-Info.plist"; sourceTree = SOURCE_ROOT; };
 		55B206E51769008300A19A12 /* FlickrKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "FlickrKit-Prefix.pch"; path = "Resources/FlickrKit-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		55B206EA176903DB00A19A12 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		55B206EB176903E300A19A12 /* Source Code License.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "Source Code License.rtf"; sourceTree = "<group>"; };
+		55B206EB176903E300A19A12 /* Source Code License.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Source Code License.md"; sourceTree = "<group>"; };
 		55EA68A917CAA6B90017DDD1 /* FlickrKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FlickrKit.podspec; sourceTree = "<group>"; };
 		55EA68AB17CAABD40017DDD1 /* FKOFHMACSha1Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKOFHMACSha1Base64.h; path = Utilities/FKOFHMACSha1Base64.h; sourceTree = "<group>"; };
 		55EA68AC17CAABD40017DDD1 /* FKOFHMACSha1Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKOFHMACSha1Base64.m; path = Utilities/FKOFHMACSha1Base64.m; sourceTree = "<group>"; };
@@ -981,7 +981,7 @@
 			children = (
 				55EA68A917CAA6B90017DDD1 /* FlickrKit.podspec */,
 				55B206EA176903DB00A19A12 /* README.md */,
-				55B206EB176903E300A19A12 /* Source Code License.rtf */,
+				55B206EB176903E300A19A12 /* Source Code License.md */,
 				552D91E41754AE8900BE3FEA /* Classes */,
 				552D91201753951300BE3FEA /* Supporting Files */,
 				552D913D1753951300BE3FEA /* Tests */,
@@ -2459,7 +2459,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2484,7 +2484,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

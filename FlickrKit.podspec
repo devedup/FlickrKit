@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version        = "1.0.5"
   s.summary        = "FlickrKit is an iOS Objective-C library for accessing the Flickr API."
   s.homepage       = "https://github.com/devedup/FlickrKit"
-  s.license        = { :type => 'BSD license with attribution', :file => 'Source Code License.rtf' }
+  s.license        = { :type => 'BSD license with attribution', :file => 'Source Code License.md' }
   s.author         = { "David Casserly" => "flickrkit@devedup.com" }
   s.source         = { :git => "https://github.com/devedup/FlickrKit.git", :tag => "v1.0.5" }
   s.platform       = :ios, '6.0'
