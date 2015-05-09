@@ -9,9 +9,9 @@ Features
 Who needs FlickrKit when we have ObjectiveFlickr? Why not? I used ObjectiveFlickr for a long time, and some of the methods in this library were born from ObjectiveFlickr. However, I sometimes had problems debugging ObjectiveFlickr as the networking code was custom and not familiar to me. Also I go a little further with FlickrKit and I provide a little bit more than ObjectiveFlickr does... read on....
 
 * You have a few ways to call methods - using string method name/dictionary params - or using the Model classes that have been generated for every Flickr API call available! It's up to you - or mix it up!
-* All methods return an NSOperation subclass, so you have the ability to cancel requests easily, requests are put onto an operation queue.
-* FlickrKit uses latest iOS libraries where possible, and is built with ARC and uses block callbacks. So it's internals should be familiar.
-*  Errors are packaged properly into NSError objects, again more familiarity.
+* All methods return an `NSOperation` subclass, so you have the ability to cancel requests easily, requests are put onto an operation queue.
+* FlickrKit uses latest iOS libraries where possible, and is built with ARC and uses block callbacks. So its internals should be familiar.
+*  Errors are packaged properly into `NSError` objects, again more familiarity.
 *  There is a default disk caching of Flickr responses - you are allowed to cache up to 24 hrs. You can specify the cache time per request.
 *  The code is (hopefully) easy to read and debug, as it uses standard iOS networking components in the simplest way possible.
 *  It is (partially) unit tested. 
