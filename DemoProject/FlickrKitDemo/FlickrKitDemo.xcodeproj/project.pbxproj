@@ -101,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				553561381767602A00F00F50 /* libFlickrKit.a */,
-				5535613A1767602A00F00F50 /* FlickrKitTests.octest */,
+				5535613A1767602A00F00F50 /* FlickrKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,7 +199,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = FK;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "DevedUp Ltd";
 				TargetAttributes = {
 					55AD4855175CA257004AF85C = {
@@ -238,10 +238,9 @@
 			remoteRef = 553561371767602A00F00F50 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5535613A1767602A00F00F50 /* FlickrKitTests.octest */ = {
+		5535613A1767602A00F00F50 /* FlickrKitTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			name = FlickrKitTests.octest;
 			path = FlickrKitTests.xctest;
 			remoteRef = 553561391767602A00F00F50 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -322,6 +321,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -375,6 +375,7 @@
 				GCC_PREFIX_HEADER = "FlickrKitDemo/FlickrKitDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../Classes\"/**";
 				INFOPLIST_FILE = "FlickrKitDemo/FlickrKitDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devedup.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -391,6 +392,7 @@
 				GCC_PREFIX_HEADER = "FlickrKitDemo/FlickrKitDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../Classes\"/**";
 				INFOPLIST_FILE = "FlickrKitDemo/FlickrKitDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devedup.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
