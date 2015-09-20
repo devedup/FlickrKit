@@ -201,6 +201,11 @@
 				CLASSPREFIX = FK;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "DevedUp Ltd";
+				TargetAttributes = {
+					55AD4855175CA257004AF85C = {
+						DevelopmentTeam = 7LE43RRC39;
+					};
+				};
 			};
 			buildConfigurationList = 55AD4851175CA257004AF85C /* Build configuration list for PBXProject "FlickrKitDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -236,7 +241,8 @@
 		5535613A1767602A00F00F50 /* FlickrKitTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = FlickrKitTests.octest;
+			name = FlickrKitTests.octest;
+			path = FlickrKitTests.xctest;
 			remoteRef = 553561391767602A00F00F50 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -363,11 +369,14 @@
 		55AD4892175CA257004AF85C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlickrKitDemo/FlickrKitDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../Classes\"/**";
 				INFOPLIST_FILE = "FlickrKitDemo/FlickrKitDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -376,11 +385,14 @@
 		55AD4893175CA257004AF85C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlickrKitDemo/FlickrKitDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../Classes\"/**";
 				INFOPLIST_FILE = "FlickrKitDemo/FlickrKitDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

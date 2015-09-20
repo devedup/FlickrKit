@@ -494,7 +494,7 @@
 		552D916A1753C5C900BE3FEA /* FlickrAuthTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAuthTests.h; sourceTree = "<group>"; };
 		552D916B1753C5C900BE3FEA /* FlickrAuthTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrAuthTests.m; sourceTree = "<group>"; };
 		552D918C1753F8EF00BE3FEA /* libFlickrKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFlickrKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		552D919A1753F8F000BE3FEA /* FlickrKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FlickrKitTests.octest; path = FlickrKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		552D919A1753F8F000BE3FEA /* FlickrKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		552D91E61754AE8A00BE3FEA /* FKDUBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKDUBlocks.h; sourceTree = "<group>"; };
 		552D91E71754AE8A00BE3FEA /* FKDUBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKDUBlocks.m; sourceTree = "<group>"; };
 		552D91E81754AE8A00BE3FEA /* FKDUConcurrentOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKDUConcurrentOperation.h; sourceTree = "<group>"; };
@@ -994,7 +994,7 @@
 			isa = PBXGroup;
 			children = (
 				552D918C1753F8EF00BE3FEA /* libFlickrKit.a */,
-				552D919A1753F8F000BE3FEA /* FlickrKitTests.octest */,
+				552D919A1753F8F000BE3FEA /* FlickrKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1897,7 +1897,7 @@
 			);
 			name = FlickrKitTests;
 			productName = FlickrKitTests;
-			productReference = 552D919A1753F8F000BE3FEA /* FlickrKitTests.octest */;
+			productReference = 552D919A1753F8F000BE3FEA /* FlickrKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
