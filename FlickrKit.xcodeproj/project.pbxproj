@@ -456,6 +456,451 @@
 		55AEEF5A175766F000B61A3C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AEEF59175766EF00B61A3C /* SystemConfiguration.framework */; };
 		55AEEF5B17576A3D00B61A3C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AEEF59175766EF00B61A3C /* SystemConfiguration.framework */; };
 		55EA68AD17CAABD40017DDD1 /* FKOFHMACSha1Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EA68AC17CAABD40017DDD1 /* FKOFHMACSha1Base64.m */; };
+		6AF250181BC0EE5D000C3223 /* FKFlickrActivityUserComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D2917678A9700E84674 /* FKFlickrActivityUserComments.m */; };
+		6AF250191BC0EE5D000C3223 /* FKFlickrActivityUserPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D2B17678A9700E84674 /* FKFlickrActivityUserPhotos.m */; };
+		6AF2501A1BC0EE5D000C3223 /* FKFlickrAuthCheckToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D2E17678A9700E84674 /* FKFlickrAuthCheckToken.m */; };
+		6AF2501B1BC0EE5D000C3223 /* FKFlickrAuthGetFrob.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D3017678A9700E84674 /* FKFlickrAuthGetFrob.m */; };
+		6AF2501C1BC0EE5D000C3223 /* FKFlickrAuthGetFullToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D3217678A9700E84674 /* FKFlickrAuthGetFullToken.m */; };
+		6AF2501D1BC0EE5D000C3223 /* FKFlickrAuthGetToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D3417678A9700E84674 /* FKFlickrAuthGetToken.m */; };
+		6AF2501E1BC0EE5D000C3223 /* FKFlickrAuthOauthCheckToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D3717678A9700E84674 /* FKFlickrAuthOauthCheckToken.m */; };
+		6AF2501F1BC0EE5D000C3223 /* FKFlickrAuthOauthGetAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D3917678A9700E84674 /* FKFlickrAuthOauthGetAccessToken.m */; };
+		6AF250201BC0EE5D000C3223 /* FKFlickrBlogsGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D3C17678A9700E84674 /* FKFlickrBlogsGetList.m */; };
+		6AF250211BC0EE5D000C3223 /* FKFlickrBlogsGetServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D3E17678A9700E84674 /* FKFlickrBlogsGetServices.m */; };
+		6AF250221BC0EE5D000C3223 /* FKFlickrBlogsPostPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D4017678A9700E84674 /* FKFlickrBlogsPostPhoto.m */; };
+		6AF250231BC0EE5D000C3223 /* FKFlickrCamerasGetBrandModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D4317678A9700E84674 /* FKFlickrCamerasGetBrandModels.m */; };
+		6AF250241BC0EE5D000C3223 /* FKFlickrCamerasGetBrands.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D4517678A9700E84674 /* FKFlickrCamerasGetBrands.m */; };
+		6AF250251BC0EE5D000C3223 /* FKFlickrCollectionsGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D4817678A9700E84674 /* FKFlickrCollectionsGetInfo.m */; };
+		6AF250261BC0EE5D000C3223 /* FKFlickrCollectionsGetTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D4A17678A9700E84674 /* FKFlickrCollectionsGetTree.m */; };
+		6AF250271BC0EE5D000C3223 /* FKFlickrCommonsGetInstitutions.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D4D17678A9700E84674 /* FKFlickrCommonsGetInstitutions.m */; };
+		6AF250281BC0EE5D000C3223 /* FKFlickrContactsGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5017678A9700E84674 /* FKFlickrContactsGetList.m */; };
+		6AF250291BC0EE5D000C3223 /* FKFlickrContactsGetListRecentlyUploaded.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5217678A9700E84674 /* FKFlickrContactsGetListRecentlyUploaded.m */; };
+		6AF2502A1BC0EE5D000C3223 /* FKFlickrContactsGetPublicList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5417678A9700E84674 /* FKFlickrContactsGetPublicList.m */; };
+		6AF2502B1BC0EE5D000C3223 /* FKFlickrContactsGetTaggingSuggestions.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5617678A9700E84674 /* FKFlickrContactsGetTaggingSuggestions.m */; };
+		6AF2502C1BC0EE5D000C3223 /* FKFlickrFavoritesAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5917678A9700E84674 /* FKFlickrFavoritesAdd.m */; };
+		6AF2502D1BC0EE5D000C3223 /* FKFlickrFavoritesGetContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5B17678A9700E84674 /* FKFlickrFavoritesGetContext.m */; };
+		6AF2502E1BC0EE5D000C3223 /* FKFlickrFavoritesGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5D17678A9700E84674 /* FKFlickrFavoritesGetList.m */; };
+		6AF2502F1BC0EE5E000C3223 /* FKFlickrFavoritesGetPublicList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5F17678A9700E84674 /* FKFlickrFavoritesGetPublicList.m */; };
+		6AF250301BC0EE5E000C3223 /* FKFlickrFavoritesRemove.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D6117678A9700E84674 /* FKFlickrFavoritesRemove.m */; };
+		6AF250311BC0EE5E000C3223 /* FKFlickrGalleriesAddPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D6417678A9700E84674 /* FKFlickrGalleriesAddPhoto.m */; };
+		6AF250321BC0EE5E000C3223 /* FKFlickrGalleriesCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D6617678A9700E84674 /* FKFlickrGalleriesCreate.m */; };
+		6AF250331BC0EE5E000C3223 /* FKFlickrGalleriesEditMeta.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D6817678A9700E84674 /* FKFlickrGalleriesEditMeta.m */; };
+		6AF250341BC0EE5E000C3223 /* FKFlickrGalleriesEditPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D6A17678A9700E84674 /* FKFlickrGalleriesEditPhoto.m */; };
+		6AF250351BC0EE5E000C3223 /* FKFlickrGalleriesEditPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D6C17678A9700E84674 /* FKFlickrGalleriesEditPhotos.m */; };
+		6AF250361BC0EE5E000C3223 /* FKFlickrGalleriesGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D6E17678A9700E84674 /* FKFlickrGalleriesGetInfo.m */; };
+		6AF250371BC0EE5E000C3223 /* FKFlickrGalleriesGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D7017678A9700E84674 /* FKFlickrGalleriesGetList.m */; };
+		6AF250381BC0EE5E000C3223 /* FKFlickrGalleriesGetListForPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D7217678A9700E84674 /* FKFlickrGalleriesGetListForPhoto.m */; };
+		6AF250391BC0EE5E000C3223 /* FKFlickrGalleriesGetPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D7417678A9700E84674 /* FKFlickrGalleriesGetPhotos.m */; };
+		6AF2503A1BC0EE5E000C3223 /* FKFlickrGroupsDiscussRepliesAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D7917678A9700E84674 /* FKFlickrGroupsDiscussRepliesAdd.m */; };
+		6AF2503B1BC0EE5E000C3223 /* FKFlickrGroupsDiscussRepliesDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D7B17678A9700E84674 /* FKFlickrGroupsDiscussRepliesDelete.m */; };
+		6AF2503C1BC0EE5E000C3223 /* FKFlickrGroupsDiscussRepliesEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D7D17678A9700E84674 /* FKFlickrGroupsDiscussRepliesEdit.m */; };
+		6AF2503D1BC0EE5E000C3223 /* FKFlickrGroupsDiscussRepliesGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D7F17678A9700E84674 /* FKFlickrGroupsDiscussRepliesGetInfo.m */; };
+		6AF2503E1BC0EE5E000C3223 /* FKFlickrGroupsDiscussRepliesGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D8117678A9700E84674 /* FKFlickrGroupsDiscussRepliesGetList.m */; };
+		6AF2503F1BC0EE5E000C3223 /* FKFlickrGroupsDiscussTopicsAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D8417678A9700E84674 /* FKFlickrGroupsDiscussTopicsAdd.m */; };
+		6AF250401BC0EE5E000C3223 /* FKFlickrGroupsDiscussTopicsGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D8617678A9700E84674 /* FKFlickrGroupsDiscussTopicsGetInfo.m */; };
+		6AF250411BC0EE5E000C3223 /* FKFlickrGroupsDiscussTopicsGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D8817678A9700E84674 /* FKFlickrGroupsDiscussTopicsGetList.m */; };
+		6AF250421BC0EE5E000C3223 /* FKFlickrGroupsBrowse.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D8A17678A9700E84674 /* FKFlickrGroupsBrowse.m */; };
+		6AF250431BC0EE5E000C3223 /* FKFlickrGroupsGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D8C17678A9700E84674 /* FKFlickrGroupsGetInfo.m */; };
+		6AF250441BC0EE5E000C3223 /* FKFlickrGroupsJoin.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D8E17678A9700E84674 /* FKFlickrGroupsJoin.m */; };
+		6AF250451BC0EE5E000C3223 /* FKFlickrGroupsJoinRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D9017678A9700E84674 /* FKFlickrGroupsJoinRequest.m */; };
+		6AF250461BC0EE5E000C3223 /* FKFlickrGroupsLeave.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D9217678A9700E84674 /* FKFlickrGroupsLeave.m */; };
+		6AF250471BC0EE5E000C3223 /* FKFlickrGroupsSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D9417678A9700E84674 /* FKFlickrGroupsSearch.m */; };
+		6AF250481BC0EE5E000C3223 /* FKFlickrGroupsMembersGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D9717678A9700E84674 /* FKFlickrGroupsMembersGetList.m */; };
+		6AF250491BC0EE5E000C3223 /* FKFlickrGroupsPoolsAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D9A17678A9700E84674 /* FKFlickrGroupsPoolsAdd.m */; };
+		6AF2504A1BC0EE5E000C3223 /* FKFlickrGroupsPoolsGetContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D9C17678A9700E84674 /* FKFlickrGroupsPoolsGetContext.m */; };
+		6AF2504B1BC0EE5E000C3223 /* FKFlickrGroupsPoolsGetGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D9E17678A9700E84674 /* FKFlickrGroupsPoolsGetGroups.m */; };
+		6AF2504C1BC0EE5E000C3223 /* FKFlickrGroupsPoolsGetPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DA017678A9700E84674 /* FKFlickrGroupsPoolsGetPhotos.m */; };
+		6AF2504D1BC0EE5E000C3223 /* FKFlickrGroupsPoolsRemove.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DA217678A9700E84674 /* FKFlickrGroupsPoolsRemove.m */; };
+		6AF2504E1BC0EE5E000C3223 /* FKFlickrInterestingnessGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DA517678A9700E84674 /* FKFlickrInterestingnessGetList.m */; };
+		6AF2504F1BC0EE5E000C3223 /* FKFlickrMachinetagsGetNamespaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DA817678A9700E84674 /* FKFlickrMachinetagsGetNamespaces.m */; };
+		6AF250501BC0EE5E000C3223 /* FKFlickrMachinetagsGetPairs.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DAA17678A9700E84674 /* FKFlickrMachinetagsGetPairs.m */; };
+		6AF250511BC0EE5E000C3223 /* FKFlickrMachinetagsGetPredicates.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DAC17678A9700E84674 /* FKFlickrMachinetagsGetPredicates.m */; };
+		6AF250521BC0EE5E000C3223 /* FKFlickrMachinetagsGetRecentValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DAE17678A9700E84674 /* FKFlickrMachinetagsGetRecentValues.m */; };
+		6AF250531BC0EE5E000C3223 /* FKFlickrMachinetagsGetValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DB017678A9700E84674 /* FKFlickrMachinetagsGetValues.m */; };
+		6AF250541BC0EE5E000C3223 /* FKFlickrPandaGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DB317678A9700E84674 /* FKFlickrPandaGetList.m */; };
+		6AF250551BC0EE5E000C3223 /* FKFlickrPandaGetPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DB517678A9700E84674 /* FKFlickrPandaGetPhotos.m */; };
+		6AF250561BC0EE5E000C3223 /* FKFlickrPeopleFindByEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DB817678A9700E84674 /* FKFlickrPeopleFindByEmail.m */; };
+		6AF250571BC0EE5E000C3223 /* FKFlickrPeopleFindByUsername.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DBA17678A9700E84674 /* FKFlickrPeopleFindByUsername.m */; };
+		6AF250581BC0EE5E000C3223 /* FKFlickrPeopleGetGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DBC17678A9700E84674 /* FKFlickrPeopleGetGroups.m */; };
+		6AF250591BC0EE5E000C3223 /* FKFlickrPeopleGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DBE17678A9700E84674 /* FKFlickrPeopleGetInfo.m */; };
+		6AF2505A1BC0EE5E000C3223 /* FKFlickrPeopleGetLimits.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DC017678A9700E84674 /* FKFlickrPeopleGetLimits.m */; };
+		6AF2505B1BC0EE5E000C3223 /* FKFlickrPeopleGetPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DC217678A9700E84674 /* FKFlickrPeopleGetPhotos.m */; };
+		6AF2505C1BC0EE5E000C3223 /* FKFlickrPeopleGetPhotosOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DC417678A9700E84674 /* FKFlickrPeopleGetPhotosOf.m */; };
+		6AF2505D1BC0EE5E000C3223 /* FKFlickrPeopleGetPublicGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DC617678A9700E84674 /* FKFlickrPeopleGetPublicGroups.m */; };
+		6AF2505E1BC0EE5E000C3223 /* FKFlickrPeopleGetPublicPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DC817678A9700E84674 /* FKFlickrPeopleGetPublicPhotos.m */; };
+		6AF2505F1BC0EE5E000C3223 /* FKFlickrPeopleGetUploadStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DCA17678A9700E84674 /* FKFlickrPeopleGetUploadStatus.m */; };
+		6AF250601BC0EE5E000C3223 /* FKFlickrPhotosCommentsAddComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DCE17678A9700E84674 /* FKFlickrPhotosCommentsAddComment.m */; };
+		6AF250611BC0EE5E000C3223 /* FKFlickrPhotosCommentsDeleteComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DD017678A9700E84674 /* FKFlickrPhotosCommentsDeleteComment.m */; };
+		6AF250621BC0EE5E000C3223 /* FKFlickrPhotosCommentsEditComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DD217678A9700E84674 /* FKFlickrPhotosCommentsEditComment.m */; };
+		6AF250631BC0EE5E000C3223 /* FKFlickrPhotosCommentsGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DD417678A9700E84674 /* FKFlickrPhotosCommentsGetList.m */; };
+		6AF250641BC0EE5E000C3223 /* FKFlickrPhotosCommentsGetRecentForContacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DD617678A9700E84674 /* FKFlickrPhotosCommentsGetRecentForContacts.m */; };
+		6AF250651BC0EE5E000C3223 /* FKFlickrPhotosAddTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DD817678A9700E84674 /* FKFlickrPhotosAddTags.m */; };
+		6AF250661BC0EE5E000C3223 /* FKFlickrPhotosDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DDA17678A9700E84674 /* FKFlickrPhotosDelete.m */; };
+		6AF250671BC0EE5E000C3223 /* FKFlickrPhotosGetAllContexts.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DDC17678A9700E84674 /* FKFlickrPhotosGetAllContexts.m */; };
+		6AF250681BC0EE5E000C3223 /* FKFlickrPhotosGetContactsPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DDE17678A9700E84674 /* FKFlickrPhotosGetContactsPhotos.m */; };
+		6AF250691BC0EE5E000C3223 /* FKFlickrPhotosGetContactsPublicPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DE017678A9700E84674 /* FKFlickrPhotosGetContactsPublicPhotos.m */; };
+		6AF2506A1BC0EE5E000C3223 /* FKFlickrPhotosGetContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DE217678A9700E84674 /* FKFlickrPhotosGetContext.m */; };
+		6AF2506B1BC0EE5E000C3223 /* FKFlickrPhotosGetCounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DE417678A9700E84674 /* FKFlickrPhotosGetCounts.m */; };
+		6AF2506C1BC0EE5E000C3223 /* FKFlickrPhotosGetExif.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DE617678A9700E84674 /* FKFlickrPhotosGetExif.m */; };
+		6AF2506D1BC0EE5E000C3223 /* FKFlickrPhotosGetFavorites.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DE817678A9700E84674 /* FKFlickrPhotosGetFavorites.m */; };
+		6AF2506E1BC0EE5E000C3223 /* FKFlickrPhotosGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DEA17678A9700E84674 /* FKFlickrPhotosGetInfo.m */; };
+		6AF2506F1BC0EE5E000C3223 /* FKFlickrPhotosGetNotInSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DEC17678A9700E84674 /* FKFlickrPhotosGetNotInSet.m */; };
+		6AF250701BC0EE5E000C3223 /* FKFlickrPhotosGetPerms.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DEE17678A9700E84674 /* FKFlickrPhotosGetPerms.m */; };
+		6AF250711BC0EE5E000C3223 /* FKFlickrPhotosGetRecent.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DF017678A9700E84674 /* FKFlickrPhotosGetRecent.m */; };
+		6AF250721BC0EE5E000C3223 /* FKFlickrPhotosGetSizes.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DF217678A9700E84674 /* FKFlickrPhotosGetSizes.m */; };
+		6AF250731BC0EE5E000C3223 /* FKFlickrPhotosGetUntagged.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DF417678A9700E84674 /* FKFlickrPhotosGetUntagged.m */; };
+		6AF250741BC0EE5E000C3223 /* FKFlickrPhotosGetWithGeoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DF617678A9700E84674 /* FKFlickrPhotosGetWithGeoData.m */; };
+		6AF250751BC0EE5E000C3223 /* FKFlickrPhotosGetWithoutGeoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DF817678A9700E84674 /* FKFlickrPhotosGetWithoutGeoData.m */; };
+		6AF250761BC0EE5E000C3223 /* FKFlickrPhotosRecentlyUpdated.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DFA17678A9700E84674 /* FKFlickrPhotosRecentlyUpdated.m */; };
+		6AF250771BC0EE5E000C3223 /* FKFlickrPhotosRemoveTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DFC17678A9700E84674 /* FKFlickrPhotosRemoveTag.m */; };
+		6AF250781BC0EE5E000C3223 /* FKFlickrPhotosSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DFE17678A9700E84674 /* FKFlickrPhotosSearch.m */; };
+		6AF250791BC0EE5E000C3223 /* FKFlickrPhotosSetContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E0017678A9700E84674 /* FKFlickrPhotosSetContentType.m */; };
+		6AF2507A1BC0EE5E000C3223 /* FKFlickrPhotosSetDates.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E0217678A9700E84674 /* FKFlickrPhotosSetDates.m */; };
+		6AF2507B1BC0EE5E000C3223 /* FKFlickrPhotosSetMeta.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E0417678A9700E84674 /* FKFlickrPhotosSetMeta.m */; };
+		6AF2507C1BC0EE5E000C3223 /* FKFlickrPhotosSetPerms.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E0617678A9700E84674 /* FKFlickrPhotosSetPerms.m */; };
+		6AF2507D1BC0EE5E000C3223 /* FKFlickrPhotosSetSafetyLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E0817678A9700E84674 /* FKFlickrPhotosSetSafetyLevel.m */; };
+		6AF2507E1BC0EE5E000C3223 /* FKFlickrPhotosSetTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E0A17678A9700E84674 /* FKFlickrPhotosSetTags.m */; };
+		6AF2507F1BC0EE5E000C3223 /* FKFlickrPhotosGeoBatchCorrectLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E0E17678A9700E84674 /* FKFlickrPhotosGeoBatchCorrectLocation.m */; };
+		6AF250801BC0EE5E000C3223 /* FKFlickrPhotosGeoCorrectLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1017678A9700E84674 /* FKFlickrPhotosGeoCorrectLocation.m */; };
+		6AF250811BC0EE5E000C3223 /* FKFlickrPhotosGeoGetLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1217678A9700E84674 /* FKFlickrPhotosGeoGetLocation.m */; };
+		6AF250821BC0EE5E000C3223 /* FKFlickrPhotosGeoGetPerms.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1417678A9700E84674 /* FKFlickrPhotosGeoGetPerms.m */; };
+		6AF250831BC0EE5E000C3223 /* FKFlickrPhotosGeoPhotosForLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1617678A9700E84674 /* FKFlickrPhotosGeoPhotosForLocation.m */; };
+		6AF250841BC0EE5E000C3223 /* FKFlickrPhotosGeoRemoveLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1817678A9700E84674 /* FKFlickrPhotosGeoRemoveLocation.m */; };
+		6AF250851BC0EE5E000C3223 /* FKFlickrPhotosGeoSetContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1A17678A9700E84674 /* FKFlickrPhotosGeoSetContext.m */; };
+		6AF250861BC0EE5E000C3223 /* FKFlickrPhotosGeoSetLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1C17678A9700E84674 /* FKFlickrPhotosGeoSetLocation.m */; };
+		6AF250871BC0EE5E000C3223 /* FKFlickrPhotosGeoSetPerms.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1E17678A9700E84674 /* FKFlickrPhotosGeoSetPerms.m */; };
+		6AF250881BC0EE5E000C3223 /* FKFlickrPhotosLicensesGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E2117678A9700E84674 /* FKFlickrPhotosLicensesGetInfo.m */; };
+		6AF250891BC0EE5E000C3223 /* FKFlickrPhotosLicensesSetLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E2317678A9700E84674 /* FKFlickrPhotosLicensesSetLicense.m */; };
+		6AF2508A1BC0EE5E000C3223 /* FKFlickrPhotosNotesAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E2617678A9700E84674 /* FKFlickrPhotosNotesAdd.m */; };
+		6AF2508B1BC0EE5E000C3223 /* FKFlickrPhotosNotesDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E2817678A9700E84674 /* FKFlickrPhotosNotesDelete.m */; };
+		6AF2508C1BC0EE5E000C3223 /* FKFlickrPhotosNotesEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E2A17678A9700E84674 /* FKFlickrPhotosNotesEdit.m */; };
+		6AF2508D1BC0EE5E000C3223 /* FKFlickrPhotosPeopleAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E2D17678A9700E84674 /* FKFlickrPhotosPeopleAdd.m */; };
+		6AF2508E1BC0EE5E000C3223 /* FKFlickrPhotosPeopleDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E2F17678A9700E84674 /* FKFlickrPhotosPeopleDelete.m */; };
+		6AF2508F1BC0EE5E000C3223 /* FKFlickrPhotosPeopleDeleteCoords.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E3117678A9700E84674 /* FKFlickrPhotosPeopleDeleteCoords.m */; };
+		6AF250901BC0EE5E000C3223 /* FKFlickrPhotosPeopleEditCoords.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E3317678A9700E84674 /* FKFlickrPhotosPeopleEditCoords.m */; };
+		6AF250911BC0EE5E000C3223 /* FKFlickrPhotosPeopleGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E3517678A9700E84674 /* FKFlickrPhotosPeopleGetList.m */; };
+		6AF250921BC0EE5E000C3223 /* FKFlickrPhotosSuggestionsApproveSuggestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E3817678A9700E84674 /* FKFlickrPhotosSuggestionsApproveSuggestion.m */; };
+		6AF250931BC0EE5E000C3223 /* FKFlickrPhotosSuggestionsGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E3A17678A9700E84674 /* FKFlickrPhotosSuggestionsGetList.m */; };
+		6AF250941BC0EE5E000C3223 /* FKFlickrPhotosSuggestionsRejectSuggestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E3C17678A9700E84674 /* FKFlickrPhotosSuggestionsRejectSuggestion.m */; };
+		6AF250951BC0EE5E000C3223 /* FKFlickrPhotosSuggestionsRemoveSuggestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E3E17678A9700E84674 /* FKFlickrPhotosSuggestionsRemoveSuggestion.m */; };
+		6AF250961BC0EE5E000C3223 /* FKFlickrPhotosSuggestionsSuggestLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E4017678A9700E84674 /* FKFlickrPhotosSuggestionsSuggestLocation.m */; };
+		6AF250971BC0EE5E000C3223 /* FKFlickrPhotosTransformRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E4317678A9700E84674 /* FKFlickrPhotosTransformRotate.m */; };
+		6AF250981BC0EE5E000C3223 /* FKFlickrPhotosUploadCheckTickets.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E4617678A9700E84674 /* FKFlickrPhotosUploadCheckTickets.m */; };
+		6AF250991BC0EE5E000C3223 /* FKFlickrPhotosetsCommentsAddComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E4A17678A9700E84674 /* FKFlickrPhotosetsCommentsAddComment.m */; };
+		6AF2509A1BC0EE5E000C3223 /* FKFlickrPhotosetsCommentsDeleteComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E4C17678A9700E84674 /* FKFlickrPhotosetsCommentsDeleteComment.m */; };
+		6AF2509B1BC0EE5E000C3223 /* FKFlickrPhotosetsCommentsEditComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E4E17678A9700E84674 /* FKFlickrPhotosetsCommentsEditComment.m */; };
+		6AF2509C1BC0EE5E000C3223 /* FKFlickrPhotosetsCommentsGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5017678A9700E84674 /* FKFlickrPhotosetsCommentsGetList.m */; };
+		6AF2509D1BC0EE5E000C3223 /* FKFlickrPhotosetsAddPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5217678A9700E84674 /* FKFlickrPhotosetsAddPhoto.m */; };
+		6AF2509E1BC0EE5E000C3223 /* FKFlickrPhotosetsCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5417678A9700E84674 /* FKFlickrPhotosetsCreate.m */; };
+		6AF2509F1BC0EE5E000C3223 /* FKFlickrPhotosetsDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5617678A9700E84674 /* FKFlickrPhotosetsDelete.m */; };
+		6AF250A01BC0EE5E000C3223 /* FKFlickrPhotosetsEditMeta.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5817678A9700E84674 /* FKFlickrPhotosetsEditMeta.m */; };
+		6AF250A11BC0EE5E000C3223 /* FKFlickrPhotosetsEditPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5A17678A9700E84674 /* FKFlickrPhotosetsEditPhotos.m */; };
+		6AF250A21BC0EE5E000C3223 /* FKFlickrPhotosetsGetContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5C17678A9700E84674 /* FKFlickrPhotosetsGetContext.m */; };
+		6AF250A31BC0EE5E000C3223 /* FKFlickrPhotosetsGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5E17678A9700E84674 /* FKFlickrPhotosetsGetInfo.m */; };
+		6AF250A41BC0EE5E000C3223 /* FKFlickrPhotosetsGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6017678A9700E84674 /* FKFlickrPhotosetsGetList.m */; };
+		6AF250A51BC0EE5E000C3223 /* FKFlickrPhotosetsGetPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6217678A9700E84674 /* FKFlickrPhotosetsGetPhotos.m */; };
+		6AF250A61BC0EE5E000C3223 /* FKFlickrPhotosetsOrderSets.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6417678A9700E84674 /* FKFlickrPhotosetsOrderSets.m */; };
+		6AF250A71BC0EE5E000C3223 /* FKFlickrPhotosetsRemovePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6617678A9700E84674 /* FKFlickrPhotosetsRemovePhoto.m */; };
+		6AF250A81BC0EE5E000C3223 /* FKFlickrPhotosetsRemovePhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6817678A9700E84674 /* FKFlickrPhotosetsRemovePhotos.m */; };
+		6AF250A91BC0EE5F000C3223 /* FKFlickrPhotosetsReorderPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6A17678A9700E84674 /* FKFlickrPhotosetsReorderPhotos.m */; };
+		6AF250AA1BC0EE5F000C3223 /* FKFlickrPhotosetsSetPrimaryPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6C17678A9700E84674 /* FKFlickrPhotosetsSetPrimaryPhoto.m */; };
+		6AF250AB1BC0EE5F000C3223 /* FKFlickrPlacesFind.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6F17678A9700E84674 /* FKFlickrPlacesFind.m */; };
+		6AF250AC1BC0EE5F000C3223 /* FKFlickrPlacesFindByLatLon.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7117678A9700E84674 /* FKFlickrPlacesFindByLatLon.m */; };
+		6AF250AD1BC0EE5F000C3223 /* FKFlickrPlacesGetChildrenWithPhotosPublic.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7317678A9700E84674 /* FKFlickrPlacesGetChildrenWithPhotosPublic.m */; };
+		6AF250AE1BC0EE5F000C3223 /* FKFlickrPlacesGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7517678A9700E84674 /* FKFlickrPlacesGetInfo.m */; };
+		6AF250AF1BC0EE5F000C3223 /* FKFlickrPlacesGetInfoByUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7717678A9700E84674 /* FKFlickrPlacesGetInfoByUrl.m */; };
+		6AF250B01BC0EE5F000C3223 /* FKFlickrPlacesGetPlaceTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7917678A9700E84674 /* FKFlickrPlacesGetPlaceTypes.m */; };
+		6AF250B11BC0EE5F000C3223 /* FKFlickrPlacesGetShapeHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7B17678A9700E84674 /* FKFlickrPlacesGetShapeHistory.m */; };
+		6AF250B21BC0EE5F000C3223 /* FKFlickrPlacesGetTopPlacesList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7D17678A9700E84674 /* FKFlickrPlacesGetTopPlacesList.m */; };
+		6AF250B31BC0EE5F000C3223 /* FKFlickrPlacesPlacesForBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7F17678A9700E84674 /* FKFlickrPlacesPlacesForBoundingBox.m */; };
+		6AF250B41BC0EE5F000C3223 /* FKFlickrPlacesPlacesForContacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E8117678A9700E84674 /* FKFlickrPlacesPlacesForContacts.m */; };
+		6AF250B51BC0EE5F000C3223 /* FKFlickrPlacesPlacesForTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E8317678A9700E84674 /* FKFlickrPlacesPlacesForTags.m */; };
+		6AF250B61BC0EE5F000C3223 /* FKFlickrPlacesPlacesForUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E8517678A9800E84674 /* FKFlickrPlacesPlacesForUser.m */; };
+		6AF250B71BC0EE5F000C3223 /* FKFlickrPlacesResolvePlaceId.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E8717678A9800E84674 /* FKFlickrPlacesResolvePlaceId.m */; };
+		6AF250B81BC0EE5F000C3223 /* FKFlickrPlacesResolvePlaceURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E8917678A9800E84674 /* FKFlickrPlacesResolvePlaceURL.m */; };
+		6AF250B91BC0EE5F000C3223 /* FKFlickrPlacesTagsForPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E8B17678A9800E84674 /* FKFlickrPlacesTagsForPlace.m */; };
+		6AF250BA1BC0EE5F000C3223 /* FKFlickrPrefsGetContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E8E17678A9800E84674 /* FKFlickrPrefsGetContentType.m */; };
+		6AF250BB1BC0EE5F000C3223 /* FKFlickrPrefsGetGeoPerms.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9017678A9800E84674 /* FKFlickrPrefsGetGeoPerms.m */; };
+		6AF250BC1BC0EE5F000C3223 /* FKFlickrPrefsGetHidden.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9217678A9800E84674 /* FKFlickrPrefsGetHidden.m */; };
+		6AF250BD1BC0EE5F000C3223 /* FKFlickrPrefsGetPrivacy.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9417678A9800E84674 /* FKFlickrPrefsGetPrivacy.m */; };
+		6AF250BE1BC0EE5F000C3223 /* FKFlickrPrefsGetSafetyLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9617678A9800E84674 /* FKFlickrPrefsGetSafetyLevel.m */; };
+		6AF250BF1BC0EE5F000C3223 /* FKFlickrPushGetSubscriptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9917678A9800E84674 /* FKFlickrPushGetSubscriptions.m */; };
+		6AF250C01BC0EE5F000C3223 /* FKFlickrPushGetTopics.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9B17678A9800E84674 /* FKFlickrPushGetTopics.m */; };
+		6AF250C11BC0EE5F000C3223 /* FKFlickrPushSubscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9D17678A9800E84674 /* FKFlickrPushSubscribe.m */; };
+		6AF250C21BC0EE5F000C3223 /* FKFlickrPushUnsubscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9F17678A9800E84674 /* FKFlickrPushUnsubscribe.m */; };
+		6AF250C31BC0EE5F000C3223 /* FKFlickrReflectionGetMethodInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EA217678A9800E84674 /* FKFlickrReflectionGetMethodInfo.m */; };
+		6AF250C41BC0EE5F000C3223 /* FKFlickrReflectionGetMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EA417678A9800E84674 /* FKFlickrReflectionGetMethods.m */; };
+		6AF250C51BC0EE5F000C3223 /* FKFlickrStatsGetCollectionDomains.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EA717678A9800E84674 /* FKFlickrStatsGetCollectionDomains.m */; };
+		6AF250C61BC0EE5F000C3223 /* FKFlickrStatsGetCollectionReferrers.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EA917678A9800E84674 /* FKFlickrStatsGetCollectionReferrers.m */; };
+		6AF250C71BC0EE5F000C3223 /* FKFlickrStatsGetCollectionStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EAB17678A9800E84674 /* FKFlickrStatsGetCollectionStats.m */; };
+		6AF250C81BC0EE5F000C3223 /* FKFlickrStatsGetCSVFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EAD17678A9800E84674 /* FKFlickrStatsGetCSVFiles.m */; };
+		6AF250C91BC0EE5F000C3223 /* FKFlickrStatsGetPhotoDomains.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EAF17678A9800E84674 /* FKFlickrStatsGetPhotoDomains.m */; };
+		6AF250CA1BC0EE5F000C3223 /* FKFlickrStatsGetPhotoReferrers.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EB117678A9800E84674 /* FKFlickrStatsGetPhotoReferrers.m */; };
+		6AF250CB1BC0EE5F000C3223 /* FKFlickrStatsGetPhotosetDomains.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EB317678A9800E84674 /* FKFlickrStatsGetPhotosetDomains.m */; };
+		6AF250CC1BC0EE5F000C3223 /* FKFlickrStatsGetPhotosetReferrers.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EB517678A9800E84674 /* FKFlickrStatsGetPhotosetReferrers.m */; };
+		6AF250CD1BC0EE5F000C3223 /* FKFlickrStatsGetPhotosetStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EB717678A9800E84674 /* FKFlickrStatsGetPhotosetStats.m */; };
+		6AF250CE1BC0EE5F000C3223 /* FKFlickrStatsGetPhotoStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EB917678A9800E84674 /* FKFlickrStatsGetPhotoStats.m */; };
+		6AF250CF1BC0EE5F000C3223 /* FKFlickrStatsGetPhotostreamDomains.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EBB17678A9800E84674 /* FKFlickrStatsGetPhotostreamDomains.m */; };
+		6AF250D01BC0EE5F000C3223 /* FKFlickrStatsGetPhotostreamReferrers.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EBD17678A9800E84674 /* FKFlickrStatsGetPhotostreamReferrers.m */; };
+		6AF250D11BC0EE5F000C3223 /* FKFlickrStatsGetPhotostreamStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EBF17678A9800E84674 /* FKFlickrStatsGetPhotostreamStats.m */; };
+		6AF250D21BC0EE5F000C3223 /* FKFlickrStatsGetPopularPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EC117678A9800E84674 /* FKFlickrStatsGetPopularPhotos.m */; };
+		6AF250D31BC0EE5F000C3223 /* FKFlickrStatsGetTotalViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EC317678A9800E84674 /* FKFlickrStatsGetTotalViews.m */; };
+		6AF250D41BC0EE5F000C3223 /* FKFlickrTagsGetClusterPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EC617678A9800E84674 /* FKFlickrTagsGetClusterPhotos.m */; };
+		6AF250D51BC0EE5F000C3223 /* FKFlickrTagsGetClusters.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EC817678A9800E84674 /* FKFlickrTagsGetClusters.m */; };
+		6AF250D61BC0EE5F000C3223 /* FKFlickrTagsGetHotList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ECA17678A9800E84674 /* FKFlickrTagsGetHotList.m */; };
+		6AF250D71BC0EE5F000C3223 /* FKFlickrTagsGetListPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ECC17678A9800E84674 /* FKFlickrTagsGetListPhoto.m */; };
+		6AF250D81BC0EE5F000C3223 /* FKFlickrTagsGetListUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ECE17678A9800E84674 /* FKFlickrTagsGetListUser.m */; };
+		6AF250D91BC0EE5F000C3223 /* FKFlickrTagsGetListUserPopular.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ED017678A9800E84674 /* FKFlickrTagsGetListUserPopular.m */; };
+		6AF250DA1BC0EE5F000C3223 /* FKFlickrTagsGetListUserRaw.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ED217678A9800E84674 /* FKFlickrTagsGetListUserRaw.m */; };
+		6AF250DB1BC0EE5F000C3223 /* FKFlickrTagsGetMostFrequentlyUsed.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ED417678A9800E84674 /* FKFlickrTagsGetMostFrequentlyUsed.m */; };
+		6AF250DC1BC0EE5F000C3223 /* FKFlickrTagsGetRelated.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ED617678A9800E84674 /* FKFlickrTagsGetRelated.m */; };
+		6AF250DD1BC0EE5F000C3223 /* FKFlickrTestEcho.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ED917678A9800E84674 /* FKFlickrTestEcho.m */; };
+		6AF250DE1BC0EE60000C3223 /* FKFlickrTestLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EDB17678A9800E84674 /* FKFlickrTestLogin.m */; };
+		6AF250DF1BC0EE60000C3223 /* FKFlickrTestNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EDD17678A9800E84674 /* FKFlickrTestNull.m */; };
+		6AF250E01BC0EE60000C3223 /* FKFlickrUrlsGetGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EE017678A9800E84674 /* FKFlickrUrlsGetGroup.m */; };
+		6AF250E11BC0EE60000C3223 /* FKFlickrUrlsGetUserPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EE217678A9800E84674 /* FKFlickrUrlsGetUserPhotos.m */; };
+		6AF250E21BC0EE60000C3223 /* FKFlickrUrlsGetUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EE417678A9800E84674 /* FKFlickrUrlsGetUserProfile.m */; };
+		6AF250E31BC0EE60000C3223 /* FKFlickrUrlsLookupGallery.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EE617678A9800E84674 /* FKFlickrUrlsLookupGallery.m */; };
+		6AF250E41BC0EE60000C3223 /* FKFlickrUrlsLookupGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EE817678A9800E84674 /* FKFlickrUrlsLookupGroup.m */; };
+		6AF250E51BC0EE60000C3223 /* FKFlickrUrlsLookupUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EEA17678A9800E84674 /* FKFlickrUrlsLookupUser.m */; };
+		6AF250E61BC0EE60000C3223 /* FKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEEF4F1756646400B61A3C /* FKUtilities.m */; };
+		6AF250E71BC0EE60000C3223 /* FKOFHMACSha1Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EA68AC17CAABD40017DDD1 /* FKOFHMACSha1Base64.m */; };
+		6AF250E81BC0EE60000C3223 /* FKDUDefaultDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D92171754DBAC00BE3FEA /* FKDUDefaultDiskCache.m */; };
+		6AF250E91BC0EE60000C3223 /* FKDUBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91E71754AE8A00BE3FEA /* FKDUBlocks.m */; };
+		6AF250EA1BC0EE60000C3223 /* FKDUConcurrentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91E91754AE8A00BE3FEA /* FKDUConcurrentOperation.m */; };
+		6AF250EB1BC0EE60000C3223 /* FKDUNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD48E8175F3217004AF85C /* FKDUNetworkOperation.m */; };
+		6AF250EC1BC0EE60000C3223 /* FKDUNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91EB1754AE8A00BE3FEA /* FKDUNetworkController.m */; };
+		6AF250ED1BC0EE60000C3223 /* FKDUStreamUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B667176613F900745C71 /* FKDUStreamUtil.m */; };
+		6AF250EE1BC0EE60000C3223 /* FKFlickrNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91F21754AE8A00BE3FEA /* FKFlickrNetworkOperation.m */; };
+		6AF250EF1BC0EE60000C3223 /* FKImageUploadNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD49051760DBE5004AF85C /* FKImageUploadNetworkOperation.m */; };
+		6AF250F01BC0EE60000C3223 /* FKUploadRespone.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD49091760E546004AF85C /* FKUploadRespone.m */; };
+		6AF250F11BC0EE60000C3223 /* FKURLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91F41754AE8A00BE3FEA /* FKURLBuilder.m */; };
+		6AF250F21BC0EE60000C3223 /* FKDUReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEEF56175766D500B61A3C /* FKDUReachability.m */; };
+		6AF250F31BC0EE60000C3223 /* FlickrKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD48E1175E7561004AF85C /* FlickrKit.m */; };
+		6AF250F41BC0EE60000C3223 /* FKDataTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD484A175CA188004AF85C /* FKDataTypes.m */; };
+		6AF250F51BC0F13A000C3223 /* FlickrKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 552D91EC1754AE8A00BE3FEA /* FlickrKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF250F61BC0F14B000C3223 /* FKFlickrActivityUserComments.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D2817678A9700E84674 /* FKFlickrActivityUserComments.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF250F71BC0F14B000C3223 /* FKFlickrActivityUserPhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D2A17678A9700E84674 /* FKFlickrActivityUserPhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF250F81BC0F14B000C3223 /* FKFlickrAuthCheckToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D2D17678A9700E84674 /* FKFlickrAuthCheckToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF250F91BC0F14B000C3223 /* FKFlickrAuthGetFrob.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D2F17678A9700E84674 /* FKFlickrAuthGetFrob.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF250FA1BC0F14B000C3223 /* FKFlickrAuthGetFullToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D3117678A9700E84674 /* FKFlickrAuthGetFullToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF250FB1BC0F14B000C3223 /* FKFlickrAuthGetToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D3317678A9700E84674 /* FKFlickrAuthGetToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF250FC1BC0F14B000C3223 /* FKFlickrAuthOauthCheckToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D3617678A9700E84674 /* FKFlickrAuthOauthCheckToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF250FD1BC0F14B000C3223 /* FKFlickrAuthOauthGetAccessToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D3817678A9700E84674 /* FKFlickrAuthOauthGetAccessToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF250FE1BC0F14B000C3223 /* FKFlickrBlogsGetList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D3B17678A9700E84674 /* FKFlickrBlogsGetList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF250FF1BC0F14B000C3223 /* FKFlickrBlogsGetServices.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D3D17678A9700E84674 /* FKFlickrBlogsGetServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251001BC0F14B000C3223 /* FKFlickrBlogsPostPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D3F17678A9700E84674 /* FKFlickrBlogsPostPhoto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251011BC0F14B000C3223 /* FKFlickrCamerasGetBrandModels.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D4217678A9700E84674 /* FKFlickrCamerasGetBrandModels.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251021BC0F14B000C3223 /* FKFlickrCamerasGetBrands.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D4417678A9700E84674 /* FKFlickrCamerasGetBrands.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251031BC0F14B000C3223 /* FKFlickrCollectionsGetInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D4717678A9700E84674 /* FKFlickrCollectionsGetInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251041BC0F14B000C3223 /* FKFlickrCollectionsGetTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D4917678A9700E84674 /* FKFlickrCollectionsGetTree.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251051BC0F14B000C3223 /* FKFlickrCommonsGetInstitutions.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D4C17678A9700E84674 /* FKFlickrCommonsGetInstitutions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251061BC0F14B000C3223 /* FKFlickrContactsGetList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D4F17678A9700E84674 /* FKFlickrContactsGetList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251071BC0F14B000C3223 /* FKFlickrContactsGetListRecentlyUploaded.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D5117678A9700E84674 /* FKFlickrContactsGetListRecentlyUploaded.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251081BC0F14B000C3223 /* FKFlickrContactsGetPublicList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D5317678A9700E84674 /* FKFlickrContactsGetPublicList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251091BC0F14B000C3223 /* FKFlickrContactsGetTaggingSuggestions.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D5517678A9700E84674 /* FKFlickrContactsGetTaggingSuggestions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2510A1BC0F14B000C3223 /* FKFlickrFavoritesAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D5817678A9700E84674 /* FKFlickrFavoritesAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2510B1BC0F14C000C3223 /* FKFlickrFavoritesGetContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D5A17678A9700E84674 /* FKFlickrFavoritesGetContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2510C1BC0F14C000C3223 /* FKFlickrFavoritesGetList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D5C17678A9700E84674 /* FKFlickrFavoritesGetList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2510D1BC0F14C000C3223 /* FKFlickrFavoritesGetPublicList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D5E17678A9700E84674 /* FKFlickrFavoritesGetPublicList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2510E1BC0F14C000C3223 /* FKFlickrFavoritesRemove.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D6017678A9700E84674 /* FKFlickrFavoritesRemove.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2510F1BC0F14C000C3223 /* FKFlickrGalleriesAddPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D6317678A9700E84674 /* FKFlickrGalleriesAddPhoto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251101BC0F14C000C3223 /* FKFlickrGalleriesCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D6517678A9700E84674 /* FKFlickrGalleriesCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251111BC0F14C000C3223 /* FKFlickrGalleriesEditMeta.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D6717678A9700E84674 /* FKFlickrGalleriesEditMeta.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251121BC0F14C000C3223 /* FKFlickrGalleriesEditPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D6917678A9700E84674 /* FKFlickrGalleriesEditPhoto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251131BC0F14C000C3223 /* FKFlickrGalleriesEditPhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D6B17678A9700E84674 /* FKFlickrGalleriesEditPhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251141BC0F14C000C3223 /* FKFlickrGalleriesGetInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D6D17678A9700E84674 /* FKFlickrGalleriesGetInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251151BC0F14C000C3223 /* FKFlickrGalleriesGetList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D6F17678A9700E84674 /* FKFlickrGalleriesGetList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251161BC0F14C000C3223 /* FKFlickrGalleriesGetListForPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D7117678A9700E84674 /* FKFlickrGalleriesGetListForPhoto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251171BC0F14C000C3223 /* FKFlickrGalleriesGetPhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D7317678A9700E84674 /* FKFlickrGalleriesGetPhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251181BC0F14C000C3223 /* FKFlickrGroupsDiscussRepliesAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D7817678A9700E84674 /* FKFlickrGroupsDiscussRepliesAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251191BC0F14C000C3223 /* FKFlickrGroupsDiscussRepliesDelete.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D7A17678A9700E84674 /* FKFlickrGroupsDiscussRepliesDelete.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2511A1BC0F14C000C3223 /* FKFlickrGroupsDiscussRepliesEdit.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D7C17678A9700E84674 /* FKFlickrGroupsDiscussRepliesEdit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2511B1BC0F14C000C3223 /* FKFlickrGroupsDiscussRepliesGetInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D7E17678A9700E84674 /* FKFlickrGroupsDiscussRepliesGetInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2511C1BC0F14C000C3223 /* FKFlickrGroupsDiscussRepliesGetList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D8017678A9700E84674 /* FKFlickrGroupsDiscussRepliesGetList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2511D1BC0F14C000C3223 /* FKFlickrGroupsDiscussTopicsAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D8317678A9700E84674 /* FKFlickrGroupsDiscussTopicsAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2511E1BC0F14D000C3223 /* FKFlickrGroupsDiscussTopicsGetInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D8517678A9700E84674 /* FKFlickrGroupsDiscussTopicsGetInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2511F1BC0F14D000C3223 /* FKFlickrGroupsDiscussTopicsGetList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D8717678A9700E84674 /* FKFlickrGroupsDiscussTopicsGetList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251201BC0F14D000C3223 /* FKFlickrGroupsBrowse.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D8917678A9700E84674 /* FKFlickrGroupsBrowse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251211BC0F14D000C3223 /* FKFlickrGroupsGetInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D8B17678A9700E84674 /* FKFlickrGroupsGetInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251221BC0F14D000C3223 /* FKFlickrGroupsJoin.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D8D17678A9700E84674 /* FKFlickrGroupsJoin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251231BC0F14D000C3223 /* FKFlickrGroupsJoinRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D8F17678A9700E84674 /* FKFlickrGroupsJoinRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251241BC0F14D000C3223 /* FKFlickrGroupsLeave.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D9117678A9700E84674 /* FKFlickrGroupsLeave.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251251BC0F14D000C3223 /* FKFlickrGroupsSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D9317678A9700E84674 /* FKFlickrGroupsSearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251261BC0F14D000C3223 /* FKFlickrGroupsMembersGetList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D9617678A9700E84674 /* FKFlickrGroupsMembersGetList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251271BC0F14D000C3223 /* FKFlickrGroupsPoolsAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D9917678A9700E84674 /* FKFlickrGroupsPoolsAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251281BC0F14D000C3223 /* FKFlickrGroupsPoolsGetContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D9B17678A9700E84674 /* FKFlickrGroupsPoolsGetContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251291BC0F14E000C3223 /* FKFlickrGroupsPoolsGetGroups.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D9D17678A9700E84674 /* FKFlickrGroupsPoolsGetGroups.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2512A1BC0F14E000C3223 /* FKFlickrGroupsPoolsGetPhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2D9F17678A9700E84674 /* FKFlickrGroupsPoolsGetPhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2512B1BC0F14E000C3223 /* FKFlickrGroupsPoolsRemove.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DA117678A9700E84674 /* FKFlickrGroupsPoolsRemove.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2512C1BC0F14E000C3223 /* FKFlickrInterestingnessGetList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DA417678A9700E84674 /* FKFlickrInterestingnessGetList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2512D1BC0F14E000C3223 /* FKFlickrMachinetagsGetNamespaces.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DA717678A9700E84674 /* FKFlickrMachinetagsGetNamespaces.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2512E1BC0F14E000C3223 /* FKFlickrMachinetagsGetPairs.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DA917678A9700E84674 /* FKFlickrMachinetagsGetPairs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2512F1BC0F14E000C3223 /* FKFlickrMachinetagsGetPredicates.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DAB17678A9700E84674 /* FKFlickrMachinetagsGetPredicates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251301BC0F14E000C3223 /* FKFlickrMachinetagsGetRecentValues.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DAD17678A9700E84674 /* FKFlickrMachinetagsGetRecentValues.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251311BC0F14E000C3223 /* FKFlickrMachinetagsGetValues.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DAF17678A9700E84674 /* FKFlickrMachinetagsGetValues.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251321BC0F14E000C3223 /* FKFlickrPandaGetList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DB217678A9700E84674 /* FKFlickrPandaGetList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251331BC0F14F000C3223 /* FKFlickrPandaGetPhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DB417678A9700E84674 /* FKFlickrPandaGetPhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251341BC0F14F000C3223 /* FKFlickrPeopleFindByEmail.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DB717678A9700E84674 /* FKFlickrPeopleFindByEmail.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251351BC0F14F000C3223 /* FKFlickrPeopleFindByUsername.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DB917678A9700E84674 /* FKFlickrPeopleFindByUsername.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251361BC0F14F000C3223 /* FKFlickrPeopleGetGroups.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DBB17678A9700E84674 /* FKFlickrPeopleGetGroups.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251371BC0F14F000C3223 /* FKFlickrPeopleGetInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DBD17678A9700E84674 /* FKFlickrPeopleGetInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251381BC0F14F000C3223 /* FKFlickrPeopleGetLimits.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DBF17678A9700E84674 /* FKFlickrPeopleGetLimits.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251391BC0F14F000C3223 /* FKFlickrPeopleGetPhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DC117678A9700E84674 /* FKFlickrPeopleGetPhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2513A1BC0F150000C3223 /* FKFlickrPeopleGetPhotosOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DC317678A9700E84674 /* FKFlickrPeopleGetPhotosOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2513B1BC0F150000C3223 /* FKFlickrPeopleGetPublicGroups.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DC517678A9700E84674 /* FKFlickrPeopleGetPublicGroups.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2513C1BC0F150000C3223 /* FKFlickrPeopleGetPublicPhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DC717678A9700E84674 /* FKFlickrPeopleGetPublicPhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2513D1BC0F150000C3223 /* FKFlickrPeopleGetUploadStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DC917678A9700E84674 /* FKFlickrPeopleGetUploadStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2513E1BC0F150000C3223 /* FKFlickrPhotosCommentsAddComment.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DCD17678A9700E84674 /* FKFlickrPhotosCommentsAddComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2513F1BC0F150000C3223 /* FKFlickrPhotosCommentsDeleteComment.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DCF17678A9700E84674 /* FKFlickrPhotosCommentsDeleteComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251401BC0F150000C3223 /* FKFlickrPhotosCommentsEditComment.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DD117678A9700E84674 /* FKFlickrPhotosCommentsEditComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251411BC0F151000C3223 /* FKFlickrPhotosCommentsGetList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DD317678A9700E84674 /* FKFlickrPhotosCommentsGetList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251421BC0F151000C3223 /* FKFlickrPhotosCommentsGetRecentForContacts.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DD517678A9700E84674 /* FKFlickrPhotosCommentsGetRecentForContacts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251431BC0F151000C3223 /* FKFlickrPhotosAddTags.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DD717678A9700E84674 /* FKFlickrPhotosAddTags.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251441BC0F151000C3223 /* FKFlickrPhotosDelete.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DD917678A9700E84674 /* FKFlickrPhotosDelete.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251451BC0F151000C3223 /* FKFlickrPhotosGetAllContexts.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DDB17678A9700E84674 /* FKFlickrPhotosGetAllContexts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251461BC0F151000C3223 /* FKFlickrPhotosGetContactsPhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DDD17678A9700E84674 /* FKFlickrPhotosGetContactsPhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251471BC0F152000C3223 /* FKFlickrPhotosGetContactsPublicPhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DDF17678A9700E84674 /* FKFlickrPhotosGetContactsPublicPhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251481BC0F152000C3223 /* FKFlickrPhotosGetContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DE117678A9700E84674 /* FKFlickrPhotosGetContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251491BC0F152000C3223 /* FKFlickrPhotosGetCounts.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DE317678A9700E84674 /* FKFlickrPhotosGetCounts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2514A1BC0F152000C3223 /* FKFlickrPhotosGetExif.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DE517678A9700E84674 /* FKFlickrPhotosGetExif.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2514B1BC0F152000C3223 /* FKFlickrPhotosGetFavorites.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DE717678A9700E84674 /* FKFlickrPhotosGetFavorites.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2514C1BC0F153000C3223 /* FKFlickrPhotosGetInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DE917678A9700E84674 /* FKFlickrPhotosGetInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2514D1BC0F153000C3223 /* FKFlickrPhotosGetNotInSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DEB17678A9700E84674 /* FKFlickrPhotosGetNotInSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2514E1BC0F153000C3223 /* FKFlickrPhotosGetPerms.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DED17678A9700E84674 /* FKFlickrPhotosGetPerms.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2514F1BC0F153000C3223 /* FKFlickrPhotosGetRecent.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DEF17678A9700E84674 /* FKFlickrPhotosGetRecent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251501BC0F153000C3223 /* FKFlickrPhotosGetSizes.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DF117678A9700E84674 /* FKFlickrPhotosGetSizes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251511BC0F154000C3223 /* FKFlickrPhotosGetUntagged.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DF317678A9700E84674 /* FKFlickrPhotosGetUntagged.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251521BC0F154000C3223 /* FKFlickrPhotosGetWithGeoData.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DF517678A9700E84674 /* FKFlickrPhotosGetWithGeoData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251531BC0F154000C3223 /* FKFlickrPhotosGetWithoutGeoData.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DF717678A9700E84674 /* FKFlickrPhotosGetWithoutGeoData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251541BC0F154000C3223 /* FKFlickrPhotosRecentlyUpdated.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DF917678A9700E84674 /* FKFlickrPhotosRecentlyUpdated.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251551BC0F155000C3223 /* FKFlickrPhotosRemoveTag.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DFB17678A9700E84674 /* FKFlickrPhotosRemoveTag.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251561BC0F155000C3223 /* FKFlickrPhotosSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DFD17678A9700E84674 /* FKFlickrPhotosSearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251571BC0F155000C3223 /* FKFlickrPhotosSetContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2DFF17678A9700E84674 /* FKFlickrPhotosSetContentType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251581BC0F155000C3223 /* FKFlickrPhotosSetDates.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E0117678A9700E84674 /* FKFlickrPhotosSetDates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251591BC0F156000C3223 /* FKFlickrPhotosSetMeta.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E0317678A9700E84674 /* FKFlickrPhotosSetMeta.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2515A1BC0F156000C3223 /* FKFlickrPhotosSetPerms.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E0517678A9700E84674 /* FKFlickrPhotosSetPerms.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2515B1BC0F156000C3223 /* FKFlickrPhotosSetSafetyLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E0717678A9700E84674 /* FKFlickrPhotosSetSafetyLevel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2515C1BC0F156000C3223 /* FKFlickrPhotosSetTags.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E0917678A9700E84674 /* FKFlickrPhotosSetTags.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2515D1BC0F157000C3223 /* FKFlickrPhotosGeoBatchCorrectLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E0D17678A9700E84674 /* FKFlickrPhotosGeoBatchCorrectLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2515E1BC0F157000C3223 /* FKFlickrPhotosGeoCorrectLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E0F17678A9700E84674 /* FKFlickrPhotosGeoCorrectLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2515F1BC0F157000C3223 /* FKFlickrPhotosGeoGetLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E1117678A9700E84674 /* FKFlickrPhotosGeoGetLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251601BC0F157000C3223 /* FKFlickrPhotosGeoGetPerms.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E1317678A9700E84674 /* FKFlickrPhotosGeoGetPerms.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251611BC0F158000C3223 /* FKFlickrPhotosGeoPhotosForLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E1517678A9700E84674 /* FKFlickrPhotosGeoPhotosForLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251621BC0F158000C3223 /* FKFlickrPhotosGeoRemoveLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E1717678A9700E84674 /* FKFlickrPhotosGeoRemoveLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251631BC0F158000C3223 /* FKFlickrPhotosGeoSetContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E1917678A9700E84674 /* FKFlickrPhotosGeoSetContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251641BC0F159000C3223 /* FKFlickrPhotosGeoSetLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E1B17678A9700E84674 /* FKFlickrPhotosGeoSetLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251651BC0F159000C3223 /* FKFlickrPhotosGeoSetPerms.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E1D17678A9700E84674 /* FKFlickrPhotosGeoSetPerms.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251661BC0F159000C3223 /* FKFlickrPhotosLicensesGetInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E2017678A9700E84674 /* FKFlickrPhotosLicensesGetInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251671BC0F15A000C3223 /* FKFlickrPhotosLicensesSetLicense.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E2217678A9700E84674 /* FKFlickrPhotosLicensesSetLicense.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251681BC0F15A000C3223 /* FKFlickrPhotosNotesAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E2517678A9700E84674 /* FKFlickrPhotosNotesAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251691BC0F15B000C3223 /* FKFlickrPhotosNotesDelete.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E2717678A9700E84674 /* FKFlickrPhotosNotesDelete.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2516A1BC0F15B000C3223 /* FKFlickrPhotosNotesEdit.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E2917678A9700E84674 /* FKFlickrPhotosNotesEdit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2516B1BC0F15B000C3223 /* FKFlickrPhotosPeopleAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E2C17678A9700E84674 /* FKFlickrPhotosPeopleAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2516C1BC0F15C000C3223 /* FKFlickrPhotosPeopleDelete.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E2E17678A9700E84674 /* FKFlickrPhotosPeopleDelete.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2516D1BC0F15C000C3223 /* FKFlickrPhotosPeopleDeleteCoords.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E3017678A9700E84674 /* FKFlickrPhotosPeopleDeleteCoords.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2516E1BC0F15C000C3223 /* FKFlickrPhotosPeopleEditCoords.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E3217678A9700E84674 /* FKFlickrPhotosPeopleEditCoords.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2516F1BC0F15D000C3223 /* FKFlickrPhotosPeopleGetList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E3417678A9700E84674 /* FKFlickrPhotosPeopleGetList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251701BC0F15D000C3223 /* FKFlickrPhotosSuggestionsApproveSuggestion.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E3717678A9700E84674 /* FKFlickrPhotosSuggestionsApproveSuggestion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251711BC0F15E000C3223 /* FKFlickrPhotosSuggestionsGetList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E3917678A9700E84674 /* FKFlickrPhotosSuggestionsGetList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251721BC0F15E000C3223 /* FKFlickrPhotosSuggestionsRejectSuggestion.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E3B17678A9700E84674 /* FKFlickrPhotosSuggestionsRejectSuggestion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251731BC0F15E000C3223 /* FKFlickrPhotosSuggestionsRemoveSuggestion.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E3D17678A9700E84674 /* FKFlickrPhotosSuggestionsRemoveSuggestion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251741BC0F15F000C3223 /* FKFlickrPhotosSuggestionsSuggestLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E3F17678A9700E84674 /* FKFlickrPhotosSuggestionsSuggestLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251751BC0F15F000C3223 /* FKFlickrPhotosTransformRotate.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E4217678A9700E84674 /* FKFlickrPhotosTransformRotate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251761BC0F160000C3223 /* FKFlickrPhotosUploadCheckTickets.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E4517678A9700E84674 /* FKFlickrPhotosUploadCheckTickets.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251771BC0F160000C3223 /* FKFlickrPhotosetsCommentsAddComment.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E4917678A9700E84674 /* FKFlickrPhotosetsCommentsAddComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251781BC0F161000C3223 /* FKFlickrPhotosetsCommentsDeleteComment.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E4B17678A9700E84674 /* FKFlickrPhotosetsCommentsDeleteComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251791BC0F161000C3223 /* FKFlickrPhotosetsCommentsEditComment.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E4D17678A9700E84674 /* FKFlickrPhotosetsCommentsEditComment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2517A1BC0F161000C3223 /* FKFlickrPhotosetsCommentsGetList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E4F17678A9700E84674 /* FKFlickrPhotosetsCommentsGetList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2517B1BC0F162000C3223 /* FKFlickrPhotosetsAddPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E5117678A9700E84674 /* FKFlickrPhotosetsAddPhoto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2517C1BC0F162000C3223 /* FKFlickrPhotosetsCreate.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E5317678A9700E84674 /* FKFlickrPhotosetsCreate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2517D1BC0F163000C3223 /* FKFlickrPhotosetsDelete.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E5517678A9700E84674 /* FKFlickrPhotosetsDelete.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2517E1BC0F163000C3223 /* FKFlickrPhotosetsEditMeta.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E5717678A9700E84674 /* FKFlickrPhotosetsEditMeta.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2517F1BC0F164000C3223 /* FKFlickrPhotosetsEditPhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E5917678A9700E84674 /* FKFlickrPhotosetsEditPhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251801BC0F165000C3223 /* FKFlickrPhotosetsGetContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E5B17678A9700E84674 /* FKFlickrPhotosetsGetContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251811BC0F165000C3223 /* FKFlickrPhotosetsGetInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E5D17678A9700E84674 /* FKFlickrPhotosetsGetInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251821BC0F166000C3223 /* FKFlickrPhotosetsGetList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E5F17678A9700E84674 /* FKFlickrPhotosetsGetList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251831BC0F166000C3223 /* FKFlickrPhotosetsGetPhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E6117678A9700E84674 /* FKFlickrPhotosetsGetPhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251841BC0F167000C3223 /* FKFlickrPhotosetsOrderSets.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E6317678A9700E84674 /* FKFlickrPhotosetsOrderSets.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251851BC0F167000C3223 /* FKFlickrPhotosetsRemovePhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E6517678A9700E84674 /* FKFlickrPhotosetsRemovePhoto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251861BC0F168000C3223 /* FKFlickrPhotosetsRemovePhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E6717678A9700E84674 /* FKFlickrPhotosetsRemovePhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251871BC0F169000C3223 /* FKFlickrPhotosetsReorderPhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E6917678A9700E84674 /* FKFlickrPhotosetsReorderPhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251881BC0F169000C3223 /* FKFlickrPhotosetsSetPrimaryPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E6B17678A9700E84674 /* FKFlickrPhotosetsSetPrimaryPhoto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251891BC0F16A000C3223 /* FKFlickrPlacesFind.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E6E17678A9700E84674 /* FKFlickrPlacesFind.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2518A1BC0F16A000C3223 /* FKFlickrPlacesFindByLatLon.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E7017678A9700E84674 /* FKFlickrPlacesFindByLatLon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2518B1BC0F16B000C3223 /* FKFlickrPlacesGetChildrenWithPhotosPublic.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E7217678A9700E84674 /* FKFlickrPlacesGetChildrenWithPhotosPublic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2518C1BC0F16C000C3223 /* FKFlickrPlacesGetInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E7417678A9700E84674 /* FKFlickrPlacesGetInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2518D1BC0F16C000C3223 /* FKFlickrPlacesGetInfoByUrl.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E7617678A9700E84674 /* FKFlickrPlacesGetInfoByUrl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2518E1BC0F16D000C3223 /* FKFlickrPlacesGetPlaceTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E7817678A9700E84674 /* FKFlickrPlacesGetPlaceTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2518F1BC0F16E000C3223 /* FKFlickrPlacesGetShapeHistory.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E7A17678A9700E84674 /* FKFlickrPlacesGetShapeHistory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251901BC0F16E000C3223 /* FKFlickrPlacesGetTopPlacesList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E7C17678A9700E84674 /* FKFlickrPlacesGetTopPlacesList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251911BC0F16F000C3223 /* FKFlickrPlacesPlacesForBoundingBox.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E7E17678A9700E84674 /* FKFlickrPlacesPlacesForBoundingBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251921BC0F170000C3223 /* FKFlickrPlacesPlacesForContacts.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E8017678A9700E84674 /* FKFlickrPlacesPlacesForContacts.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251931BC0F170000C3223 /* FKFlickrPlacesPlacesForTags.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E8217678A9700E84674 /* FKFlickrPlacesPlacesForTags.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251941BC0F171000C3223 /* FKFlickrPlacesPlacesForUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E8417678A9800E84674 /* FKFlickrPlacesPlacesForUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251951BC0F172000C3223 /* FKFlickrPlacesResolvePlaceId.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E8617678A9800E84674 /* FKFlickrPlacesResolvePlaceId.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251961BC0F172000C3223 /* FKFlickrPlacesResolvePlaceURL.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E8817678A9800E84674 /* FKFlickrPlacesResolvePlaceURL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251971BC0F173000C3223 /* FKFlickrPlacesTagsForPlace.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E8A17678A9800E84674 /* FKFlickrPlacesTagsForPlace.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251981BC0F174000C3223 /* FKFlickrPrefsGetContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E8D17678A9800E84674 /* FKFlickrPrefsGetContentType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251991BC0F175000C3223 /* FKFlickrPrefsGetGeoPerms.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E8F17678A9800E84674 /* FKFlickrPrefsGetGeoPerms.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2519A1BC0F176000C3223 /* FKFlickrPrefsGetHidden.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E9117678A9800E84674 /* FKFlickrPrefsGetHidden.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2519B1BC0F176000C3223 /* FKFlickrPrefsGetPrivacy.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E9317678A9800E84674 /* FKFlickrPrefsGetPrivacy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2519C1BC0F177000C3223 /* FKFlickrPrefsGetSafetyLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E9517678A9800E84674 /* FKFlickrPrefsGetSafetyLevel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2519D1BC0F178000C3223 /* FKFlickrPushGetSubscriptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E9817678A9800E84674 /* FKFlickrPushGetSubscriptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2519E1BC0F179000C3223 /* FKFlickrPushGetTopics.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E9A17678A9800E84674 /* FKFlickrPushGetTopics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF2519F1BC0F17A000C3223 /* FKFlickrPushSubscribe.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E9C17678A9800E84674 /* FKFlickrPushSubscribe.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251A01BC0F17A000C3223 /* FKFlickrPushUnsubscribe.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2E9E17678A9800E84674 /* FKFlickrPushUnsubscribe.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251A11BC0F17B000C3223 /* FKFlickrReflectionGetMethodInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EA117678A9800E84674 /* FKFlickrReflectionGetMethodInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251A21BC0F17C000C3223 /* FKFlickrReflectionGetMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EA317678A9800E84674 /* FKFlickrReflectionGetMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251A31BC0F17D000C3223 /* FKFlickrStatsGetCollectionDomains.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EA617678A9800E84674 /* FKFlickrStatsGetCollectionDomains.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251A41BC0F17E000C3223 /* FKFlickrStatsGetCollectionReferrers.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EA817678A9800E84674 /* FKFlickrStatsGetCollectionReferrers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251A51BC0F17F000C3223 /* FKFlickrStatsGetCollectionStats.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EAA17678A9800E84674 /* FKFlickrStatsGetCollectionStats.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251A61BC0F180000C3223 /* FKFlickrStatsGetCSVFiles.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EAC17678A9800E84674 /* FKFlickrStatsGetCSVFiles.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251A71BC0F181000C3223 /* FKFlickrStatsGetPhotoDomains.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EAE17678A9800E84674 /* FKFlickrStatsGetPhotoDomains.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251A81BC0F181000C3223 /* FKFlickrStatsGetPhotoReferrers.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EB017678A9800E84674 /* FKFlickrStatsGetPhotoReferrers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251A91BC0F182000C3223 /* FKFlickrStatsGetPhotosetDomains.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EB217678A9800E84674 /* FKFlickrStatsGetPhotosetDomains.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251AA1BC0F183000C3223 /* FKFlickrStatsGetPhotosetReferrers.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EB417678A9800E84674 /* FKFlickrStatsGetPhotosetReferrers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251AB1BC0F184000C3223 /* FKFlickrStatsGetPhotosetStats.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EB617678A9800E84674 /* FKFlickrStatsGetPhotosetStats.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251AC1BC0F185000C3223 /* FKFlickrStatsGetPhotoStats.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EB817678A9800E84674 /* FKFlickrStatsGetPhotoStats.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251AD1BC0F186000C3223 /* FKFlickrStatsGetPhotostreamDomains.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EBA17678A9800E84674 /* FKFlickrStatsGetPhotostreamDomains.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251AE1BC0F187000C3223 /* FKFlickrStatsGetPhotostreamReferrers.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EBC17678A9800E84674 /* FKFlickrStatsGetPhotostreamReferrers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251AF1BC0F188000C3223 /* FKFlickrStatsGetPhotostreamStats.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EBE17678A9800E84674 /* FKFlickrStatsGetPhotostreamStats.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251B01BC0F189000C3223 /* FKFlickrStatsGetPopularPhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EC017678A9800E84674 /* FKFlickrStatsGetPopularPhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251B11BC0F18A000C3223 /* FKFlickrStatsGetTotalViews.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EC217678A9800E84674 /* FKFlickrStatsGetTotalViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251B21BC0F18B000C3223 /* FKFlickrTagsGetClusterPhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EC517678A9800E84674 /* FKFlickrTagsGetClusterPhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251B31BC0F18C000C3223 /* FKFlickrTagsGetClusters.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EC717678A9800E84674 /* FKFlickrTagsGetClusters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251B41BC0F18D000C3223 /* FKFlickrTagsGetHotList.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EC917678A9800E84674 /* FKFlickrTagsGetHotList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251B51BC0F18E000C3223 /* FKFlickrTagsGetListPhoto.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2ECB17678A9800E84674 /* FKFlickrTagsGetListPhoto.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251B61BC0F18F000C3223 /* FKFlickrTagsGetListUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2ECD17678A9800E84674 /* FKFlickrTagsGetListUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251B71BC0F190000C3223 /* FKFlickrTagsGetListUserPopular.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2ECF17678A9800E84674 /* FKFlickrTagsGetListUserPopular.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251B81BC0F191000C3223 /* FKFlickrTagsGetListUserRaw.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2ED117678A9800E84674 /* FKFlickrTagsGetListUserRaw.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251B91BC0F192000C3223 /* FKFlickrTagsGetMostFrequentlyUsed.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2ED317678A9800E84674 /* FKFlickrTagsGetMostFrequentlyUsed.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251BA1BC0F193000C3223 /* FKFlickrTagsGetRelated.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2ED517678A9800E84674 /* FKFlickrTagsGetRelated.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251BB1BC0F194000C3223 /* FKFlickrTestEcho.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2ED817678A9800E84674 /* FKFlickrTestEcho.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251BC1BC0F196000C3223 /* FKFlickrTestLogin.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EDA17678A9800E84674 /* FKFlickrTestLogin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251BD1BC0F197000C3223 /* FKFlickrTestNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EDC17678A9800E84674 /* FKFlickrTestNull.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251BE1BC0F198000C3223 /* FKFlickrUrlsGetGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EDF17678A9800E84674 /* FKFlickrUrlsGetGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251BF1BC0F199000C3223 /* FKFlickrUrlsGetUserPhotos.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EE117678A9800E84674 /* FKFlickrUrlsGetUserPhotos.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251C01BC0F19A000C3223 /* FKFlickrUrlsGetUserProfile.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EE317678A9800E84674 /* FKFlickrUrlsGetUserProfile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251C11BC0F19B000C3223 /* FKFlickrUrlsLookupGallery.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EE517678A9800E84674 /* FKFlickrUrlsLookupGallery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251C21BC0F19D000C3223 /* FKFlickrUrlsLookupGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EE717678A9800E84674 /* FKFlickrUrlsLookupGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251C31BC0F19E000C3223 /* FKFlickrUrlsLookupUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 555F2EE917678A9800E84674 /* FKFlickrUrlsLookupUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251C41BC0F19F000C3223 /* FKFlickrAPIMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = 555ADB1C1766640100AA91AB /* FKFlickrAPIMethod.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251C51BC0F1A0000C3223 /* FKAPIMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 55958DEF1767BD7B0078905C /* FKAPIMethods.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251C61BC0F1A1000C3223 /* FKUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 55AEEF4E1756646400B61A3C /* FKUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251C71BC0F1A3000C3223 /* FKOFHMACSha1Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 55EA68AB17CAABD40017DDD1 /* FKOFHMACSha1Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251C81BC0F1A4000C3223 /* FKDUDiskCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 552D921A1754DC6500BE3FEA /* FKDUDiskCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251C91BC0F1A5000C3223 /* FKDUDefaultDiskCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 552D92161754DBAC00BE3FEA /* FKDUDefaultDiskCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251CA1BC0F1A7000C3223 /* FKDUBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 552D91E61754AE8A00BE3FEA /* FKDUBlocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251CB1BC0F1A8000C3223 /* FKDUConcurrentOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 552D91E81754AE8A00BE3FEA /* FKDUConcurrentOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251CC1BC0F1AA000C3223 /* FKDUNetworkOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 55AD48E7175F3217004AF85C /* FKDUNetworkOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251CD1BC0F1AB000C3223 /* FKDUNetworkController.h in Headers */ = {isa = PBXBuildFile; fileRef = 552D91EA1754AE8A00BE3FEA /* FKDUNetworkController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251CE1BC0F1AD000C3223 /* FKDUStreamUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 55A5B666176613F900745C71 /* FKDUStreamUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251CF1BC0F1AE000C3223 /* FKFlickrNetworkOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 552D91F11754AE8A00BE3FEA /* FKFlickrNetworkOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251D01BC0F1B0000C3223 /* FKImageUploadNetworkOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 55AD49041760DBE4004AF85C /* FKImageUploadNetworkOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251D11BC0F1B1000C3223 /* FKUploadRespone.h in Headers */ = {isa = PBXBuildFile; fileRef = 55AD49081760E545004AF85C /* FKUploadRespone.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251D21BC0F1B3000C3223 /* FKURLBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 552D91F31754AE8A00BE3FEA /* FKURLBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251D31BC0F1B5000C3223 /* FKDUReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 55AEEF55175766D500B61A3C /* FKDUReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AF251D41BC0F1B6000C3223 /* FKDataTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 55AD4849175CA188004AF85C /* FKDataTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -949,6 +1394,8 @@
 		55EA68A917CAA6B90017DDD1 /* FlickrKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FlickrKit.podspec; sourceTree = "<group>"; };
 		55EA68AB17CAABD40017DDD1 /* FKOFHMACSha1Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKOFHMACSha1Base64.h; path = Utilities/FKOFHMACSha1Base64.h; sourceTree = "<group>"; };
 		55EA68AC17CAABD40017DDD1 /* FKOFHMACSha1Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKOFHMACSha1Base64.m; path = Utilities/FKOFHMACSha1Base64.m; sourceTree = "<group>"; };
+		6AAAF1211BC022A100EFC8E6 /* FlickrKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlickrKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AAAF1251BC022A100EFC8E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -973,6 +1420,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6AAAF11D1BC022A100EFC8E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -985,6 +1439,7 @@
 				552D91E41754AE8900BE3FEA /* Classes */,
 				552D91201753951300BE3FEA /* Supporting Files */,
 				552D913D1753951300BE3FEA /* Tests */,
+				6AAAF1221BC022A100EFC8E6 /* FlickrKitOSX */,
 				552D91181753951300BE3FEA /* Frameworks */,
 				552D91171753951300BE3FEA /* Products */,
 			);
@@ -995,6 +1450,7 @@
 			children = (
 				552D918C1753F8EF00BE3FEA /* libFlickrKit.a */,
 				552D919A1753F8F000BE3FEA /* FlickrKitTests.xctest */,
+				6AAAF1211BC022A100EFC8E6 /* FlickrKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1861,7 +2317,249 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		6AAAF1221BC022A100EFC8E6 /* FlickrKitOSX */ = {
+			isa = PBXGroup;
+			children = (
+				6AAAF1251BC022A100EFC8E6 /* Info.plist */,
+			);
+			path = FlickrKitOSX;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6AAAF11E1BC022A100EFC8E6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AF250F51BC0F13A000C3223 /* FlickrKit.h in Headers */,
+				6AF250F61BC0F14B000C3223 /* FKFlickrActivityUserComments.h in Headers */,
+				6AF250F71BC0F14B000C3223 /* FKFlickrActivityUserPhotos.h in Headers */,
+				6AF250F81BC0F14B000C3223 /* FKFlickrAuthCheckToken.h in Headers */,
+				6AF250F91BC0F14B000C3223 /* FKFlickrAuthGetFrob.h in Headers */,
+				6AF250FA1BC0F14B000C3223 /* FKFlickrAuthGetFullToken.h in Headers */,
+				6AF250FB1BC0F14B000C3223 /* FKFlickrAuthGetToken.h in Headers */,
+				6AF250FC1BC0F14B000C3223 /* FKFlickrAuthOauthCheckToken.h in Headers */,
+				6AF250FD1BC0F14B000C3223 /* FKFlickrAuthOauthGetAccessToken.h in Headers */,
+				6AF250FE1BC0F14B000C3223 /* FKFlickrBlogsGetList.h in Headers */,
+				6AF250FF1BC0F14B000C3223 /* FKFlickrBlogsGetServices.h in Headers */,
+				6AF251001BC0F14B000C3223 /* FKFlickrBlogsPostPhoto.h in Headers */,
+				6AF251011BC0F14B000C3223 /* FKFlickrCamerasGetBrandModels.h in Headers */,
+				6AF251021BC0F14B000C3223 /* FKFlickrCamerasGetBrands.h in Headers */,
+				6AF251031BC0F14B000C3223 /* FKFlickrCollectionsGetInfo.h in Headers */,
+				6AF251041BC0F14B000C3223 /* FKFlickrCollectionsGetTree.h in Headers */,
+				6AF251051BC0F14B000C3223 /* FKFlickrCommonsGetInstitutions.h in Headers */,
+				6AF251061BC0F14B000C3223 /* FKFlickrContactsGetList.h in Headers */,
+				6AF251071BC0F14B000C3223 /* FKFlickrContactsGetListRecentlyUploaded.h in Headers */,
+				6AF251081BC0F14B000C3223 /* FKFlickrContactsGetPublicList.h in Headers */,
+				6AF251091BC0F14B000C3223 /* FKFlickrContactsGetTaggingSuggestions.h in Headers */,
+				6AF2510A1BC0F14B000C3223 /* FKFlickrFavoritesAdd.h in Headers */,
+				6AF2510B1BC0F14C000C3223 /* FKFlickrFavoritesGetContext.h in Headers */,
+				6AF2510C1BC0F14C000C3223 /* FKFlickrFavoritesGetList.h in Headers */,
+				6AF2510D1BC0F14C000C3223 /* FKFlickrFavoritesGetPublicList.h in Headers */,
+				6AF2510E1BC0F14C000C3223 /* FKFlickrFavoritesRemove.h in Headers */,
+				6AF2510F1BC0F14C000C3223 /* FKFlickrGalleriesAddPhoto.h in Headers */,
+				6AF251101BC0F14C000C3223 /* FKFlickrGalleriesCreate.h in Headers */,
+				6AF251111BC0F14C000C3223 /* FKFlickrGalleriesEditMeta.h in Headers */,
+				6AF251121BC0F14C000C3223 /* FKFlickrGalleriesEditPhoto.h in Headers */,
+				6AF251131BC0F14C000C3223 /* FKFlickrGalleriesEditPhotos.h in Headers */,
+				6AF251141BC0F14C000C3223 /* FKFlickrGalleriesGetInfo.h in Headers */,
+				6AF251151BC0F14C000C3223 /* FKFlickrGalleriesGetList.h in Headers */,
+				6AF251161BC0F14C000C3223 /* FKFlickrGalleriesGetListForPhoto.h in Headers */,
+				6AF251171BC0F14C000C3223 /* FKFlickrGalleriesGetPhotos.h in Headers */,
+				6AF251181BC0F14C000C3223 /* FKFlickrGroupsDiscussRepliesAdd.h in Headers */,
+				6AF251191BC0F14C000C3223 /* FKFlickrGroupsDiscussRepliesDelete.h in Headers */,
+				6AF2511A1BC0F14C000C3223 /* FKFlickrGroupsDiscussRepliesEdit.h in Headers */,
+				6AF2511B1BC0F14C000C3223 /* FKFlickrGroupsDiscussRepliesGetInfo.h in Headers */,
+				6AF2511C1BC0F14C000C3223 /* FKFlickrGroupsDiscussRepliesGetList.h in Headers */,
+				6AF2511D1BC0F14C000C3223 /* FKFlickrGroupsDiscussTopicsAdd.h in Headers */,
+				6AF2511E1BC0F14D000C3223 /* FKFlickrGroupsDiscussTopicsGetInfo.h in Headers */,
+				6AF2511F1BC0F14D000C3223 /* FKFlickrGroupsDiscussTopicsGetList.h in Headers */,
+				6AF251201BC0F14D000C3223 /* FKFlickrGroupsBrowse.h in Headers */,
+				6AF251211BC0F14D000C3223 /* FKFlickrGroupsGetInfo.h in Headers */,
+				6AF251221BC0F14D000C3223 /* FKFlickrGroupsJoin.h in Headers */,
+				6AF251231BC0F14D000C3223 /* FKFlickrGroupsJoinRequest.h in Headers */,
+				6AF251241BC0F14D000C3223 /* FKFlickrGroupsLeave.h in Headers */,
+				6AF251251BC0F14D000C3223 /* FKFlickrGroupsSearch.h in Headers */,
+				6AF251261BC0F14D000C3223 /* FKFlickrGroupsMembersGetList.h in Headers */,
+				6AF251271BC0F14D000C3223 /* FKFlickrGroupsPoolsAdd.h in Headers */,
+				6AF251281BC0F14D000C3223 /* FKFlickrGroupsPoolsGetContext.h in Headers */,
+				6AF251291BC0F14E000C3223 /* FKFlickrGroupsPoolsGetGroups.h in Headers */,
+				6AF2512A1BC0F14E000C3223 /* FKFlickrGroupsPoolsGetPhotos.h in Headers */,
+				6AF2512B1BC0F14E000C3223 /* FKFlickrGroupsPoolsRemove.h in Headers */,
+				6AF2512C1BC0F14E000C3223 /* FKFlickrInterestingnessGetList.h in Headers */,
+				6AF2512D1BC0F14E000C3223 /* FKFlickrMachinetagsGetNamespaces.h in Headers */,
+				6AF2512E1BC0F14E000C3223 /* FKFlickrMachinetagsGetPairs.h in Headers */,
+				6AF2512F1BC0F14E000C3223 /* FKFlickrMachinetagsGetPredicates.h in Headers */,
+				6AF251301BC0F14E000C3223 /* FKFlickrMachinetagsGetRecentValues.h in Headers */,
+				6AF251311BC0F14E000C3223 /* FKFlickrMachinetagsGetValues.h in Headers */,
+				6AF251321BC0F14E000C3223 /* FKFlickrPandaGetList.h in Headers */,
+				6AF251331BC0F14F000C3223 /* FKFlickrPandaGetPhotos.h in Headers */,
+				6AF251341BC0F14F000C3223 /* FKFlickrPeopleFindByEmail.h in Headers */,
+				6AF251351BC0F14F000C3223 /* FKFlickrPeopleFindByUsername.h in Headers */,
+				6AF251361BC0F14F000C3223 /* FKFlickrPeopleGetGroups.h in Headers */,
+				6AF251371BC0F14F000C3223 /* FKFlickrPeopleGetInfo.h in Headers */,
+				6AF251381BC0F14F000C3223 /* FKFlickrPeopleGetLimits.h in Headers */,
+				6AF251391BC0F14F000C3223 /* FKFlickrPeopleGetPhotos.h in Headers */,
+				6AF2513A1BC0F150000C3223 /* FKFlickrPeopleGetPhotosOf.h in Headers */,
+				6AF2513B1BC0F150000C3223 /* FKFlickrPeopleGetPublicGroups.h in Headers */,
+				6AF2513C1BC0F150000C3223 /* FKFlickrPeopleGetPublicPhotos.h in Headers */,
+				6AF2513D1BC0F150000C3223 /* FKFlickrPeopleGetUploadStatus.h in Headers */,
+				6AF2513E1BC0F150000C3223 /* FKFlickrPhotosCommentsAddComment.h in Headers */,
+				6AF2513F1BC0F150000C3223 /* FKFlickrPhotosCommentsDeleteComment.h in Headers */,
+				6AF251401BC0F150000C3223 /* FKFlickrPhotosCommentsEditComment.h in Headers */,
+				6AF251411BC0F151000C3223 /* FKFlickrPhotosCommentsGetList.h in Headers */,
+				6AF251421BC0F151000C3223 /* FKFlickrPhotosCommentsGetRecentForContacts.h in Headers */,
+				6AF251431BC0F151000C3223 /* FKFlickrPhotosAddTags.h in Headers */,
+				6AF251441BC0F151000C3223 /* FKFlickrPhotosDelete.h in Headers */,
+				6AF251451BC0F151000C3223 /* FKFlickrPhotosGetAllContexts.h in Headers */,
+				6AF251461BC0F151000C3223 /* FKFlickrPhotosGetContactsPhotos.h in Headers */,
+				6AF251471BC0F152000C3223 /* FKFlickrPhotosGetContactsPublicPhotos.h in Headers */,
+				6AF251481BC0F152000C3223 /* FKFlickrPhotosGetContext.h in Headers */,
+				6AF251491BC0F152000C3223 /* FKFlickrPhotosGetCounts.h in Headers */,
+				6AF2514A1BC0F152000C3223 /* FKFlickrPhotosGetExif.h in Headers */,
+				6AF2514B1BC0F152000C3223 /* FKFlickrPhotosGetFavorites.h in Headers */,
+				6AF2514C1BC0F153000C3223 /* FKFlickrPhotosGetInfo.h in Headers */,
+				6AF2514D1BC0F153000C3223 /* FKFlickrPhotosGetNotInSet.h in Headers */,
+				6AF2514E1BC0F153000C3223 /* FKFlickrPhotosGetPerms.h in Headers */,
+				6AF2514F1BC0F153000C3223 /* FKFlickrPhotosGetRecent.h in Headers */,
+				6AF251501BC0F153000C3223 /* FKFlickrPhotosGetSizes.h in Headers */,
+				6AF251511BC0F154000C3223 /* FKFlickrPhotosGetUntagged.h in Headers */,
+				6AF251521BC0F154000C3223 /* FKFlickrPhotosGetWithGeoData.h in Headers */,
+				6AF251531BC0F154000C3223 /* FKFlickrPhotosGetWithoutGeoData.h in Headers */,
+				6AF251541BC0F154000C3223 /* FKFlickrPhotosRecentlyUpdated.h in Headers */,
+				6AF251551BC0F155000C3223 /* FKFlickrPhotosRemoveTag.h in Headers */,
+				6AF251561BC0F155000C3223 /* FKFlickrPhotosSearch.h in Headers */,
+				6AF251571BC0F155000C3223 /* FKFlickrPhotosSetContentType.h in Headers */,
+				6AF251581BC0F155000C3223 /* FKFlickrPhotosSetDates.h in Headers */,
+				6AF251591BC0F156000C3223 /* FKFlickrPhotosSetMeta.h in Headers */,
+				6AF2515A1BC0F156000C3223 /* FKFlickrPhotosSetPerms.h in Headers */,
+				6AF2515B1BC0F156000C3223 /* FKFlickrPhotosSetSafetyLevel.h in Headers */,
+				6AF2515C1BC0F156000C3223 /* FKFlickrPhotosSetTags.h in Headers */,
+				6AF2515D1BC0F157000C3223 /* FKFlickrPhotosGeoBatchCorrectLocation.h in Headers */,
+				6AF2515E1BC0F157000C3223 /* FKFlickrPhotosGeoCorrectLocation.h in Headers */,
+				6AF2515F1BC0F157000C3223 /* FKFlickrPhotosGeoGetLocation.h in Headers */,
+				6AF251601BC0F157000C3223 /* FKFlickrPhotosGeoGetPerms.h in Headers */,
+				6AF251611BC0F158000C3223 /* FKFlickrPhotosGeoPhotosForLocation.h in Headers */,
+				6AF251621BC0F158000C3223 /* FKFlickrPhotosGeoRemoveLocation.h in Headers */,
+				6AF251631BC0F158000C3223 /* FKFlickrPhotosGeoSetContext.h in Headers */,
+				6AF251641BC0F159000C3223 /* FKFlickrPhotosGeoSetLocation.h in Headers */,
+				6AF251651BC0F159000C3223 /* FKFlickrPhotosGeoSetPerms.h in Headers */,
+				6AF251661BC0F159000C3223 /* FKFlickrPhotosLicensesGetInfo.h in Headers */,
+				6AF251671BC0F15A000C3223 /* FKFlickrPhotosLicensesSetLicense.h in Headers */,
+				6AF251681BC0F15A000C3223 /* FKFlickrPhotosNotesAdd.h in Headers */,
+				6AF251691BC0F15B000C3223 /* FKFlickrPhotosNotesDelete.h in Headers */,
+				6AF2516A1BC0F15B000C3223 /* FKFlickrPhotosNotesEdit.h in Headers */,
+				6AF2516B1BC0F15B000C3223 /* FKFlickrPhotosPeopleAdd.h in Headers */,
+				6AF2516C1BC0F15C000C3223 /* FKFlickrPhotosPeopleDelete.h in Headers */,
+				6AF2516D1BC0F15C000C3223 /* FKFlickrPhotosPeopleDeleteCoords.h in Headers */,
+				6AF2516E1BC0F15C000C3223 /* FKFlickrPhotosPeopleEditCoords.h in Headers */,
+				6AF2516F1BC0F15D000C3223 /* FKFlickrPhotosPeopleGetList.h in Headers */,
+				6AF251701BC0F15D000C3223 /* FKFlickrPhotosSuggestionsApproveSuggestion.h in Headers */,
+				6AF251711BC0F15E000C3223 /* FKFlickrPhotosSuggestionsGetList.h in Headers */,
+				6AF251721BC0F15E000C3223 /* FKFlickrPhotosSuggestionsRejectSuggestion.h in Headers */,
+				6AF251731BC0F15E000C3223 /* FKFlickrPhotosSuggestionsRemoveSuggestion.h in Headers */,
+				6AF251741BC0F15F000C3223 /* FKFlickrPhotosSuggestionsSuggestLocation.h in Headers */,
+				6AF251751BC0F15F000C3223 /* FKFlickrPhotosTransformRotate.h in Headers */,
+				6AF251761BC0F160000C3223 /* FKFlickrPhotosUploadCheckTickets.h in Headers */,
+				6AF251771BC0F160000C3223 /* FKFlickrPhotosetsCommentsAddComment.h in Headers */,
+				6AF251781BC0F161000C3223 /* FKFlickrPhotosetsCommentsDeleteComment.h in Headers */,
+				6AF251791BC0F161000C3223 /* FKFlickrPhotosetsCommentsEditComment.h in Headers */,
+				6AF2517A1BC0F161000C3223 /* FKFlickrPhotosetsCommentsGetList.h in Headers */,
+				6AF2517B1BC0F162000C3223 /* FKFlickrPhotosetsAddPhoto.h in Headers */,
+				6AF2517C1BC0F162000C3223 /* FKFlickrPhotosetsCreate.h in Headers */,
+				6AF2517D1BC0F163000C3223 /* FKFlickrPhotosetsDelete.h in Headers */,
+				6AF2517E1BC0F163000C3223 /* FKFlickrPhotosetsEditMeta.h in Headers */,
+				6AF2517F1BC0F164000C3223 /* FKFlickrPhotosetsEditPhotos.h in Headers */,
+				6AF251801BC0F165000C3223 /* FKFlickrPhotosetsGetContext.h in Headers */,
+				6AF251811BC0F165000C3223 /* FKFlickrPhotosetsGetInfo.h in Headers */,
+				6AF251821BC0F166000C3223 /* FKFlickrPhotosetsGetList.h in Headers */,
+				6AF251831BC0F166000C3223 /* FKFlickrPhotosetsGetPhotos.h in Headers */,
+				6AF251841BC0F167000C3223 /* FKFlickrPhotosetsOrderSets.h in Headers */,
+				6AF251851BC0F167000C3223 /* FKFlickrPhotosetsRemovePhoto.h in Headers */,
+				6AF251861BC0F168000C3223 /* FKFlickrPhotosetsRemovePhotos.h in Headers */,
+				6AF251871BC0F169000C3223 /* FKFlickrPhotosetsReorderPhotos.h in Headers */,
+				6AF251881BC0F169000C3223 /* FKFlickrPhotosetsSetPrimaryPhoto.h in Headers */,
+				6AF251891BC0F16A000C3223 /* FKFlickrPlacesFind.h in Headers */,
+				6AF2518A1BC0F16A000C3223 /* FKFlickrPlacesFindByLatLon.h in Headers */,
+				6AF2518B1BC0F16B000C3223 /* FKFlickrPlacesGetChildrenWithPhotosPublic.h in Headers */,
+				6AF2518C1BC0F16C000C3223 /* FKFlickrPlacesGetInfo.h in Headers */,
+				6AF2518D1BC0F16C000C3223 /* FKFlickrPlacesGetInfoByUrl.h in Headers */,
+				6AF2518E1BC0F16D000C3223 /* FKFlickrPlacesGetPlaceTypes.h in Headers */,
+				6AF2518F1BC0F16E000C3223 /* FKFlickrPlacesGetShapeHistory.h in Headers */,
+				6AF251901BC0F16E000C3223 /* FKFlickrPlacesGetTopPlacesList.h in Headers */,
+				6AF251911BC0F16F000C3223 /* FKFlickrPlacesPlacesForBoundingBox.h in Headers */,
+				6AF251921BC0F170000C3223 /* FKFlickrPlacesPlacesForContacts.h in Headers */,
+				6AF251931BC0F170000C3223 /* FKFlickrPlacesPlacesForTags.h in Headers */,
+				6AF251941BC0F171000C3223 /* FKFlickrPlacesPlacesForUser.h in Headers */,
+				6AF251951BC0F172000C3223 /* FKFlickrPlacesResolvePlaceId.h in Headers */,
+				6AF251961BC0F172000C3223 /* FKFlickrPlacesResolvePlaceURL.h in Headers */,
+				6AF251971BC0F173000C3223 /* FKFlickrPlacesTagsForPlace.h in Headers */,
+				6AF251981BC0F174000C3223 /* FKFlickrPrefsGetContentType.h in Headers */,
+				6AF251991BC0F175000C3223 /* FKFlickrPrefsGetGeoPerms.h in Headers */,
+				6AF2519A1BC0F176000C3223 /* FKFlickrPrefsGetHidden.h in Headers */,
+				6AF2519B1BC0F176000C3223 /* FKFlickrPrefsGetPrivacy.h in Headers */,
+				6AF2519C1BC0F177000C3223 /* FKFlickrPrefsGetSafetyLevel.h in Headers */,
+				6AF2519D1BC0F178000C3223 /* FKFlickrPushGetSubscriptions.h in Headers */,
+				6AF2519E1BC0F179000C3223 /* FKFlickrPushGetTopics.h in Headers */,
+				6AF2519F1BC0F17A000C3223 /* FKFlickrPushSubscribe.h in Headers */,
+				6AF251A01BC0F17A000C3223 /* FKFlickrPushUnsubscribe.h in Headers */,
+				6AF251A11BC0F17B000C3223 /* FKFlickrReflectionGetMethodInfo.h in Headers */,
+				6AF251A21BC0F17C000C3223 /* FKFlickrReflectionGetMethods.h in Headers */,
+				6AF251A31BC0F17D000C3223 /* FKFlickrStatsGetCollectionDomains.h in Headers */,
+				6AF251A41BC0F17E000C3223 /* FKFlickrStatsGetCollectionReferrers.h in Headers */,
+				6AF251A51BC0F17F000C3223 /* FKFlickrStatsGetCollectionStats.h in Headers */,
+				6AF251A61BC0F180000C3223 /* FKFlickrStatsGetCSVFiles.h in Headers */,
+				6AF251A71BC0F181000C3223 /* FKFlickrStatsGetPhotoDomains.h in Headers */,
+				6AF251A81BC0F181000C3223 /* FKFlickrStatsGetPhotoReferrers.h in Headers */,
+				6AF251A91BC0F182000C3223 /* FKFlickrStatsGetPhotosetDomains.h in Headers */,
+				6AF251AA1BC0F183000C3223 /* FKFlickrStatsGetPhotosetReferrers.h in Headers */,
+				6AF251AB1BC0F184000C3223 /* FKFlickrStatsGetPhotosetStats.h in Headers */,
+				6AF251AC1BC0F185000C3223 /* FKFlickrStatsGetPhotoStats.h in Headers */,
+				6AF251AD1BC0F186000C3223 /* FKFlickrStatsGetPhotostreamDomains.h in Headers */,
+				6AF251AE1BC0F187000C3223 /* FKFlickrStatsGetPhotostreamReferrers.h in Headers */,
+				6AF251AF1BC0F188000C3223 /* FKFlickrStatsGetPhotostreamStats.h in Headers */,
+				6AF251B01BC0F189000C3223 /* FKFlickrStatsGetPopularPhotos.h in Headers */,
+				6AF251B11BC0F18A000C3223 /* FKFlickrStatsGetTotalViews.h in Headers */,
+				6AF251B21BC0F18B000C3223 /* FKFlickrTagsGetClusterPhotos.h in Headers */,
+				6AF251B31BC0F18C000C3223 /* FKFlickrTagsGetClusters.h in Headers */,
+				6AF251B41BC0F18D000C3223 /* FKFlickrTagsGetHotList.h in Headers */,
+				6AF251B51BC0F18E000C3223 /* FKFlickrTagsGetListPhoto.h in Headers */,
+				6AF251B61BC0F18F000C3223 /* FKFlickrTagsGetListUser.h in Headers */,
+				6AF251B71BC0F190000C3223 /* FKFlickrTagsGetListUserPopular.h in Headers */,
+				6AF251B81BC0F191000C3223 /* FKFlickrTagsGetListUserRaw.h in Headers */,
+				6AF251B91BC0F192000C3223 /* FKFlickrTagsGetMostFrequentlyUsed.h in Headers */,
+				6AF251BA1BC0F193000C3223 /* FKFlickrTagsGetRelated.h in Headers */,
+				6AF251BB1BC0F194000C3223 /* FKFlickrTestEcho.h in Headers */,
+				6AF251BC1BC0F196000C3223 /* FKFlickrTestLogin.h in Headers */,
+				6AF251BD1BC0F197000C3223 /* FKFlickrTestNull.h in Headers */,
+				6AF251BE1BC0F198000C3223 /* FKFlickrUrlsGetGroup.h in Headers */,
+				6AF251BF1BC0F199000C3223 /* FKFlickrUrlsGetUserPhotos.h in Headers */,
+				6AF251C01BC0F19A000C3223 /* FKFlickrUrlsGetUserProfile.h in Headers */,
+				6AF251C11BC0F19B000C3223 /* FKFlickrUrlsLookupGallery.h in Headers */,
+				6AF251C21BC0F19D000C3223 /* FKFlickrUrlsLookupGroup.h in Headers */,
+				6AF251C31BC0F19E000C3223 /* FKFlickrUrlsLookupUser.h in Headers */,
+				6AF251C41BC0F19F000C3223 /* FKFlickrAPIMethod.h in Headers */,
+				6AF251C51BC0F1A0000C3223 /* FKAPIMethods.h in Headers */,
+				6AF251C71BC0F1A3000C3223 /* FKOFHMACSha1Base64.h in Headers */,
+				6AF251C81BC0F1A4000C3223 /* FKDUDiskCache.h in Headers */,
+				6AF251C91BC0F1A5000C3223 /* FKDUDefaultDiskCache.h in Headers */,
+				6AF251CA1BC0F1A7000C3223 /* FKDUBlocks.h in Headers */,
+				6AF251CB1BC0F1A8000C3223 /* FKDUConcurrentOperation.h in Headers */,
+				6AF251CC1BC0F1AA000C3223 /* FKDUNetworkOperation.h in Headers */,
+				6AF251CD1BC0F1AB000C3223 /* FKDUNetworkController.h in Headers */,
+				6AF251CE1BC0F1AD000C3223 /* FKDUStreamUtil.h in Headers */,
+				6AF251CF1BC0F1AE000C3223 /* FKFlickrNetworkOperation.h in Headers */,
+				6AF251D01BC0F1B0000C3223 /* FKImageUploadNetworkOperation.h in Headers */,
+				6AF251D11BC0F1B1000C3223 /* FKUploadRespone.h in Headers */,
+				6AF251D31BC0F1B5000C3223 /* FKDUReachability.h in Headers */,
+				6AF251D41BC0F1B6000C3223 /* FKDataTypes.h in Headers */,
+				6AF251D21BC0F1B3000C3223 /* FKURLBuilder.h in Headers */,
+				6AF251C61BC0F1A1000C3223 /* FKUtilities.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		552D918B1753F8EF00BE3FEA /* FlickrKit */ = {
@@ -1900,6 +2598,24 @@
 			productReference = 552D919A1753F8F000BE3FEA /* FlickrKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		6AAAF1201BC022A100EFC8E6 /* FlickrKitOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AAAF1261BC022A100EFC8E6 /* Build configuration list for PBXNativeTarget "FlickrKitOSX" */;
+			buildPhases = (
+				6AAAF11C1BC022A100EFC8E6 /* Sources */,
+				6AAAF11D1BC022A100EFC8E6 /* Frameworks */,
+				6AAAF11E1BC022A100EFC8E6 /* Headers */,
+				6AAAF11F1BC022A100EFC8E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlickrKitOSX;
+			productName = FlickrKitOSX;
+			productReference = 6AAAF1211BC022A100EFC8E6 /* FlickrKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1910,6 +2626,11 @@
 				LastTestingUpgradeCheck = 0600;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "DevedUp Ltd";
+				TargetAttributes = {
+					6AAAF1201BC022A100EFC8E6 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
 			};
 			buildConfigurationList = 552D91111753951300BE3FEA /* Build configuration list for PBXProject "FlickrKit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1925,12 +2646,20 @@
 			targets = (
 				552D918B1753F8EF00BE3FEA /* FlickrKit */,
 				552D91991753F8F000BE3FEA /* FlickrKitTests */,
+				6AAAF1201BC022A100EFC8E6 /* FlickrKitOSX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		552D91971753F8F000BE3FEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6AAAF11F1BC022A100EFC8E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2412,6 +3141,234 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6AAAF11C1BC022A100EFC8E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AF250181BC0EE5D000C3223 /* FKFlickrActivityUserComments.m in Sources */,
+				6AF250191BC0EE5D000C3223 /* FKFlickrActivityUserPhotos.m in Sources */,
+				6AF2501A1BC0EE5D000C3223 /* FKFlickrAuthCheckToken.m in Sources */,
+				6AF2501B1BC0EE5D000C3223 /* FKFlickrAuthGetFrob.m in Sources */,
+				6AF2501C1BC0EE5D000C3223 /* FKFlickrAuthGetFullToken.m in Sources */,
+				6AF2501D1BC0EE5D000C3223 /* FKFlickrAuthGetToken.m in Sources */,
+				6AF2501E1BC0EE5D000C3223 /* FKFlickrAuthOauthCheckToken.m in Sources */,
+				6AF2501F1BC0EE5D000C3223 /* FKFlickrAuthOauthGetAccessToken.m in Sources */,
+				6AF250201BC0EE5D000C3223 /* FKFlickrBlogsGetList.m in Sources */,
+				6AF250211BC0EE5D000C3223 /* FKFlickrBlogsGetServices.m in Sources */,
+				6AF250221BC0EE5D000C3223 /* FKFlickrBlogsPostPhoto.m in Sources */,
+				6AF250231BC0EE5D000C3223 /* FKFlickrCamerasGetBrandModels.m in Sources */,
+				6AF250241BC0EE5D000C3223 /* FKFlickrCamerasGetBrands.m in Sources */,
+				6AF250251BC0EE5D000C3223 /* FKFlickrCollectionsGetInfo.m in Sources */,
+				6AF250261BC0EE5D000C3223 /* FKFlickrCollectionsGetTree.m in Sources */,
+				6AF250271BC0EE5D000C3223 /* FKFlickrCommonsGetInstitutions.m in Sources */,
+				6AF250281BC0EE5D000C3223 /* FKFlickrContactsGetList.m in Sources */,
+				6AF250291BC0EE5D000C3223 /* FKFlickrContactsGetListRecentlyUploaded.m in Sources */,
+				6AF2502A1BC0EE5D000C3223 /* FKFlickrContactsGetPublicList.m in Sources */,
+				6AF2502B1BC0EE5D000C3223 /* FKFlickrContactsGetTaggingSuggestions.m in Sources */,
+				6AF2502C1BC0EE5D000C3223 /* FKFlickrFavoritesAdd.m in Sources */,
+				6AF2502D1BC0EE5D000C3223 /* FKFlickrFavoritesGetContext.m in Sources */,
+				6AF2502E1BC0EE5D000C3223 /* FKFlickrFavoritesGetList.m in Sources */,
+				6AF2502F1BC0EE5E000C3223 /* FKFlickrFavoritesGetPublicList.m in Sources */,
+				6AF250301BC0EE5E000C3223 /* FKFlickrFavoritesRemove.m in Sources */,
+				6AF250311BC0EE5E000C3223 /* FKFlickrGalleriesAddPhoto.m in Sources */,
+				6AF250321BC0EE5E000C3223 /* FKFlickrGalleriesCreate.m in Sources */,
+				6AF250331BC0EE5E000C3223 /* FKFlickrGalleriesEditMeta.m in Sources */,
+				6AF250341BC0EE5E000C3223 /* FKFlickrGalleriesEditPhoto.m in Sources */,
+				6AF250351BC0EE5E000C3223 /* FKFlickrGalleriesEditPhotos.m in Sources */,
+				6AF250361BC0EE5E000C3223 /* FKFlickrGalleriesGetInfo.m in Sources */,
+				6AF250371BC0EE5E000C3223 /* FKFlickrGalleriesGetList.m in Sources */,
+				6AF250381BC0EE5E000C3223 /* FKFlickrGalleriesGetListForPhoto.m in Sources */,
+				6AF250391BC0EE5E000C3223 /* FKFlickrGalleriesGetPhotos.m in Sources */,
+				6AF2503A1BC0EE5E000C3223 /* FKFlickrGroupsDiscussRepliesAdd.m in Sources */,
+				6AF2503B1BC0EE5E000C3223 /* FKFlickrGroupsDiscussRepliesDelete.m in Sources */,
+				6AF2503C1BC0EE5E000C3223 /* FKFlickrGroupsDiscussRepliesEdit.m in Sources */,
+				6AF2503D1BC0EE5E000C3223 /* FKFlickrGroupsDiscussRepliesGetInfo.m in Sources */,
+				6AF2503E1BC0EE5E000C3223 /* FKFlickrGroupsDiscussRepliesGetList.m in Sources */,
+				6AF2503F1BC0EE5E000C3223 /* FKFlickrGroupsDiscussTopicsAdd.m in Sources */,
+				6AF250401BC0EE5E000C3223 /* FKFlickrGroupsDiscussTopicsGetInfo.m in Sources */,
+				6AF250411BC0EE5E000C3223 /* FKFlickrGroupsDiscussTopicsGetList.m in Sources */,
+				6AF250421BC0EE5E000C3223 /* FKFlickrGroupsBrowse.m in Sources */,
+				6AF250431BC0EE5E000C3223 /* FKFlickrGroupsGetInfo.m in Sources */,
+				6AF250441BC0EE5E000C3223 /* FKFlickrGroupsJoin.m in Sources */,
+				6AF250451BC0EE5E000C3223 /* FKFlickrGroupsJoinRequest.m in Sources */,
+				6AF250461BC0EE5E000C3223 /* FKFlickrGroupsLeave.m in Sources */,
+				6AF250471BC0EE5E000C3223 /* FKFlickrGroupsSearch.m in Sources */,
+				6AF250481BC0EE5E000C3223 /* FKFlickrGroupsMembersGetList.m in Sources */,
+				6AF250491BC0EE5E000C3223 /* FKFlickrGroupsPoolsAdd.m in Sources */,
+				6AF2504A1BC0EE5E000C3223 /* FKFlickrGroupsPoolsGetContext.m in Sources */,
+				6AF2504B1BC0EE5E000C3223 /* FKFlickrGroupsPoolsGetGroups.m in Sources */,
+				6AF2504C1BC0EE5E000C3223 /* FKFlickrGroupsPoolsGetPhotos.m in Sources */,
+				6AF2504D1BC0EE5E000C3223 /* FKFlickrGroupsPoolsRemove.m in Sources */,
+				6AF2504E1BC0EE5E000C3223 /* FKFlickrInterestingnessGetList.m in Sources */,
+				6AF2504F1BC0EE5E000C3223 /* FKFlickrMachinetagsGetNamespaces.m in Sources */,
+				6AF250501BC0EE5E000C3223 /* FKFlickrMachinetagsGetPairs.m in Sources */,
+				6AF250511BC0EE5E000C3223 /* FKFlickrMachinetagsGetPredicates.m in Sources */,
+				6AF250521BC0EE5E000C3223 /* FKFlickrMachinetagsGetRecentValues.m in Sources */,
+				6AF250531BC0EE5E000C3223 /* FKFlickrMachinetagsGetValues.m in Sources */,
+				6AF250541BC0EE5E000C3223 /* FKFlickrPandaGetList.m in Sources */,
+				6AF250551BC0EE5E000C3223 /* FKFlickrPandaGetPhotos.m in Sources */,
+				6AF250561BC0EE5E000C3223 /* FKFlickrPeopleFindByEmail.m in Sources */,
+				6AF250571BC0EE5E000C3223 /* FKFlickrPeopleFindByUsername.m in Sources */,
+				6AF250581BC0EE5E000C3223 /* FKFlickrPeopleGetGroups.m in Sources */,
+				6AF250591BC0EE5E000C3223 /* FKFlickrPeopleGetInfo.m in Sources */,
+				6AF2505A1BC0EE5E000C3223 /* FKFlickrPeopleGetLimits.m in Sources */,
+				6AF2505B1BC0EE5E000C3223 /* FKFlickrPeopleGetPhotos.m in Sources */,
+				6AF2505C1BC0EE5E000C3223 /* FKFlickrPeopleGetPhotosOf.m in Sources */,
+				6AF2505D1BC0EE5E000C3223 /* FKFlickrPeopleGetPublicGroups.m in Sources */,
+				6AF2505E1BC0EE5E000C3223 /* FKFlickrPeopleGetPublicPhotos.m in Sources */,
+				6AF2505F1BC0EE5E000C3223 /* FKFlickrPeopleGetUploadStatus.m in Sources */,
+				6AF250601BC0EE5E000C3223 /* FKFlickrPhotosCommentsAddComment.m in Sources */,
+				6AF250611BC0EE5E000C3223 /* FKFlickrPhotosCommentsDeleteComment.m in Sources */,
+				6AF250621BC0EE5E000C3223 /* FKFlickrPhotosCommentsEditComment.m in Sources */,
+				6AF250631BC0EE5E000C3223 /* FKFlickrPhotosCommentsGetList.m in Sources */,
+				6AF250641BC0EE5E000C3223 /* FKFlickrPhotosCommentsGetRecentForContacts.m in Sources */,
+				6AF250651BC0EE5E000C3223 /* FKFlickrPhotosAddTags.m in Sources */,
+				6AF250661BC0EE5E000C3223 /* FKFlickrPhotosDelete.m in Sources */,
+				6AF250671BC0EE5E000C3223 /* FKFlickrPhotosGetAllContexts.m in Sources */,
+				6AF250681BC0EE5E000C3223 /* FKFlickrPhotosGetContactsPhotos.m in Sources */,
+				6AF250691BC0EE5E000C3223 /* FKFlickrPhotosGetContactsPublicPhotos.m in Sources */,
+				6AF2506A1BC0EE5E000C3223 /* FKFlickrPhotosGetContext.m in Sources */,
+				6AF2506B1BC0EE5E000C3223 /* FKFlickrPhotosGetCounts.m in Sources */,
+				6AF2506C1BC0EE5E000C3223 /* FKFlickrPhotosGetExif.m in Sources */,
+				6AF2506D1BC0EE5E000C3223 /* FKFlickrPhotosGetFavorites.m in Sources */,
+				6AF2506E1BC0EE5E000C3223 /* FKFlickrPhotosGetInfo.m in Sources */,
+				6AF2506F1BC0EE5E000C3223 /* FKFlickrPhotosGetNotInSet.m in Sources */,
+				6AF250701BC0EE5E000C3223 /* FKFlickrPhotosGetPerms.m in Sources */,
+				6AF250711BC0EE5E000C3223 /* FKFlickrPhotosGetRecent.m in Sources */,
+				6AF250721BC0EE5E000C3223 /* FKFlickrPhotosGetSizes.m in Sources */,
+				6AF250731BC0EE5E000C3223 /* FKFlickrPhotosGetUntagged.m in Sources */,
+				6AF250741BC0EE5E000C3223 /* FKFlickrPhotosGetWithGeoData.m in Sources */,
+				6AF250751BC0EE5E000C3223 /* FKFlickrPhotosGetWithoutGeoData.m in Sources */,
+				6AF250761BC0EE5E000C3223 /* FKFlickrPhotosRecentlyUpdated.m in Sources */,
+				6AF250771BC0EE5E000C3223 /* FKFlickrPhotosRemoveTag.m in Sources */,
+				6AF250781BC0EE5E000C3223 /* FKFlickrPhotosSearch.m in Sources */,
+				6AF250791BC0EE5E000C3223 /* FKFlickrPhotosSetContentType.m in Sources */,
+				6AF2507A1BC0EE5E000C3223 /* FKFlickrPhotosSetDates.m in Sources */,
+				6AF2507B1BC0EE5E000C3223 /* FKFlickrPhotosSetMeta.m in Sources */,
+				6AF2507C1BC0EE5E000C3223 /* FKFlickrPhotosSetPerms.m in Sources */,
+				6AF2507D1BC0EE5E000C3223 /* FKFlickrPhotosSetSafetyLevel.m in Sources */,
+				6AF2507E1BC0EE5E000C3223 /* FKFlickrPhotosSetTags.m in Sources */,
+				6AF2507F1BC0EE5E000C3223 /* FKFlickrPhotosGeoBatchCorrectLocation.m in Sources */,
+				6AF250801BC0EE5E000C3223 /* FKFlickrPhotosGeoCorrectLocation.m in Sources */,
+				6AF250811BC0EE5E000C3223 /* FKFlickrPhotosGeoGetLocation.m in Sources */,
+				6AF250821BC0EE5E000C3223 /* FKFlickrPhotosGeoGetPerms.m in Sources */,
+				6AF250831BC0EE5E000C3223 /* FKFlickrPhotosGeoPhotosForLocation.m in Sources */,
+				6AF250841BC0EE5E000C3223 /* FKFlickrPhotosGeoRemoveLocation.m in Sources */,
+				6AF250851BC0EE5E000C3223 /* FKFlickrPhotosGeoSetContext.m in Sources */,
+				6AF250861BC0EE5E000C3223 /* FKFlickrPhotosGeoSetLocation.m in Sources */,
+				6AF250871BC0EE5E000C3223 /* FKFlickrPhotosGeoSetPerms.m in Sources */,
+				6AF250881BC0EE5E000C3223 /* FKFlickrPhotosLicensesGetInfo.m in Sources */,
+				6AF250891BC0EE5E000C3223 /* FKFlickrPhotosLicensesSetLicense.m in Sources */,
+				6AF2508A1BC0EE5E000C3223 /* FKFlickrPhotosNotesAdd.m in Sources */,
+				6AF2508B1BC0EE5E000C3223 /* FKFlickrPhotosNotesDelete.m in Sources */,
+				6AF2508C1BC0EE5E000C3223 /* FKFlickrPhotosNotesEdit.m in Sources */,
+				6AF2508D1BC0EE5E000C3223 /* FKFlickrPhotosPeopleAdd.m in Sources */,
+				6AF2508E1BC0EE5E000C3223 /* FKFlickrPhotosPeopleDelete.m in Sources */,
+				6AF2508F1BC0EE5E000C3223 /* FKFlickrPhotosPeopleDeleteCoords.m in Sources */,
+				6AF250901BC0EE5E000C3223 /* FKFlickrPhotosPeopleEditCoords.m in Sources */,
+				6AF250911BC0EE5E000C3223 /* FKFlickrPhotosPeopleGetList.m in Sources */,
+				6AF250921BC0EE5E000C3223 /* FKFlickrPhotosSuggestionsApproveSuggestion.m in Sources */,
+				6AF250931BC0EE5E000C3223 /* FKFlickrPhotosSuggestionsGetList.m in Sources */,
+				6AF250941BC0EE5E000C3223 /* FKFlickrPhotosSuggestionsRejectSuggestion.m in Sources */,
+				6AF250951BC0EE5E000C3223 /* FKFlickrPhotosSuggestionsRemoveSuggestion.m in Sources */,
+				6AF250961BC0EE5E000C3223 /* FKFlickrPhotosSuggestionsSuggestLocation.m in Sources */,
+				6AF250971BC0EE5E000C3223 /* FKFlickrPhotosTransformRotate.m in Sources */,
+				6AF250981BC0EE5E000C3223 /* FKFlickrPhotosUploadCheckTickets.m in Sources */,
+				6AF250991BC0EE5E000C3223 /* FKFlickrPhotosetsCommentsAddComment.m in Sources */,
+				6AF2509A1BC0EE5E000C3223 /* FKFlickrPhotosetsCommentsDeleteComment.m in Sources */,
+				6AF2509B1BC0EE5E000C3223 /* FKFlickrPhotosetsCommentsEditComment.m in Sources */,
+				6AF2509C1BC0EE5E000C3223 /* FKFlickrPhotosetsCommentsGetList.m in Sources */,
+				6AF2509D1BC0EE5E000C3223 /* FKFlickrPhotosetsAddPhoto.m in Sources */,
+				6AF2509E1BC0EE5E000C3223 /* FKFlickrPhotosetsCreate.m in Sources */,
+				6AF2509F1BC0EE5E000C3223 /* FKFlickrPhotosetsDelete.m in Sources */,
+				6AF250A01BC0EE5E000C3223 /* FKFlickrPhotosetsEditMeta.m in Sources */,
+				6AF250A11BC0EE5E000C3223 /* FKFlickrPhotosetsEditPhotos.m in Sources */,
+				6AF250A21BC0EE5E000C3223 /* FKFlickrPhotosetsGetContext.m in Sources */,
+				6AF250A31BC0EE5E000C3223 /* FKFlickrPhotosetsGetInfo.m in Sources */,
+				6AF250A41BC0EE5E000C3223 /* FKFlickrPhotosetsGetList.m in Sources */,
+				6AF250A51BC0EE5E000C3223 /* FKFlickrPhotosetsGetPhotos.m in Sources */,
+				6AF250A61BC0EE5E000C3223 /* FKFlickrPhotosetsOrderSets.m in Sources */,
+				6AF250A71BC0EE5E000C3223 /* FKFlickrPhotosetsRemovePhoto.m in Sources */,
+				6AF250A81BC0EE5E000C3223 /* FKFlickrPhotosetsRemovePhotos.m in Sources */,
+				6AF250A91BC0EE5F000C3223 /* FKFlickrPhotosetsReorderPhotos.m in Sources */,
+				6AF250AA1BC0EE5F000C3223 /* FKFlickrPhotosetsSetPrimaryPhoto.m in Sources */,
+				6AF250AB1BC0EE5F000C3223 /* FKFlickrPlacesFind.m in Sources */,
+				6AF250AC1BC0EE5F000C3223 /* FKFlickrPlacesFindByLatLon.m in Sources */,
+				6AF250AD1BC0EE5F000C3223 /* FKFlickrPlacesGetChildrenWithPhotosPublic.m in Sources */,
+				6AF250AE1BC0EE5F000C3223 /* FKFlickrPlacesGetInfo.m in Sources */,
+				6AF250AF1BC0EE5F000C3223 /* FKFlickrPlacesGetInfoByUrl.m in Sources */,
+				6AF250B01BC0EE5F000C3223 /* FKFlickrPlacesGetPlaceTypes.m in Sources */,
+				6AF250B11BC0EE5F000C3223 /* FKFlickrPlacesGetShapeHistory.m in Sources */,
+				6AF250B21BC0EE5F000C3223 /* FKFlickrPlacesGetTopPlacesList.m in Sources */,
+				6AF250B31BC0EE5F000C3223 /* FKFlickrPlacesPlacesForBoundingBox.m in Sources */,
+				6AF250B41BC0EE5F000C3223 /* FKFlickrPlacesPlacesForContacts.m in Sources */,
+				6AF250B51BC0EE5F000C3223 /* FKFlickrPlacesPlacesForTags.m in Sources */,
+				6AF250B61BC0EE5F000C3223 /* FKFlickrPlacesPlacesForUser.m in Sources */,
+				6AF250B71BC0EE5F000C3223 /* FKFlickrPlacesResolvePlaceId.m in Sources */,
+				6AF250B81BC0EE5F000C3223 /* FKFlickrPlacesResolvePlaceURL.m in Sources */,
+				6AF250B91BC0EE5F000C3223 /* FKFlickrPlacesTagsForPlace.m in Sources */,
+				6AF250BA1BC0EE5F000C3223 /* FKFlickrPrefsGetContentType.m in Sources */,
+				6AF250BB1BC0EE5F000C3223 /* FKFlickrPrefsGetGeoPerms.m in Sources */,
+				6AF250BC1BC0EE5F000C3223 /* FKFlickrPrefsGetHidden.m in Sources */,
+				6AF250BD1BC0EE5F000C3223 /* FKFlickrPrefsGetPrivacy.m in Sources */,
+				6AF250BE1BC0EE5F000C3223 /* FKFlickrPrefsGetSafetyLevel.m in Sources */,
+				6AF250BF1BC0EE5F000C3223 /* FKFlickrPushGetSubscriptions.m in Sources */,
+				6AF250C01BC0EE5F000C3223 /* FKFlickrPushGetTopics.m in Sources */,
+				6AF250C11BC0EE5F000C3223 /* FKFlickrPushSubscribe.m in Sources */,
+				6AF250C21BC0EE5F000C3223 /* FKFlickrPushUnsubscribe.m in Sources */,
+				6AF250C31BC0EE5F000C3223 /* FKFlickrReflectionGetMethodInfo.m in Sources */,
+				6AF250C41BC0EE5F000C3223 /* FKFlickrReflectionGetMethods.m in Sources */,
+				6AF250C51BC0EE5F000C3223 /* FKFlickrStatsGetCollectionDomains.m in Sources */,
+				6AF250C61BC0EE5F000C3223 /* FKFlickrStatsGetCollectionReferrers.m in Sources */,
+				6AF250C71BC0EE5F000C3223 /* FKFlickrStatsGetCollectionStats.m in Sources */,
+				6AF250C81BC0EE5F000C3223 /* FKFlickrStatsGetCSVFiles.m in Sources */,
+				6AF250C91BC0EE5F000C3223 /* FKFlickrStatsGetPhotoDomains.m in Sources */,
+				6AF250CA1BC0EE5F000C3223 /* FKFlickrStatsGetPhotoReferrers.m in Sources */,
+				6AF250CB1BC0EE5F000C3223 /* FKFlickrStatsGetPhotosetDomains.m in Sources */,
+				6AF250CC1BC0EE5F000C3223 /* FKFlickrStatsGetPhotosetReferrers.m in Sources */,
+				6AF250CD1BC0EE5F000C3223 /* FKFlickrStatsGetPhotosetStats.m in Sources */,
+				6AF250CE1BC0EE5F000C3223 /* FKFlickrStatsGetPhotoStats.m in Sources */,
+				6AF250CF1BC0EE5F000C3223 /* FKFlickrStatsGetPhotostreamDomains.m in Sources */,
+				6AF250D01BC0EE5F000C3223 /* FKFlickrStatsGetPhotostreamReferrers.m in Sources */,
+				6AF250D11BC0EE5F000C3223 /* FKFlickrStatsGetPhotostreamStats.m in Sources */,
+				6AF250D21BC0EE5F000C3223 /* FKFlickrStatsGetPopularPhotos.m in Sources */,
+				6AF250D31BC0EE5F000C3223 /* FKFlickrStatsGetTotalViews.m in Sources */,
+				6AF250D41BC0EE5F000C3223 /* FKFlickrTagsGetClusterPhotos.m in Sources */,
+				6AF250D51BC0EE5F000C3223 /* FKFlickrTagsGetClusters.m in Sources */,
+				6AF250D61BC0EE5F000C3223 /* FKFlickrTagsGetHotList.m in Sources */,
+				6AF250D71BC0EE5F000C3223 /* FKFlickrTagsGetListPhoto.m in Sources */,
+				6AF250D81BC0EE5F000C3223 /* FKFlickrTagsGetListUser.m in Sources */,
+				6AF250D91BC0EE5F000C3223 /* FKFlickrTagsGetListUserPopular.m in Sources */,
+				6AF250DA1BC0EE5F000C3223 /* FKFlickrTagsGetListUserRaw.m in Sources */,
+				6AF250DB1BC0EE5F000C3223 /* FKFlickrTagsGetMostFrequentlyUsed.m in Sources */,
+				6AF250DC1BC0EE5F000C3223 /* FKFlickrTagsGetRelated.m in Sources */,
+				6AF250DD1BC0EE5F000C3223 /* FKFlickrTestEcho.m in Sources */,
+				6AF250DE1BC0EE60000C3223 /* FKFlickrTestLogin.m in Sources */,
+				6AF250DF1BC0EE60000C3223 /* FKFlickrTestNull.m in Sources */,
+				6AF250E01BC0EE60000C3223 /* FKFlickrUrlsGetGroup.m in Sources */,
+				6AF250E11BC0EE60000C3223 /* FKFlickrUrlsGetUserPhotos.m in Sources */,
+				6AF250E21BC0EE60000C3223 /* FKFlickrUrlsGetUserProfile.m in Sources */,
+				6AF250E31BC0EE60000C3223 /* FKFlickrUrlsLookupGallery.m in Sources */,
+				6AF250E41BC0EE60000C3223 /* FKFlickrUrlsLookupGroup.m in Sources */,
+				6AF250E51BC0EE60000C3223 /* FKFlickrUrlsLookupUser.m in Sources */,
+				6AF250E61BC0EE60000C3223 /* FKUtilities.m in Sources */,
+				6AF250E71BC0EE60000C3223 /* FKOFHMACSha1Base64.m in Sources */,
+				6AF250E81BC0EE60000C3223 /* FKDUDefaultDiskCache.m in Sources */,
+				6AF250E91BC0EE60000C3223 /* FKDUBlocks.m in Sources */,
+				6AF250EA1BC0EE60000C3223 /* FKDUConcurrentOperation.m in Sources */,
+				6AF250EB1BC0EE60000C3223 /* FKDUNetworkOperation.m in Sources */,
+				6AF250EC1BC0EE60000C3223 /* FKDUNetworkController.m in Sources */,
+				6AF250ED1BC0EE60000C3223 /* FKDUStreamUtil.m in Sources */,
+				6AF250EE1BC0EE60000C3223 /* FKFlickrNetworkOperation.m in Sources */,
+				6AF250EF1BC0EE60000C3223 /* FKImageUploadNetworkOperation.m in Sources */,
+				6AF250F01BC0EE60000C3223 /* FKUploadRespone.m in Sources */,
+				6AF250F11BC0EE60000C3223 /* FKURLBuilder.m in Sources */,
+				6AF250F21BC0EE60000C3223 /* FKDUReachability.m in Sources */,
+				6AF250F31BC0EE60000C3223 /* FlickrKit.m in Sources */,
+				6AF250F41BC0EE60000C3223 /* FKDataTypes.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -2546,6 +3503,85 @@
 			};
 			name = Release;
 		};
+		6AAAF1271BC022A100EFC8E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Resources/FlickrKit-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = FlickrKitOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = RC.FlickrKitOSX;
+				PRODUCT_NAME = FlickrKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6AAAF1281BC022A100EFC8E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Resources/FlickrKit-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = FlickrKitOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = RC.FlickrKitOSX;
+				PRODUCT_NAME = FlickrKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2572,6 +3608,15 @@
 			buildConfigurations = (
 				552D91AE1753F8F100BE3FEA /* Debug */,
 				552D91AF1753F8F100BE3FEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AAAF1261BC022A100EFC8E6 /* Build configuration list for PBXNativeTarget "FlickrKitOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AAAF1271BC022A100EFC8E6 /* Debug */,
+				6AAAF1281BC022A100EFC8E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

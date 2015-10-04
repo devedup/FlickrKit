@@ -12,9 +12,17 @@
 
 + (void) writeMultipartStartString:(NSString *)startString imageStream:(NSInputStream *)imageInputStream toOutputStream:(NSOutputStream *)outputStream closingString:(NSString *)closingString;
 
+
+
+
+@end
+
+#if TARGET_OS_IPHONE
+@interface FKDUStreamUtil (iOS)
 + (void)writeMultipartWithAssetURL:(NSURL*)assetURL
                        startString:(NSString *)startString
                          imageFile:(NSString *)imageFile
                     toOutputStream:(NSOutputStream *)outputStream
                      closingString:(NSString *)closingString;
 @end
+#endif

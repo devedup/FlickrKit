@@ -7,8 +7,9 @@
 //
 
 #import "FKDUStreamUtil.h"
-
+#if TARGET_OS_IPHONE
 #import <AssetsLibrary/AssetsLibrary.h>
+#endif
 
 @implementation FKDUStreamUtil
 
@@ -50,6 +51,10 @@
     [outputStream close];    
 }
 
+
+
+
+#if TARGET_OS_IPHONE
 + (void)writeMultipartWithAssetURL:(NSURL*)assetURL
                        startString:(NSString *)startString
                        imageFile:(NSString *)imageFile
@@ -123,5 +128,5 @@
     [endStream close];
     NSAssert(actualWrittenLength == writeLength, @"Closing string not written");
 }
-
+#endif
 @end
