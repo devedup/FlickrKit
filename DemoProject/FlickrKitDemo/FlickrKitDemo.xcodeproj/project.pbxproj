@@ -48,6 +48,7 @@
 		6AF251ED1BC0F240000C3223 /* FlickrKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF250171BC0EE18000C3223 /* FlickrKit.framework */; };
 		6AF251EE1BC0F240000C3223 /* FlickrKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6AF250171BC0EE18000C3223 /* FlickrKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6AF252051BC10934000C3223 /* AuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF252041BC10934000C3223 /* AuthViewController.m */; settings = {ASSET_TAGS = (); }; };
+		D33CCA8F1BC3BC600006DA17 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D33CCA8E1BC3BC600006DA17 /* PhotosViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,8 @@
 		6AF251E91BC0F218000C3223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AF252031BC10934000C3223 /* AuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthViewController.h; sourceTree = "<group>"; };
 		6AF252041BC10934000C3223 /* AuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthViewController.m; sourceTree = "<group>"; };
+		D33CCA8D1BC3BC600006DA17 /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
+		D33CCA8E1BC3BC600006DA17 /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +270,8 @@
 				6AF251E21BC0F218000C3223 /* ViewController.m */,
 				6AF252031BC10934000C3223 /* AuthViewController.h */,
 				6AF252041BC10934000C3223 /* AuthViewController.m */,
+				D33CCA8D1BC3BC600006DA17 /* PhotosViewController.h */,
+				D33CCA8E1BC3BC600006DA17 /* PhotosViewController.m */,
 				6AF251E41BC0F218000C3223 /* Assets.xcassets */,
 				6AF251E61BC0F218000C3223 /* Main.storyboard */,
 				6AF251E91BC0F218000C3223 /* Info.plist */,
@@ -440,6 +445,7 @@
 				6AF252051BC10934000C3223 /* AuthViewController.m in Sources */,
 				6AF251E31BC0F218000C3223 /* ViewController.m in Sources */,
 				6AF251E01BC0F218000C3223 /* main.m in Sources */,
+				D33CCA8F1BC3BC600006DA17 /* PhotosViewController.m in Sources */,
 				6AF251DD1BC0F218000C3223 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

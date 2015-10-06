@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -650,7 +651,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="mainWindowController" id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="FlickrKit Demo OSX" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -673,35 +674,101 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pFg-dX-Zg7">
-                                <rect key="frame" x="97" y="192" width="69" height="32"/>
+                            <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pUM-Gp-tJp">
+                                <rect key="frame" x="178" y="136" width="124" height="100"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pFg-dX-Zg7">
+                                        <rect key="frame" x="-6" y="72" width="136" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="124" id="T9Z-dD-8Ch"/>
+                                        </constraints>
+                                        <animations/>
+                                        <buttonCell key="cell" type="push" title="Auth" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="X2a-74-Wln">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="authClick:" target="XfG-lQ-9wD" id="jT9-R1-AjY"/>
+                                        </connections>
+                                    </button>
+                                    <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M9E-4M-cL6">
+                                        <rect key="frame" x="0.0" y="29" width="124" height="42"/>
+                                        <subviews>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zgl-m0-z6T">
+                                                <rect key="frame" x="-2" y="25" width="74" height="17"/>
+                                                <animations/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="User name" placeholderString="" id="4cI-WH-soW">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <connections>
+                                                    <binding destination="XfG-lQ-9wD" name="value" keyPath="self.logginedUserName" id="heY-pd-N33"/>
+                                                </connections>
+                                            </textField>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DdP-xK-1Xk">
+                                                <rect key="frame" x="-2" y="0.0" width="20" height="17"/>
+                                                <animations/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="id" placeholderString="" id="fdz-5O-LFq">
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                                <connections>
+                                                    <binding destination="XfG-lQ-9wD" name="value" keyPath="self.logginedUserID" id="xMU-Zy-bMZ"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <animations/>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
+                                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T5Q-9m-XFG">
+                                        <rect key="frame" x="-6" y="-7" width="136" height="32"/>
+                                        <animations/>
+                                        <buttonCell key="cell" type="push" title="My photos" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tte-lL-O0C">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="XfG-lQ-9wD" name="enabled" keyPath="self.logginedUserID" id="ZFf-tN-Q1e">
+                                                <dictionary key="options">
+                                                    <string key="NSValueTransformerName">NSIsNotNil</string>
+                                                </dictionary>
+                                            </binding>
+                                            <segue destination="xo2-Jw-UQP" kind="show" identifier="showMyPhotos" id="gWz-9m-nNq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <animations/>
-                                <buttonCell key="cell" type="push" title="Auth" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="X2a-74-Wln">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="authClick:" target="XfG-lQ-9wD" id="jT9-R1-AjY"/>
-                                </connections>
-                            </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zgl-m0-z6T">
-                                <rect key="frame" x="101" y="174" width="70" height="17"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="User name" id="4cI-WH-soW">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T5Q-9m-XFG">
-                                <rect key="frame" x="315" y="165" width="104" height="32"/>
-                                <animations/>
-                                <buttonCell key="cell" type="push" title="My photos" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tte-lL-O0C">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="T5Q-9m-XFG" secondAttribute="trailing" id="7Ai-LU-l32"/>
+                                    <constraint firstAttribute="trailing" secondItem="M9E-4M-cL6" secondAttribute="trailing" id="Ixz-LY-fgV"/>
+                                    <constraint firstItem="M9E-4M-cL6" firstAttribute="leading" secondItem="pUM-Gp-tJp" secondAttribute="leading" id="TRD-EM-h7h"/>
+                                    <constraint firstItem="T5Q-9m-XFG" firstAttribute="leading" secondItem="pUM-Gp-tJp" secondAttribute="leading" id="d3g-99-zCW"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="pUM-Gp-tJp" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="34" id="Uor-EJ-UUe"/>
+                            <constraint firstItem="pUM-Gp-tJp" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="ZCK-9i-ntw"/>
+                        </constraints>
                         <animations/>
                     </view>
                     <connections>
@@ -710,7 +777,57 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="700"/>
+        </scene>
+        <!--My photos-->
+        <scene sceneID="J8o-Kv-vUU">
+            <objects>
+                <viewController title="My photos" id="xo2-Jw-UQP" customClass="PhotosViewController" sceneMemberID="viewController">
+                    <view key="view" id="yMh-XP-XXy">
+                        <rect key="frame" x="0.0" y="0.0" width="483" height="447"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbo-Zl-teL">
+                                <rect key="frame" x="0.0" y="0.0" width="483" height="447"/>
+                                <clipView key="contentView" id="prN-R0-enH">
+                                    <rect key="frame" x="1" y="1" width="466" height="430"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="69n-wC-5NU">
+                                            <rect key="frame" x="0.0" y="351" width="166" height="79"/>
+                                            <animations/>
+                                        </view>
+                                    </subviews>
+                                    <animations/>
+                                </clipView>
+                                <animations/>
+                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Rqv-xu-zTD">
+                                    <rect key="frame" x="1" y="431" width="466" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="npH-pn-fX9">
+                                    <rect key="frame" x="467" y="1" width="15" height="430"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Rbo-Zl-teL" firstAttribute="top" secondItem="yMh-XP-XXy" secondAttribute="top" id="LwD-9e-EqK"/>
+                            <constraint firstAttribute="bottom" secondItem="Rbo-Zl-teL" secondAttribute="bottom" id="tdq-a0-BM4"/>
+                            <constraint firstAttribute="trailing" secondItem="Rbo-Zl-teL" secondAttribute="trailing" id="w0p-0O-hul"/>
+                            <constraint firstItem="Rbo-Zl-teL" firstAttribute="leading" secondItem="yMh-XP-XXy" secondAttribute="leading" id="z02-ve-4b4"/>
+                        </constraints>
+                        <animations/>
+                    </view>
+                    <connections>
+                        <outlet property="imageScrollView" destination="Rbo-Zl-teL" id="LYE-FV-6xP"/>
+                    </connections>
+                </viewController>
+                <customObject id="X81-p7-XhU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840.5" y="699.5"/>
         </scene>
     </scenes>
 </document>

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "PhotosViewController.h"
 @import FlickrKit;
 
 
@@ -14,7 +15,10 @@
 @property (nonatomic, retain) FKDUNetworkOperation *authOp;
 @property (nonatomic, retain) FKDUNetworkOperation *completeAuthOp;
 @property (nonatomic, retain) FKDUNetworkOperation *checkAuthOp;
-@property (weak) IBOutlet NSTextField *userLabel;
+
+@property NSString * logginedUserName;
+@property NSString * logginedUserID;
+
 @end
 
 
@@ -23,43 +27,57 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
-- (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
-
-    // Update the view, if already loaded.
+    
+    
+    // Check if there is a stored token
+    // You should do this once on app launch
+    self.checkAuthOp = [[FlickrKit sharedFlickrKit] checkAuthorizationOnCompletion:^(NSString *userName, NSString *userId, NSString *fullName, NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (!error) {
+                [self userLoggedIn:userName userID:userId];
+            } else {
+                [self userLoggedOut];
+            }
+        });		
+    }];
 }
 
 - (void) userAuthenticateCallback:(NSNotification *)notification {
-    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:@"kCallbackURLNotification"];
-    
+    @try{
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kCallbackURLNotification" object:nil];
+    }
+    @catch(NSException * exception){
+        NSLog(@"Error removing observer");
+    }
+
     NSURL *callbackURL = notification.userInfo[@"callbackURL"];
     self.completeAuthOp = [[FlickrKit sharedFlickrKit] completeAuthWithURL:callbackURL completion:^(NSString *userName, NSString *userId, NSString *fullName, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (!error) {
                 [self userLoggedIn:userName userID:userId];
             } else {
-//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//                [alert show];
+                [[NSAlert alertWithError:error] runModal];
             }
-//            [self.navigationController popToRootViewControllerAnimated:YES];
         });
     }];
+
 }
 
 
 -(void)userLoggedIn:(NSString*)userName userID:(NSString*)userID{
-    self.userLabel.stringValue = [NSString stringWithFormat:@"%@(%@)", userName, userID];
+    self.logginedUserName = userName;
+    self.logginedUserID = userID;
+}
+
+-(void)userLoggedOut{
+    self.logginedUserName = nil;
+    self.logginedUserID = nil;
 }
 
 -(IBAction)authClick:(id)sender{
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userAuthenticateCallback:) name:@"kCallbackURLNotification" object:nil];
-    
     if ([FlickrKit sharedFlickrKit].isAuthorized) {
         [[FlickrKit sharedFlickrKit] logout];
-//        [self userLoggedOut];
+        [self userLoggedOut];
     } else {
 
         // This must be defined in your Info.plist
@@ -69,14 +87,16 @@
         
         // Begin the authentication process
         self.authOp = [[FlickrKit sharedFlickrKit] beginAuthWithCallbackURL:[NSURL URLWithString:callbackURLString] permission:FKPermissionDelete completion:^(NSURL *flickrLoginPageURL, NSError *error) {
+            
+            
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (!error) {
-
+                    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userAuthenticateCallback:) name:@"kCallbackURLNotification" object:nil];
                     [[NSWorkspace sharedWorkspace] openURL:flickrLoginPageURL];
-//                    [self.webView loadRequest:urlRequest];
                 } else {
-//                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//                    [alert show];
+                    [[NSAlert alertWithError:error] runModal];
+                    
                 }
             });		
         }];
@@ -84,5 +104,11 @@
     }
 }
 
+-(void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"showMyPhotos"]){
+        PhotosViewController * vc = segue.destinationController;
+        vc.userID = self.logginedUserID;
+    }
+}
 
 @end

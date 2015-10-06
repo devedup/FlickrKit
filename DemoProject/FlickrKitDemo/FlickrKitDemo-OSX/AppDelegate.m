@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 @import FlickrKit;
 @interface AppDelegate ()
-
+{
+    NSWindowController * _mainWindowController;
+}
 @end
 
 @implementation AppDelegate
@@ -25,6 +27,11 @@
     [[FlickrKit sharedFlickrKit] initializeWithAPIKey:apiKey sharedSecret:secret];
     
     [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleIncomingURL:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
+    
+    _mainWindowController =  [[NSStoryboard storyboardWithName:@"Main" bundle:nil] instantiateControllerWithIdentifier:@"mainWindowController"];
+    [_mainWindowController showWindow:nil];
+    
+    
 }
 
 - (void)handleIncomingURL:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent
