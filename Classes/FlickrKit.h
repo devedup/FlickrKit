@@ -7,17 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-//! Project version number for FlickrKitOSX.
-FOUNDATION_EXPORT double FlickrKitOSXVersionNumber;
+//! Project version number for FlickrKit.
+FOUNDATION_EXPORT double FlickrKitVersionNumber;
 
-//! Project version string for FlickrKitOSX.
-FOUNDATION_EXPORT const unsigned char FlickrKitOSXVersionString[];
+//! Project version string for FlickrKit.
+FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <FlickrKitOSX/PublicHeader.h>
 
-#if TARGET_OS_IPHONE
-#import <UIKit/UIKit.h>
-#endif
 #import "FKDUDiskCache.h"
 #import "FKDataTypes.h"
 #import "FKFlickrNetworkOperation.h"
