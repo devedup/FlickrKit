@@ -15,6 +15,8 @@
 @property (nonatomic, retain) FKDUNetworkOperation *authOp;
 @property (nonatomic, retain) FKDUNetworkOperation *completeAuthOp;
 @property (nonatomic, retain) FKDUNetworkOperation *checkAuthOp;
+@property (nonatomic, retain) FKImageUploadNetworkOperation *uploadOp;
+@property (weak) IBOutlet NSProgressIndicator *progressIndicator;
 
 @property NSString * logginedUserName;
 @property NSString * logginedUserID;
@@ -109,6 +111,51 @@
         PhotosViewController * vc = segue.destinationController;
         vc.userID = self.logginedUserID;
     }
+}
+
+
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        CGFloat progress = [[change objectForKey:NSKeyValueChangeNewKey] floatValue];
+        self.progressIndicator.doubleValue = progress;
+        //[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    });
+}
+
+-(IBAction)selectImage:(id)sender{
+    NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+    openPanel.allowedFileTypes = @[@"jpg", @"png"];
+    
+    openPanel.allowsMultipleSelection = NO;
+    [openPanel beginWithCompletionHandler: ^(NSInteger result) {
+        if (result == NSFileHandlingPanelOKButton) {
+            
+            NSURL* imageurl = [[openPanel URLs] objectAtIndex:0];
+            if(!imageurl)
+                return;
+            
+            self.progressIndicator.doubleValue = 0;
+            self.progressIndicator.hidden = NO;
+            
+            NSDictionary *uploadArgs = @{@"title": @"Test Photo", @"description": @"A Test Photo via FlickrKitDemo", @"is_public": @"0", @"is_friend": @"0", @"is_family": @"0", @"hidden": @"2"};
+            
+            self.uploadOp = [[FlickrKit sharedFlickrKit] uploadImage:[[NSImage alloc] initWithContentsOfURL:imageurl] args:uploadArgs completion:^(NSString *imageID, NSError *error) {
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (error) {
+                        [[NSAlert alertWithError:error] runModal];
+                    } else {
+                        NSLog(@"upload complete");
+                    }
+                    self.progressIndicator.hidden = YES;
+                    [self.uploadOp removeObserver:self forKeyPath:@"uploadProgress" context:NULL];
+                });
+            }];
+            [self.uploadOp addObserver:self forKeyPath:@"uploadProgress" options:NSKeyValueObservingOptionNew context:NULL];
+            
+        }
+    }];
+
 }
 
 @end
