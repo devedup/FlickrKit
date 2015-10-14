@@ -458,6 +458,7 @@
     return imageUpload;
 }
 
+#if TARGET_OS_IOS
 - (FKImageUploadNetworkOperation *) uploadAssetURL:(NSURL *)assetURL args:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion {
 	FKImageUploadNetworkOperation *imageUpload = [[FKImageUploadNetworkOperation alloc] initWithAssetURL:assetURL
                                                                                                arguments:args
@@ -465,5 +466,6 @@
 	[[FKDUNetworkController sharedController] execute:imageUpload];
     return imageUpload;
 }
+#endif
 
 @end

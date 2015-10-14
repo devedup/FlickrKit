@@ -12,9 +12,12 @@
 
 + (void) writeMultipartStartString:(NSString *)startString imageStream:(NSInputStream *)imageInputStream toOutputStream:(NSOutputStream *)outputStream closingString:(NSString *)closingString;
 
+#if TARGET_OS_IOS
 + (void)writeMultipartWithAssetURL:(NSURL*)assetURL
                        startString:(NSString *)startString
                          imageFile:(NSString *)imageFile
                     toOutputStream:(NSOutputStream *)outputStream
                      closingString:(NSString *)closingString;
+#endif
+
 @end

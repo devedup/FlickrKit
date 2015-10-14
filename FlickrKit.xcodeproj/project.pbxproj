@@ -23,6 +23,229 @@
 		552D92051754AE8A00BE3FEA /* FKURLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91F41754AE8A00BE3FEA /* FKURLBuilder.m */; };
 		552D92181754DBAC00BE3FEA /* FKDUDefaultDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D92171754DBAC00BE3FEA /* FKDUDefaultDiskCache.m */; };
 		552D92191754DBAC00BE3FEA /* FKDUDefaultDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D92171754DBAC00BE3FEA /* FKDUDefaultDiskCache.m */; };
+		553B845C1BCEB24A00BF59AF /* FKDUBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91E71754AE8A00BE3FEA /* FKDUBlocks.m */; };
+		553B845D1BCEB24A00BF59AF /* FKDUConcurrentOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91E91754AE8A00BE3FEA /* FKDUConcurrentOperation.m */; };
+		553B845E1BCEB24A00BF59AF /* FKDUNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91EB1754AE8A00BE3FEA /* FKDUNetworkController.m */; };
+		553B845F1BCEB24A00BF59AF /* FKFlickrNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91F21754AE8A00BE3FEA /* FKFlickrNetworkOperation.m */; };
+		553B84601BCEB24A00BF59AF /* FKURLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D91F41754AE8A00BE3FEA /* FKURLBuilder.m */; };
+		553B84611BCEB24A00BF59AF /* FKDUDefaultDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D92171754DBAC00BE3FEA /* FKDUDefaultDiskCache.m */; };
+		553B84621BCEB24A00BF59AF /* FKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEEF4F1756646400B61A3C /* FKUtilities.m */; };
+		553B84631BCEB24A00BF59AF /* FKDUReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AEEF56175766D500B61A3C /* FKDUReachability.m */; };
+		553B84641BCEB24A00BF59AF /* FKDataTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD484A175CA188004AF85C /* FKDataTypes.m */; };
+		553B84651BCEB24A00BF59AF /* FlickrKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD48E1175E7561004AF85C /* FlickrKit.m */; };
+		553B84661BCEB24A00BF59AF /* FKDUNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD48E8175F3217004AF85C /* FKDUNetworkOperation.m */; };
+		553B84671BCEB24A00BF59AF /* FKImageUploadNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD49051760DBE5004AF85C /* FKImageUploadNetworkOperation.m */; };
+		553B84681BCEB24A00BF59AF /* FKUploadRespone.m in Sources */ = {isa = PBXBuildFile; fileRef = 55AD49091760E546004AF85C /* FKUploadRespone.m */; };
+		553B84691BCEB24A00BF59AF /* FKDUStreamUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A5B667176613F900745C71 /* FKDUStreamUtil.m */; };
+		553B846A1BCEB24A00BF59AF /* FKFlickrActivityUserComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D2917678A9700E84674 /* FKFlickrActivityUserComments.m */; };
+		553B846B1BCEB24A00BF59AF /* FKFlickrActivityUserPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D2B17678A9700E84674 /* FKFlickrActivityUserPhotos.m */; };
+		553B846C1BCEB24A00BF59AF /* FKFlickrAuthCheckToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D2E17678A9700E84674 /* FKFlickrAuthCheckToken.m */; };
+		553B846D1BCEB24A00BF59AF /* FKFlickrAuthGetFrob.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D3017678A9700E84674 /* FKFlickrAuthGetFrob.m */; };
+		553B846E1BCEB24A00BF59AF /* FKFlickrAuthGetFullToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D3217678A9700E84674 /* FKFlickrAuthGetFullToken.m */; };
+		553B846F1BCEB24A00BF59AF /* FKFlickrAuthGetToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D3417678A9700E84674 /* FKFlickrAuthGetToken.m */; };
+		553B84701BCEB24A00BF59AF /* FKFlickrAuthOauthCheckToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D3717678A9700E84674 /* FKFlickrAuthOauthCheckToken.m */; };
+		553B84711BCEB24A00BF59AF /* FKFlickrAuthOauthGetAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D3917678A9700E84674 /* FKFlickrAuthOauthGetAccessToken.m */; };
+		553B84721BCEB24A00BF59AF /* FKFlickrBlogsGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D3C17678A9700E84674 /* FKFlickrBlogsGetList.m */; };
+		553B84731BCEB24A00BF59AF /* FKFlickrBlogsGetServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D3E17678A9700E84674 /* FKFlickrBlogsGetServices.m */; };
+		553B84741BCEB24A00BF59AF /* FKFlickrBlogsPostPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D4017678A9700E84674 /* FKFlickrBlogsPostPhoto.m */; };
+		553B84751BCEB24A00BF59AF /* FKFlickrCamerasGetBrandModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D4317678A9700E84674 /* FKFlickrCamerasGetBrandModels.m */; };
+		553B84761BCEB24A00BF59AF /* FKFlickrCamerasGetBrands.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D4517678A9700E84674 /* FKFlickrCamerasGetBrands.m */; };
+		553B84771BCEB24A00BF59AF /* FKFlickrCollectionsGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D4817678A9700E84674 /* FKFlickrCollectionsGetInfo.m */; };
+		553B84781BCEB24A00BF59AF /* FKFlickrCollectionsGetTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D4A17678A9700E84674 /* FKFlickrCollectionsGetTree.m */; };
+		553B84791BCEB24A00BF59AF /* FKFlickrCommonsGetInstitutions.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D4D17678A9700E84674 /* FKFlickrCommonsGetInstitutions.m */; };
+		553B847A1BCEB24A00BF59AF /* FKFlickrContactsGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5017678A9700E84674 /* FKFlickrContactsGetList.m */; };
+		553B847B1BCEB24A00BF59AF /* FKFlickrContactsGetListRecentlyUploaded.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5217678A9700E84674 /* FKFlickrContactsGetListRecentlyUploaded.m */; };
+		553B847C1BCEB24A00BF59AF /* FKFlickrContactsGetPublicList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5417678A9700E84674 /* FKFlickrContactsGetPublicList.m */; };
+		553B847D1BCEB24A00BF59AF /* FKFlickrContactsGetTaggingSuggestions.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5617678A9700E84674 /* FKFlickrContactsGetTaggingSuggestions.m */; };
+		553B847E1BCEB24A00BF59AF /* FKFlickrFavoritesAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5917678A9700E84674 /* FKFlickrFavoritesAdd.m */; };
+		553B847F1BCEB24A00BF59AF /* FKFlickrFavoritesGetContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5B17678A9700E84674 /* FKFlickrFavoritesGetContext.m */; };
+		553B84801BCEB24A00BF59AF /* FKOFHMACSha1Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EA68AC17CAABD40017DDD1 /* FKOFHMACSha1Base64.m */; };
+		553B84811BCEB24A00BF59AF /* FKFlickrFavoritesGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5D17678A9700E84674 /* FKFlickrFavoritesGetList.m */; };
+		553B84821BCEB24A00BF59AF /* FKFlickrFavoritesGetPublicList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D5F17678A9700E84674 /* FKFlickrFavoritesGetPublicList.m */; };
+		553B84831BCEB24A00BF59AF /* FKFlickrFavoritesRemove.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D6117678A9700E84674 /* FKFlickrFavoritesRemove.m */; };
+		553B84841BCEB24A00BF59AF /* FKFlickrGalleriesAddPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D6417678A9700E84674 /* FKFlickrGalleriesAddPhoto.m */; };
+		553B84851BCEB24A00BF59AF /* FKFlickrGalleriesCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D6617678A9700E84674 /* FKFlickrGalleriesCreate.m */; };
+		553B84861BCEB24A00BF59AF /* FKFlickrGalleriesEditMeta.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D6817678A9700E84674 /* FKFlickrGalleriesEditMeta.m */; };
+		553B84871BCEB24A00BF59AF /* FKFlickrGalleriesEditPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D6A17678A9700E84674 /* FKFlickrGalleriesEditPhoto.m */; };
+		553B84881BCEB24A00BF59AF /* FKFlickrGalleriesEditPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D6C17678A9700E84674 /* FKFlickrGalleriesEditPhotos.m */; };
+		553B84891BCEB24A00BF59AF /* FKFlickrGalleriesGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D6E17678A9700E84674 /* FKFlickrGalleriesGetInfo.m */; };
+		553B848A1BCEB24A00BF59AF /* FKFlickrGalleriesGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D7017678A9700E84674 /* FKFlickrGalleriesGetList.m */; };
+		553B848B1BCEB24A00BF59AF /* FKFlickrGalleriesGetListForPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D7217678A9700E84674 /* FKFlickrGalleriesGetListForPhoto.m */; };
+		553B848C1BCEB24A00BF59AF /* FKFlickrGalleriesGetPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D7417678A9700E84674 /* FKFlickrGalleriesGetPhotos.m */; };
+		553B848D1BCEB24A00BF59AF /* FKFlickrGroupsDiscussRepliesAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D7917678A9700E84674 /* FKFlickrGroupsDiscussRepliesAdd.m */; };
+		553B848E1BCEB24A00BF59AF /* FKFlickrGroupsDiscussRepliesDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D7B17678A9700E84674 /* FKFlickrGroupsDiscussRepliesDelete.m */; };
+		553B848F1BCEB24A00BF59AF /* FKFlickrGroupsDiscussRepliesEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D7D17678A9700E84674 /* FKFlickrGroupsDiscussRepliesEdit.m */; };
+		553B84901BCEB24A00BF59AF /* FKFlickrGroupsDiscussRepliesGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D7F17678A9700E84674 /* FKFlickrGroupsDiscussRepliesGetInfo.m */; };
+		553B84911BCEB24A00BF59AF /* FKFlickrGroupsDiscussRepliesGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D8117678A9700E84674 /* FKFlickrGroupsDiscussRepliesGetList.m */; };
+		553B84921BCEB24A00BF59AF /* FKFlickrGroupsDiscussTopicsAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D8417678A9700E84674 /* FKFlickrGroupsDiscussTopicsAdd.m */; };
+		553B84931BCEB24A00BF59AF /* FKFlickrGroupsDiscussTopicsGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D8617678A9700E84674 /* FKFlickrGroupsDiscussTopicsGetInfo.m */; };
+		553B84941BCEB24A00BF59AF /* FKFlickrGroupsDiscussTopicsGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D8817678A9700E84674 /* FKFlickrGroupsDiscussTopicsGetList.m */; };
+		553B84951BCEB24A00BF59AF /* FKFlickrGroupsBrowse.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D8A17678A9700E84674 /* FKFlickrGroupsBrowse.m */; };
+		553B84961BCEB24A00BF59AF /* FKFlickrGroupsGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D8C17678A9700E84674 /* FKFlickrGroupsGetInfo.m */; };
+		553B84971BCEB24A00BF59AF /* FKFlickrGroupsJoin.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D8E17678A9700E84674 /* FKFlickrGroupsJoin.m */; };
+		553B84981BCEB24A00BF59AF /* FKFlickrGroupsJoinRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D9017678A9700E84674 /* FKFlickrGroupsJoinRequest.m */; };
+		553B84991BCEB24A00BF59AF /* FKFlickrGroupsLeave.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D9217678A9700E84674 /* FKFlickrGroupsLeave.m */; };
+		553B849A1BCEB24A00BF59AF /* FKFlickrGroupsSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D9417678A9700E84674 /* FKFlickrGroupsSearch.m */; };
+		553B849B1BCEB24A00BF59AF /* FKFlickrGroupsMembersGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D9717678A9700E84674 /* FKFlickrGroupsMembersGetList.m */; };
+		553B849C1BCEB24A00BF59AF /* FKFlickrGroupsPoolsAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D9A17678A9700E84674 /* FKFlickrGroupsPoolsAdd.m */; };
+		553B849D1BCEB24A00BF59AF /* FKFlickrGroupsPoolsGetContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D9C17678A9700E84674 /* FKFlickrGroupsPoolsGetContext.m */; };
+		553B849E1BCEB24A00BF59AF /* FKFlickrGroupsPoolsGetGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D9E17678A9700E84674 /* FKFlickrGroupsPoolsGetGroups.m */; };
+		553B849F1BCEB24A00BF59AF /* FKFlickrGroupsPoolsGetPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DA017678A9700E84674 /* FKFlickrGroupsPoolsGetPhotos.m */; };
+		553B84A01BCEB24A00BF59AF /* FKFlickrGroupsPoolsRemove.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DA217678A9700E84674 /* FKFlickrGroupsPoolsRemove.m */; };
+		553B84A11BCEB24A00BF59AF /* FKFlickrInterestingnessGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DA517678A9700E84674 /* FKFlickrInterestingnessGetList.m */; };
+		553B84A21BCEB24A00BF59AF /* FKFlickrMachinetagsGetNamespaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DA817678A9700E84674 /* FKFlickrMachinetagsGetNamespaces.m */; };
+		553B84A31BCEB24A00BF59AF /* FKFlickrMachinetagsGetPairs.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DAA17678A9700E84674 /* FKFlickrMachinetagsGetPairs.m */; };
+		553B84A41BCEB24A00BF59AF /* FKFlickrMachinetagsGetPredicates.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DAC17678A9700E84674 /* FKFlickrMachinetagsGetPredicates.m */; };
+		553B84A51BCEB24A00BF59AF /* FKFlickrMachinetagsGetRecentValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DAE17678A9700E84674 /* FKFlickrMachinetagsGetRecentValues.m */; };
+		553B84A61BCEB24A00BF59AF /* FKFlickrMachinetagsGetValues.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DB017678A9700E84674 /* FKFlickrMachinetagsGetValues.m */; };
+		553B84A71BCEB24A00BF59AF /* FKFlickrPandaGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DB317678A9700E84674 /* FKFlickrPandaGetList.m */; };
+		553B84A81BCEB24A00BF59AF /* FKFlickrPandaGetPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DB517678A9700E84674 /* FKFlickrPandaGetPhotos.m */; };
+		553B84A91BCEB24A00BF59AF /* FKFlickrPeopleFindByEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DB817678A9700E84674 /* FKFlickrPeopleFindByEmail.m */; };
+		553B84AA1BCEB24A00BF59AF /* FKFlickrPeopleFindByUsername.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DBA17678A9700E84674 /* FKFlickrPeopleFindByUsername.m */; };
+		553B84AB1BCEB24A00BF59AF /* FKFlickrPeopleGetGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DBC17678A9700E84674 /* FKFlickrPeopleGetGroups.m */; };
+		553B84AC1BCEB24A00BF59AF /* FKFlickrPeopleGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DBE17678A9700E84674 /* FKFlickrPeopleGetInfo.m */; };
+		553B84AD1BCEB24A00BF59AF /* FKFlickrPeopleGetLimits.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DC017678A9700E84674 /* FKFlickrPeopleGetLimits.m */; };
+		553B84AE1BCEB24A00BF59AF /* FKFlickrPeopleGetPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DC217678A9700E84674 /* FKFlickrPeopleGetPhotos.m */; };
+		553B84AF1BCEB24A00BF59AF /* FKFlickrPeopleGetPhotosOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DC417678A9700E84674 /* FKFlickrPeopleGetPhotosOf.m */; };
+		553B84B01BCEB24A00BF59AF /* FKFlickrPeopleGetPublicGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DC617678A9700E84674 /* FKFlickrPeopleGetPublicGroups.m */; };
+		553B84B11BCEB24A00BF59AF /* FKFlickrPeopleGetPublicPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DC817678A9700E84674 /* FKFlickrPeopleGetPublicPhotos.m */; };
+		553B84B21BCEB24A00BF59AF /* FKFlickrPeopleGetUploadStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DCA17678A9700E84674 /* FKFlickrPeopleGetUploadStatus.m */; };
+		553B84B31BCEB24A00BF59AF /* FKFlickrPhotosCommentsAddComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DCE17678A9700E84674 /* FKFlickrPhotosCommentsAddComment.m */; };
+		553B84B41BCEB24A00BF59AF /* FKFlickrPhotosCommentsDeleteComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DD017678A9700E84674 /* FKFlickrPhotosCommentsDeleteComment.m */; };
+		553B84B51BCEB24A00BF59AF /* FKFlickrPhotosCommentsEditComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DD217678A9700E84674 /* FKFlickrPhotosCommentsEditComment.m */; };
+		553B84B61BCEB24A00BF59AF /* FKFlickrPhotosCommentsGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DD417678A9700E84674 /* FKFlickrPhotosCommentsGetList.m */; };
+		553B84B71BCEB24A00BF59AF /* FKFlickrPhotosCommentsGetRecentForContacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DD617678A9700E84674 /* FKFlickrPhotosCommentsGetRecentForContacts.m */; };
+		553B84B81BCEB24A00BF59AF /* FKFlickrPhotosAddTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DD817678A9700E84674 /* FKFlickrPhotosAddTags.m */; };
+		553B84B91BCEB24A00BF59AF /* FKFlickrPhotosDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DDA17678A9700E84674 /* FKFlickrPhotosDelete.m */; };
+		553B84BA1BCEB24A00BF59AF /* FKFlickrPhotosGetAllContexts.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DDC17678A9700E84674 /* FKFlickrPhotosGetAllContexts.m */; };
+		553B84BB1BCEB24A00BF59AF /* FKFlickrPhotosGetContactsPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DDE17678A9700E84674 /* FKFlickrPhotosGetContactsPhotos.m */; };
+		553B84BC1BCEB24A00BF59AF /* FKFlickrPhotosGetContactsPublicPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DE017678A9700E84674 /* FKFlickrPhotosGetContactsPublicPhotos.m */; };
+		553B84BD1BCEB24A00BF59AF /* FKFlickrPhotosGetContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DE217678A9700E84674 /* FKFlickrPhotosGetContext.m */; };
+		553B84BE1BCEB24A00BF59AF /* FKFlickrPhotosGetCounts.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DE417678A9700E84674 /* FKFlickrPhotosGetCounts.m */; };
+		553B84BF1BCEB24A00BF59AF /* FKFlickrPhotosGetExif.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DE617678A9700E84674 /* FKFlickrPhotosGetExif.m */; };
+		553B84C01BCEB24A00BF59AF /* FKFlickrPhotosGetFavorites.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DE817678A9700E84674 /* FKFlickrPhotosGetFavorites.m */; };
+		553B84C11BCEB24A00BF59AF /* FKFlickrPhotosGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DEA17678A9700E84674 /* FKFlickrPhotosGetInfo.m */; };
+		553B84C21BCEB24A00BF59AF /* FKFlickrPhotosGetNotInSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DEC17678A9700E84674 /* FKFlickrPhotosGetNotInSet.m */; };
+		553B84C31BCEB24A00BF59AF /* FKFlickrPhotosGetPerms.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DEE17678A9700E84674 /* FKFlickrPhotosGetPerms.m */; };
+		553B84C41BCEB24A00BF59AF /* FKFlickrPhotosGetRecent.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DF017678A9700E84674 /* FKFlickrPhotosGetRecent.m */; };
+		553B84C51BCEB24A00BF59AF /* FKFlickrPhotosGetSizes.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DF217678A9700E84674 /* FKFlickrPhotosGetSizes.m */; };
+		553B84C61BCEB24A00BF59AF /* FKFlickrPhotosGetUntagged.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DF417678A9700E84674 /* FKFlickrPhotosGetUntagged.m */; };
+		553B84C71BCEB24A00BF59AF /* FKFlickrPhotosGetWithGeoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DF617678A9700E84674 /* FKFlickrPhotosGetWithGeoData.m */; };
+		553B84C81BCEB24A00BF59AF /* FKFlickrPhotosGetWithoutGeoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DF817678A9700E84674 /* FKFlickrPhotosGetWithoutGeoData.m */; };
+		553B84C91BCEB24A00BF59AF /* FKFlickrPhotosRecentlyUpdated.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DFA17678A9700E84674 /* FKFlickrPhotosRecentlyUpdated.m */; };
+		553B84CA1BCEB24A00BF59AF /* FKFlickrPhotosRemoveTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DFC17678A9700E84674 /* FKFlickrPhotosRemoveTag.m */; };
+		553B84CB1BCEB24A00BF59AF /* FKFlickrPhotosSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2DFE17678A9700E84674 /* FKFlickrPhotosSearch.m */; };
+		553B84CC1BCEB24A00BF59AF /* FKFlickrPhotosSetContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E0017678A9700E84674 /* FKFlickrPhotosSetContentType.m */; };
+		553B84CD1BCEB24A00BF59AF /* FKFlickrPhotosSetDates.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E0217678A9700E84674 /* FKFlickrPhotosSetDates.m */; };
+		553B84CE1BCEB24A00BF59AF /* FKFlickrPhotosSetMeta.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E0417678A9700E84674 /* FKFlickrPhotosSetMeta.m */; };
+		553B84CF1BCEB24A00BF59AF /* FKFlickrPhotosSetPerms.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E0617678A9700E84674 /* FKFlickrPhotosSetPerms.m */; };
+		553B84D01BCEB24A00BF59AF /* FKFlickrPhotosSetSafetyLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E0817678A9700E84674 /* FKFlickrPhotosSetSafetyLevel.m */; };
+		553B84D11BCEB24A00BF59AF /* FKFlickrPhotosSetTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E0A17678A9700E84674 /* FKFlickrPhotosSetTags.m */; };
+		553B84D21BCEB24A00BF59AF /* FKFlickrPhotosGeoBatchCorrectLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E0E17678A9700E84674 /* FKFlickrPhotosGeoBatchCorrectLocation.m */; };
+		553B84D31BCEB24A00BF59AF /* FKFlickrPhotosGeoCorrectLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1017678A9700E84674 /* FKFlickrPhotosGeoCorrectLocation.m */; };
+		553B84D41BCEB24A00BF59AF /* FKFlickrPhotosGeoGetLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1217678A9700E84674 /* FKFlickrPhotosGeoGetLocation.m */; };
+		553B84D51BCEB24A00BF59AF /* FKFlickrPhotosGeoGetPerms.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1417678A9700E84674 /* FKFlickrPhotosGeoGetPerms.m */; };
+		553B84D61BCEB24A00BF59AF /* FKFlickrPhotosGeoPhotosForLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1617678A9700E84674 /* FKFlickrPhotosGeoPhotosForLocation.m */; };
+		553B84D71BCEB24A00BF59AF /* FKFlickrPhotosGeoRemoveLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1817678A9700E84674 /* FKFlickrPhotosGeoRemoveLocation.m */; };
+		553B84D81BCEB24A00BF59AF /* FKFlickrPhotosGeoSetContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1A17678A9700E84674 /* FKFlickrPhotosGeoSetContext.m */; };
+		553B84D91BCEB24A00BF59AF /* FKFlickrPhotosGeoSetLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1C17678A9700E84674 /* FKFlickrPhotosGeoSetLocation.m */; };
+		553B84DA1BCEB24A00BF59AF /* FKFlickrPhotosGeoSetPerms.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E1E17678A9700E84674 /* FKFlickrPhotosGeoSetPerms.m */; };
+		553B84DB1BCEB24A00BF59AF /* FKFlickrPhotosLicensesGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E2117678A9700E84674 /* FKFlickrPhotosLicensesGetInfo.m */; };
+		553B84DC1BCEB24A00BF59AF /* FKFlickrPhotosLicensesSetLicense.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E2317678A9700E84674 /* FKFlickrPhotosLicensesSetLicense.m */; };
+		553B84DD1BCEB24A00BF59AF /* FKFlickrPhotosNotesAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E2617678A9700E84674 /* FKFlickrPhotosNotesAdd.m */; };
+		553B84DE1BCEB24A00BF59AF /* FKFlickrPhotosNotesDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E2817678A9700E84674 /* FKFlickrPhotosNotesDelete.m */; };
+		553B84DF1BCEB24A00BF59AF /* FKFlickrPhotosNotesEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E2A17678A9700E84674 /* FKFlickrPhotosNotesEdit.m */; };
+		553B84E01BCEB24A00BF59AF /* FKFlickrPhotosPeopleAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E2D17678A9700E84674 /* FKFlickrPhotosPeopleAdd.m */; };
+		553B84E11BCEB24A00BF59AF /* FKFlickrPhotosPeopleDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E2F17678A9700E84674 /* FKFlickrPhotosPeopleDelete.m */; };
+		553B84E21BCEB24A00BF59AF /* FKFlickrPhotosPeopleDeleteCoords.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E3117678A9700E84674 /* FKFlickrPhotosPeopleDeleteCoords.m */; };
+		553B84E31BCEB24A00BF59AF /* FKFlickrPhotosPeopleEditCoords.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E3317678A9700E84674 /* FKFlickrPhotosPeopleEditCoords.m */; };
+		553B84E41BCEB24A00BF59AF /* FKFlickrPhotosPeopleGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E3517678A9700E84674 /* FKFlickrPhotosPeopleGetList.m */; };
+		553B84E51BCEB24A00BF59AF /* FKFlickrPhotosSuggestionsApproveSuggestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E3817678A9700E84674 /* FKFlickrPhotosSuggestionsApproveSuggestion.m */; };
+		553B84E61BCEB24A00BF59AF /* FKFlickrPhotosSuggestionsGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E3A17678A9700E84674 /* FKFlickrPhotosSuggestionsGetList.m */; };
+		553B84E71BCEB24A00BF59AF /* FKFlickrPhotosSuggestionsRejectSuggestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E3C17678A9700E84674 /* FKFlickrPhotosSuggestionsRejectSuggestion.m */; };
+		553B84E81BCEB24A00BF59AF /* FKFlickrPhotosSuggestionsRemoveSuggestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E3E17678A9700E84674 /* FKFlickrPhotosSuggestionsRemoveSuggestion.m */; };
+		553B84E91BCEB24A00BF59AF /* FKFlickrPhotosSuggestionsSuggestLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E4017678A9700E84674 /* FKFlickrPhotosSuggestionsSuggestLocation.m */; };
+		553B84EA1BCEB24A00BF59AF /* FKFlickrPhotosTransformRotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E4317678A9700E84674 /* FKFlickrPhotosTransformRotate.m */; };
+		553B84EB1BCEB24A00BF59AF /* FKFlickrPhotosUploadCheckTickets.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E4617678A9700E84674 /* FKFlickrPhotosUploadCheckTickets.m */; };
+		553B84EC1BCEB24A00BF59AF /* FKFlickrPhotosetsCommentsAddComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E4A17678A9700E84674 /* FKFlickrPhotosetsCommentsAddComment.m */; };
+		553B84ED1BCEB24A00BF59AF /* FKFlickrPhotosetsCommentsDeleteComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E4C17678A9700E84674 /* FKFlickrPhotosetsCommentsDeleteComment.m */; };
+		553B84EE1BCEB24A00BF59AF /* FKFlickrPhotosetsCommentsEditComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E4E17678A9700E84674 /* FKFlickrPhotosetsCommentsEditComment.m */; };
+		553B84EF1BCEB24A00BF59AF /* FKFlickrPhotosetsCommentsGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5017678A9700E84674 /* FKFlickrPhotosetsCommentsGetList.m */; };
+		553B84F01BCEB24A00BF59AF /* FKFlickrPhotosetsAddPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5217678A9700E84674 /* FKFlickrPhotosetsAddPhoto.m */; };
+		553B84F11BCEB24A00BF59AF /* FKFlickrPhotosetsCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5417678A9700E84674 /* FKFlickrPhotosetsCreate.m */; };
+		553B84F21BCEB24A00BF59AF /* FKFlickrPhotosetsDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5617678A9700E84674 /* FKFlickrPhotosetsDelete.m */; };
+		553B84F31BCEB24A00BF59AF /* FKFlickrPhotosetsEditMeta.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5817678A9700E84674 /* FKFlickrPhotosetsEditMeta.m */; };
+		553B84F41BCEB24A00BF59AF /* FKFlickrPhotosetsEditPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5A17678A9700E84674 /* FKFlickrPhotosetsEditPhotos.m */; };
+		553B84F51BCEB24A00BF59AF /* FKFlickrPhotosetsGetContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5C17678A9700E84674 /* FKFlickrPhotosetsGetContext.m */; };
+		553B84F61BCEB24A00BF59AF /* FKFlickrPhotosetsGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E5E17678A9700E84674 /* FKFlickrPhotosetsGetInfo.m */; };
+		553B84F71BCEB24A00BF59AF /* FKFlickrPhotosetsGetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6017678A9700E84674 /* FKFlickrPhotosetsGetList.m */; };
+		553B84F81BCEB24A00BF59AF /* FKFlickrPhotosetsGetPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6217678A9700E84674 /* FKFlickrPhotosetsGetPhotos.m */; };
+		553B84F91BCEB24A00BF59AF /* FKFlickrPhotosetsOrderSets.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6417678A9700E84674 /* FKFlickrPhotosetsOrderSets.m */; };
+		553B84FA1BCEB24A00BF59AF /* FKFlickrPhotosetsRemovePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6617678A9700E84674 /* FKFlickrPhotosetsRemovePhoto.m */; };
+		553B84FB1BCEB24A00BF59AF /* FKFlickrPhotosetsRemovePhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6817678A9700E84674 /* FKFlickrPhotosetsRemovePhotos.m */; };
+		553B84FC1BCEB24A00BF59AF /* FKFlickrPhotosetsReorderPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6A17678A9700E84674 /* FKFlickrPhotosetsReorderPhotos.m */; };
+		553B84FD1BCEB24A00BF59AF /* FKFlickrPhotosetsSetPrimaryPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6C17678A9700E84674 /* FKFlickrPhotosetsSetPrimaryPhoto.m */; };
+		553B84FE1BCEB24A00BF59AF /* FKFlickrPlacesFind.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E6F17678A9700E84674 /* FKFlickrPlacesFind.m */; };
+		553B84FF1BCEB24A00BF59AF /* FKFlickrPlacesFindByLatLon.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7117678A9700E84674 /* FKFlickrPlacesFindByLatLon.m */; };
+		553B85001BCEB24A00BF59AF /* FKFlickrPlacesGetChildrenWithPhotosPublic.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7317678A9700E84674 /* FKFlickrPlacesGetChildrenWithPhotosPublic.m */; };
+		553B85011BCEB24A00BF59AF /* FKFlickrPlacesGetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7517678A9700E84674 /* FKFlickrPlacesGetInfo.m */; };
+		553B85021BCEB24A00BF59AF /* FKFlickrPlacesGetInfoByUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7717678A9700E84674 /* FKFlickrPlacesGetInfoByUrl.m */; };
+		553B85031BCEB24A00BF59AF /* FKFlickrPlacesGetPlaceTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7917678A9700E84674 /* FKFlickrPlacesGetPlaceTypes.m */; };
+		553B85041BCEB24A00BF59AF /* FKFlickrPlacesGetShapeHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7B17678A9700E84674 /* FKFlickrPlacesGetShapeHistory.m */; };
+		553B85051BCEB24A00BF59AF /* FKFlickrPlacesGetTopPlacesList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7D17678A9700E84674 /* FKFlickrPlacesGetTopPlacesList.m */; };
+		553B85061BCEB24A00BF59AF /* FKFlickrPlacesPlacesForBoundingBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E7F17678A9700E84674 /* FKFlickrPlacesPlacesForBoundingBox.m */; };
+		553B85071BCEB24A00BF59AF /* FKFlickrPlacesPlacesForContacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E8117678A9700E84674 /* FKFlickrPlacesPlacesForContacts.m */; };
+		553B85081BCEB24A00BF59AF /* FKFlickrPlacesPlacesForTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E8317678A9700E84674 /* FKFlickrPlacesPlacesForTags.m */; };
+		553B85091BCEB24A00BF59AF /* FKFlickrPlacesPlacesForUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E8517678A9800E84674 /* FKFlickrPlacesPlacesForUser.m */; };
+		553B850A1BCEB24A00BF59AF /* FKFlickrPlacesResolvePlaceId.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E8717678A9800E84674 /* FKFlickrPlacesResolvePlaceId.m */; };
+		553B850B1BCEB24A00BF59AF /* FKFlickrPlacesResolvePlaceURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E8917678A9800E84674 /* FKFlickrPlacesResolvePlaceURL.m */; };
+		553B850C1BCEB24A00BF59AF /* FKFlickrPlacesTagsForPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E8B17678A9800E84674 /* FKFlickrPlacesTagsForPlace.m */; };
+		553B850D1BCEB24A00BF59AF /* FKFlickrPrefsGetContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E8E17678A9800E84674 /* FKFlickrPrefsGetContentType.m */; };
+		553B850E1BCEB24A00BF59AF /* FKFlickrPrefsGetGeoPerms.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9017678A9800E84674 /* FKFlickrPrefsGetGeoPerms.m */; };
+		553B850F1BCEB24A00BF59AF /* FKFlickrPrefsGetHidden.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9217678A9800E84674 /* FKFlickrPrefsGetHidden.m */; };
+		553B85101BCEB24A00BF59AF /* FKFlickrPrefsGetPrivacy.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9417678A9800E84674 /* FKFlickrPrefsGetPrivacy.m */; };
+		553B85111BCEB24A00BF59AF /* FKFlickrPrefsGetSafetyLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9617678A9800E84674 /* FKFlickrPrefsGetSafetyLevel.m */; };
+		553B85121BCEB24A00BF59AF /* FKFlickrPushGetSubscriptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9917678A9800E84674 /* FKFlickrPushGetSubscriptions.m */; };
+		553B85131BCEB24A00BF59AF /* FKFlickrPushGetTopics.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9B17678A9800E84674 /* FKFlickrPushGetTopics.m */; };
+		553B85141BCEB24A00BF59AF /* FKFlickrPushSubscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9D17678A9800E84674 /* FKFlickrPushSubscribe.m */; };
+		553B85151BCEB24A00BF59AF /* FKFlickrPushUnsubscribe.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2E9F17678A9800E84674 /* FKFlickrPushUnsubscribe.m */; };
+		553B85161BCEB24A00BF59AF /* FKFlickrReflectionGetMethodInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EA217678A9800E84674 /* FKFlickrReflectionGetMethodInfo.m */; };
+		553B85171BCEB24A00BF59AF /* FKFlickrReflectionGetMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EA417678A9800E84674 /* FKFlickrReflectionGetMethods.m */; };
+		553B85181BCEB24A00BF59AF /* FKFlickrStatsGetCollectionDomains.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EA717678A9800E84674 /* FKFlickrStatsGetCollectionDomains.m */; };
+		553B85191BCEB24A00BF59AF /* FKFlickrStatsGetCollectionReferrers.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EA917678A9800E84674 /* FKFlickrStatsGetCollectionReferrers.m */; };
+		553B851A1BCEB24A00BF59AF /* FKFlickrStatsGetCollectionStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EAB17678A9800E84674 /* FKFlickrStatsGetCollectionStats.m */; };
+		553B851B1BCEB24A00BF59AF /* FKFlickrStatsGetCSVFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EAD17678A9800E84674 /* FKFlickrStatsGetCSVFiles.m */; };
+		553B851C1BCEB24A00BF59AF /* FKFlickrStatsGetPhotoDomains.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EAF17678A9800E84674 /* FKFlickrStatsGetPhotoDomains.m */; };
+		553B851D1BCEB24A00BF59AF /* FKFlickrStatsGetPhotoReferrers.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EB117678A9800E84674 /* FKFlickrStatsGetPhotoReferrers.m */; };
+		553B851E1BCEB24A00BF59AF /* FKFlickrStatsGetPhotosetDomains.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EB317678A9800E84674 /* FKFlickrStatsGetPhotosetDomains.m */; };
+		553B851F1BCEB24A00BF59AF /* FKFlickrStatsGetPhotosetReferrers.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EB517678A9800E84674 /* FKFlickrStatsGetPhotosetReferrers.m */; };
+		553B85201BCEB24A00BF59AF /* FKFlickrStatsGetPhotosetStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EB717678A9800E84674 /* FKFlickrStatsGetPhotosetStats.m */; };
+		553B85211BCEB24A00BF59AF /* FKFlickrStatsGetPhotoStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EB917678A9800E84674 /* FKFlickrStatsGetPhotoStats.m */; };
+		553B85221BCEB24A00BF59AF /* FKFlickrStatsGetPhotostreamDomains.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EBB17678A9800E84674 /* FKFlickrStatsGetPhotostreamDomains.m */; };
+		553B85231BCEB24A00BF59AF /* FKFlickrStatsGetPhotostreamReferrers.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EBD17678A9800E84674 /* FKFlickrStatsGetPhotostreamReferrers.m */; };
+		553B85241BCEB24A00BF59AF /* FKFlickrStatsGetPhotostreamStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EBF17678A9800E84674 /* FKFlickrStatsGetPhotostreamStats.m */; };
+		553B85251BCEB24A00BF59AF /* FKFlickrStatsGetPopularPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EC117678A9800E84674 /* FKFlickrStatsGetPopularPhotos.m */; };
+		553B85261BCEB24A00BF59AF /* FKFlickrStatsGetTotalViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EC317678A9800E84674 /* FKFlickrStatsGetTotalViews.m */; };
+		553B85271BCEB24A00BF59AF /* FKFlickrTagsGetClusterPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EC617678A9800E84674 /* FKFlickrTagsGetClusterPhotos.m */; };
+		553B85281BCEB24A00BF59AF /* FKFlickrTagsGetClusters.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EC817678A9800E84674 /* FKFlickrTagsGetClusters.m */; };
+		553B85291BCEB24A00BF59AF /* FKFlickrTagsGetHotList.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ECA17678A9800E84674 /* FKFlickrTagsGetHotList.m */; };
+		553B852A1BCEB24A00BF59AF /* FKFlickrTagsGetListPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ECC17678A9800E84674 /* FKFlickrTagsGetListPhoto.m */; };
+		553B852B1BCEB24A00BF59AF /* FKFlickrTagsGetListUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ECE17678A9800E84674 /* FKFlickrTagsGetListUser.m */; };
+		553B852C1BCEB24A00BF59AF /* FKFlickrTagsGetListUserPopular.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ED017678A9800E84674 /* FKFlickrTagsGetListUserPopular.m */; };
+		553B852D1BCEB24A00BF59AF /* FKFlickrTagsGetListUserRaw.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ED217678A9800E84674 /* FKFlickrTagsGetListUserRaw.m */; };
+		553B852E1BCEB24A00BF59AF /* FKFlickrTagsGetMostFrequentlyUsed.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ED417678A9800E84674 /* FKFlickrTagsGetMostFrequentlyUsed.m */; };
+		553B852F1BCEB24A00BF59AF /* FKFlickrTagsGetRelated.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ED617678A9800E84674 /* FKFlickrTagsGetRelated.m */; };
+		553B85301BCEB24A00BF59AF /* FKFlickrTestEcho.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2ED917678A9800E84674 /* FKFlickrTestEcho.m */; };
+		553B85311BCEB24A00BF59AF /* FKFlickrTestLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EDB17678A9800E84674 /* FKFlickrTestLogin.m */; };
+		553B85321BCEB24A00BF59AF /* FKFlickrTestNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EDD17678A9800E84674 /* FKFlickrTestNull.m */; };
+		553B85331BCEB24A00BF59AF /* FKFlickrUrlsGetGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EE017678A9800E84674 /* FKFlickrUrlsGetGroup.m */; };
+		553B85341BCEB24A00BF59AF /* FKFlickrUrlsGetUserPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EE217678A9800E84674 /* FKFlickrUrlsGetUserPhotos.m */; };
+		553B85351BCEB24A00BF59AF /* FKFlickrUrlsGetUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EE417678A9800E84674 /* FKFlickrUrlsGetUserProfile.m */; };
+		553B85361BCEB24A00BF59AF /* FKFlickrUrlsLookupGallery.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EE617678A9800E84674 /* FKFlickrUrlsLookupGallery.m */; };
+		553B85371BCEB24A00BF59AF /* FKFlickrUrlsLookupGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EE817678A9800E84674 /* FKFlickrUrlsLookupGroup.m */; };
+		553B85381BCEB24A00BF59AF /* FKFlickrUrlsLookupUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2EEA17678A9800E84674 /* FKFlickrUrlsLookupUser.m */; };
+		553B853A1BCEB24A00BF59AF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AEEF59175766EF00B61A3C /* SystemConfiguration.framework */; };
+		553B853B1BCEB24A00BF59AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552D911B1753951300BE3FEA /* Foundation.framework */; };
 		555F2EEB17678A9800E84674 /* FKFlickrActivityUserComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D2917678A9700E84674 /* FKFlickrActivityUserComments.m */; };
 		555F2EEC17678A9800E84674 /* FKFlickrActivityUserComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D2917678A9700E84674 /* FKFlickrActivityUserComments.m */; };
 		555F2EED17678A9800E84674 /* FKFlickrActivityUserPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 555F2D2B17678A9700E84674 /* FKFlickrActivityUserPhotos.m */; };
@@ -478,6 +701,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		553B853C1BCEB24A00BF59AF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -510,6 +742,7 @@
 		552D92171754DBAC00BE3FEA /* FKDUDefaultDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKDUDefaultDiskCache.m; sourceTree = "<group>"; };
 		552D921A1754DC6500BE3FEA /* FKDUDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKDUDiskCache.h; sourceTree = "<group>"; };
 		552D921D175504DF00BE3FEA /* FlickrKit_Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrKit_Tests.h; sourceTree = "<group>"; };
+		553B85401BCEB24A00BF59AF /* libFlickrKit-TV.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libFlickrKit-TV.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		555ADB1C1766640100AA91AB /* FKFlickrAPIMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKFlickrAPIMethod.h; path = Model/FKFlickrAPIMethod.h; sourceTree = "<group>"; };
 		555F2D2817678A9700E84674 /* FKFlickrActivityUserComments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFlickrActivityUserComments.h; sourceTree = "<group>"; };
 		555F2D2917678A9700E84674 /* FKFlickrActivityUserComments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFlickrActivityUserComments.m; sourceTree = "<group>"; };
@@ -973,6 +1206,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		553B85391BCEB24A00BF59AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				553B853A1BCEB24A00BF59AF /* SystemConfiguration.framework in Frameworks */,
+				553B853B1BCEB24A00BF59AF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -995,6 +1237,7 @@
 			children = (
 				552D918C1753F8EF00BE3FEA /* libFlickrKit.a */,
 				552D919A1753F8F000BE3FEA /* FlickrKitTests.xctest */,
+				553B85401BCEB24A00BF59AF /* libFlickrKit-TV.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1900,6 +2143,23 @@
 			productReference = 552D919A1753F8F000BE3FEA /* FlickrKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		553B845A1BCEB24A00BF59AF /* FlickrKit-TV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 553B853D1BCEB24A00BF59AF /* Build configuration list for PBXNativeTarget "FlickrKit-TV" */;
+			buildPhases = (
+				553B845B1BCEB24A00BF59AF /* Sources */,
+				553B85391BCEB24A00BF59AF /* Frameworks */,
+				553B853C1BCEB24A00BF59AF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FlickrKit-TV";
+			productName = FlickrKit;
+			productReference = 553B85401BCEB24A00BF59AF /* libFlickrKit-TV.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1924,6 +2184,7 @@
 			projectRoot = "";
 			targets = (
 				552D918B1753F8EF00BE3FEA /* FlickrKit */,
+				553B845A1BCEB24A00BF59AF /* FlickrKit-TV */,
 				552D91991753F8F000BE3FEA /* FlickrKitTests */,
 			);
 		};
@@ -2412,6 +2673,234 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		553B845B1BCEB24A00BF59AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				553B845C1BCEB24A00BF59AF /* FKDUBlocks.m in Sources */,
+				553B845D1BCEB24A00BF59AF /* FKDUConcurrentOperation.m in Sources */,
+				553B845E1BCEB24A00BF59AF /* FKDUNetworkController.m in Sources */,
+				553B845F1BCEB24A00BF59AF /* FKFlickrNetworkOperation.m in Sources */,
+				553B84601BCEB24A00BF59AF /* FKURLBuilder.m in Sources */,
+				553B84611BCEB24A00BF59AF /* FKDUDefaultDiskCache.m in Sources */,
+				553B84621BCEB24A00BF59AF /* FKUtilities.m in Sources */,
+				553B84631BCEB24A00BF59AF /* FKDUReachability.m in Sources */,
+				553B84641BCEB24A00BF59AF /* FKDataTypes.m in Sources */,
+				553B84651BCEB24A00BF59AF /* FlickrKit.m in Sources */,
+				553B84661BCEB24A00BF59AF /* FKDUNetworkOperation.m in Sources */,
+				553B84671BCEB24A00BF59AF /* FKImageUploadNetworkOperation.m in Sources */,
+				553B84681BCEB24A00BF59AF /* FKUploadRespone.m in Sources */,
+				553B84691BCEB24A00BF59AF /* FKDUStreamUtil.m in Sources */,
+				553B846A1BCEB24A00BF59AF /* FKFlickrActivityUserComments.m in Sources */,
+				553B846B1BCEB24A00BF59AF /* FKFlickrActivityUserPhotos.m in Sources */,
+				553B846C1BCEB24A00BF59AF /* FKFlickrAuthCheckToken.m in Sources */,
+				553B846D1BCEB24A00BF59AF /* FKFlickrAuthGetFrob.m in Sources */,
+				553B846E1BCEB24A00BF59AF /* FKFlickrAuthGetFullToken.m in Sources */,
+				553B846F1BCEB24A00BF59AF /* FKFlickrAuthGetToken.m in Sources */,
+				553B84701BCEB24A00BF59AF /* FKFlickrAuthOauthCheckToken.m in Sources */,
+				553B84711BCEB24A00BF59AF /* FKFlickrAuthOauthGetAccessToken.m in Sources */,
+				553B84721BCEB24A00BF59AF /* FKFlickrBlogsGetList.m in Sources */,
+				553B84731BCEB24A00BF59AF /* FKFlickrBlogsGetServices.m in Sources */,
+				553B84741BCEB24A00BF59AF /* FKFlickrBlogsPostPhoto.m in Sources */,
+				553B84751BCEB24A00BF59AF /* FKFlickrCamerasGetBrandModels.m in Sources */,
+				553B84761BCEB24A00BF59AF /* FKFlickrCamerasGetBrands.m in Sources */,
+				553B84771BCEB24A00BF59AF /* FKFlickrCollectionsGetInfo.m in Sources */,
+				553B84781BCEB24A00BF59AF /* FKFlickrCollectionsGetTree.m in Sources */,
+				553B84791BCEB24A00BF59AF /* FKFlickrCommonsGetInstitutions.m in Sources */,
+				553B847A1BCEB24A00BF59AF /* FKFlickrContactsGetList.m in Sources */,
+				553B847B1BCEB24A00BF59AF /* FKFlickrContactsGetListRecentlyUploaded.m in Sources */,
+				553B847C1BCEB24A00BF59AF /* FKFlickrContactsGetPublicList.m in Sources */,
+				553B847D1BCEB24A00BF59AF /* FKFlickrContactsGetTaggingSuggestions.m in Sources */,
+				553B847E1BCEB24A00BF59AF /* FKFlickrFavoritesAdd.m in Sources */,
+				553B847F1BCEB24A00BF59AF /* FKFlickrFavoritesGetContext.m in Sources */,
+				553B84801BCEB24A00BF59AF /* FKOFHMACSha1Base64.m in Sources */,
+				553B84811BCEB24A00BF59AF /* FKFlickrFavoritesGetList.m in Sources */,
+				553B84821BCEB24A00BF59AF /* FKFlickrFavoritesGetPublicList.m in Sources */,
+				553B84831BCEB24A00BF59AF /* FKFlickrFavoritesRemove.m in Sources */,
+				553B84841BCEB24A00BF59AF /* FKFlickrGalleriesAddPhoto.m in Sources */,
+				553B84851BCEB24A00BF59AF /* FKFlickrGalleriesCreate.m in Sources */,
+				553B84861BCEB24A00BF59AF /* FKFlickrGalleriesEditMeta.m in Sources */,
+				553B84871BCEB24A00BF59AF /* FKFlickrGalleriesEditPhoto.m in Sources */,
+				553B84881BCEB24A00BF59AF /* FKFlickrGalleriesEditPhotos.m in Sources */,
+				553B84891BCEB24A00BF59AF /* FKFlickrGalleriesGetInfo.m in Sources */,
+				553B848A1BCEB24A00BF59AF /* FKFlickrGalleriesGetList.m in Sources */,
+				553B848B1BCEB24A00BF59AF /* FKFlickrGalleriesGetListForPhoto.m in Sources */,
+				553B848C1BCEB24A00BF59AF /* FKFlickrGalleriesGetPhotos.m in Sources */,
+				553B848D1BCEB24A00BF59AF /* FKFlickrGroupsDiscussRepliesAdd.m in Sources */,
+				553B848E1BCEB24A00BF59AF /* FKFlickrGroupsDiscussRepliesDelete.m in Sources */,
+				553B848F1BCEB24A00BF59AF /* FKFlickrGroupsDiscussRepliesEdit.m in Sources */,
+				553B84901BCEB24A00BF59AF /* FKFlickrGroupsDiscussRepliesGetInfo.m in Sources */,
+				553B84911BCEB24A00BF59AF /* FKFlickrGroupsDiscussRepliesGetList.m in Sources */,
+				553B84921BCEB24A00BF59AF /* FKFlickrGroupsDiscussTopicsAdd.m in Sources */,
+				553B84931BCEB24A00BF59AF /* FKFlickrGroupsDiscussTopicsGetInfo.m in Sources */,
+				553B84941BCEB24A00BF59AF /* FKFlickrGroupsDiscussTopicsGetList.m in Sources */,
+				553B84951BCEB24A00BF59AF /* FKFlickrGroupsBrowse.m in Sources */,
+				553B84961BCEB24A00BF59AF /* FKFlickrGroupsGetInfo.m in Sources */,
+				553B84971BCEB24A00BF59AF /* FKFlickrGroupsJoin.m in Sources */,
+				553B84981BCEB24A00BF59AF /* FKFlickrGroupsJoinRequest.m in Sources */,
+				553B84991BCEB24A00BF59AF /* FKFlickrGroupsLeave.m in Sources */,
+				553B849A1BCEB24A00BF59AF /* FKFlickrGroupsSearch.m in Sources */,
+				553B849B1BCEB24A00BF59AF /* FKFlickrGroupsMembersGetList.m in Sources */,
+				553B849C1BCEB24A00BF59AF /* FKFlickrGroupsPoolsAdd.m in Sources */,
+				553B849D1BCEB24A00BF59AF /* FKFlickrGroupsPoolsGetContext.m in Sources */,
+				553B849E1BCEB24A00BF59AF /* FKFlickrGroupsPoolsGetGroups.m in Sources */,
+				553B849F1BCEB24A00BF59AF /* FKFlickrGroupsPoolsGetPhotos.m in Sources */,
+				553B84A01BCEB24A00BF59AF /* FKFlickrGroupsPoolsRemove.m in Sources */,
+				553B84A11BCEB24A00BF59AF /* FKFlickrInterestingnessGetList.m in Sources */,
+				553B84A21BCEB24A00BF59AF /* FKFlickrMachinetagsGetNamespaces.m in Sources */,
+				553B84A31BCEB24A00BF59AF /* FKFlickrMachinetagsGetPairs.m in Sources */,
+				553B84A41BCEB24A00BF59AF /* FKFlickrMachinetagsGetPredicates.m in Sources */,
+				553B84A51BCEB24A00BF59AF /* FKFlickrMachinetagsGetRecentValues.m in Sources */,
+				553B84A61BCEB24A00BF59AF /* FKFlickrMachinetagsGetValues.m in Sources */,
+				553B84A71BCEB24A00BF59AF /* FKFlickrPandaGetList.m in Sources */,
+				553B84A81BCEB24A00BF59AF /* FKFlickrPandaGetPhotos.m in Sources */,
+				553B84A91BCEB24A00BF59AF /* FKFlickrPeopleFindByEmail.m in Sources */,
+				553B84AA1BCEB24A00BF59AF /* FKFlickrPeopleFindByUsername.m in Sources */,
+				553B84AB1BCEB24A00BF59AF /* FKFlickrPeopleGetGroups.m in Sources */,
+				553B84AC1BCEB24A00BF59AF /* FKFlickrPeopleGetInfo.m in Sources */,
+				553B84AD1BCEB24A00BF59AF /* FKFlickrPeopleGetLimits.m in Sources */,
+				553B84AE1BCEB24A00BF59AF /* FKFlickrPeopleGetPhotos.m in Sources */,
+				553B84AF1BCEB24A00BF59AF /* FKFlickrPeopleGetPhotosOf.m in Sources */,
+				553B84B01BCEB24A00BF59AF /* FKFlickrPeopleGetPublicGroups.m in Sources */,
+				553B84B11BCEB24A00BF59AF /* FKFlickrPeopleGetPublicPhotos.m in Sources */,
+				553B84B21BCEB24A00BF59AF /* FKFlickrPeopleGetUploadStatus.m in Sources */,
+				553B84B31BCEB24A00BF59AF /* FKFlickrPhotosCommentsAddComment.m in Sources */,
+				553B84B41BCEB24A00BF59AF /* FKFlickrPhotosCommentsDeleteComment.m in Sources */,
+				553B84B51BCEB24A00BF59AF /* FKFlickrPhotosCommentsEditComment.m in Sources */,
+				553B84B61BCEB24A00BF59AF /* FKFlickrPhotosCommentsGetList.m in Sources */,
+				553B84B71BCEB24A00BF59AF /* FKFlickrPhotosCommentsGetRecentForContacts.m in Sources */,
+				553B84B81BCEB24A00BF59AF /* FKFlickrPhotosAddTags.m in Sources */,
+				553B84B91BCEB24A00BF59AF /* FKFlickrPhotosDelete.m in Sources */,
+				553B84BA1BCEB24A00BF59AF /* FKFlickrPhotosGetAllContexts.m in Sources */,
+				553B84BB1BCEB24A00BF59AF /* FKFlickrPhotosGetContactsPhotos.m in Sources */,
+				553B84BC1BCEB24A00BF59AF /* FKFlickrPhotosGetContactsPublicPhotos.m in Sources */,
+				553B84BD1BCEB24A00BF59AF /* FKFlickrPhotosGetContext.m in Sources */,
+				553B84BE1BCEB24A00BF59AF /* FKFlickrPhotosGetCounts.m in Sources */,
+				553B84BF1BCEB24A00BF59AF /* FKFlickrPhotosGetExif.m in Sources */,
+				553B84C01BCEB24A00BF59AF /* FKFlickrPhotosGetFavorites.m in Sources */,
+				553B84C11BCEB24A00BF59AF /* FKFlickrPhotosGetInfo.m in Sources */,
+				553B84C21BCEB24A00BF59AF /* FKFlickrPhotosGetNotInSet.m in Sources */,
+				553B84C31BCEB24A00BF59AF /* FKFlickrPhotosGetPerms.m in Sources */,
+				553B84C41BCEB24A00BF59AF /* FKFlickrPhotosGetRecent.m in Sources */,
+				553B84C51BCEB24A00BF59AF /* FKFlickrPhotosGetSizes.m in Sources */,
+				553B84C61BCEB24A00BF59AF /* FKFlickrPhotosGetUntagged.m in Sources */,
+				553B84C71BCEB24A00BF59AF /* FKFlickrPhotosGetWithGeoData.m in Sources */,
+				553B84C81BCEB24A00BF59AF /* FKFlickrPhotosGetWithoutGeoData.m in Sources */,
+				553B84C91BCEB24A00BF59AF /* FKFlickrPhotosRecentlyUpdated.m in Sources */,
+				553B84CA1BCEB24A00BF59AF /* FKFlickrPhotosRemoveTag.m in Sources */,
+				553B84CB1BCEB24A00BF59AF /* FKFlickrPhotosSearch.m in Sources */,
+				553B84CC1BCEB24A00BF59AF /* FKFlickrPhotosSetContentType.m in Sources */,
+				553B84CD1BCEB24A00BF59AF /* FKFlickrPhotosSetDates.m in Sources */,
+				553B84CE1BCEB24A00BF59AF /* FKFlickrPhotosSetMeta.m in Sources */,
+				553B84CF1BCEB24A00BF59AF /* FKFlickrPhotosSetPerms.m in Sources */,
+				553B84D01BCEB24A00BF59AF /* FKFlickrPhotosSetSafetyLevel.m in Sources */,
+				553B84D11BCEB24A00BF59AF /* FKFlickrPhotosSetTags.m in Sources */,
+				553B84D21BCEB24A00BF59AF /* FKFlickrPhotosGeoBatchCorrectLocation.m in Sources */,
+				553B84D31BCEB24A00BF59AF /* FKFlickrPhotosGeoCorrectLocation.m in Sources */,
+				553B84D41BCEB24A00BF59AF /* FKFlickrPhotosGeoGetLocation.m in Sources */,
+				553B84D51BCEB24A00BF59AF /* FKFlickrPhotosGeoGetPerms.m in Sources */,
+				553B84D61BCEB24A00BF59AF /* FKFlickrPhotosGeoPhotosForLocation.m in Sources */,
+				553B84D71BCEB24A00BF59AF /* FKFlickrPhotosGeoRemoveLocation.m in Sources */,
+				553B84D81BCEB24A00BF59AF /* FKFlickrPhotosGeoSetContext.m in Sources */,
+				553B84D91BCEB24A00BF59AF /* FKFlickrPhotosGeoSetLocation.m in Sources */,
+				553B84DA1BCEB24A00BF59AF /* FKFlickrPhotosGeoSetPerms.m in Sources */,
+				553B84DB1BCEB24A00BF59AF /* FKFlickrPhotosLicensesGetInfo.m in Sources */,
+				553B84DC1BCEB24A00BF59AF /* FKFlickrPhotosLicensesSetLicense.m in Sources */,
+				553B84DD1BCEB24A00BF59AF /* FKFlickrPhotosNotesAdd.m in Sources */,
+				553B84DE1BCEB24A00BF59AF /* FKFlickrPhotosNotesDelete.m in Sources */,
+				553B84DF1BCEB24A00BF59AF /* FKFlickrPhotosNotesEdit.m in Sources */,
+				553B84E01BCEB24A00BF59AF /* FKFlickrPhotosPeopleAdd.m in Sources */,
+				553B84E11BCEB24A00BF59AF /* FKFlickrPhotosPeopleDelete.m in Sources */,
+				553B84E21BCEB24A00BF59AF /* FKFlickrPhotosPeopleDeleteCoords.m in Sources */,
+				553B84E31BCEB24A00BF59AF /* FKFlickrPhotosPeopleEditCoords.m in Sources */,
+				553B84E41BCEB24A00BF59AF /* FKFlickrPhotosPeopleGetList.m in Sources */,
+				553B84E51BCEB24A00BF59AF /* FKFlickrPhotosSuggestionsApproveSuggestion.m in Sources */,
+				553B84E61BCEB24A00BF59AF /* FKFlickrPhotosSuggestionsGetList.m in Sources */,
+				553B84E71BCEB24A00BF59AF /* FKFlickrPhotosSuggestionsRejectSuggestion.m in Sources */,
+				553B84E81BCEB24A00BF59AF /* FKFlickrPhotosSuggestionsRemoveSuggestion.m in Sources */,
+				553B84E91BCEB24A00BF59AF /* FKFlickrPhotosSuggestionsSuggestLocation.m in Sources */,
+				553B84EA1BCEB24A00BF59AF /* FKFlickrPhotosTransformRotate.m in Sources */,
+				553B84EB1BCEB24A00BF59AF /* FKFlickrPhotosUploadCheckTickets.m in Sources */,
+				553B84EC1BCEB24A00BF59AF /* FKFlickrPhotosetsCommentsAddComment.m in Sources */,
+				553B84ED1BCEB24A00BF59AF /* FKFlickrPhotosetsCommentsDeleteComment.m in Sources */,
+				553B84EE1BCEB24A00BF59AF /* FKFlickrPhotosetsCommentsEditComment.m in Sources */,
+				553B84EF1BCEB24A00BF59AF /* FKFlickrPhotosetsCommentsGetList.m in Sources */,
+				553B84F01BCEB24A00BF59AF /* FKFlickrPhotosetsAddPhoto.m in Sources */,
+				553B84F11BCEB24A00BF59AF /* FKFlickrPhotosetsCreate.m in Sources */,
+				553B84F21BCEB24A00BF59AF /* FKFlickrPhotosetsDelete.m in Sources */,
+				553B84F31BCEB24A00BF59AF /* FKFlickrPhotosetsEditMeta.m in Sources */,
+				553B84F41BCEB24A00BF59AF /* FKFlickrPhotosetsEditPhotos.m in Sources */,
+				553B84F51BCEB24A00BF59AF /* FKFlickrPhotosetsGetContext.m in Sources */,
+				553B84F61BCEB24A00BF59AF /* FKFlickrPhotosetsGetInfo.m in Sources */,
+				553B84F71BCEB24A00BF59AF /* FKFlickrPhotosetsGetList.m in Sources */,
+				553B84F81BCEB24A00BF59AF /* FKFlickrPhotosetsGetPhotos.m in Sources */,
+				553B84F91BCEB24A00BF59AF /* FKFlickrPhotosetsOrderSets.m in Sources */,
+				553B84FA1BCEB24A00BF59AF /* FKFlickrPhotosetsRemovePhoto.m in Sources */,
+				553B84FB1BCEB24A00BF59AF /* FKFlickrPhotosetsRemovePhotos.m in Sources */,
+				553B84FC1BCEB24A00BF59AF /* FKFlickrPhotosetsReorderPhotos.m in Sources */,
+				553B84FD1BCEB24A00BF59AF /* FKFlickrPhotosetsSetPrimaryPhoto.m in Sources */,
+				553B84FE1BCEB24A00BF59AF /* FKFlickrPlacesFind.m in Sources */,
+				553B84FF1BCEB24A00BF59AF /* FKFlickrPlacesFindByLatLon.m in Sources */,
+				553B85001BCEB24A00BF59AF /* FKFlickrPlacesGetChildrenWithPhotosPublic.m in Sources */,
+				553B85011BCEB24A00BF59AF /* FKFlickrPlacesGetInfo.m in Sources */,
+				553B85021BCEB24A00BF59AF /* FKFlickrPlacesGetInfoByUrl.m in Sources */,
+				553B85031BCEB24A00BF59AF /* FKFlickrPlacesGetPlaceTypes.m in Sources */,
+				553B85041BCEB24A00BF59AF /* FKFlickrPlacesGetShapeHistory.m in Sources */,
+				553B85051BCEB24A00BF59AF /* FKFlickrPlacesGetTopPlacesList.m in Sources */,
+				553B85061BCEB24A00BF59AF /* FKFlickrPlacesPlacesForBoundingBox.m in Sources */,
+				553B85071BCEB24A00BF59AF /* FKFlickrPlacesPlacesForContacts.m in Sources */,
+				553B85081BCEB24A00BF59AF /* FKFlickrPlacesPlacesForTags.m in Sources */,
+				553B85091BCEB24A00BF59AF /* FKFlickrPlacesPlacesForUser.m in Sources */,
+				553B850A1BCEB24A00BF59AF /* FKFlickrPlacesResolvePlaceId.m in Sources */,
+				553B850B1BCEB24A00BF59AF /* FKFlickrPlacesResolvePlaceURL.m in Sources */,
+				553B850C1BCEB24A00BF59AF /* FKFlickrPlacesTagsForPlace.m in Sources */,
+				553B850D1BCEB24A00BF59AF /* FKFlickrPrefsGetContentType.m in Sources */,
+				553B850E1BCEB24A00BF59AF /* FKFlickrPrefsGetGeoPerms.m in Sources */,
+				553B850F1BCEB24A00BF59AF /* FKFlickrPrefsGetHidden.m in Sources */,
+				553B85101BCEB24A00BF59AF /* FKFlickrPrefsGetPrivacy.m in Sources */,
+				553B85111BCEB24A00BF59AF /* FKFlickrPrefsGetSafetyLevel.m in Sources */,
+				553B85121BCEB24A00BF59AF /* FKFlickrPushGetSubscriptions.m in Sources */,
+				553B85131BCEB24A00BF59AF /* FKFlickrPushGetTopics.m in Sources */,
+				553B85141BCEB24A00BF59AF /* FKFlickrPushSubscribe.m in Sources */,
+				553B85151BCEB24A00BF59AF /* FKFlickrPushUnsubscribe.m in Sources */,
+				553B85161BCEB24A00BF59AF /* FKFlickrReflectionGetMethodInfo.m in Sources */,
+				553B85171BCEB24A00BF59AF /* FKFlickrReflectionGetMethods.m in Sources */,
+				553B85181BCEB24A00BF59AF /* FKFlickrStatsGetCollectionDomains.m in Sources */,
+				553B85191BCEB24A00BF59AF /* FKFlickrStatsGetCollectionReferrers.m in Sources */,
+				553B851A1BCEB24A00BF59AF /* FKFlickrStatsGetCollectionStats.m in Sources */,
+				553B851B1BCEB24A00BF59AF /* FKFlickrStatsGetCSVFiles.m in Sources */,
+				553B851C1BCEB24A00BF59AF /* FKFlickrStatsGetPhotoDomains.m in Sources */,
+				553B851D1BCEB24A00BF59AF /* FKFlickrStatsGetPhotoReferrers.m in Sources */,
+				553B851E1BCEB24A00BF59AF /* FKFlickrStatsGetPhotosetDomains.m in Sources */,
+				553B851F1BCEB24A00BF59AF /* FKFlickrStatsGetPhotosetReferrers.m in Sources */,
+				553B85201BCEB24A00BF59AF /* FKFlickrStatsGetPhotosetStats.m in Sources */,
+				553B85211BCEB24A00BF59AF /* FKFlickrStatsGetPhotoStats.m in Sources */,
+				553B85221BCEB24A00BF59AF /* FKFlickrStatsGetPhotostreamDomains.m in Sources */,
+				553B85231BCEB24A00BF59AF /* FKFlickrStatsGetPhotostreamReferrers.m in Sources */,
+				553B85241BCEB24A00BF59AF /* FKFlickrStatsGetPhotostreamStats.m in Sources */,
+				553B85251BCEB24A00BF59AF /* FKFlickrStatsGetPopularPhotos.m in Sources */,
+				553B85261BCEB24A00BF59AF /* FKFlickrStatsGetTotalViews.m in Sources */,
+				553B85271BCEB24A00BF59AF /* FKFlickrTagsGetClusterPhotos.m in Sources */,
+				553B85281BCEB24A00BF59AF /* FKFlickrTagsGetClusters.m in Sources */,
+				553B85291BCEB24A00BF59AF /* FKFlickrTagsGetHotList.m in Sources */,
+				553B852A1BCEB24A00BF59AF /* FKFlickrTagsGetListPhoto.m in Sources */,
+				553B852B1BCEB24A00BF59AF /* FKFlickrTagsGetListUser.m in Sources */,
+				553B852C1BCEB24A00BF59AF /* FKFlickrTagsGetListUserPopular.m in Sources */,
+				553B852D1BCEB24A00BF59AF /* FKFlickrTagsGetListUserRaw.m in Sources */,
+				553B852E1BCEB24A00BF59AF /* FKFlickrTagsGetMostFrequentlyUsed.m in Sources */,
+				553B852F1BCEB24A00BF59AF /* FKFlickrTagsGetRelated.m in Sources */,
+				553B85301BCEB24A00BF59AF /* FKFlickrTestEcho.m in Sources */,
+				553B85311BCEB24A00BF59AF /* FKFlickrTestLogin.m in Sources */,
+				553B85321BCEB24A00BF59AF /* FKFlickrTestNull.m in Sources */,
+				553B85331BCEB24A00BF59AF /* FKFlickrUrlsGetGroup.m in Sources */,
+				553B85341BCEB24A00BF59AF /* FKFlickrUrlsGetUserPhotos.m in Sources */,
+				553B85351BCEB24A00BF59AF /* FKFlickrUrlsGetUserProfile.m in Sources */,
+				553B85361BCEB24A00BF59AF /* FKFlickrUrlsLookupGallery.m in Sources */,
+				553B85371BCEB24A00BF59AF /* FKFlickrUrlsLookupGroup.m in Sources */,
+				553B85381BCEB24A00BF59AF /* FKFlickrUrlsLookupUser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -2549,6 +3038,34 @@
 			};
 			name = Release;
 		};
+		553B853E1BCEB24A00BF59AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/FlickrKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Resources/FlickrKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
+			};
+			name = Debug;
+		};
+		553B853F1BCEB24A00BF59AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/FlickrKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Resources/FlickrKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2575,6 +3092,15 @@
 			buildConfigurations = (
 				552D91AE1753F8F100BE3FEA /* Debug */,
 				552D91AF1753F8F100BE3FEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		553B853D1BCEB24A00BF59AF /* Build configuration list for PBXNativeTarget "FlickrKit-TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				553B853E1BCEB24A00BF59AF /* Debug */,
+				553B853F1BCEB24A00BF59AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -20,7 +20,9 @@
 @property (nonatomic, retain) NSDictionary *args;
 @property (nonatomic, assign) CGFloat uploadProgress;
 @property (nonatomic, assign) NSUInteger fileSize;
+#if TARGET_OS_IOS
 @property (nonatomic, assign) NSURL* assetURL;
+#endif
 @end
 
 @implementation FKImageUploadNetworkOperation
@@ -29,13 +31,16 @@
     self = [super init];
     if (self) {
 		self.image = image;
+#if TARGET_OS_IOS
         self.assetURL = nil;
+#endif
 		self.args = args;
 		self.completion = completion;
     }
     return self;
 }
 
+#if TARGET_OS_IOS
 - (id) initWithAssetURL:(NSURL *)assetURL arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion; {
     self = [super init];
     if (self) {
@@ -46,6 +51,7 @@
     }
     return self;
 }
+#endif
 
 #pragma mark - DUOperation methods
 
@@ -131,6 +137,7 @@
         // Write the contents to the streams... don't cross the streams !
         [FKDUStreamUtil writeMultipartStartString:multipartOpeningString imageStream:inImageStream toOutputStream:outputStream closingString:multipartClosingString];
     }
+#if TARGET_OS_IOS
     else if( self.assetURL ){
         [FKDUStreamUtil writeMultipartWithAssetURL:self.assetURL
                                        startString:multipartOpeningString
@@ -138,6 +145,7 @@
                                     toOutputStream:outputStream
                                      closingString:multipartClosingString];
     }
+#endif
     else{
         return nil;
     }

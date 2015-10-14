@@ -22,7 +22,7 @@ NSString *FKMD5FromString(NSString *string) {
 #pragma mark - URL Escaped Strings
 
 NSString *FKEscapedURLString(NSString *string) {
-	return [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    return [string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
 NSString *FKEscapedURLStringPlus(NSString *string) {
