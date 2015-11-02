@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosGeoRemoveLocationError) {
 	FKFlickrPhotosGeoRemoveLocationError_PhotoNotFound = 1,		 /* The photo id was either invalid or was for a photo not viewable by the calling user. */
 	FKFlickrPhotosGeoRemoveLocationError_PhotoHasNoLocationInformation = 2,		 /* The specified photo has not been geotagged - there is nothing to remove. */
 	FKFlickrPhotosGeoRemoveLocationError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
@@ -27,7 +27,7 @@ typedef enum {
 	FKFlickrPhotosGeoRemoveLocationError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosGeoRemoveLocationError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosGeoRemoveLocationError;
+};
 
 /*
 

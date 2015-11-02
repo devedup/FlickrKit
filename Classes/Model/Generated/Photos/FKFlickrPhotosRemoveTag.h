@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosRemoveTagError) {
 	FKFlickrPhotosRemoveTagError_TagNotFound = 1,		 /* The calling user doesn't have permission to delete the specified tag. This could mean it belongs to someone else, or doesn't exist. */
 	FKFlickrPhotosRemoveTagError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrPhotosRemoveTagError_InvalidSignature = 96,		 /* The passed signature was invalid. */
@@ -26,7 +26,7 @@ typedef enum {
 	FKFlickrPhotosRemoveTagError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosRemoveTagError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosRemoveTagError;
+};
 
 /*
 

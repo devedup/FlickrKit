@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrGroupsSearchError) {
 	FKFlickrGroupsSearchError_NoTextPassed = 1,		 /* The required text argument was ommited. */
 	FKFlickrGroupsSearchError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrGroupsSearchError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
@@ -21,7 +21,7 @@ typedef enum {
 	FKFlickrGroupsSearchError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrGroupsSearchError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrGroupsSearchError;
+};
 
 /*
 

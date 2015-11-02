@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrTagsGetListUserRawError) {
 	FKFlickrTagsGetListUserRawError_UserNotFound = 1,		 /* The calling user was not logged in. */
 	FKFlickrTagsGetListUserRawError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrTagsGetListUserRawError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
@@ -21,7 +21,7 @@ typedef enum {
 	FKFlickrTagsGetListUserRawError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrTagsGetListUserRawError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrTagsGetListUserRawError;
+};
 
 /*
 

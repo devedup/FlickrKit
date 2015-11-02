@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosGetSizesError) {
 	FKFlickrPhotosGetSizesError_PhotoNotFound = 1,		 /* The photo id passed was not a valid photo id. */
 	FKFlickrPhotosGetSizesError_PermissionDenied = 2,		 /* The calling user does not have permission to view the photo. */
 	FKFlickrPhotosGetSizesError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
@@ -22,7 +22,7 @@ typedef enum {
 	FKFlickrPhotosGetSizesError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosGetSizesError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosGetSizesError;
+};
 
 /*
 

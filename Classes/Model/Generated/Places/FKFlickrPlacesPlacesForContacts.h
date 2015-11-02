@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPlacesPlacesForContactsError) {
 	FKFlickrPlacesPlacesForContactsError_PlacesForContactsAreNotAvailableAtThisTime = 1,		 /* Places for contacts have been disabled or are otherwise not available. */
 	FKFlickrPlacesPlacesForContactsError_RequiredParameterMissing = 2,		 /* One or more of the required parameters was not included with your request. */
 	FKFlickrPlacesPlacesForContactsError_NotAValidPlaceType = 3,		 /* An invalid place type was included with your request. */
@@ -31,7 +31,7 @@ typedef enum {
 	FKFlickrPlacesPlacesForContactsError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPlacesPlacesForContactsError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPlacesPlacesForContactsError;
+};
 
 /*
 

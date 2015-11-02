@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosSetSafetyLevelError) {
 	FKFlickrPhotosSetSafetyLevelError_PhotoNotFound = 1,		 /* The photo id passed was not a valid photo id of a photo belonging to the calling user. */
 	FKFlickrPhotosSetSafetyLevelError_InvalidOrMissingArguments = 2,		 /* Neither a valid safety level nor a hidden value were passed. */
 	FKFlickrPhotosSetSafetyLevelError_ChangeNotAllowed = 3,		 /* Changing the safety level of this photo is not allowed. */
@@ -28,7 +28,7 @@ typedef enum {
 	FKFlickrPhotosSetSafetyLevelError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosSetSafetyLevelError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosSetSafetyLevelError;
+};
 
 /*
 

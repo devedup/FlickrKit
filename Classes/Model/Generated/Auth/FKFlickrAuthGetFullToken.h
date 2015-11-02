@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrAuthGetFullTokenError) {
 	FKFlickrAuthGetFullTokenError_MinitokenNotFound = 1,		 /* The passed mini-token was not valid. */
 	FKFlickrAuthGetFullTokenError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrAuthGetFullTokenError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
@@ -21,7 +21,7 @@ typedef enum {
 	FKFlickrAuthGetFullTokenError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrAuthGetFullTokenError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrAuthGetFullTokenError;
+};
 
 /*
 

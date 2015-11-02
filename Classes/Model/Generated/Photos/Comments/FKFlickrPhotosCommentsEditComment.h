@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosCommentsEditCommentError) {
 	FKFlickrPhotosCommentsEditCommentError_PhotoNotFound = 1,		 /* The requested comment is against a photo which no longer exists. */
 	FKFlickrPhotosCommentsEditCommentError_CommentNotFound = 2,		 /* The comment id passed was not a valid comment id */
 	FKFlickrPhotosCommentsEditCommentError_BlankComment = 8,		 /* Comment text can not be blank */
@@ -28,7 +28,7 @@ typedef enum {
 	FKFlickrPhotosCommentsEditCommentError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosCommentsEditCommentError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosCommentsEditCommentError;
+};
 
 /*
 

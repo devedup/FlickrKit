@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosGetExifError) {
 	FKFlickrPhotosGetExifError_PhotoNotFound = 1,		 /* The photo id was either invalid or was for a photo not viewable by the calling user. */
 	FKFlickrPhotosGetExifError_PermissionDenied = 2,		 /* The owner of the photo does not want to share EXIF data. */
 	FKFlickrPhotosGetExifError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
@@ -22,7 +22,7 @@ typedef enum {
 	FKFlickrPhotosGetExifError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosGetExifError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosGetExifError;
+};
 
 /*
 

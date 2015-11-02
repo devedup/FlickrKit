@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrFavoritesGetPublicListError) {
 	FKFlickrFavoritesGetPublicListError_UserNotFound = 1,		 /* The specified user NSID was not a valid flickr user. */
 	FKFlickrFavoritesGetPublicListError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrFavoritesGetPublicListError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
@@ -21,7 +21,7 @@ typedef enum {
 	FKFlickrFavoritesGetPublicListError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrFavoritesGetPublicListError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrFavoritesGetPublicListError;
+};
 
 /*
 

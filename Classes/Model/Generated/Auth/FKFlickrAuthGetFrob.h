@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrAuthGetFrobError) {
 	FKFlickrAuthGetFrobError_InvalidSignature = 96,		 /* The passed signature was invalid. */
 	FKFlickrAuthGetFrobError_MissingSignature = 97,		 /* The call required signing but no signature was sent. */
 	FKFlickrAuthGetFrobError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
@@ -22,7 +22,7 @@ typedef enum {
 	FKFlickrAuthGetFrobError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrAuthGetFrobError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrAuthGetFrobError;
+};
 
 /*
 

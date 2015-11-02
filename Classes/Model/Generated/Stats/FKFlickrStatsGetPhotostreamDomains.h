@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrStatsGetPhotostreamDomainsError) {
 	FKFlickrStatsGetPhotostreamDomainsError_UserDoesNotHaveStats = 1,		 /* The user you have requested stats has not enabled stats on their account. */
 	FKFlickrStatsGetPhotostreamDomainsError_NoStatsForThatDate = 2,		 /* No stats are available for the date requested. Flickr only keeps stats data for the last 28 days. */
 	FKFlickrStatsGetPhotostreamDomainsError_InvalidDate = 3,		 /* The date provided could not be parsed */
@@ -28,7 +28,7 @@ typedef enum {
 	FKFlickrStatsGetPhotostreamDomainsError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrStatsGetPhotostreamDomainsError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrStatsGetPhotostreamDomainsError;
+};
 
 /*
 

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrGroupsPoolsRemoveError) {
 	FKFlickrGroupsPoolsRemoveError_GroupNotFound = 1,		 /* The group_id passed did not refer to a valid group. */
 	FKFlickrGroupsPoolsRemoveError_PhotoNotInPool = 2,		 /* The photo_id passed was not a valid id of a photo in the group pool. */
 	FKFlickrGroupsPoolsRemoveError_InsufficientPermissionToRemovePhoto = 3,		 /* The calling user doesn't own the photo and is not an administrator of the group, so may not remove the photo from the pool. */
@@ -28,7 +28,7 @@ typedef enum {
 	FKFlickrGroupsPoolsRemoveError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrGroupsPoolsRemoveError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrGroupsPoolsRemoveError;
+};
 
 /*
 

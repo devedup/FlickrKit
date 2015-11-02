@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrFavoritesRemoveError) {
 	FKFlickrFavoritesRemoveError_PhotoNotInFavorites = 1,		 /* The photo id passed was not in the user's favorites. */
 	FKFlickrFavoritesRemoveError_CannotRemovePhotoFromThatUsersFavorites = 2,		 /* user_id was passed as an argument, but photo_id is not owned by the authenticated user. */
 	FKFlickrFavoritesRemoveError_UserNotFound = 3,		 /* Invalid user_id argument. */
@@ -28,7 +28,7 @@ typedef enum {
 	FKFlickrFavoritesRemoveError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrFavoritesRemoveError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrFavoritesRemoveError;
+};
 
 /*
 

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosCommentsGetRecentForContactsError) {
 	FKFlickrPhotosCommentsGetRecentForContactsError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrPhotosCommentsGetRecentForContactsError_InvalidSignature = 96,		 /* The passed signature was invalid. */
 	FKFlickrPhotosCommentsGetRecentForContactsError_MissingSignature = 97,		 /* The call required signing but no signature was sent. */
@@ -25,7 +25,7 @@ typedef enum {
 	FKFlickrPhotosCommentsGetRecentForContactsError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosCommentsGetRecentForContactsError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosCommentsGetRecentForContactsError;
+};
 
 /*
 

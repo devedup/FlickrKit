@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosPeopleDeleteError) {
 	FKFlickrPhotosPeopleDeleteError_PersonNotFound = 1,		 /* The NSID passed was not a valid user id. */
 	FKFlickrPhotosPeopleDeleteError_PhotoNotFound = 2,		 /* The photo id passed was not a valid photo id. */
 	FKFlickrPhotosPeopleDeleteError_UserCannotRemoveThatPerson = 3,		 /* The calling user did not have permission to remove this person from this photo. */
@@ -28,7 +28,7 @@ typedef enum {
 	FKFlickrPhotosPeopleDeleteError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosPeopleDeleteError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosPeopleDeleteError;
+};
 
 /*
 

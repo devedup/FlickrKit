@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosGetCountsError) {
 	FKFlickrPhotosGetCountsError_NoDatesSpecified = 1,		 /* Neither dates nor taken_dates were specified. */
 	FKFlickrPhotosGetCountsError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrPhotosGetCountsError_InvalidSignature = 96,		 /* The passed signature was invalid. */
@@ -26,7 +26,7 @@ typedef enum {
 	FKFlickrPhotosGetCountsError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosGetCountsError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosGetCountsError;
+};
 
 /*
 

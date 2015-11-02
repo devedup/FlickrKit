@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrGroupsBrowseError) {
 	FKFlickrGroupsBrowseError_CategoryNotFound = 1,		 /* The value passed for cat_id was not a valid category id. */
 	FKFlickrGroupsBrowseError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrGroupsBrowseError_InvalidSignature = 96,		 /* The passed signature was invalid. */
@@ -26,7 +26,7 @@ typedef enum {
 	FKFlickrGroupsBrowseError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrGroupsBrowseError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrGroupsBrowseError;
+};
 
 /*
 

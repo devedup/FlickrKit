@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosGeoCorrectLocationError) {
 	FKFlickrPhotosGeoCorrectLocationError_UserHasNotConfiguredDefaultViewingSettingsForLocationData = 1,		 /* Before users may assign location data to a photo they must define who, by default, may view that information. Users can edit this preference at <a href="http://www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a> */
 	FKFlickrPhotosGeoCorrectLocationError_MissingPlaceID = 2,		 /* No place ID was passed to the method */
 	FKFlickrPhotosGeoCorrectLocationError_NotAValidPlaceID = 3,		 /* The place ID passed to the method could not be identified */
@@ -29,7 +29,7 @@ typedef enum {
 	FKFlickrPhotosGeoCorrectLocationError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosGeoCorrectLocationError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosGeoCorrectLocationError;
+};
 
 /*
 

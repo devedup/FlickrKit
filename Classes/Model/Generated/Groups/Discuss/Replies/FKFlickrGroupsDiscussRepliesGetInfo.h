@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrGroupsDiscussRepliesGetInfoError) {
 	FKFlickrGroupsDiscussRepliesGetInfoError_TopicNotFound = 1,		 /* The topic_id is invalid */
 	FKFlickrGroupsDiscussRepliesGetInfoError_ReplyNotFound = 2,		 /* The reply_id is invalid */
 	FKFlickrGroupsDiscussRepliesGetInfoError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
@@ -22,7 +22,7 @@ typedef enum {
 	FKFlickrGroupsDiscussRepliesGetInfoError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrGroupsDiscussRepliesGetInfoError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrGroupsDiscussRepliesGetInfoError;
+};
 
 /*
 

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPeopleGetPhotosError) {
 	FKFlickrPeopleGetPhotosError_RequiredArgumentsMissing = 1,		 /*  */
 	FKFlickrPeopleGetPhotosError_UnknownUser = 2,		 /* A user_id was passed which did not match a valid flickr user. */
 	FKFlickrPeopleGetPhotosError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
@@ -22,7 +22,7 @@ typedef enum {
 	FKFlickrPeopleGetPhotosError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPeopleGetPhotosError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPeopleGetPhotosError;
+};
 
 /*
 

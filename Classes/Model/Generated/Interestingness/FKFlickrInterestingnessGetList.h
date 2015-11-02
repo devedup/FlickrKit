@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrInterestingnessGetListError) {
 	FKFlickrInterestingnessGetListError_NotAValidDateString = 1,		 /* The date string passed did not validate. All dates must be formatted : YYYY-MM-DD */
 	FKFlickrInterestingnessGetListError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrInterestingnessGetListError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
@@ -21,7 +21,7 @@ typedef enum {
 	FKFlickrInterestingnessGetListError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrInterestingnessGetListError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrInterestingnessGetListError;
+};
 
 /*
 

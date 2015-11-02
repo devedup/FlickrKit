@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPlacesFindError) {
 	FKFlickrPlacesFindError_RequiredParameterMissing = 1,		 /* One or more required parameters was not included with the API call. */
 	FKFlickrPlacesFindError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrPlacesFindError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
@@ -21,7 +21,7 @@ typedef enum {
 	FKFlickrPlacesFindError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPlacesFindError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPlacesFindError;
+};
 
 /*
 

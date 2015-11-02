@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosPeopleEditCoordsError) {
 	FKFlickrPhotosPeopleEditCoordsError_PersonNotFound = 1,		 /* The NSID passed was not a valid user id. */
 	FKFlickrPhotosPeopleEditCoordsError_PhotoNotFound = 2,		 /* The photo id passed was not a valid photo id. */
 	FKFlickrPhotosPeopleEditCoordsError_UserCannotEditThatPersonInThatPhoto = 3,		 /* The calling user did not originally add this person to the photo, and is not the person in question. */
@@ -30,7 +30,7 @@ typedef enum {
 	FKFlickrPhotosPeopleEditCoordsError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosPeopleEditCoordsError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosPeopleEditCoordsError;
+};
 
 /*
 

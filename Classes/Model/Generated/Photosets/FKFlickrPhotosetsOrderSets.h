@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosetsOrderSetsError) {
 	FKFlickrPhotosetsOrderSetsError_SetNotFound = 1,		 /* One of the photoset ids passed was not the id of a valid photoset belonging to the calling user. */
 	FKFlickrPhotosetsOrderSetsError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrPhotosetsOrderSetsError_InvalidSignature = 96,		 /* The passed signature was invalid. */
@@ -26,7 +26,7 @@ typedef enum {
 	FKFlickrPhotosetsOrderSetsError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosetsOrderSetsError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosetsOrderSetsError;
+};
 
 /*
 

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPushGetSubscriptionsError) {
 	FKFlickrPushGetSubscriptionsError_ServiceCurrentlyAvailableOnlyToProAccounts = 5,		 /* PuSH subscriptions are currently restricted to Pro account holders. */
 	FKFlickrPushGetSubscriptionsError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrPushGetSubscriptionsError_InvalidSignature = 96,		 /* The passed signature was invalid. */
@@ -26,7 +26,7 @@ typedef enum {
 	FKFlickrPushGetSubscriptionsError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPushGetSubscriptionsError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPushGetSubscriptionsError;
+};
 
 /*
 

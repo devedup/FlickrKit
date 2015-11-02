@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosetsCreateError) {
 	FKFlickrPhotosetsCreateError_NoTitleSpecified = 1,		 /* No title parameter was passed in the request. */
 	FKFlickrPhotosetsCreateError_PhotoNotFound = 2,		 /* The primary photo id passed was not a valid photo id or does not belong to the calling user. */
 	FKFlickrPhotosetsCreateError_CantCreateAnyMoreSets = 3,		 /* The user has reached their maximum number of photosets limit. */
@@ -28,7 +28,7 @@ typedef enum {
 	FKFlickrPhotosetsCreateError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosetsCreateError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosetsCreateError;
+};
 
 /*
 

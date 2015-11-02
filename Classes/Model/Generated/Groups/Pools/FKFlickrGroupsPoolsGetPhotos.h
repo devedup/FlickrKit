@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrGroupsPoolsGetPhotosError) {
 	FKFlickrGroupsPoolsGetPhotosError_GroupNotFound = 1,		 /* The group id passed was not a valid group id. */
 	FKFlickrGroupsPoolsGetPhotosError_YouDontHavePermissionToViewThisPool = 2,		 /* The logged in user (if any) does not have permission to view the pool for this group. */
 	FKFlickrGroupsPoolsGetPhotosError_UnknownUser = 3,		 /* The user specified by user_id does not exist. */
@@ -24,7 +24,7 @@ typedef enum {
 	FKFlickrGroupsPoolsGetPhotosError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrGroupsPoolsGetPhotosError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrGroupsPoolsGetPhotosError;
+};
 
 /*
 

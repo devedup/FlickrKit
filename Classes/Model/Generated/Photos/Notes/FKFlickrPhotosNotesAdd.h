@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosNotesAddError) {
 	FKFlickrPhotosNotesAddError_PhotoNotFound = 1,		 /* The photo id passed was not a valid photo id */
 	FKFlickrPhotosNotesAddError_UserCannotAddNotes = 2,		 /* The calling user does not have permission to add a note to this photo */
 	FKFlickrPhotosNotesAddError_MissingRequiredArguments = 3,		 /* One or more of the required arguments were not supplied. */
@@ -29,7 +29,7 @@ typedef enum {
 	FKFlickrPhotosNotesAddError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosNotesAddError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosNotesAddError;
+};
 
 /*
 

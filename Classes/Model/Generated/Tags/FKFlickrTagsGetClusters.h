@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrTagsGetClustersError) {
 	FKFlickrTagsGetClustersError_TagClusterNotFound = 1,		 /* The tag was invalid or no cluster exists for that tag. */
 	FKFlickrTagsGetClustersError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrTagsGetClustersError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
@@ -21,7 +21,7 @@ typedef enum {
 	FKFlickrTagsGetClustersError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrTagsGetClustersError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrTagsGetClustersError;
+};
 
 /*
 

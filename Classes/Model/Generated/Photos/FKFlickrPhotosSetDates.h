@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosSetDatesError) {
 	FKFlickrPhotosSetDatesError_PhotoNotFound = 1,		 /* The photo id was not the id of a valid photo belonging to the calling user. */
 	FKFlickrPhotosSetDatesError_NotEnoughArguments = 2,		 /* No dates were specified to be changed. */
 	FKFlickrPhotosSetDatesError_InvalidGranularity = 3,		 /* The value passed for 'granularity' was not a valid flickr date granularity. */
@@ -31,7 +31,7 @@ typedef enum {
 	FKFlickrPhotosSetDatesError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosSetDatesError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosSetDatesError;
+};
 
 /*
 

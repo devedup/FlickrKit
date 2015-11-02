@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrGroupsMembersGetListError) {
 	FKFlickrGroupsMembersGetListError_GroupNotFound = 1,		 /*  */
 	FKFlickrGroupsMembersGetListError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrGroupsMembersGetListError_InvalidSignature = 96,		 /* The passed signature was invalid. */
@@ -26,7 +26,7 @@ typedef enum {
 	FKFlickrGroupsMembersGetListError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrGroupsMembersGetListError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrGroupsMembersGetListError;
+};
 
 /*
 

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrCollectionsGetInfoError) {
 	FKFlickrCollectionsGetInfoError_CollectionNotFound = 1,		 /* The requested collection could not be found or is not visible to the calling user. */
 	FKFlickrCollectionsGetInfoError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrCollectionsGetInfoError_InvalidSignature = 96,		 /* The passed signature was invalid. */
@@ -26,7 +26,7 @@ typedef enum {
 	FKFlickrCollectionsGetInfoError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrCollectionsGetInfoError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrCollectionsGetInfoError;
+};
 
 /*
 

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrGalleriesCreateError) {
 	FKFlickrGalleriesCreateError_RequiredParameterMissing = 1,		 /* One or more of the required parameters was missing from your API call. */
 	FKFlickrGalleriesCreateError_InvalidTitleOrDescription = 2,		 /* The title or the description could not be validated. */
 	FKFlickrGalleriesCreateError_FailedToAddGallery = 3,		 /* There was a problem creating the gallery. */
@@ -28,7 +28,7 @@ typedef enum {
 	FKFlickrGalleriesCreateError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrGalleriesCreateError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrGalleriesCreateError;
+};
 
 /*
 

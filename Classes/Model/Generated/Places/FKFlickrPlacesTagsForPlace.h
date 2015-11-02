@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPlacesTagsForPlaceError) {
 	FKFlickrPlacesTagsForPlaceError_RequiredParameterMissing = 1,		 /* One or more parameters was not included with the API request */
 	FKFlickrPlacesTagsForPlaceError_NotAValidPlacesID = 2,		 /* An invalid Places (or WOE) identifier was included with your request. */
 	FKFlickrPlacesTagsForPlaceError_PlaceNotFound = 3,		 /* An invalid Places (or WOE) identifier was included with your request. */
@@ -23,7 +23,7 @@ typedef enum {
 	FKFlickrPlacesTagsForPlaceError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPlacesTagsForPlaceError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPlacesTagsForPlaceError;
+};
 
 /*
 

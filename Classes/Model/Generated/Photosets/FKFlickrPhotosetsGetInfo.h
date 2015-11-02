@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosetsGetInfoError) {
 	FKFlickrPhotosetsGetInfoError_PhotosetNotFound = 1,		 /* The photoset id was not valid. */
 	FKFlickrPhotosetsGetInfoError_UserNotFound = 2,		 /*  */
 	FKFlickrPhotosetsGetInfoError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
@@ -22,7 +22,7 @@ typedef enum {
 	FKFlickrPhotosetsGetInfoError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosetsGetInfoError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosetsGetInfoError;
+};
 
 /*
 

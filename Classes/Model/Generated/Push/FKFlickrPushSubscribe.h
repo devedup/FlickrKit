@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPushSubscribeError) {
 	FKFlickrPushSubscribeError_RequiredParameterMissing = 1,		 /* One of the required arguments for the method was not provided. */
 	FKFlickrPushSubscribeError_InvalidParameterValue = 2,		 /* One of the arguments was specified with an illegal value. */
 	FKFlickrPushSubscribeError_CallbackURLAlreadyInUseForADifferentSubscription = 3,		 /* A different subscription already exists that uses the same callback URL. */
@@ -31,7 +31,7 @@ typedef enum {
 	FKFlickrPushSubscribeError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPushSubscribeError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPushSubscribeError;
+};
 
 /*
 

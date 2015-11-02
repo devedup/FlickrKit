@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosGeoSetPermsError) {
 	FKFlickrPhotosGeoSetPermsError_PhotoNotFound = 1,		 /* The photo id was either invalid or was for a photo not viewable by the calling user. */
 	FKFlickrPhotosGeoSetPermsError_PhotoHasNoLocationInformation = 2,		 /* The photo requested has no location data or is not viewable by the calling user. */
 	FKFlickrPhotosGeoSetPermsError_RequiredArgumentsMissing = 3,		 /* Some or all of the required arguments were not supplied. */
@@ -28,7 +28,7 @@ typedef enum {
 	FKFlickrPhotosGeoSetPermsError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosGeoSetPermsError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosGeoSetPermsError;
+};
 
 /*
 

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrAuthGetTokenError) {
 	FKFlickrAuthGetTokenError_InvalidFrob = 108,		 /* The specified frob does not exist or has already been used. */
 	FKFlickrAuthGetTokenError_InvalidSignature = 96,		 /* The passed signature was invalid. */
 	FKFlickrAuthGetTokenError_MissingSignature = 97,		 /* The call required signing but no signature was sent. */
@@ -23,7 +23,7 @@ typedef enum {
 	FKFlickrAuthGetTokenError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrAuthGetTokenError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrAuthGetTokenError;
+};
 
 /*
 

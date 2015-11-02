@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrGalleriesEditPhotoError) {
 	FKFlickrGalleriesEditPhotoError_InvalidGalleryID = 1,		 /* That gallery could not be found. */
 	FKFlickrGalleriesEditPhotoError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrGalleriesEditPhotoError_InvalidSignature = 96,		 /* The passed signature was invalid. */
@@ -26,7 +26,7 @@ typedef enum {
 	FKFlickrGalleriesEditPhotoError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrGalleriesEditPhotoError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrGalleriesEditPhotoError;
+};
 
 /*
 

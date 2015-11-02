@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosSetContentTypeError) {
 	FKFlickrPhotosSetContentTypeError_PhotoNotFound = 1,		 /* The photo id passed was not a valid photo id of a photo belonging to the calling user. */
 	FKFlickrPhotosSetContentTypeError_RequiredArgumentsMissing = 2,		 /* Some or all of the required arguments were not supplied. */
 	FKFlickrPhotosSetContentTypeError_ChangeNotAllowed = 3,		 /* Changing the content type of this photo is not allowed. */
@@ -28,7 +28,7 @@ typedef enum {
 	FKFlickrPhotosSetContentTypeError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosSetContentTypeError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosSetContentTypeError;
+};
 
 /*
 

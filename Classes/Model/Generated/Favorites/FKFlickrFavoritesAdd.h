@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrFavoritesAddError) {
 	FKFlickrFavoritesAddError_PhotoNotFound = 1,		 /* The photo id passed was not a valid photo id. */
 	FKFlickrFavoritesAddError_PhotoIsOwnedByYou = 2,		 /* The photo belongs to the user and so cannot be added to their favorites. */
 	FKFlickrFavoritesAddError_PhotoIsAlreadyInFavorites = 3,		 /* The photo is already in the user's list of favorites. */
@@ -29,7 +29,7 @@ typedef enum {
 	FKFlickrFavoritesAddError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrFavoritesAddError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrFavoritesAddError;
+};
 
 /*
 

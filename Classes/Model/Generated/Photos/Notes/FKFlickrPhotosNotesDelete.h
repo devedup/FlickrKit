@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosNotesDeleteError) {
 	FKFlickrPhotosNotesDeleteError_NoteNotFound = 1,		 /* The note id passed was not a valid note id */
 	FKFlickrPhotosNotesDeleteError_UserCannotDeleteNote = 2,		 /* The calling user does not have permission to delete the specified note */
 	FKFlickrPhotosNotesDeleteError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
@@ -27,7 +27,7 @@ typedef enum {
 	FKFlickrPhotosNotesDeleteError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosNotesDeleteError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosNotesDeleteError;
+};
 
 /*
 

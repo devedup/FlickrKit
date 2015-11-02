@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosGeoBatchCorrectLocationError) {
 	FKFlickrPhotosGeoBatchCorrectLocationError_RequiredArgumentsMissing = 1,		 /* Some or all of the required arguments were not supplied. */
 	FKFlickrPhotosGeoBatchCorrectLocationError_NotAValidLatitude = 2,		 /* The latitude argument failed validation. */
 	FKFlickrPhotosGeoBatchCorrectLocationError_NotAValidLongitude = 3,		 /* The longitude argument failed validation. */
@@ -31,7 +31,7 @@ typedef enum {
 	FKFlickrPhotosGeoBatchCorrectLocationError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosGeoBatchCorrectLocationError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosGeoBatchCorrectLocationError;
+};
 
 /*
 

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosSuggestionsRejectSuggestionError) {
 	FKFlickrPhotosSuggestionsRejectSuggestionError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrPhotosSuggestionsRejectSuggestionError_InvalidSignature = 96,		 /* The passed signature was invalid. */
 	FKFlickrPhotosSuggestionsRejectSuggestionError_MissingSignature = 97,		 /* The call required signing but no signature was sent. */
@@ -25,7 +25,7 @@ typedef enum {
 	FKFlickrPhotosSuggestionsRejectSuggestionError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosSuggestionsRejectSuggestionError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosSuggestionsRejectSuggestionError;
+};
 
 /*
 

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosLicensesSetLicenseError) {
 	FKFlickrPhotosLicensesSetLicenseError_PhotoNotFound = 1,		 /* The specified id was not the id of a valif photo owner by the calling user. */
 	FKFlickrPhotosLicensesSetLicenseError_LicenseNotFound = 2,		 /* The license id was not valid. */
 	FKFlickrPhotosLicensesSetLicenseError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
@@ -27,7 +27,7 @@ typedef enum {
 	FKFlickrPhotosLicensesSetLicenseError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosLicensesSetLicenseError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosLicensesSetLicenseError;
+};
 
 /*
 

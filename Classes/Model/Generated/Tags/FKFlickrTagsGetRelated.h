@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrTagsGetRelatedError) {
 	FKFlickrTagsGetRelatedError_TagNotFound = 1,		 /* The tag argument was missing. */
 	FKFlickrTagsGetRelatedError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrTagsGetRelatedError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
@@ -21,7 +21,7 @@ typedef enum {
 	FKFlickrTagsGetRelatedError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrTagsGetRelatedError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrTagsGetRelatedError;
+};
 
 /*
 

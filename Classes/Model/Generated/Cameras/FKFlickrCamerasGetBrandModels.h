@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrCamerasGetBrandModelsError) {
 	FKFlickrCamerasGetBrandModelsError_BrandNotFound = 1,		 /* Unable to find the given brand ID. */
 	FKFlickrCamerasGetBrandModelsError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrCamerasGetBrandModelsError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
@@ -21,7 +21,7 @@ typedef enum {
 	FKFlickrCamerasGetBrandModelsError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrCamerasGetBrandModelsError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrCamerasGetBrandModelsError;
+};
 
 /*
 

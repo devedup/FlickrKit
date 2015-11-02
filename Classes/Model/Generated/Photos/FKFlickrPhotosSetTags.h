@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosSetTagsError) {
 	FKFlickrPhotosSetTagsError_PhotoNotFound = 1,		 /* The photo id passed was not the id of a photo belonging to the calling user. It might be an invalid id, or the photo might be owned by another user.  */
 	FKFlickrPhotosSetTagsError_MaximumNumberOfTagsReached = 2,		 /* The number of tags specified exceeds the limit for the photo. No tags were modified. */
 	FKFlickrPhotosSetTagsError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
@@ -27,7 +27,7 @@ typedef enum {
 	FKFlickrPhotosSetTagsError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosSetTagsError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosSetTagsError;
+};
 
 /*
 

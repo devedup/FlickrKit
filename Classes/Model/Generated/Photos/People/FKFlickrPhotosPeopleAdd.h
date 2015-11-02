@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosPeopleAddError) {
 	FKFlickrPhotosPeopleAddError_PersonNotFound = 1,		 /* The NSID passed was not a valid user id. */
 	FKFlickrPhotosPeopleAddError_PhotoNotFound = 2,		 /* The photo id passed was not a valid photo id. */
 	FKFlickrPhotosPeopleAddError_UserCannotAddThisPersonToPhotos = 3,		 /* The person being added to the photo does not allow the calling user to add them. */
@@ -33,7 +33,7 @@ typedef enum {
 	FKFlickrPhotosPeopleAddError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosPeopleAddError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosPeopleAddError;
+};
 
 /*
 

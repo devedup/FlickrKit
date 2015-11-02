@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPlacesResolvePlaceIdError) {
 	FKFlickrPlacesResolvePlaceIdError_PlaceIDRequired = 2,		 /*  */
 	FKFlickrPlacesResolvePlaceIdError_PlaceNotFound = 3,		 /*  */
 	FKFlickrPlacesResolvePlaceIdError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
@@ -22,7 +22,7 @@ typedef enum {
 	FKFlickrPlacesResolvePlaceIdError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPlacesResolvePlaceIdError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPlacesResolvePlaceIdError;
+};
 
 /*
 

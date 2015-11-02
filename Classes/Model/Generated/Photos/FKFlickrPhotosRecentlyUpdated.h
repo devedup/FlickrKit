@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosRecentlyUpdatedError) {
 	FKFlickrPhotosRecentlyUpdatedError_RequiredArgumentMissing = 1,		 /* Some or all of the required arguments were not supplied. */
 	FKFlickrPhotosRecentlyUpdatedError_NotAValidDate = 2,		 /* The date argument did not pass validation. */
 	FKFlickrPhotosRecentlyUpdatedError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
@@ -27,7 +27,7 @@ typedef enum {
 	FKFlickrPhotosRecentlyUpdatedError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosRecentlyUpdatedError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosRecentlyUpdatedError;
+};
 
 /*
 

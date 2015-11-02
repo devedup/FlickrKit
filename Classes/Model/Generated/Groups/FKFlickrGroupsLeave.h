@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrGroupsLeaveError) {
 	FKFlickrGroupsLeaveError_RequiredArgumentsMissing = 1,		 /* The group_id doesn't exist */
 	FKFlickrGroupsLeaveError_GroupDoesNotExist = 2,		 /* The group by that ID does not exist */
 	FKFlickrGroupsLeaveError_AccountIsNotInThatGroup = 3,		 /* The user is not a member of the group that was specified */
@@ -28,7 +28,7 @@ typedef enum {
 	FKFlickrGroupsLeaveError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrGroupsLeaveError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrGroupsLeaveError;
+};
 
 /*
 

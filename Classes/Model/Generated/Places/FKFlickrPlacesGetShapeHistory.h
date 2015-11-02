@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPlacesGetShapeHistoryError) {
 	FKFlickrPlacesGetShapeHistoryError_RequiredParameterMissing = 1,		 /* One or more required parameter is missing from the API call. */
 	FKFlickrPlacesGetShapeHistoryError_NotAValidPlacesID = 2,		 /* An invalid Places (or WOE) ID was passed with the API call. */
 	FKFlickrPlacesGetShapeHistoryError_PlaceNotFound = 3,		 /* No place could be found for the Places (or WOE) ID passed to the API call. */
@@ -23,7 +23,7 @@ typedef enum {
 	FKFlickrPlacesGetShapeHistoryError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPlacesGetShapeHistoryError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPlacesGetShapeHistoryError;
+};
 
 /*
 

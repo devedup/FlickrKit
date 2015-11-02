@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPlacesGetTopPlacesListError) {
 	FKFlickrPlacesGetTopPlacesListError_RequiredParameterMissing = 1,		 /* One or more required parameters with missing from your request. */
 	FKFlickrPlacesGetTopPlacesListError_NotAValidPlaceType = 2,		 /* An unknown or unsupported place type ID was passed with your request. */
 	FKFlickrPlacesGetTopPlacesListError_NotAValidDate = 3,		 /* The date argument passed with your request is invalid. */
@@ -24,7 +24,7 @@ typedef enum {
 	FKFlickrPlacesGetTopPlacesListError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPlacesGetTopPlacesListError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPlacesGetTopPlacesListError;
+};
 
 /*
 

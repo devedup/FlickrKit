@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrMachinetagsGetPairsError) {
 	FKFlickrMachinetagsGetPairsError_NotAValidNamespace = 1,		 /* Missing or invalid namespace argument. */
 	FKFlickrMachinetagsGetPairsError_NotAValidPredicate = 2,		 /* Missing or invalid predicate argument. */
 	FKFlickrMachinetagsGetPairsError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
@@ -22,7 +22,7 @@ typedef enum {
 	FKFlickrMachinetagsGetPairsError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrMachinetagsGetPairsError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrMachinetagsGetPairsError;
+};
 
 /*
 

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrGroupsDiscussTopicsAddError) {
 	FKFlickrGroupsDiscussTopicsAddError_GroupNotFound = 1,		 /* The group by that ID does not exist
  */
 	FKFlickrGroupsDiscussTopicsAddError_CannotPostToGroup = 2,		 /* Either this account is not a member of the group, or discussion in this group is disabled. */
@@ -30,7 +30,7 @@ typedef enum {
 	FKFlickrGroupsDiscussTopicsAddError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrGroupsDiscussTopicsAddError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrGroupsDiscussTopicsAddError;
+};
 
 /*
 

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosetsDeleteError) {
 	FKFlickrPhotosetsDeleteError_PhotosetNotFound = 1,		 /* The photoset id passed was not a valid photoset id or did not belong to the calling user. */
 	FKFlickrPhotosetsDeleteError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrPhotosetsDeleteError_InvalidSignature = 96,		 /* The passed signature was invalid. */
@@ -26,7 +26,7 @@ typedef enum {
 	FKFlickrPhotosetsDeleteError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosetsDeleteError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosetsDeleteError;
+};
 
 /*
 

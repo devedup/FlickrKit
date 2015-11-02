@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosGetContactsPublicPhotosError) {
 	FKFlickrPhotosGetContactsPublicPhotosError_UserNotFound = 1,		 /* The user NSID passed was not a valid user NSID. */
 	FKFlickrPhotosGetContactsPublicPhotosError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrPhotosGetContactsPublicPhotosError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
@@ -21,7 +21,7 @@ typedef enum {
 	FKFlickrPhotosGetContactsPublicPhotosError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosGetContactsPublicPhotosError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosGetContactsPublicPhotosError;
+};
 
 /*
 

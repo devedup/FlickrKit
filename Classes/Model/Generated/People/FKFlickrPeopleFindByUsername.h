@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPeopleFindByUsernameError) {
 	FKFlickrPeopleFindByUsernameError_UserNotFound = 1,		 /* No user with the supplied username was found. */
 	FKFlickrPeopleFindByUsernameError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrPeopleFindByUsernameError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
@@ -21,7 +21,7 @@ typedef enum {
 	FKFlickrPeopleFindByUsernameError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPeopleFindByUsernameError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPeopleFindByUsernameError;
+};
 
 /*
 

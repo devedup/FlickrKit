@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrCollectionsGetTreeError) {
 	FKFlickrCollectionsGetTreeError_UserNotFound = 1,		 /* The specified user could not be found. */
 	FKFlickrCollectionsGetTreeError_CollectionNotFound = 2,		 /* The specified collection does not exist. */
 	FKFlickrCollectionsGetTreeError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
@@ -22,7 +22,7 @@ typedef enum {
 	FKFlickrCollectionsGetTreeError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrCollectionsGetTreeError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrCollectionsGetTreeError;
+};
 
 /*
 

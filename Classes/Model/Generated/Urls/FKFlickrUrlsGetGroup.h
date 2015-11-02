@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrUrlsGetGroupError) {
 	FKFlickrUrlsGetGroupError_GroupNotFound = 1,		 /* The NSID specified was not a valid group. */
 	FKFlickrUrlsGetGroupError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrUrlsGetGroupError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
@@ -21,7 +21,7 @@ typedef enum {
 	FKFlickrUrlsGetGroupError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrUrlsGetGroupError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrUrlsGetGroupError;
+};
 
 /*
 

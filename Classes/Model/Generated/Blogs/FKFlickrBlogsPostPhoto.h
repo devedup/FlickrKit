@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrBlogsPostPhotoError) {
 	FKFlickrBlogsPostPhotoError_BlogNotFound = 1,		 /* The blog id was not the id of a blog belonging to the calling user */
 	FKFlickrBlogsPostPhotoError_PhotoNotFound = 2,		 /* The photo id was not the id of a public photo */
 	FKFlickrBlogsPostPhotoError_PasswordNeeded = 3,		 /* A password is not stored for the blog and one was not passed with the request */
@@ -29,7 +29,7 @@ typedef enum {
 	FKFlickrBlogsPostPhotoError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrBlogsPostPhotoError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrBlogsPostPhotoError;
+};
 
 /*
 

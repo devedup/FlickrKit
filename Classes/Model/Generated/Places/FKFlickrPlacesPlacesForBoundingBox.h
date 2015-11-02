@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPlacesPlacesForBoundingBoxError) {
 	FKFlickrPlacesPlacesForBoundingBoxError_RequiredParametersMissing = 1,		 /* One or more required parameter is missing from the API call. */
 	FKFlickrPlacesPlacesForBoundingBoxError_NotAValidBbox = 2,		 /* The bbox argument was incomplete or incorrectly formatted */
 	FKFlickrPlacesPlacesForBoundingBoxError_NotAValidPlaceType = 3,		 /* An invalid place type was included with your request. */
@@ -24,7 +24,7 @@ typedef enum {
 	FKFlickrPlacesPlacesForBoundingBoxError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPlacesPlacesForBoundingBoxError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPlacesPlacesForBoundingBoxError;
+};
 
 /*
 

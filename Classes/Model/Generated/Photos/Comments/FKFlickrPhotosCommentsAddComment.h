@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrPhotosCommentsAddCommentError) {
 	FKFlickrPhotosCommentsAddCommentError_PhotoNotFound = 1,		 /* The photo id passed was not a valid photo id */
 	FKFlickrPhotosCommentsAddCommentError_BlankComment = 8,		 /* Comment text can not be blank */
 	FKFlickrPhotosCommentsAddCommentError_UserIsPostingCommentsTooFast = 9,		 /* The user has reached the limit for number of comments posted during a specific time period.  Wait a bit and try again. */
@@ -28,7 +28,7 @@ typedef enum {
 	FKFlickrPhotosCommentsAddCommentError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrPhotosCommentsAddCommentError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrPhotosCommentsAddCommentError;
+};
 
 /*
 

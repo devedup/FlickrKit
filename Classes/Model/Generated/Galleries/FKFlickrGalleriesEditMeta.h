@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrGalleriesEditMetaError) {
 	FKFlickrGalleriesEditMetaError_RequiredParameterMissing = 1,		 /* One or more required parameters was missing from your request. */
 	FKFlickrGalleriesEditMetaError_InvalidTitleOrDescription = 2,		 /* The title or description arguments could not be validated. */
 	FKFlickrGalleriesEditMetaError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
@@ -27,7 +27,7 @@ typedef enum {
 	FKFlickrGalleriesEditMetaError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrGalleriesEditMetaError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrGalleriesEditMetaError;
+};
 
 /*
 

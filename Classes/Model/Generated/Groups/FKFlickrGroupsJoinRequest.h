@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, FKFlickrGroupsJoinRequestError) {
 	FKFlickrGroupsJoinRequestError_RequiredArgumentsMissing = 1,		 /* The group_id or message argument are missing. */
 	FKFlickrGroupsJoinRequestError_GroupDoesNotExist = 2,		 /* The Group does not exist */
 	FKFlickrGroupsJoinRequestError_GroupNotAvailableToTheAccount = 3,		 /* The authed account does not have permission to view/join the group. */
@@ -32,7 +32,7 @@ typedef enum {
 	FKFlickrGroupsJoinRequestError_InvalidXMLRPCMethodCall = 115,		 /* The XML-RPC request document could not be parsed. */
 	FKFlickrGroupsJoinRequestError_BadURLFound = 116,		 /* One or more arguments contained a URL that has been used for abuse on Flickr. */
 
-} FKFlickrGroupsJoinRequestError;
+};
 
 /*
 
