@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosetsCommentsAddCommentError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosetsCommentsAddCommentError) {
 	FKFlickrPhotosetsCommentsAddCommentError_PhotosetNotFound = 1,		 /*  */
 	FKFlickrPhotosetsCommentsAddCommentError_BlankComment = 8,		 /*  */
 	FKFlickrPhotosetsCommentsAddCommentError_UserIsPostingCommentsTooFast = 9,		 /* The user has reached the limit for number of comments posted during a specific time period. Wait a bit and try again. */

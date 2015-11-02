@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrContactsGetListRecentlyUploadedError) {
+typedef NS_ENUM(NSInteger, FKFlickrContactsGetListRecentlyUploadedError) {
 	FKFlickrContactsGetListRecentlyUploadedError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrContactsGetListRecentlyUploadedError_InvalidSignature = 96,		 /* The passed signature was invalid. */
 	FKFlickrContactsGetListRecentlyUploadedError_MissingSignature = 97,		 /* The call required signing but no signature was sent. */

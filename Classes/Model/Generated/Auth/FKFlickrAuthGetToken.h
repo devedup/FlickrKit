@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrAuthGetTokenError) {
+typedef NS_ENUM(NSInteger, FKFlickrAuthGetTokenError) {
 	FKFlickrAuthGetTokenError_InvalidFrob = 108,		 /* The specified frob does not exist or has already been used. */
 	FKFlickrAuthGetTokenError_InvalidSignature = 96,		 /* The passed signature was invalid. */
 	FKFlickrAuthGetTokenError_MissingSignature = 97,		 /* The call required signing but no signature was sent. */

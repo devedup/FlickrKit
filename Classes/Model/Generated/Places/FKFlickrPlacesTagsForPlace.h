@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPlacesTagsForPlaceError) {
+typedef NS_ENUM(NSInteger, FKFlickrPlacesTagsForPlaceError) {
 	FKFlickrPlacesTagsForPlaceError_RequiredParameterMissing = 1,		 /* One or more parameters was not included with the API request */
 	FKFlickrPlacesTagsForPlaceError_NotAValidPlacesID = 2,		 /* An invalid Places (or WOE) identifier was included with your request. */
 	FKFlickrPlacesTagsForPlaceError_PlaceNotFound = 3,		 /* An invalid Places (or WOE) identifier was included with your request. */

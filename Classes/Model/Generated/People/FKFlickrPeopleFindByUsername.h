@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPeopleFindByUsernameError) {
+typedef NS_ENUM(NSInteger, FKFlickrPeopleFindByUsernameError) {
 	FKFlickrPeopleFindByUsernameError_UserNotFound = 1,		 /* No user with the supplied username was found. */
 	FKFlickrPeopleFindByUsernameError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrPeopleFindByUsernameError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

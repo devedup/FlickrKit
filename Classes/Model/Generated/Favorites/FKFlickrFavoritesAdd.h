@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrFavoritesAddError) {
+typedef NS_ENUM(NSInteger, FKFlickrFavoritesAddError) {
 	FKFlickrFavoritesAddError_PhotoNotFound = 1,		 /* The photo id passed was not a valid photo id. */
 	FKFlickrFavoritesAddError_PhotoIsOwnedByYou = 2,		 /* The photo belongs to the user and so cannot be added to their favorites. */
 	FKFlickrFavoritesAddError_PhotoIsAlreadyInFavorites = 3,		 /* The photo is already in the user's list of favorites. */

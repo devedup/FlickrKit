@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosetsCreateError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosetsCreateError) {
 	FKFlickrPhotosetsCreateError_NoTitleSpecified = 1,		 /* No title parameter was passed in the request. */
 	FKFlickrPhotosetsCreateError_PhotoNotFound = 2,		 /* The primary photo id passed was not a valid photo id or does not belong to the calling user. */
 	FKFlickrPhotosetsCreateError_CantCreateAnyMoreSets = 3,		 /* The user has reached their maximum number of photosets limit. */

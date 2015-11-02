@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrTagsGetRelatedError) {
+typedef NS_ENUM(NSInteger, FKFlickrTagsGetRelatedError) {
 	FKFlickrTagsGetRelatedError_TagNotFound = 1,		 /* The tag argument was missing. */
 	FKFlickrTagsGetRelatedError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrTagsGetRelatedError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrUrlsGetGroupError) {
+typedef NS_ENUM(NSInteger, FKFlickrUrlsGetGroupError) {
 	FKFlickrUrlsGetGroupError_GroupNotFound = 1,		 /* The NSID specified was not a valid group. */
 	FKFlickrUrlsGetGroupError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrUrlsGetGroupError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPlacesPlacesForBoundingBoxError) {
+typedef NS_ENUM(NSInteger, FKFlickrPlacesPlacesForBoundingBoxError) {
 	FKFlickrPlacesPlacesForBoundingBoxError_RequiredParametersMissing = 1,		 /* One or more required parameter is missing from the API call. */
 	FKFlickrPlacesPlacesForBoundingBoxError_NotAValidBbox = 2,		 /* The bbox argument was incomplete or incorrectly formatted */
 	FKFlickrPlacesPlacesForBoundingBoxError_NotAValidPlaceType = 3,		 /* An invalid place type was included with your request. */

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosetsRemovePhotosError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosetsRemovePhotosError) {
 	FKFlickrPhotosetsRemovePhotosError_PhotosetNotFound = 1,		 /* The photoset id passed was not the id of available photosets owned by the calling user. */
 	FKFlickrPhotosetsRemovePhotosError_PhotoNotFound = 2,		 /* The photo id passed was not the id of a valid photo belonging to the calling user. */
 	FKFlickrPhotosetsRemovePhotosError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */

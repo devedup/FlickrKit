@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGroupsPoolsRemoveError) {
+typedef NS_ENUM(NSInteger, FKFlickrGroupsPoolsRemoveError) {
 	FKFlickrGroupsPoolsRemoveError_GroupNotFound = 1,		 /* The group_id passed did not refer to a valid group. */
 	FKFlickrGroupsPoolsRemoveError_PhotoNotInPool = 2,		 /* The photo_id passed was not a valid id of a photo in the group pool. */
 	FKFlickrGroupsPoolsRemoveError_InsufficientPermissionToRemovePhoto = 3,		 /* The calling user doesn't own the photo and is not an administrator of the group, so may not remove the photo from the pool. */

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPlacesPlacesForUserError) {
+typedef NS_ENUM(NSInteger, FKFlickrPlacesPlacesForUserError) {
 	FKFlickrPlacesPlacesForUserError_PlacesForUserAreNotAvailableAtThisTime = 1,		 /* Places for user have been disabled or are otherwise not available. */
 	FKFlickrPlacesPlacesForUserError_RequiredParameterMissing = 2,		 /* One or more of the required parameters was not included with your request. */
 	FKFlickrPlacesPlacesForUserError_NotAValidPlaceType = 3,		 /* An invalid place type was included with your request. */

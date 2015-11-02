@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosGeoSetLocationError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosGeoSetLocationError) {
 	FKFlickrPhotosGeoSetLocationError_PhotoNotFound = 1,		 /* The photo id was either invalid or was for a photo not viewable by the calling user. */
 	FKFlickrPhotosGeoSetLocationError_RequiredArgumentsMissing = 2,		 /* Some or all of the required arguments were not supplied. */
 	FKFlickrPhotosGeoSetLocationError_NotAValidLatitude = 3,		 /* The latitude argument failed validation. */

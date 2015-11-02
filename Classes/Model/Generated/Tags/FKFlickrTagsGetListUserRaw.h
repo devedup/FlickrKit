@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrTagsGetListUserRawError) {
+typedef NS_ENUM(NSInteger, FKFlickrTagsGetListUserRawError) {
 	FKFlickrTagsGetListUserRawError_UserNotFound = 1,		 /* The calling user was not logged in. */
 	FKFlickrTagsGetListUserRawError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrTagsGetListUserRawError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

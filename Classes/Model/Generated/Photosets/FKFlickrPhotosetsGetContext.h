@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosetsGetContextError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosetsGetContextError) {
 	FKFlickrPhotosetsGetContextError_PhotoNotFound = 1,		 /* The photo id passed was not a valid photo id, or was the id of a photo that the calling user does not have permission to view. */
 	FKFlickrPhotosetsGetContextError_PhotoNotInSet = 2,		 /* The specified photo is not in the specified set. */
 	FKFlickrPhotosetsGetContextError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */

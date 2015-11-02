@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosetsRemovePhotoError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosetsRemovePhotoError) {
 	FKFlickrPhotosetsRemovePhotoError_PhotosetNotFound = 1,		 /* The photoset id passed was not the id of avalid photoset owned by the calling user. */
 	FKFlickrPhotosetsRemovePhotoError_PhotoNotFound = 2,		 /* The photo id passed was not the id of a valid photo belonging to the calling user. */
 	FKFlickrPhotosetsRemovePhotoError_PhotoNotInSet = 3,		 /* The photo is not a member of the photoset. */

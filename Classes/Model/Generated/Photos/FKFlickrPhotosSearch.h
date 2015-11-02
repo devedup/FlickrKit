@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosSearchError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosSearchError) {
 	FKFlickrPhotosSearchError_TooManyTagsInALLQuery = 1,		 /* When performing an 'all tags' search, you may not specify more than 20 tags to join together. */
 	FKFlickrPhotosSearchError_UnknownUser = 2,		 /* A user_id was passed which did not match a valid flickr user. */
 	FKFlickrPhotosSearchError_ParameterlessSearchesHaveBeenDisabled = 3,		 /* To perform a search with no parameters (to get the latest public photos, please use flickr.photos.getRecent instead). */

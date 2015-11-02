@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGroupsSearchError) {
+typedef NS_ENUM(NSInteger, FKFlickrGroupsSearchError) {
 	FKFlickrGroupsSearchError_NoTextPassed = 1,		 /* The required text argument was ommited. */
 	FKFlickrGroupsSearchError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrGroupsSearchError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

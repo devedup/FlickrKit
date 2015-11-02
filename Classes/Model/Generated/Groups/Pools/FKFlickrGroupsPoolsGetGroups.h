@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGroupsPoolsGetGroupsError) {
+typedef NS_ENUM(NSInteger, FKFlickrGroupsPoolsGetGroupsError) {
 	FKFlickrGroupsPoolsGetGroupsError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrGroupsPoolsGetGroupsError_InvalidSignature = 96,		 /* The passed signature was invalid. */
 	FKFlickrGroupsPoolsGetGroupsError_MissingSignature = 97,		 /* The call required signing but no signature was sent. */

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosGeoCorrectLocationError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosGeoCorrectLocationError) {
 	FKFlickrPhotosGeoCorrectLocationError_UserHasNotConfiguredDefaultViewingSettingsForLocationData = 1,		 /* Before users may assign location data to a photo they must define who, by default, may view that information. Users can edit this preference at <a href="http://www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a> */
 	FKFlickrPhotosGeoCorrectLocationError_MissingPlaceID = 2,		 /* No place ID was passed to the method */
 	FKFlickrPhotosGeoCorrectLocationError_NotAValidPlaceID = 3,		 /* The place ID passed to the method could not be identified */

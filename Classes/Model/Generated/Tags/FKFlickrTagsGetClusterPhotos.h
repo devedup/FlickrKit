@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrTagsGetClusterPhotosError) {
+typedef NS_ENUM(NSInteger, FKFlickrTagsGetClusterPhotosError) {
 	FKFlickrTagsGetClusterPhotosError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrTagsGetClusterPhotosError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
 	FKFlickrTagsGetClusterPhotosError_WriteOperationFailed = 106,		 /* The requested operation failed due to a temporary issue. */

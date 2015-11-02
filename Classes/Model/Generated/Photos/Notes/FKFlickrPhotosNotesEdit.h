@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosNotesEditError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosNotesEditError) {
 	FKFlickrPhotosNotesEditError_NoteNotFound = 1,		 /* The note id passed was not a valid note id */
 	FKFlickrPhotosNotesEditError_UserCannotEditNote = 2,		 /* The calling user does not have permission to edit the specified note */
 	FKFlickrPhotosNotesEditError_MissingRequiredArguments = 3,		 /* One or more of the required arguments were not supplied. */

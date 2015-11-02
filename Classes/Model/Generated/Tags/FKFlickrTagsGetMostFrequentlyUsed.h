@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrTagsGetMostFrequentlyUsedError) {
+typedef NS_ENUM(NSInteger, FKFlickrTagsGetMostFrequentlyUsedError) {
 	FKFlickrTagsGetMostFrequentlyUsedError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrTagsGetMostFrequentlyUsedError_InvalidSignature = 96,		 /* The passed signature was invalid. */
 	FKFlickrTagsGetMostFrequentlyUsedError_MissingSignature = 97,		 /* The call required signing but no signature was sent. */

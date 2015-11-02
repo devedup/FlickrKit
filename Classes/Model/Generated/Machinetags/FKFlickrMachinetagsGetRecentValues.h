@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrMachinetagsGetRecentValuesError) {
+typedef NS_ENUM(NSInteger, FKFlickrMachinetagsGetRecentValuesError) {
 	FKFlickrMachinetagsGetRecentValuesError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrMachinetagsGetRecentValuesError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
 	FKFlickrMachinetagsGetRecentValuesError_WriteOperationFailed = 106,		 /* The requested operation failed due to a temporary issue. */

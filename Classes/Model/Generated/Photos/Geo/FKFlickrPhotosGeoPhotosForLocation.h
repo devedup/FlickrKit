@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosGeoPhotosForLocationError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosGeoPhotosForLocationError) {
 	FKFlickrPhotosGeoPhotosForLocationError_RequiredArgumentsMissing = 1,		 /* One or more required arguments was missing from the method call. */
 	FKFlickrPhotosGeoPhotosForLocationError_NotAValidLatitude = 2,		 /* The latitude argument failed validation. */
 	FKFlickrPhotosGeoPhotosForLocationError_NotAValidLongitude = 3,		 /* The longitude argument failed validation. */

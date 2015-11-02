@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosPeopleDeleteCoordsError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosPeopleDeleteCoordsError) {
 	FKFlickrPhotosPeopleDeleteCoordsError_PersonNotFound = 1,		 /* The NSID passed was not a valid user id. */
 	FKFlickrPhotosPeopleDeleteCoordsError_PhotoNotFound = 2,		 /* The photo id passed was not a valid photo id. */
 	FKFlickrPhotosPeopleDeleteCoordsError_UserCannotEditThatPersonInThatPhoto = 3,		 /* The calling user is neither the person depicted in the photo nor the person who added the bounding box. */

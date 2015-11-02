@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGroupsGetInfoError) {
+typedef NS_ENUM(NSInteger, FKFlickrGroupsGetInfoError) {
 	FKFlickrGroupsGetInfoError_GroupNotFound = 1,		 /* The group NSID passed did not refer to a group that the calling user can see - either an invalid group is or a group that can't be seen by the calling user. */
 	FKFlickrGroupsGetInfoError_GroupIsPrivate = 2,		 /* This is a private group. */
 	FKFlickrGroupsGetInfoError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */

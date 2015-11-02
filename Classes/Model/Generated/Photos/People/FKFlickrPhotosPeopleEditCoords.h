@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosPeopleEditCoordsError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosPeopleEditCoordsError) {
 	FKFlickrPhotosPeopleEditCoordsError_PersonNotFound = 1,		 /* The NSID passed was not a valid user id. */
 	FKFlickrPhotosPeopleEditCoordsError_PhotoNotFound = 2,		 /* The photo id passed was not a valid photo id. */
 	FKFlickrPhotosPeopleEditCoordsError_UserCannotEditThatPersonInThatPhoto = 3,		 /* The calling user did not originally add this person to the photo, and is not the person in question. */

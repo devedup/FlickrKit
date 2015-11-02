@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrCollectionsGetTreeError) {
+typedef NS_ENUM(NSInteger, FKFlickrCollectionsGetTreeError) {
 	FKFlickrCollectionsGetTreeError_UserNotFound = 1,		 /* The specified user could not be found. */
 	FKFlickrCollectionsGetTreeError_CollectionNotFound = 2,		 /* The specified collection does not exist. */
 	FKFlickrCollectionsGetTreeError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */

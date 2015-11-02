@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPeopleGetUploadStatusError) {
+typedef NS_ENUM(NSInteger, FKFlickrPeopleGetUploadStatusError) {
 	FKFlickrPeopleGetUploadStatusError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrPeopleGetUploadStatusError_InvalidSignature = 96,		 /* The passed signature was invalid. */
 	FKFlickrPeopleGetUploadStatusError_MissingSignature = 97,		 /* The call required signing but no signature was sent. */

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosetsCommentsGetListError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosetsCommentsGetListError) {
 	FKFlickrPhotosetsCommentsGetListError_PhotosetNotFound = 1,		 /* The photoset id was invalid. */
 	FKFlickrPhotosetsCommentsGetListError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrPhotosetsCommentsGetListError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

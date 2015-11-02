@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPlacesFindError) {
+typedef NS_ENUM(NSInteger, FKFlickrPlacesFindError) {
 	FKFlickrPlacesFindError_RequiredParameterMissing = 1,		 /* One or more required parameters was not included with the API call. */
 	FKFlickrPlacesFindError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrPlacesFindError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

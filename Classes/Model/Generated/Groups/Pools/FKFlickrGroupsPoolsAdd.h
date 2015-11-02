@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGroupsPoolsAddError) {
+typedef NS_ENUM(NSInteger, FKFlickrGroupsPoolsAddError) {
 	FKFlickrGroupsPoolsAddError_PhotoNotFound = 1,		 /* The photo id passed was not the id of a photo owned by the caling user. */
 	FKFlickrGroupsPoolsAddError_GroupNotFound = 2,		 /* The group id passed was not a valid id for a group the user is a member of. */
 	FKFlickrGroupsPoolsAddError_PhotoAlreadyInPool = 3,		 /* The specified photo is already in the pool for the specified group. */

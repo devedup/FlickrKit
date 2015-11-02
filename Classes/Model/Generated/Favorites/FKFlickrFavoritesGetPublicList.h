@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrFavoritesGetPublicListError) {
+typedef NS_ENUM(NSInteger, FKFlickrFavoritesGetPublicListError) {
 	FKFlickrFavoritesGetPublicListError_UserNotFound = 1,		 /* The specified user NSID was not a valid flickr user. */
 	FKFlickrFavoritesGetPublicListError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrFavoritesGetPublicListError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

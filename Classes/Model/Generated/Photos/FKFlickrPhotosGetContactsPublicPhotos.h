@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosGetContactsPublicPhotosError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosGetContactsPublicPhotosError) {
 	FKFlickrPhotosGetContactsPublicPhotosError_UserNotFound = 1,		 /* The user NSID passed was not a valid user NSID. */
 	FKFlickrPhotosGetContactsPublicPhotosError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrPhotosGetContactsPublicPhotosError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

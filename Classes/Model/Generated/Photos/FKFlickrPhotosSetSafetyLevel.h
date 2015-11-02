@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosSetSafetyLevelError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosSetSafetyLevelError) {
 	FKFlickrPhotosSetSafetyLevelError_PhotoNotFound = 1,		 /* The photo id passed was not a valid photo id of a photo belonging to the calling user. */
 	FKFlickrPhotosSetSafetyLevelError_InvalidOrMissingArguments = 2,		 /* Neither a valid safety level nor a hidden value were passed. */
 	FKFlickrPhotosSetSafetyLevelError_ChangeNotAllowed = 3,		 /* Changing the safety level of this photo is not allowed. */

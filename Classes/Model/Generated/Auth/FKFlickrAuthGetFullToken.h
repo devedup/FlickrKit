@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrAuthGetFullTokenError) {
+typedef NS_ENUM(NSInteger, FKFlickrAuthGetFullTokenError) {
 	FKFlickrAuthGetFullTokenError_MinitokenNotFound = 1,		 /* The passed mini-token was not valid. */
 	FKFlickrAuthGetFullTokenError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrAuthGetFullTokenError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPlacesResolvePlaceIdError) {
+typedef NS_ENUM(NSInteger, FKFlickrPlacesResolvePlaceIdError) {
 	FKFlickrPlacesResolvePlaceIdError_PlaceIDRequired = 2,		 /*  */
 	FKFlickrPlacesResolvePlaceIdError_PlaceNotFound = 3,		 /*  */
 	FKFlickrPlacesResolvePlaceIdError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */

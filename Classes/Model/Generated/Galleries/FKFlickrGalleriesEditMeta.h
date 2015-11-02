@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGalleriesEditMetaError) {
+typedef NS_ENUM(NSInteger, FKFlickrGalleriesEditMetaError) {
 	FKFlickrGalleriesEditMetaError_RequiredParameterMissing = 1,		 /* One or more required parameters was missing from your request. */
 	FKFlickrGalleriesEditMetaError_InvalidTitleOrDescription = 2,		 /* The title or description arguments could not be validated. */
 	FKFlickrGalleriesEditMetaError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */

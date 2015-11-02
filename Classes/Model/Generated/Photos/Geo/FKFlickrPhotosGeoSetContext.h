@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosGeoSetContextError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosGeoSetContextError) {
 	FKFlickrPhotosGeoSetContextError_PhotoNotFound = 1,		 /* The photo id was either invalid or was for a photo not viewable by the calling user. */
 	FKFlickrPhotosGeoSetContextError_NotAValidContext = 2,		 /* The context ID passed to the method is invalid. */
 	FKFlickrPhotosGeoSetContextError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */

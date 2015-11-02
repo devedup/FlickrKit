@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosNotesDeleteError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosNotesDeleteError) {
 	FKFlickrPhotosNotesDeleteError_NoteNotFound = 1,		 /* The note id passed was not a valid note id */
 	FKFlickrPhotosNotesDeleteError_UserCannotDeleteNote = 2,		 /* The calling user does not have permission to delete the specified note */
 	FKFlickrPhotosNotesDeleteError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */

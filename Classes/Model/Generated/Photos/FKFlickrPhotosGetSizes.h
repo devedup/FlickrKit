@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosGetSizesError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosGetSizesError) {
 	FKFlickrPhotosGetSizesError_PhotoNotFound = 1,		 /* The photo id passed was not a valid photo id. */
 	FKFlickrPhotosGetSizesError_PermissionDenied = 2,		 /* The calling user does not have permission to view the photo. */
 	FKFlickrPhotosGetSizesError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */

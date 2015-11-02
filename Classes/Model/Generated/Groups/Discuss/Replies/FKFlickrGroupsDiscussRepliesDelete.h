@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGroupsDiscussRepliesDeleteError) {
+typedef NS_ENUM(NSInteger, FKFlickrGroupsDiscussRepliesDeleteError) {
 	FKFlickrGroupsDiscussRepliesDeleteError_TopicNotFound = 1,		 /* The topic_id is invalid. */
 	FKFlickrGroupsDiscussRepliesDeleteError_ReplyNotFound = 2,		 /* The reply_id is invalid. */
 	FKFlickrGroupsDiscussRepliesDeleteError_CannotDeleteReply = 3,		 /* Replies can only be edited by their owner. */

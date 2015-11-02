@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPlacesGetInfoByUrlError) {
+typedef NS_ENUM(NSInteger, FKFlickrPlacesGetInfoByUrlError) {
 	FKFlickrPlacesGetInfoByUrlError_PlaceURLRequired = 2,		 /* The flickr.com/places URL was not passed with the API method. */
 	FKFlickrPlacesGetInfoByUrlError_PlaceNotFound = 3,		 /* Unable to find a valid place for the places URL. */
 	FKFlickrPlacesGetInfoByUrlError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */

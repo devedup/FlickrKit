@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosTransformRotateError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosTransformRotateError) {
 	FKFlickrPhotosTransformRotateError_PhotoNotFound = 1,		 /* The photo id was invalid or did not belong to the calling user. */
 	FKFlickrPhotosTransformRotateError_InvalidRotation = 2,		 /* The rotation degrees were an invalid value. */
 	FKFlickrPhotosTransformRotateError_TemporaryFailure = 3,		 /* There was a problem either rotating the image or storing the rotated versions. */

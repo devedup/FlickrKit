@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGroupsDiscussRepliesEditError) {
+typedef NS_ENUM(NSInteger, FKFlickrGroupsDiscussRepliesEditError) {
 	FKFlickrGroupsDiscussRepliesEditError_TopicNotFound = 1,		 /* The topic_id is invalid */
 	FKFlickrGroupsDiscussRepliesEditError_ReplyNotFound = 2,		 /* The reply_id is invalid. */
 	FKFlickrGroupsDiscussRepliesEditError_MissingRequiredArguments = 3,		 /* The topic_id and reply_id are required. */

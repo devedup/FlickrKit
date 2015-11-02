@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosCommentsDeleteCommentError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosCommentsDeleteCommentError) {
 	FKFlickrPhotosCommentsDeleteCommentError_PhotoNotFound = 1,		 /* The requested comment is against a photo which no longer exists. */
 	FKFlickrPhotosCommentsDeleteCommentError_CommentNotFound = 2,		 /* The comment id passed was not a valid comment id */
 	FKFlickrPhotosCommentsDeleteCommentError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */

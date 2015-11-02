@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPushGetSubscriptionsError) {
+typedef NS_ENUM(NSInteger, FKFlickrPushGetSubscriptionsError) {
 	FKFlickrPushGetSubscriptionsError_ServiceCurrentlyAvailableOnlyToProAccounts = 5,		 /* PuSH subscriptions are currently restricted to Pro account holders. */
 	FKFlickrPushGetSubscriptionsError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrPushGetSubscriptionsError_InvalidSignature = 96,		 /* The passed signature was invalid. */

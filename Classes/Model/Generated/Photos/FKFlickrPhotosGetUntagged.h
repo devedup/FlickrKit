@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosGetUntaggedError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosGetUntaggedError) {
 	FKFlickrPhotosGetUntaggedError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrPhotosGetUntaggedError_InvalidSignature = 96,		 /* The passed signature was invalid. */
 	FKFlickrPhotosGetUntaggedError_MissingSignature = 97,		 /* The call required signing but no signature was sent. */

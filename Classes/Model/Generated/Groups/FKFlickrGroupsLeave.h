@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGroupsLeaveError) {
+typedef NS_ENUM(NSInteger, FKFlickrGroupsLeaveError) {
 	FKFlickrGroupsLeaveError_RequiredArgumentsMissing = 1,		 /* The group_id doesn't exist */
 	FKFlickrGroupsLeaveError_GroupDoesNotExist = 2,		 /* The group by that ID does not exist */
 	FKFlickrGroupsLeaveError_AccountIsNotInThatGroup = 3,		 /* The user is not a member of the group that was specified */

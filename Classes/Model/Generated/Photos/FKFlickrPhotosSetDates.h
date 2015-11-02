@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosSetDatesError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosSetDatesError) {
 	FKFlickrPhotosSetDatesError_PhotoNotFound = 1,		 /* The photo id was not the id of a valid photo belonging to the calling user. */
 	FKFlickrPhotosSetDatesError_NotEnoughArguments = 2,		 /* No dates were specified to be changed. */
 	FKFlickrPhotosSetDatesError_InvalidGranularity = 3,		 /* The value passed for 'granularity' was not a valid flickr date granularity. */

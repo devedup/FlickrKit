@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGroupsDiscussTopicsGetInfoError) {
+typedef NS_ENUM(NSInteger, FKFlickrGroupsDiscussTopicsGetInfoError) {
 	FKFlickrGroupsDiscussTopicsGetInfoError_TopicNotFound = 1,		 /* The topic_id is invalid */
 	FKFlickrGroupsDiscussTopicsGetInfoError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrGroupsDiscussTopicsGetInfoError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

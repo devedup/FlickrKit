@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrContactsGetTaggingSuggestionsError) {
+typedef NS_ENUM(NSInteger, FKFlickrContactsGetTaggingSuggestionsError) {
 	FKFlickrContactsGetTaggingSuggestionsError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrContactsGetTaggingSuggestionsError_InvalidSignature = 96,		 /* The passed signature was invalid. */
 	FKFlickrContactsGetTaggingSuggestionsError_MissingSignature = 97,		 /* The call required signing but no signature was sent. */

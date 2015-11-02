@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosGetFavoritesError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosGetFavoritesError) {
 	FKFlickrPhotosGetFavoritesError_PhotoNotFound = 1,		 /* The specified photo does not exist, or the calling user does not have permission to view it. */
 	FKFlickrPhotosGetFavoritesError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrPhotosGetFavoritesError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

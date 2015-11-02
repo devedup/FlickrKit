@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosGetPermsError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosGetPermsError) {
 	FKFlickrPhotosGetPermsError_PhotoNotFound = 1,		 /* The photo id passed was not a valid photo id of a photo belonging to the calling user. */
 	FKFlickrPhotosGetPermsError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrPhotosGetPermsError_InvalidSignature = 96,		 /* The passed signature was invalid. */

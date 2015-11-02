@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosUploadCheckTicketsError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosUploadCheckTicketsError) {
 	FKFlickrPhotosUploadCheckTicketsError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrPhotosUploadCheckTicketsError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
 	FKFlickrPhotosUploadCheckTicketsError_WriteOperationFailed = 106,		 /* The requested operation failed due to a temporary issue. */

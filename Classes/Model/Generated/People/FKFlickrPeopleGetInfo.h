@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPeopleGetInfoError) {
+typedef NS_ENUM(NSInteger, FKFlickrPeopleGetInfoError) {
 	FKFlickrPeopleGetInfoError_UserNotFound = 1,		 /* The user id passed did not match a Flickr user. */
 	FKFlickrPeopleGetInfoError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrPeopleGetInfoError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

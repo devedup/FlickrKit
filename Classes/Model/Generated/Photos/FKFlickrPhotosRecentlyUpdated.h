@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosRecentlyUpdatedError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosRecentlyUpdatedError) {
 	FKFlickrPhotosRecentlyUpdatedError_RequiredArgumentMissing = 1,		 /* Some or all of the required arguments were not supplied. */
 	FKFlickrPhotosRecentlyUpdatedError_NotAValidDate = 2,		 /* The date argument did not pass validation. */
 	FKFlickrPhotosRecentlyUpdatedError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */

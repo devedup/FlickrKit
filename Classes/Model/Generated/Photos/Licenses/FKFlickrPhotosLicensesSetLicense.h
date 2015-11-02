@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosLicensesSetLicenseError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosLicensesSetLicenseError) {
 	FKFlickrPhotosLicensesSetLicenseError_PhotoNotFound = 1,		 /* The specified id was not the id of a valif photo owner by the calling user. */
 	FKFlickrPhotosLicensesSetLicenseError_LicenseNotFound = 2,		 /* The license id was not valid. */
 	FKFlickrPhotosLicensesSetLicenseError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGroupsDiscussTopicsAddError) {
+typedef NS_ENUM(NSInteger, FKFlickrGroupsDiscussTopicsAddError) {
 	FKFlickrGroupsDiscussTopicsAddError_GroupNotFound = 1,		 /* The group by that ID does not exist
  */
 	FKFlickrGroupsDiscussTopicsAddError_CannotPostToGroup = 2,		 /* Either this account is not a member of the group, or discussion in this group is disabled. */

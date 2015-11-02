@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPushSubscribeError) {
+typedef NS_ENUM(NSInteger, FKFlickrPushSubscribeError) {
 	FKFlickrPushSubscribeError_RequiredParameterMissing = 1,		 /* One of the required arguments for the method was not provided. */
 	FKFlickrPushSubscribeError_InvalidParameterValue = 2,		 /* One of the arguments was specified with an illegal value. */
 	FKFlickrPushSubscribeError_CallbackURLAlreadyInUseForADifferentSubscription = 3,		 /* A different subscription already exists that uses the same callback URL. */

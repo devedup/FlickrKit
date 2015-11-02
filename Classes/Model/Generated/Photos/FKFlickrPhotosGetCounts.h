@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosGetCountsError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosGetCountsError) {
 	FKFlickrPhotosGetCountsError_NoDatesSpecified = 1,		 /* Neither dates nor taken_dates were specified. */
 	FKFlickrPhotosGetCountsError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrPhotosGetCountsError_InvalidSignature = 96,		 /* The passed signature was invalid. */

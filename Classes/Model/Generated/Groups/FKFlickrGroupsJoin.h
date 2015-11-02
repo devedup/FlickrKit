@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGroupsJoinError) {
+typedef NS_ENUM(NSInteger, FKFlickrGroupsJoinError) {
 	FKFlickrGroupsJoinError_RequiredArgumentsMissing = 1,		 /* The group_id doesn't exist */
 	FKFlickrGroupsJoinError_GroupDoesNotExist = 2,		 /* The Group does not exist */
 	FKFlickrGroupsJoinError_GroupNotAvailabieToTheAccount = 3,		 /* The authed account does not have permission to view/join the group. */

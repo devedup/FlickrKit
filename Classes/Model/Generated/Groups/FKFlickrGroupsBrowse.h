@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGroupsBrowseError) {
+typedef NS_ENUM(NSInteger, FKFlickrGroupsBrowseError) {
 	FKFlickrGroupsBrowseError_CategoryNotFound = 1,		 /* The value passed for cat_id was not a valid category id. */
 	FKFlickrGroupsBrowseError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrGroupsBrowseError_InvalidSignature = 96,		 /* The passed signature was invalid. */

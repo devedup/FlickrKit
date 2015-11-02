@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosPeopleDeleteError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosPeopleDeleteError) {
 	FKFlickrPhotosPeopleDeleteError_PersonNotFound = 1,		 /* The NSID passed was not a valid user id. */
 	FKFlickrPhotosPeopleDeleteError_PhotoNotFound = 2,		 /* The photo id passed was not a valid photo id. */
 	FKFlickrPhotosPeopleDeleteError_UserCannotRemoveThatPerson = 3,		 /* The calling user did not have permission to remove this person from this photo. */

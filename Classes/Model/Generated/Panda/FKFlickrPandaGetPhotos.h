@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPandaGetPhotosError) {
+typedef NS_ENUM(NSInteger, FKFlickrPandaGetPhotosError) {
 	FKFlickrPandaGetPhotosError_RequiredParameterMissing = 1,		 /* One or more required parameters was not included with your request. */
 	FKFlickrPandaGetPhotosError_UnknownPanda = 2,		 /* You requested a panda we haven't met yet. */
 	FKFlickrPandaGetPhotosError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */

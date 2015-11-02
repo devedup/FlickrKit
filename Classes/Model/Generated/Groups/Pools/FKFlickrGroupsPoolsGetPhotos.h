@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGroupsPoolsGetPhotosError) {
+typedef NS_ENUM(NSInteger, FKFlickrGroupsPoolsGetPhotosError) {
 	FKFlickrGroupsPoolsGetPhotosError_GroupNotFound = 1,		 /* The group id passed was not a valid group id. */
 	FKFlickrGroupsPoolsGetPhotosError_YouDontHavePermissionToViewThisPool = 2,		 /* The logged in user (if any) does not have permission to view the pool for this group. */
 	FKFlickrGroupsPoolsGetPhotosError_UnknownUser = 3,		 /* The user specified by user_id does not exist. */

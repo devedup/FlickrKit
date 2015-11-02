@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrMachinetagsGetPairsError) {
+typedef NS_ENUM(NSInteger, FKFlickrMachinetagsGetPairsError) {
 	FKFlickrMachinetagsGetPairsError_NotAValidNamespace = 1,		 /* Missing or invalid namespace argument. */
 	FKFlickrMachinetagsGetPairsError_NotAValidPredicate = 2,		 /* Missing or invalid predicate argument. */
 	FKFlickrMachinetagsGetPairsError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */

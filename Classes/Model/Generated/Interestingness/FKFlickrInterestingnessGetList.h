@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrInterestingnessGetListError) {
+typedef NS_ENUM(NSInteger, FKFlickrInterestingnessGetListError) {
 	FKFlickrInterestingnessGetListError_NotAValidDateString = 1,		 /* The date string passed did not validate. All dates must be formatted : YYYY-MM-DD */
 	FKFlickrInterestingnessGetListError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrInterestingnessGetListError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

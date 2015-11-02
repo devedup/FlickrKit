@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosSetContentTypeError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosSetContentTypeError) {
 	FKFlickrPhotosSetContentTypeError_PhotoNotFound = 1,		 /* The photo id passed was not a valid photo id of a photo belonging to the calling user. */
 	FKFlickrPhotosSetContentTypeError_RequiredArgumentsMissing = 2,		 /* Some or all of the required arguments were not supplied. */
 	FKFlickrPhotosSetContentTypeError_ChangeNotAllowed = 3,		 /* Changing the content type of this photo is not allowed. */

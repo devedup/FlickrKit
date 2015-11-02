@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrCommonsGetInstitutionsError) {
+typedef NS_ENUM(NSInteger, FKFlickrCommonsGetInstitutionsError) {
 	FKFlickrCommonsGetInstitutionsError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrCommonsGetInstitutionsError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
 	FKFlickrCommonsGetInstitutionsError_WriteOperationFailed = 106,		 /* The requested operation failed due to a temporary issue. */

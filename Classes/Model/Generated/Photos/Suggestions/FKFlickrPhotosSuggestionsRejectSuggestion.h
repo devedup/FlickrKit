@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosSuggestionsRejectSuggestionError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosSuggestionsRejectSuggestionError) {
 	FKFlickrPhotosSuggestionsRejectSuggestionError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrPhotosSuggestionsRejectSuggestionError_InvalidSignature = 96,		 /* The passed signature was invalid. */
 	FKFlickrPhotosSuggestionsRejectSuggestionError_MissingSignature = 97,		 /* The call required signing but no signature was sent. */

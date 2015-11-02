@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrTagsGetClustersError) {
+typedef NS_ENUM(NSInteger, FKFlickrTagsGetClustersError) {
 	FKFlickrTagsGetClustersError_TagClusterNotFound = 1,		 /* The tag was invalid or no cluster exists for that tag. */
 	FKFlickrTagsGetClustersError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrTagsGetClustersError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrCollectionsGetInfoError) {
+typedef NS_ENUM(NSInteger, FKFlickrCollectionsGetInfoError) {
 	FKFlickrCollectionsGetInfoError_CollectionNotFound = 1,		 /* The requested collection could not be found or is not visible to the calling user. */
 	FKFlickrCollectionsGetInfoError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrCollectionsGetInfoError_InvalidSignature = 96,		 /* The passed signature was invalid. */

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosGeoBatchCorrectLocationError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosGeoBatchCorrectLocationError) {
 	FKFlickrPhotosGeoBatchCorrectLocationError_RequiredArgumentsMissing = 1,		 /* Some or all of the required arguments were not supplied. */
 	FKFlickrPhotosGeoBatchCorrectLocationError_NotAValidLatitude = 2,		 /* The latitude argument failed validation. */
 	FKFlickrPhotosGeoBatchCorrectLocationError_NotAValidLongitude = 3,		 /* The longitude argument failed validation. */

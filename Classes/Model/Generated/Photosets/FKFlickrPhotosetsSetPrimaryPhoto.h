@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosetsSetPrimaryPhotoError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosetsSetPrimaryPhotoError) {
 	FKFlickrPhotosetsSetPrimaryPhotoError_PhotosetNotFound = 1,		 /* The photoset id passed was not the id of avalid photoset owned by the calling user. */
 	FKFlickrPhotosetsSetPrimaryPhotoError_PhotoNotFound = 2,		 /* The photo id passed was not the id of a valid photo owned by the calling user. */
 	FKFlickrPhotosetsSetPrimaryPhotoError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */

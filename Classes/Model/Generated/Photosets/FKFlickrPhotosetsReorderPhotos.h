@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosetsReorderPhotosError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosetsReorderPhotosError) {
 	FKFlickrPhotosetsReorderPhotosError_PhotosetNotFound = 1,		 /* The photoset id passed was not a valid photoset id or did not belong to the calling user. */
 	FKFlickrPhotosetsReorderPhotosError_PhotoNotFound = 2,		 /* One or more of the photo ids passed was not a valid photo id or does not belong to the calling user. */
 	FKFlickrPhotosetsReorderPhotosError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */

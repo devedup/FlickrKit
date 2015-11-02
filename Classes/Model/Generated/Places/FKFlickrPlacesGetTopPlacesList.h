@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPlacesGetTopPlacesListError) {
+typedef NS_ENUM(NSInteger, FKFlickrPlacesGetTopPlacesListError) {
 	FKFlickrPlacesGetTopPlacesListError_RequiredParameterMissing = 1,		 /* One or more required parameters with missing from your request. */
 	FKFlickrPlacesGetTopPlacesListError_NotAValidPlaceType = 2,		 /* An unknown or unsupported place type ID was passed with your request. */
 	FKFlickrPlacesGetTopPlacesListError_NotAValidDate = 3,		 /* The date argument passed with your request is invalid. */

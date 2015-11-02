@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosCommentsEditCommentError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosCommentsEditCommentError) {
 	FKFlickrPhotosCommentsEditCommentError_PhotoNotFound = 1,		 /* The requested comment is against a photo which no longer exists. */
 	FKFlickrPhotosCommentsEditCommentError_CommentNotFound = 2,		 /* The comment id passed was not a valid comment id */
 	FKFlickrPhotosCommentsEditCommentError_BlankComment = 8,		 /* Comment text can not be blank */

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosDeleteError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosDeleteError) {
 	FKFlickrPhotosDeleteError_PhotoNotFound = 1,		 /* The photo id was not the id of a photo belonging to the calling user. */
 	FKFlickrPhotosDeleteError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */
 	FKFlickrPhotosDeleteError_InvalidSignature = 96,		 /* The passed signature was invalid. */

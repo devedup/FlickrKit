@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrAuthCheckTokenError) {
+typedef NS_ENUM(NSInteger, FKFlickrAuthCheckTokenError) {
 	FKFlickrAuthCheckTokenError_LoginFailedOrInvalidAuthToken = 98,		 /* The login details or auth token passed were invalid. */
 	FKFlickrAuthCheckTokenError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrAuthCheckTokenError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

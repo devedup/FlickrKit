@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrStatsGetPhotosetStatsError) {
+typedef NS_ENUM(NSInteger, FKFlickrStatsGetPhotosetStatsError) {
 	FKFlickrStatsGetPhotosetStatsError_UserDoesNotHaveStats = 1,		 /* The user you have requested stats has not enabled stats on their account. */
 	FKFlickrStatsGetPhotosetStatsError_NoStatsForThatDate = 2,		 /* No stats are available for the date requested. Flickr only keeps stats data for the last 28 days. */
 	FKFlickrStatsGetPhotosetStatsError_InvalidDate = 3,		 /* The date provided could not be parsed */

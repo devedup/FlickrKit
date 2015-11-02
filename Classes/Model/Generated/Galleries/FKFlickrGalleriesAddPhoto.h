@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGalleriesAddPhotoError) {
+typedef NS_ENUM(NSInteger, FKFlickrGalleriesAddPhotoError) {
 	FKFlickrGalleriesAddPhotoError_RequiredParameterMissing = 1,		 /* One or more required parameters was not included with your API call. */
 	FKFlickrGalleriesAddPhotoError_InvalidGalleryID = 2,		 /* That gallery could not be found. */
 	FKFlickrGalleriesAddPhotoError_InvalidPhotoID = 3,		 /* The requested photo could not be found. */

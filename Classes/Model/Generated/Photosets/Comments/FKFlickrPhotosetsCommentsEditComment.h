@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosetsCommentsEditCommentError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosetsCommentsEditCommentError) {
 	FKFlickrPhotosetsCommentsEditCommentError_CommentNotFound = 2,		 /* The comment id passed was not a valid comment id. */
 	FKFlickrPhotosetsCommentsEditCommentError_BlankComment = 8,		 /* Comment text can't be blank. */
 	FKFlickrPhotosetsCommentsEditCommentError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */

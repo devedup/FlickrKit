@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPlacesPlacesForContactsError) {
+typedef NS_ENUM(NSInteger, FKFlickrPlacesPlacesForContactsError) {
 	FKFlickrPlacesPlacesForContactsError_PlacesForContactsAreNotAvailableAtThisTime = 1,		 /* Places for contacts have been disabled or are otherwise not available. */
 	FKFlickrPlacesPlacesForContactsError_RequiredParameterMissing = 2,		 /* One or more of the required parameters was not included with your request. */
 	FKFlickrPlacesPlacesForContactsError_NotAValidPlaceType = 3,		 /* An invalid place type was included with your request. */

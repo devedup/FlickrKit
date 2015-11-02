@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosSetMetaError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosSetMetaError) {
 	FKFlickrPhotosSetMetaError_PhotoNotFound = 1,		 /* The photo id passed was not the id of a photo belonging to the calling user. It might be an invalid id, or the photo might be owned by another user.  */
 	FKFlickrPhotosSetMetaError_AtLeastOneOfTitleOrDescriptionMustBeSet = 2,		 /* Since title and description is now optional, at least one of them must be sent.  */
 	FKFlickrPhotosSetMetaError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */

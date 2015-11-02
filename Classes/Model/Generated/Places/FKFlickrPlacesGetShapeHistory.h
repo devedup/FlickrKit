@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPlacesGetShapeHistoryError) {
+typedef NS_ENUM(NSInteger, FKFlickrPlacesGetShapeHistoryError) {
 	FKFlickrPlacesGetShapeHistoryError_RequiredParameterMissing = 1,		 /* One or more required parameter is missing from the API call. */
 	FKFlickrPlacesGetShapeHistoryError_NotAValidPlacesID = 2,		 /* An invalid Places (or WOE) ID was passed with the API call. */
 	FKFlickrPlacesGetShapeHistoryError_PlaceNotFound = 3,		 /* No place could be found for the Places (or WOE) ID passed to the API call. */

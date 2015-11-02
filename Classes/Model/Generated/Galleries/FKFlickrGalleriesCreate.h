@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrGalleriesCreateError) {
+typedef NS_ENUM(NSInteger, FKFlickrGalleriesCreateError) {
 	FKFlickrGalleriesCreateError_RequiredParameterMissing = 1,		 /* One or more of the required parameters was missing from your API call. */
 	FKFlickrGalleriesCreateError_InvalidTitleOrDescription = 2,		 /* The title or the description could not be validated. */
 	FKFlickrGalleriesCreateError_FailedToAddGallery = 3,		 /* There was a problem creating the gallery. */

@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrCamerasGetBrandModelsError) {
+typedef NS_ENUM(NSInteger, FKFlickrCamerasGetBrandModelsError) {
 	FKFlickrCamerasGetBrandModelsError_BrandNotFound = 1,		 /* Unable to find the given brand ID. */
 	FKFlickrCamerasGetBrandModelsError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrCamerasGetBrandModelsError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

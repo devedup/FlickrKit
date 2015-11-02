@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosetsEditMetaError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosetsEditMetaError) {
 	FKFlickrPhotosetsEditMetaError_PhotosetNotFound = 1,		 /* The photoset id passed was not a valid photoset id or did not belong to the calling user. */
 	FKFlickrPhotosetsEditMetaError_NoTitleSpecified = 2,		 /* No title parameter was passed in the request.  */
 	FKFlickrPhotosetsEditMetaError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */

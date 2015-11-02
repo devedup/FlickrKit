@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrAuthGetFrobError) {
+typedef NS_ENUM(NSInteger, FKFlickrAuthGetFrobError) {
 	FKFlickrAuthGetFrobError_InvalidSignature = 96,		 /* The passed signature was invalid. */
 	FKFlickrAuthGetFrobError_MissingSignature = 97,		 /* The call required signing but no signature was sent. */
 	FKFlickrAuthGetFrobError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */

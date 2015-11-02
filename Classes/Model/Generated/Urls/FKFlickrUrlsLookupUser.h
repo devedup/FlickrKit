@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrUrlsLookupUserError) {
+typedef NS_ENUM(NSInteger, FKFlickrUrlsLookupUserError) {
 	FKFlickrUrlsLookupUserError_UserNotFound = 1,		 /* The passed URL was not a valid user profile or photos url. */
 	FKFlickrUrlsLookupUserError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrUrlsLookupUserError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

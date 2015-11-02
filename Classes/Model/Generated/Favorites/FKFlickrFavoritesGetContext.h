@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrFavoritesGetContextError) {
+typedef NS_ENUM(NSInteger, FKFlickrFavoritesGetContextError) {
 	FKFlickrFavoritesGetContextError_PhotoNotFound = 1,		 /* The photo id passed was not a valid photo id, or was the id of a photo that the calling user does not have permission to view. */
 	FKFlickrFavoritesGetContextError_UserNotFound = 2,		 /* The specified user was not found. */
 	FKFlickrFavoritesGetContextError_PhotoNotAFavorite = 3,		 /* The specified photo is not a favorite of the specified user. */

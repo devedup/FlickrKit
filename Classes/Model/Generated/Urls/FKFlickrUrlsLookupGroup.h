@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrUrlsLookupGroupError) {
+typedef NS_ENUM(NSInteger, FKFlickrUrlsLookupGroupError) {
 	FKFlickrUrlsLookupGroupError_GroupNotFound = 1,		 /* The passed URL was not a valid group page or photo pool url. */
 	FKFlickrUrlsLookupGroupError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrUrlsLookupGroupError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */

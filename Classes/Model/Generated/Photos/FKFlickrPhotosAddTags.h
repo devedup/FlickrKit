@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosAddTagsError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosAddTagsError) {
 	FKFlickrPhotosAddTagsError_PhotoNotFound = 1,		 /* The photo id passed was not the id of a photo that the calling user can add tags to. It could be an invalid id, or the user may not have permission to add tags to it. */
 	FKFlickrPhotosAddTagsError_MaximumNumberOfTagsReached = 2,		 /* The maximum number of tags for the photo has been reached - no more tags can be added. If the current count is less than the maximum, but adding all of the tags for this request would go over the limit, the whole request is ignored. I.E. when you get this message, none of the requested tags have been added. */
 	FKFlickrPhotosAddTagsError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */

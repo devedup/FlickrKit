@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrFavoritesRemoveError) {
+typedef NS_ENUM(NSInteger, FKFlickrFavoritesRemoveError) {
 	FKFlickrFavoritesRemoveError_PhotoNotInFavorites = 1,		 /* The photo id passed was not in the user's favorites. */
 	FKFlickrFavoritesRemoveError_CannotRemovePhotoFromThatUsersFavorites = 2,		 /* user_id was passed as an argument, but photo_id is not owned by the authenticated user. */
 	FKFlickrFavoritesRemoveError_UserNotFound = 3,		 /* Invalid user_id argument. */

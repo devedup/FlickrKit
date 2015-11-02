@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrPhotosGeoRemoveLocationError) {
+typedef NS_ENUM(NSInteger, FKFlickrPhotosGeoRemoveLocationError) {
 	FKFlickrPhotosGeoRemoveLocationError_PhotoNotFound = 1,		 /* The photo id was either invalid or was for a photo not viewable by the calling user. */
 	FKFlickrPhotosGeoRemoveLocationError_PhotoHasNoLocationInformation = 2,		 /* The specified photo has not been geotagged - there is nothing to remove. */
 	FKFlickrPhotosGeoRemoveLocationError_SSLIsRequired = 95,		 /* SSL is required to access the Flickr API. */

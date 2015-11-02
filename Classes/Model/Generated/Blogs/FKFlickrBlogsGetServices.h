@@ -10,7 +10,7 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef NS_ENUM(NSUInteger, FKFlickrBlogsGetServicesError) {
+typedef NS_ENUM(NSInteger, FKFlickrBlogsGetServicesError) {
 	FKFlickrBlogsGetServicesError_InvalidAPIKey = 100,		 /* The API key passed was not valid or has expired. */
 	FKFlickrBlogsGetServicesError_ServiceCurrentlyUnavailable = 105,		 /* The requested service is temporarily unavailable. */
 	FKFlickrBlogsGetServicesError_WriteOperationFailed = 106,		 /* The requested operation failed due to a temporary issue. */
