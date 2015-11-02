@@ -17,6 +17,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.photoURLs = []
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 
     @IBAction func showTodaysInterestingWasPressed(sender: AnyObject) {
         let flickrInteresting = FKFlickrInterestingnessGetList()
@@ -80,7 +84,7 @@ class ViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "PhotosSegue") {
+        if (segue.identifier == "SegueToPhotos") {
             let photosVC: PhotosViewController = segue.destinationViewController as! PhotosViewController
             photosVC.photoURLs = self.photoURLs
         }
