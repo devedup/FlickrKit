@@ -32,6 +32,9 @@
                                 <state key="normal" title="Please wait ...">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="authButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9MH-ea-4JV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dll-Od-yXJ">
                                 <rect key="frame" x="304" y="49" width="276" height="30"/>
@@ -43,6 +46,9 @@
                                 <state key="normal" title="Show My Photos">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="photostreamButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LIu-H9-7TW"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Todays Interesting Photos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHm-7u-woa">
                                 <rect key="frame" x="201" y="192" width="199" height="21"/>
@@ -195,7 +201,10 @@
                     <navigationItem key="navigationItem" id="Pko-Qz-blL"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="authButton" destination="mg7-O5-PNL" id="rWy-1f-D8p"/>
+                        <outlet property="authLabel" destination="vN4-eC-OqB" id="Egt-OV-XLt"/>
                         <segue destination="5iq-7g-Q0U" kind="show" identifier="SegueToPhotos" id="kfR-6K-zSa"/>
+                        <segue destination="cl3-0b-6Zy" kind="show" identifier="SegueToAuth" id="VvU-As-g7W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -254,6 +263,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="626-3x-nkn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="313" y="-369"/>
+        </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="Idd-Cc-TFt">
+            <objects>
+                <viewController id="cl3-0b-6Zy" customClass="AuthViewController" customModule="FlickrKitSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3B-n9-aqr"/>
+                        <viewControllerLayoutGuide type="bottom" id="dXl-84-vqL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qes-aO-dN5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fG2-3t-MWC">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fG2-3t-MWC" secondAttribute="trailing" id="amy-fM-8ri"/>
+                            <constraint firstItem="fG2-3t-MWC" firstAttribute="leading" secondItem="Qes-aO-dN5" secondAttribute="leading" id="b6o-Ge-GUT"/>
+                            <constraint firstItem="dXl-84-vqL" firstAttribute="top" secondItem="fG2-3t-MWC" secondAttribute="bottom" id="j8P-mH-pC8"/>
+                            <constraint firstItem="fG2-3t-MWC" firstAttribute="top" secondItem="y3B-n9-aqr" secondAttribute="bottom" id="yJ5-7P-Bjp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="fG2-3t-MWC" id="8wr-HN-zNB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVK-lC-pqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
 </document>

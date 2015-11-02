@@ -689,7 +689,7 @@
 		553B884C1BCEC15D00BF59AF /* FKUploadRespone.h in Headers */ = {isa = PBXBuildFile; fileRef = 55AD49081760E545004AF85C /* FKUploadRespone.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		553B884D1BCEC15F00BF59AF /* FKURLBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 552D91F31754AE8A00BE3FEA /* FKURLBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		553B884E1BCEC16100BF59AF /* FKDUReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 55AEEF55175766D500B61A3C /* FKDUReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		55597DA11BE796850063CF0D /* FKFlickrTestEcho.h in Headers */ = {isa = PBXBuildFile; fileRef = 55597D9F1BE796850063CF0D /* FKFlickrTestEcho.h */; };
+		55597DA11BE796850063CF0D /* FKFlickrTestEcho.h in Headers */ = {isa = PBXBuildFile; fileRef = 55597D9F1BE796850063CF0D /* FKFlickrTestEcho.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55597DA21BE796850063CF0D /* FKFlickrTestEcho.m in Sources */ = {isa = PBXBuildFile; fileRef = 55597DA01BE796850063CF0D /* FKFlickrTestEcho.m */; };
 		55597DA31BE796850063CF0D /* FKFlickrTestEcho.m in Sources */ = {isa = PBXBuildFile; fileRef = 55597DA01BE796850063CF0D /* FKFlickrTestEcho.m */; };
 		55597DA41BE796850063CF0D /* FKFlickrTestEcho.m in Sources */ = {isa = PBXBuildFile; fileRef = 55597DA01BE796850063CF0D /* FKFlickrTestEcho.m */; };

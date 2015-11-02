@@ -14,6 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        let scheme = url.scheme
+        if("flickrkitdemo" == scheme) {
+            // I don't recommend doing it like this, it's just a demo... I use an authentication
+            // controller singleton object in my projects
+            NSNotificationCenter.defaultCenter().postNotificationName("UserAuthCallbackNotification", object: url)
+        }        
+        return true
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         

@@ -25,8 +25,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {		
 
 	// Initialise FlickrKit with your flickr api key and shared secret
-	NSString *apiKey = nil;
-	NSString *secret = nil;
+	NSString *apiKey = @"348ea26ca45d5f9d3da7fff4822a7fd1";
+	NSString *secret = @"471cc96b04e60f27";
     if (!apiKey) {
         NSLog(@"\n----------------------------------\nYou need to enter your own 'apiKey' and 'secret' in FKAppDelegate for the demo to run. \n\nYou can get these from your Flickr account settings.\n----------------------------------\n");
         exit(0);
