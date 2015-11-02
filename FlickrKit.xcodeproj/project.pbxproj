@@ -1665,7 +1665,7 @@
 		55B206E51769008300A19A12 /* FlickrKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "FlickrKit-Prefix.pch"; path = "Resources/FlickrKit-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		55B206EA176903DB00A19A12 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		55B206EB176903E300A19A12 /* Source Code License.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Source Code License.md"; sourceTree = "<group>"; };
-		55EA68A917CAA6B90017DDD1 /* FlickrKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FlickrKit.podspec; sourceTree = "<group>"; };
+		55EA68A917CAA6B90017DDD1 /* FlickrKit.podspec.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FlickrKit.podspec.json; sourceTree = "<group>"; };
 		55EA68AB17CAABD40017DDD1 /* FKOFHMACSha1Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKOFHMACSha1Base64.h; path = Utilities/FKOFHMACSha1Base64.h; sourceTree = "<group>"; };
 		55EA68AC17CAABD40017DDD1 /* FKOFHMACSha1Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKOFHMACSha1Base64.m; path = Utilities/FKOFHMACSha1Base64.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1724,7 +1724,7 @@
 		552D910D1753951300BE3FEA = {
 			isa = PBXGroup;
 			children = (
-				55EA68A917CAA6B90017DDD1 /* FlickrKit.podspec */,
+				55EA68A917CAA6B90017DDD1 /* FlickrKit.podspec.json */,
 				55B206EA176903DB00A19A12 /* README.md */,
 				55B206EB176903E300A19A12 /* Source Code License.md */,
 				552D91E41754AE8900BE3FEA /* Classes */,
