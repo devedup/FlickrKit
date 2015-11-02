@@ -128,6 +128,11 @@
 	}
 	NSString *header = [self templateForFactoryHeader];
 	header = [header stringByReplacingOccurrencesOfString:@"#IMPORTS#" withString:imports];
+    
+    // Date Generated
+    NSString *generatedDate = [[self dateFormatter] stringFromDate:[NSDate date]];
+    header = [header stringByReplacingOccurrencesOfString:@"#GENERATED_DATE#" withString:generatedDate];
+    
 	NSString *outputPath = [NSString stringWithFormat:@"%@FKAPIMethods.h", self.factoryOutputPath];
 	[self writeString:header toFileAtPath:outputPath];
 }
@@ -193,12 +198,7 @@
             [errorString appendFormat:@"\t%@Error_%@ = %lu,\t\t /* %@ */\n", className, enumTitle, (unsigned long)code, desc];
         }
         header = [header stringByReplacingOccurrencesOfString:@"#ERROR_CODES#" withString:errorString];
-        
-                
-        // Date Generated        
-//        NSString *generatedDate = [[self dateFormatter] stringFromDate:[NSDate date]];
-//        header = [header stringByReplacingOccurrencesOfString:@"#GENERATED_DATE#" withString:generatedDate];
-        
+
         NSString *outputPath = [NSString stringWithFormat:@"%@%@.h", path, className];
         [self writeString:header toFileAtPath:outputPath];
     }

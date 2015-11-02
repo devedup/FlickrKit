@@ -1,1 +1,1 @@
-/Users/Dave/Developer/GIT/github/FlickrKit-GitHub
+/Users/dave/Developer/GIT/github/devedup/FlickrKit
