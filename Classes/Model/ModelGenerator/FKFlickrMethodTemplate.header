@@ -10,9 +10,9 @@
 
 #import "FKFlickrAPIMethod.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, #CLASS_NAME#Error) {
 #ERROR_CODES#
-} #CLASS_NAME#Error;
+};
 
 /*
 
