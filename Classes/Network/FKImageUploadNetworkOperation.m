@@ -14,7 +14,8 @@
 #import "FKDUStreamUtil.h"
 
 @interface FKImageUploadNetworkOperation ()
-@property (nonatomic, strong) UIImage *image;
+
+@property (nonatomic, strong) DUImage *image;
 @property (nonatomic, retain) NSString *tempFile;
 @property (nonatomic, copy) FKAPIImageUploadCompletion completion;
 @property (nonatomic, retain) NSDictionary *args;
@@ -27,13 +28,10 @@
 
 @implementation FKImageUploadNetworkOperation
 
-- (id) initWithImage:(UIImage *)image arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion; {
+- (id) initWithImage:(DUImage *)image arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion; {
     self = [super init];
     if (self) {
 		self.image = image;
-#if TARGET_OS_IOS
-        self.assetURL = nil;
-#endif
 		self.args = args;
 		self.completion = completion;
     }
@@ -130,10 +128,9 @@
     [outputStream open];
     
     if( self.image ){
+        NSData *jpegData = [FKImageUploadNetworkOperation jpegSerialzation:self.image];
         // Input stream is the image
-        NSData *imgData = UIImageJPEGRepresentation(self.image, 1.0);
-        NSInputStream *inImageStream = [[NSInputStream alloc] initWithData:imgData];
-        
+        NSInputStream *inImageStream = [[NSInputStream alloc] initWithData:jpegData];
         // Write the contents to the streams... don't cross the streams !
         [FKDUStreamUtil writeMultipartStartString:multipartOpeningString imageStream:inImageStream toOutputStream:outputStream closingString:multipartClosingString];
     }
@@ -217,6 +214,22 @@
 #endif
 }
 
+#pragma mark - ImageSerialization
+
+#if TARGET_OS_IPHONE
++(NSData*)jpegSerialzation:(DUImage *)image{
+    return UIImageJPEGRepresentation(image, 1.0);
+}
+#else
++(NSData*)jpegSerialzation:(DUImage *)image{
+    NSData *imageData = [image TIFFRepresentation];
+    NSBitmapImageRep *imageRep = [NSBitmapImageRep imageRepWithData:imageData];
+    NSNumber *compressionFactor = [NSNumber numberWithFloat:1.0];
+    NSDictionary *imageProps = [NSDictionary dictionaryWithObject:compressionFactor
+                                                           forKey:NSImageCompressionFactor];
+    return [imageRep representationUsingType:NSJPEGFileType properties:imageProps];
+}
+#endif
 @end
 
 

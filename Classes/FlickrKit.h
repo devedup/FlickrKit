@@ -6,13 +6,33 @@
 //  Copyright (c) 2013 DevedUp Ltd. All rights reserved. http://www.devedup.com
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+//! Project version number for FlickrKit.
+FOUNDATION_EXPORT double FlickrKitVersionNumber;
+
+//! Project version string for FlickrKit.
+FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <FlickrKitOSX/PublicHeader.h>
+
 #import "FKDUDiskCache.h"
 #import "FKDataTypes.h"
 #import "FKFlickrNetworkOperation.h"
 #import "FKImageUploadNetworkOperation.h"
 #import "FKFlickrAPIMethod.h"
 #import "FKAPIMethods.h"
+
+//for module umbrella header
+#import "FKDUBlocks.h"
+#import "FKDUDefaultDiskCache.h"
+#import "FKDUNetworkController.h"
+#import "FKDUReachability.h"
+#import "FKDUStreamUtil.h"
+#import "FKOFHMACSha1Base64.h"
+#import "FKUploadRespone.h"
+#import "FKURLBuilder.h"
+#import "FKUtilities.h"
+
 
 @class FKFlickrNetworkOperation;
 
@@ -133,7 +153,7 @@
 
 @interface FlickrKit (PhotoUpload)
 
-- (FKImageUploadNetworkOperation *) uploadImage:(UIImage *)image args:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;
+- (FKImageUploadNetworkOperation *) uploadImage:(DUImage *)image args:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;
 
 #if TARGET_OS_IOS
 - (FKImageUploadNetworkOperation *) uploadAssetURL:(NSURL *)assetURL args:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;
