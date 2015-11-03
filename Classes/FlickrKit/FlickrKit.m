@@ -451,8 +451,7 @@
 
 
 @implementation FlickrKit (PhotoUpload)
-
-- (FKImageUploadNetworkOperation *) uploadImage:(UIImage *)image args:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion {
+- (FKImageUploadNetworkOperation *) uploadImage:(DUImage *)image args:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion {
 	FKImageUploadNetworkOperation *imageUpload = [[FKImageUploadNetworkOperation alloc] initWithImage:image arguments:args completion:completion];
 	[[FKDUNetworkController sharedController] execute:imageUpload];
     return imageUpload;
@@ -460,10 +459,10 @@
 
 #if TARGET_OS_IOS
 - (FKImageUploadNetworkOperation *) uploadAssetURL:(NSURL *)assetURL args:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion {
-	FKImageUploadNetworkOperation *imageUpload = [[FKImageUploadNetworkOperation alloc] initWithAssetURL:assetURL
+    FKImageUploadNetworkOperation *imageUpload = [[FKImageUploadNetworkOperation alloc] initWithAssetURL:assetURL
                                                                                                arguments:args
                                                                                               completion:completion];
-	[[FKDUNetworkController sharedController] execute:imageUpload];
+    [[FKDUNetworkController sharedController] execute:imageUpload];
     return imageUpload;
 }
 #endif

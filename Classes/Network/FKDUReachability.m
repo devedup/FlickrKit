@@ -57,12 +57,14 @@
 					// ... and no [user] intervention is needed
 					isConnected = YES;
 				}
-			} else if ((flags & kSCNetworkReachabilityFlagsIsWWAN) == kSCNetworkReachabilityFlagsIsWWAN) {
+			}
+#if TARGET_OS_IPHONE
+            else if ((flags & kSCNetworkReachabilityFlagsIsWWAN) == kSCNetworkReachabilityFlagsIsWWAN) {
 				// ... but WWAN connections are OK if the calling application
 				//     is using the CFNetwork (CFSocketStream?) APIs.
 				isConnected = YES;
 			}
-			
+#endif
 			CFRelease(reachability);
 			return isConnected;
 		}

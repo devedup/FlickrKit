@@ -67,3 +67,11 @@ NSString *FKPermissionStringForPermission(FKPermission permission);
 
 NSString *FKIdentifierForSize(FKPhotoSize size);
 
+/*
+ Define platform specific image wrapper class.
+ */
+#if TARGET_OS_IPHONE
+typedef UIImage DUImage;
+#else
+typedef NSImage DUImage;
+#endif

@@ -6,7 +6,15 @@
 //  Copyright (c) 2013 DevedUp Ltd. All rights reserved. http://www.devedup.com
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+//! Project version number for FlickrKit.
+FOUNDATION_EXPORT double FlickrKitVersionNumber;
+
+//! Project version string for FlickrKit.
+FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <FlickrKitOSX/PublicHeader.h>
+
 #import "FKDUDiskCache.h"
 #import "FKDataTypes.h"
 #import "FKFlickrNetworkOperation.h"
@@ -14,8 +22,23 @@
 #import "FKFlickrAPIMethod.h"
 #import "FKAPIMethods.h"
 
+//for module umbrella header
+#import "FKDUBlocks.h"
+#import "FKDUDefaultDiskCache.h"
+#import "FKDUNetworkController.h"
+#import "FKDUReachability.h"
+#import "FKDUStreamUtil.h"
+#import "FKOFHMACSha1Base64.h"
+#import "FKUploadRespone.h"
+#import "FKURLBuilder.h"
+#import "FKUtilities.h"
+
+
 @class FKFlickrNetworkOperation;
 
+/**
+ *  The main point of entry into FlickrKit
+ */
 @interface FlickrKit : NSObject
 
 //You can inject your own disk cache if you like, or just use the default one and ignore this
@@ -28,40 +51,74 @@
 @property (nonatomic, strong, readonly) NSString *authSecret;
 @property (nonatomic, assign, readonly) FKPermission permissionGranted;
 
+/**
+ *  Access the FlickrKit shared singleton
+ *
+ *  @return the FlickrKit shared singleton
+ */
 + (FlickrKit *) sharedFlickrKit;
 
-#pragma mark - Initialisation - run this on startup with your API key and Shared Secret
+#pragma mark - Initialisation
+
+/**
+ *  Run this on startup with your API key and Shared Secret
+ *
+ *  @param apiKey Your flickr API key
+ *  @param secret Your flickr API secret
+ */
 - (void) initializeWithAPIKey:(NSString *)apiKey sharedSecret:(NSString *)secret;
 
-#pragma mark - Flickr Data Requests - using basic string and dictionary
+#pragma mark - Flickr Data Requests
 
-/*! Call the Flickr API using a string apiMethod passing any requestArgs
+/**
+ *  Call the Flickr API using a string apiMethod passing any requestArgs
  *
- *  \param apiMethod The Flickr method you want to call
- *  \param requestArgs An NSDictionary of arguments to pass to the method
- *  \param completion The completion block of code to execute on completion of the network call
- *  \returns The FKFlickrNetworkOperation created
- */
-- (FKFlickrNetworkOperation *) call:(NSString * )apiMethod args:(NSDictionary *)requestArgs completion:(FKAPIRequestCompletion)completion; //doesn't use the cache
-
-/*! Call the Flickr API using a string apiMethod passing any requestArgs
+ *  @param apiMethod   The Flickr method you want to call
+ *  @param requestArgs An NSDictionary of arguments to pass to the method
+ *  @param completion  The completion block of code to execute on completion of the network call
  *
- *  \param apiMethod The Flickr method you want to call
- *  \param requestArgs An NSDictionary of arguments to pass to the method
- *  \param maxAge The maximum age the cached response can be around for.
- *  \param completion The completion block of code to execute on completion of the network call
- *  \returns The FKFlickrNetworkOperation created
+ *  @return The FKFlickrNetworkOperation created
  */
-- (FKFlickrNetworkOperation *) call:(NSString *)apiMethod args:(NSDictionary *)requestArgs maxCacheAge:(FKDUMaxAge)maxAge completion:(FKAPIRequestCompletion)completion; //with caching specified
+- (FKFlickrNetworkOperation *) call:(NSString * )apiMethod args:(NSDictionary *)requestArgs completion:(FKAPIRequestCompletion)completion;
 
-#pragma mark - Flickr Using the Model Objects
-- (FKFlickrNetworkOperation *) call:(id<FKFlickrAPIMethod>)method completion:(FKAPIRequestCompletion)completion; //doesn't use the cache
-- (FKFlickrNetworkOperation *) call:(id<FKFlickrAPIMethod>)method maxCacheAge:(FKDUMaxAge)maxAge completion:(FKAPIRequestCompletion)completion; //with caching specified
+/**
+ *  Call the Flickr API using a string apiMethod passing any requestArgs
+ *
+ *  @param apiMethod   The Flickr method you want to call
+ *  @param requestArgs An NSDictionary of arguments to pass to the method
+ *  @param maxAge      The maximum age the cached response can be around for
+ *  @param completion  The completion block of code to execute on completion of the network call
+ *
+ *  @return The FKFlickrNetworkOperation created
+ */
+- (FKFlickrNetworkOperation *) call:(NSString *)apiMethod args:(NSDictionary *)requestArgs maxCacheAge:(FKDUMaxAge)maxAge completion:(FKAPIRequestCompletion)completion;
+
+/**
+ *  Call the Flickr API using the model objects
+ *
+ *  @param method     The flickr model object method you are calling
+ *  @param completion The completion block of code to execute on completion of the network call
+ *
+ *  @return The FKFlickrNetworkOperation created
+ */
+- (FKFlickrNetworkOperation *) call:(id<FKFlickrAPIMethod>)method completion:(FKAPIRequestCompletion)completion;
+
+/**
+ *  Call the Flickr API using the model objects
+ *
+ *  @param method     The flickr model object method you are calling
+ *  @param maxAge     The maximum age the cached response can be around for
+ *  @param completion The completion block of code to execute on completion of the network call
+ *
+ *  @return The FKFlickrNetworkOperation created
+ */
+- (FKFlickrNetworkOperation *) call:(id<FKFlickrAPIMethod>)method maxCacheAge:(FKDUMaxAge)maxAge completion:(FKAPIRequestCompletion)completion;
 
 @end
 
 
 #pragma mark - Authentication
+
 @interface FlickrKit (Authentication)
 
 // Check if they are authorized
@@ -80,6 +137,7 @@
 
 
 #pragma mark - Building Photo URLs
+
 @interface FlickrKit (ImageURL)
 
 // Build your own from the components required
@@ -92,9 +150,10 @@
 
 
 #pragma mark - Photo Upload
+
 @interface FlickrKit (PhotoUpload)
 
-- (FKImageUploadNetworkOperation *) uploadImage:(UIImage *)image args:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;
+- (FKImageUploadNetworkOperation *) uploadImage:(DUImage *)image args:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;
 
 #if TARGET_OS_IOS
 - (FKImageUploadNetworkOperation *) uploadAssetURL:(NSURL *)assetURL args:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;

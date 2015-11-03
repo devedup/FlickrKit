@@ -7,17 +7,19 @@
 //
 
 #import "FKDUNetworkOperation.h"
-#import <UIKit/UIKit.h>
 #import "FKDataTypes.h"
 
-@interface FKImageUploadNetworkOperation : FKDUNetworkOperation 
-
+@interface FKImageUploadNetworkOperation : FKDUNetworkOperation
 @property (nonatomic, assign, readonly) CGFloat uploadProgress;
 
-- (id) initWithImage:(UIImage *)image arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;
+- (id) initWithImage:(DUImage *)image arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;
 
 #if TARGET_OS_IOS
 - (id) initWithAssetURL:(NSURL *)assetURL arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;
 #endif
 
+@end
+
+@interface FKImageUploadNetworkOperation (ImageSerialization)
++ (NSData *) jpegSerialzation:(DUImage *)image;
 @end
