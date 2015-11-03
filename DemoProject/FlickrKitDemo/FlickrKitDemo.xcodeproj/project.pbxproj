@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3AEBD0E218ACFD2A00CAD038 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEBD0E118ACFD2A00CAD038 /* AssetsLibrary.framework */; };
-		5535613F1767604100F00F50 /* libFlickrKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 553561381767602A00F00F50 /* libFlickrKit.a */; };
+		55169F221BE929E600BC8A6D /* libFlickrKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 553561381767602A00F00F50 /* libFlickrKit.a */; };
 		55AD485A175CA257004AF85C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD4859175CA257004AF85C /* UIKit.framework */; };
 		55AD485C175CA257004AF85C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD485B175CA257004AF85C /* Foundation.framework */; };
 		55AD485E175CA257004AF85C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55AD485D175CA257004AF85C /* CoreGraphics.framework */; };
@@ -28,6 +28,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		55169F171BE9299D00BC8A6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 553561311767602A00F00F50 /* FlickrKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 553B85401BCEB24A00BF59AF;
+			remoteInfo = "FlickrKit-TV";
+		};
+		55169F191BE9299D00BC8A6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 553561311767602A00F00F50 /* FlickrKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 553B859E1BCEBBD600BF59AF;
+			remoteInfo = FlickrKitFramework;
+		};
+		55169F1B1BE9299D00BC8A6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 553561311767602A00F00F50 /* FlickrKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55951D711BE6BAC9002628DB;
+			remoteInfo = FlickrModelGenerator;
+		};
+		55169F201BE929D500BC8A6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 553561311767602A00F00F50 /* FlickrKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 552D918B1753F8EF00BE3FEA;
+			remoteInfo = FlickrKit;
+		};
 		553561371767602A00F00F50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 553561311767602A00F00F50 /* FlickrKit.xcodeproj */;
@@ -41,13 +69,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 552D919A1753F8F000BE3FEA;
 			remoteInfo = FlickrKitTests;
-		};
-		5535613D1767603A00F00F50 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 553561311767602A00F00F50 /* FlickrKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 552D918B1753F8EF00BE3FEA;
-			remoteInfo = FlickrKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -85,12 +106,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55169F221BE929E600BC8A6D /* libFlickrKit.a in Frameworks */,
 				3AEBD0E218ACFD2A00CAD038 /* AssetsLibrary.framework in Frameworks */,
 				55AD48BC175CF055004AF85C /* SystemConfiguration.framework in Frameworks */,
 				55AD485A175CA257004AF85C /* UIKit.framework in Frameworks */,
 				55AD485C175CA257004AF85C /* Foundation.framework in Frameworks */,
 				55AD485E175CA257004AF85C /* CoreGraphics.framework in Frameworks */,
-				5535613F1767604100F00F50 /* libFlickrKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +122,10 @@
 			isa = PBXGroup;
 			children = (
 				553561381767602A00F00F50 /* libFlickrKit.a */,
+				55169F181BE9299D00BC8A6D /* libFlickrKit-TV.a */,
 				5535613A1767602A00F00F50 /* FlickrKitTests.xctest */,
+				55169F1A1BE9299D00BC8A6D /* FlickrKitFramework.framework */,
+				55169F1C1BE9299D00BC8A6D /* FlickrModelGenerator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,7 +209,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				5535613E1767603A00F00F50 /* PBXTargetDependency */,
+				55169F211BE929D500BC8A6D /* PBXTargetDependency */,
 			);
 			name = FlickrKitDemo;
 			productName = FlickrKitDemo;
@@ -231,6 +255,27 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		55169F181BE9299D00BC8A6D /* libFlickrKit-TV.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libFlickrKit-TV.a";
+			remoteRef = 55169F171BE9299D00BC8A6D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		55169F1A1BE9299D00BC8A6D /* FlickrKitFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FlickrKitFramework.framework;
+			remoteRef = 55169F191BE9299D00BC8A6D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		55169F1C1BE9299D00BC8A6D /* FlickrModelGenerator.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = FlickrModelGenerator.app;
+			remoteRef = 55169F1B1BE9299D00BC8A6D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		553561381767602A00F00F50 /* libFlickrKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -280,10 +325,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5535613E1767603A00F00F50 /* PBXTargetDependency */ = {
+		55169F211BE929D500BC8A6D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FlickrKit;
-			targetProxy = 5535613D1767603A00F00F50 /* PBXContainerItemProxy */;
+			targetProxy = 55169F201BE929D500BC8A6D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -333,7 +378,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -358,7 +403,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -375,6 +420,7 @@
 				GCC_PREFIX_HEADER = "FlickrKitDemo/FlickrKitDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../Classes\"/**";
 				INFOPLIST_FILE = "FlickrKitDemo/FlickrKitDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devedup.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -392,6 +438,7 @@
 				GCC_PREFIX_HEADER = "FlickrKitDemo/FlickrKitDemo-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../Classes\"/**";
 				INFOPLIST_FILE = "FlickrKitDemo/FlickrKitDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.devedup.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
