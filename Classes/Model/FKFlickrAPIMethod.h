@@ -10,25 +10,66 @@
 
 @protocol FKFlickrAPIMethod <NSObject>
 
-/* The name of the method used by flickr */
+/**
+ *  The name of the method used by flickr
+ *
+ *  @return The name of the method used by flickr
+ */
 - (NSString *) name;
 
-/* All the args that you have injected into the object into a dictionary */
+/**
+ *  All the args that you have injected into the object into a dictionary
+ *
+ *  @return dictionary of args
+ */
 - (NSDictionary *) args;
 
-/* Are the args passed valid? */
+/**
+ *  Are the args passed valid?
+ *
+ *  @param error the error if the args are not valie
+ *
+ *  @return true if they are valid
+ */
 - (BOOL) isValid:(NSError **)error;
 
-/* Get a readable description for the error code passed */
+/**
+ *  Get a readable description for the error code passed
+ *
+ *  @param error the error code you want info of
+ *
+ *  @return a displayable error
+ */
 - (NSString *) descriptionForError:(NSInteger)error;
 
-/* Does this need a login? */
+/**
+ *  Does this method require you to be logged in . i.e. need a login?
+ *
+ *  @return true if you need to login first
+ */
 - (BOOL) needsLogin;
 
-/* Do you need to sign this request */
+/**
+ *  Do you need to sign this request
+ *
+ *  @return true if you need to sign this request
+ */
 - (BOOL) needsSigning;
 
-/* Permissions needed for this request */
+/**
+ *  Permissions needed for this request
+ *
+ *  @return the FkPermission you need to access this request
+ */
 - (FKPermission) requiredPerms;
+
+@optional
+
+/**
+ *  Set the page to be access on this method. This is used when loading pages of data
+ *
+ *  @param page the page you want to access
+ */
+- (void) setPage:(NSString *)page;
 
 @end
