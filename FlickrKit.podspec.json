@@ -1,6 +1,6 @@
 {
     "name": "FlickrKit",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "summary": "FlickrKit is an iOS Objective-C library for accessing the Flickr API.",
     "homepage": "https://github.com/devedup/FlickrKit",
     "license": {
