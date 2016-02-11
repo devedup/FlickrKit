@@ -32,7 +32,7 @@ If you are using FlickrKit in your non-arc project, you will need to set a `-fob
 
 To set a compiler flag in Xcode, go to your active target and select the "Build Phases" tab. Now select all FlickrKit source files, press Enter, insert `-fobjc-arc` and then "Done" to enable ARC for FlickrKit.
 
-Cocoapods Installation
+CocoaPods Installation
 -------------
 Add this line to your target in your `Podfile`:
 
