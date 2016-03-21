@@ -11,7 +11,11 @@ typedef enum {
 	FKHttpMethodPOST
 } FKHttpMethod;
 
+@class FlickrKit;
+
 @interface FKURLBuilder : NSObject
+
+- (id)initWithFlickrKit:(FlickrKit *)flickrKit;
 
 #pragma mark - URL Encryption
 

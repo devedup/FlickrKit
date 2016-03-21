@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 DevedUp Ltd. All rights reserved. http://www.devedup.com
 //
 
+@class FlickrKit;
+
 #import "FKDataTypes.h"
 #import "FKDUConcurrentOperation.h"
 #import "FKDUDiskCache.h"
@@ -14,8 +16,7 @@
 
 @interface FKFlickrNetworkOperation : FKDUNetworkOperation
 
-- (id) initWithAPIMethod:(NSString *)api arguments:(NSDictionary *)args maxAgeMinutes:(FKDUMaxAge)maxAge diskCache:(id<FKDUDiskCache>)diskCache completion:(FKAPIRequestCompletion)completion;
-
-- (id) initWithAPIMethod:(id<FKFlickrAPIMethod>)method maxAgeMinutes:(FKDUMaxAge)maxAge diskCache:(id<FKDUDiskCache>)diskCache completion:(FKAPIRequestCompletion)completion;
+- (id) initWithFlickrKit:(FlickrKit *)flickrKit APIMethod:(NSString *)api arguments:(NSDictionary *)args maxAgeMinutes:(FKDUMaxAge)maxAge completion:(FKAPIRequestCompletion)completion;
+- (id) initWithFlickrKit:(FlickrKit *)flickrKit APIMethod:(id<FKFlickrAPIMethod>)method maxAgeMinutes:(FKDUMaxAge)maxAge completion:(FKAPIRequestCompletion)completion;
 
 @end

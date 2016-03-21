@@ -9,13 +9,15 @@
 #import "FKDUNetworkOperation.h"
 #import "FKDataTypes.h"
 
+@class FlickrKit;
+
 @interface FKImageUploadNetworkOperation : FKDUNetworkOperation
 @property (nonatomic, assign, readonly) CGFloat uploadProgress;
 
-- (id) initWithImage:(DUImage *)image arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;
+- (id) initWithFlickrKit:(FlickrKit *)flickrKit image:(DUImage *)image arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;
 
 #if TARGET_OS_IOS
-- (id) initWithAssetURL:(NSURL *)assetURL arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;
+- (id) initWithFlickrKit:(FlickrKit *)flickrKit assetURL:(NSURL *)assetURL arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;
 #endif
 
 @end

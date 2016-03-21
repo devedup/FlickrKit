@@ -15,6 +15,7 @@
 
 @interface FKImageUploadNetworkOperation ()
 
+@property (nonatomic, strong) FlickrKit *flickrKit;
 @property (nonatomic, strong) DUImage *image;
 @property (nonatomic, retain) NSString *tempFile;
 @property (nonatomic, copy) FKAPIImageUploadCompletion completion;
@@ -28,9 +29,10 @@
 
 @implementation FKImageUploadNetworkOperation
 
-- (id) initWithImage:(DUImage *)image arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion; {
+- (id) initWithFlickrKit:(FlickrKit *)flickrKit image:(DUImage *)image arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion; {
     self = [super init];
     if (self) {
+        self.flickrKit = flickrKit;
 		self.image = image;
 		self.args = args;
 		self.completion = completion;
@@ -39,9 +41,10 @@
 }
 
 #if TARGET_OS_IOS
-- (id) initWithAssetURL:(NSURL *)assetURL arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion; {
+- (id) initWithFlickrKit:(FlickrKit *)flickrKit assetURL:(NSURL *)assetURL arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion; {
     self = [super init];
     if (self) {
+        self.flickrKit = flickrKit;
 		self.image = nil;
         self.assetURL = assetURL;
 		self.args = args;
@@ -93,7 +96,7 @@
 //#endif
     
     // Build a URL to the upload service
-	FKURLBuilder *urlBuilder = [[FKURLBuilder alloc] init];
+	FKURLBuilder *urlBuilder = [[FKURLBuilder alloc] initWithFlickrKit:self.flickrKit];
 	NSDictionary *args = [urlBuilder signedArgsFromParameters:newArgs method:FKHttpMethodPOST url:[NSURL URLWithString:@"https://api.flickr.com/services/upload/"]];
 	
 	// Form multipart needs a boundary 

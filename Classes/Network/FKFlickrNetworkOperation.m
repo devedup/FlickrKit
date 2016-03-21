@@ -14,10 +14,10 @@
 #import "FKDUNetworkController.h"
 
 @interface FKFlickrNetworkOperation ()
+@property (nonatomic, strong) FlickrKit *flickrKit;
 @property (nonatomic, strong) NSString *apiMethod;
 @property (nonatomic, strong) NSDictionary *args;
 @property (nonatomic, copy) FKAPIRequestCompletion completion;
-@property (nonatomic, strong) id<FKDUDiskCache> diskCache;
 @property (nonatomic, assign) NSInteger maxAgeMinutes;
 @property (nonatomic, strong) NSString *cacheKey;
 @property (nonatomic, retain) id<FKFlickrAPIMethod> method;
@@ -28,11 +28,11 @@
 
 #pragma mark - Init
 
-- (id) initWithAPIMethod:(NSString *)api arguments:(NSDictionary *)args maxAgeMinutes:(FKDUMaxAge)maxAge diskCache:(id<FKDUDiskCache>)diskCache completion:(FKAPIRequestCompletion)completion {
+- (id) initWithFlickrKit:(FlickrKit *)flickrKit APIMethod:(NSString *)api arguments:(NSDictionary *)args maxAgeMinutes:(FKDUMaxAge)maxAge completion:(FKAPIRequestCompletion)completion {
 	self = [super init];
     if (self) {
+        self.flickrKit = flickrKit;
 		self.maxAgeMinutes = maxAge;
-		self.diskCache = diskCache;
         self.apiMethod = api;
 		self.args = args;
 		self.completion = completion;
@@ -42,10 +42,10 @@
     return self;
 }
 
-- (id) initWithAPIMethod:(id<FKFlickrAPIMethod>)method maxAgeMinutes:(FKDUMaxAge)maxAge diskCache:(id<FKDUDiskCache>)diskCache completion:(FKAPIRequestCompletion)completion {
+- (id) initWithFlickrKit:(FlickrKit *)flickrKit APIMethod:(id<FKFlickrAPIMethod>)method maxAgeMinutes:(FKDUMaxAge)maxAge completion:(FKAPIRequestCompletion)completion {
     NSString *api = [method name];
     NSDictionary *args = [method args];
-    return [self initWithAPIMethod:api arguments:args maxAgeMinutes:maxAge diskCache:diskCache completion:completion];
+    return [self initWithFlickrKit:flickrKit APIMethod:api arguments:args maxAgeMinutes:maxAge completion:completion];
 }
 
 #pragma mark - DUOperation Methods
@@ -71,9 +71,9 @@
     
 	NSData *cachedData = nil;
 	if (0 == self.maxAgeMinutes) {
-		[self.diskCache removeDataForKey:self.cacheKey];
+		[self.flickrKit.diskCache removeDataForKey:self.cacheKey];
 	} else {
-		cachedData = [self.diskCache dataForKey:self.cacheKey maxAgeMinutes:self.maxAgeMinutes];
+		cachedData = [self.flickrKit.diskCache dataForKey:self.cacheKey maxAgeMinutes:self.maxAgeMinutes];
 	}
 	
 	if (cachedData) {
@@ -133,7 +133,7 @@
 		//Cache the response
 		if (data && data.length > 0) {
 			if (0 != self.maxAgeMinutes) {
-				[self.diskCache storeData:subData forKey:self.cacheKey];
+				[self.flickrKit.diskCache storeData:subData forKey:self.cacheKey];
 			}
             [self processResponseData:subData];
 		} else {
@@ -156,10 +156,10 @@
 	newArgs[@"method"] = self.apiMethod;
 	newArgs[@"format"] = @"json";
 	
-	FKURLBuilder *urlBuilder = [[FKURLBuilder alloc] init];
+	FKURLBuilder *urlBuilder = [[FKURLBuilder alloc] initWithFlickrKit:self.flickrKit];
 	
 	NSURL *url = nil;
-	if ([FlickrKit sharedFlickrKit].isAuthorized) {
+	if (self.flickrKit.isAuthorized) {
 		url = [urlBuilder oauthURLFromBaseURL:[NSURL URLWithString:FKFlickrRESTAPI] method:FKHttpMethodGET params:newArgs];
 	} else {
 		NSString *query = [urlBuilder signedQueryStringFromParameters:newArgs];
