@@ -235,6 +235,11 @@
 }
 
 - (FKDUNetworkOperation *) completeAuthWithURL:(NSURL *)url completion:(FKAPIAuthCompletion)completion {
+    // By default persist token to user defaults
+    return [self completeAuthWithURL:url saveAuthTokenToUserDefaults:YES completion:completion];
+}
+
+- (FKDUNetworkOperation *) completeAuthWithURL:(NSURL *)url saveAuthTokenToUserDefaults:(BOOL)persistAuthToken completion:(FKAPIAuthCompletion)completion {
 	
 	if ([FKDUReachability isOffline]) {
 		if (completion) {
@@ -294,9 +299,11 @@
 						completion(nil, nil, nil, error);
 					}
 				} else {
-					[[NSUserDefaults standardUserDefaults] setValue:oat forKey:kFKStoredTokenKey];
-					[[NSUserDefaults standardUserDefaults] setValue:oats forKey:kFKStoredTokenSecret];
-					[[NSUserDefaults standardUserDefaults] synchronize];
+                    if (persistAuthToken) {
+                        [[NSUserDefaults standardUserDefaults] setValue:oat forKey:kFKStoredTokenKey];
+                        [[NSUserDefaults standardUserDefaults] setValue:oats forKey:kFKStoredTokenSecret];
+                        [[NSUserDefaults standardUserDefaults] synchronize];
+                    }
 					self.authorized = YES;
 					self.authToken = oat;
 					self.authSecret = oats;
@@ -382,6 +389,14 @@
 	self.authSecret = nil;
 	self.authToken = nil;
 	self.beginAuthURL = nil;
+}
+
+#pragma mark - 5. Programatic Login - allow logging in with supplied tokens
+
+- (void) loginWithAuthToken:(NSString *)authToken authSecret:(NSString *)authSecret {
+    self.authorized = YES;
+    self.authToken = authToken;
+    self.authSecret = authSecret;
 }
 
 @end
