@@ -11,7 +11,27 @@
 #import "FlickrKit.h"
 #import "FKUtilities.h"
 
+@interface FKURLBuilder ()
+@property (nonatomic, strong) FlickrKit *flickrKit;
+@end
+
 @implementation FKURLBuilder
+
+- (id)initWithFlickrKit:(FlickrKit *)flickrKit {
+    self = [super init];
+    if (self) {
+        self.flickrKit = flickrKit;
+    }
+    return self;
+}
+
+- (id)init {
+    self = [super init];
+    if (self) {
+        NSAssert(false, @"FKURLBuilder must be initialised with a FlickrKit instance");
+    }
+    return self;
+}
 
 #pragma mark - URL Encryption
 
@@ -50,17 +70,17 @@
     newArgs[@"oauth_timestamp"] = [NSString stringWithFormat:@"%f", time];
     newArgs[@"oauth_version"] = @"1.0";
     newArgs[@"oauth_signature_method"] = @"HMAC-SHA1";
-    newArgs[@"oauth_consumer_key"] = [FlickrKit sharedFlickrKit].apiKey;
+    newArgs[@"oauth_consumer_key"] = self.flickrKit.apiKey;
     
-    if (!params[@"oauth_token"] && [FlickrKit sharedFlickrKit].authToken) {
-        newArgs[@"oauth_token"] = [FlickrKit sharedFlickrKit].authToken;
+    if (!params[@"oauth_token"] && self.flickrKit.authToken) {
+        newArgs[@"oauth_token"] = self.flickrKit.authToken;
     }
     
     NSString *signatureKey = nil;
-    if ([FlickrKit sharedFlickrKit].authSecret) {
-        signatureKey = [NSString stringWithFormat:@"%@&%@", [FlickrKit sharedFlickrKit].secret, [FlickrKit sharedFlickrKit].authSecret];
+    if (self.flickrKit.authSecret) {
+        signatureKey = [NSString stringWithFormat:@"%@&%@", self.flickrKit.secret, self.flickrKit.authSecret];
     } else {
-        signatureKey = [NSString stringWithFormat:@"%@&", [FlickrKit sharedFlickrKit].secret];
+        signatureKey = [NSString stringWithFormat:@"%@&", self.flickrKit.secret];
     }
     
     NSMutableString *baseString = [NSMutableString string];
@@ -100,12 +120,12 @@
 //private
 - (NSArray *) signedArgumentComponentsFromParameters:(NSDictionary *)params {
     NSMutableDictionary *args = params ? [params mutableCopy] : [NSMutableDictionary dictionary];
-	if ([FlickrKit sharedFlickrKit].apiKey) {
-		args[@"api_key"] = [FlickrKit sharedFlickrKit].apiKey;
+	if (self.flickrKit.apiKey) {
+		args[@"api_key"] = self.flickrKit.apiKey;
 	}
 
 	NSMutableArray *argArray = [NSMutableArray array];
-	NSMutableString *sigString = [NSMutableString stringWithString:[FlickrKit sharedFlickrKit].secret ? [FlickrKit sharedFlickrKit].secret  : @""];
+	NSMutableString *sigString = [NSMutableString stringWithString:self.flickrKit.secret ? self.flickrKit.secret  : @""];
 	NSArray *sortedKeys = [[args allKeys] sortedArrayUsingSelector:@selector(compare:)];
 	
 	for (NSString *key in sortedKeys) {
@@ -123,7 +143,7 @@
 #pragma mark - Args as array
 
 - (NSDictionary *) signedArgsFromParameters:(NSDictionary *)params method:(FKHttpMethod)method url:(NSURL *)url {
-	if ([FlickrKit sharedFlickrKit].isAuthorized) {
+	if (self.flickrKit.isAuthorized) {
 		return [self signedOAuthHTTPQueryParameters:params baseURL:url method:method];
 	} else {
 		NSMutableDictionary *returnDict = [NSMutableDictionary dictionary];

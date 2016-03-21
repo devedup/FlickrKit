@@ -128,10 +128,13 @@ FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
 - (FKDUNetworkOperation *) beginAuthWithCallbackURL:(NSURL *)url permission:(FKPermission)permission completion:(FKAPIAuthBeginCompletion)completion;
 // 2. After they login and authorize the app, need to get an auth token - this will happen via your URL scheme - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 - (FKDUNetworkOperation *) completeAuthWithURL:(NSURL *)url completion:(FKAPIAuthCompletion)completion;
+- (FKDUNetworkOperation *) completeAuthWithURL:(NSURL *)url saveAuthTokenToUserDefaults:(BOOL)persistAuthToken completion:(FKAPIAuthCompletion)completion;
 // 3. On returning to the app, you want to re-log them in automatically - do it here
 - (FKFlickrNetworkOperation *) checkAuthorizationOnCompletion:(FKAPIAuthCompletion)completion;
 // 4. Logout - just removes all the stored keys
 - (void) logout;
+// 5. Programatic Login - allow logging in with supplied tokens
+- (void) loginWithAuthToken:(NSString *)authToken authSecret:(NSString *)authSecret;
 
 @end
 

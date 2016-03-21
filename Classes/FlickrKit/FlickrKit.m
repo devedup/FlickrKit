@@ -59,11 +59,11 @@
 }
 
 - (FKFlickrNetworkOperation *) call:(NSString *)apiMethod args:(NSDictionary *)requestArgs maxCacheAge:(FKDUMaxAge)maxAge completion:(FKAPIRequestCompletion)completion {
-	NSAssert([FlickrKit sharedFlickrKit].apiKey, @"You must pass an apiKey to initializeWithAPIKey");
+	NSAssert(self.apiKey, @"You must pass an apiKey to initializeWithAPIKey");
 	NSAssert(apiMethod, @"You must pass an apiMethod");
 	NSAssert(completion, @"You must pass a completion block");
 	
-	if ([FKDUReachability isOffline]) {		
+	if ([FKDUReachability isOffline]) {
 		if (completion) {
 			completion(nil, [FKDUReachability buildOfflineErrorMessage]);
 		}
@@ -74,7 +74,7 @@
 		self.diskCache = [FKDUDefaultDiskCache sharedDiskCache];
 	}
 	
-	FKFlickrNetworkOperation *op = [[FKFlickrNetworkOperation alloc] initWithAPIMethod:apiMethod arguments:requestArgs maxAgeMinutes:maxAge diskCache:self.diskCache completion:completion];
+	FKFlickrNetworkOperation *op = [[FKFlickrNetworkOperation alloc] initWithFlickrKit:self APIMethod:apiMethod arguments:requestArgs maxAgeMinutes:maxAge completion:completion];
 	
 	[[FKDUNetworkController sharedController] execute:op];
 	return op;
@@ -87,12 +87,12 @@
 }
 
 - (FKFlickrNetworkOperation *) call:(id<FKFlickrAPIMethod>)method maxCacheAge:(FKDUMaxAge)maxAge completion:(FKAPIRequestCompletion)completion {
-    NSAssert([FlickrKit sharedFlickrKit].apiKey, @"You must pass an apiKey to initializeWithAPIKey");
+    NSAssert(self.apiKey, @"You must pass an apiKey to initializeWithAPIKey");
     NSAssert(method, @"You must pass a method");
 	
 	// Check if this method needs auth
 	if ([method needsLogin]) {
-		if (![FlickrKit sharedFlickrKit].isAuthorized) {
+		if (!self.isAuthorized) {
 			NSString *errorDescription = @"You need to login to call this method";
 			NSDictionary *userInfo = @{NSLocalizedDescriptionKey: errorDescription};
 			NSError *error = [NSError errorWithDomain:FKFlickrAPIErrorDomain code:FKErrorNotAuthorized userInfo:userInfo];
@@ -101,7 +101,7 @@
 		} else {
 			// Check method permission
 			FKPermission permissionRequired = [method requiredPerms];
-			FKPermission grantedPermission = [FlickrKit sharedFlickrKit].permissionGranted;
+			FKPermission grantedPermission = self.permissionGranted;
 			if (permissionRequired > grantedPermission) {
 				NSString *requiredString = FKPermissionStringForPermission(permissionRequired);
 				NSString *grantedString = FKPermissionStringForPermission(grantedPermission);
@@ -126,7 +126,7 @@
 		self.diskCache = [FKDUDefaultDiskCache sharedDiskCache];
 	}
     
-    FKFlickrNetworkOperation *op = [[FKFlickrNetworkOperation alloc] initWithAPIMethod:method maxAgeMinutes:maxAge diskCache:self.diskCache completion:completion];
+    FKFlickrNetworkOperation *op = [[FKFlickrNetworkOperation alloc] initWithFlickrKit:self APIMethod:method maxAgeMinutes:maxAge completion:completion];
 	
 	[[FKDUNetworkController sharedController] execute:op];
 	return op;
@@ -198,7 +198,7 @@
 	}
 	
 	NSDictionary *paramsDictionary = @{@"oauth_callback": [url absoluteString]};
-	FKURLBuilder *urlBuilder = [[FKURLBuilder alloc] init];
+	FKURLBuilder *urlBuilder = [[FKURLBuilder alloc] initWithFlickrKit:self];
     NSURL *requestURL = [urlBuilder oauthURLFromBaseURL:[NSURL URLWithString:@"https://www.flickr.com/services/oauth/request_token"] method:FKHttpMethodGET params:paramsDictionary];
 	
 	FKDUNetworkOperation *op = [[FKDUNetworkOperation alloc] initWithURL:requestURL];
@@ -235,6 +235,11 @@
 }
 
 - (FKDUNetworkOperation *) completeAuthWithURL:(NSURL *)url completion:(FKAPIAuthCompletion)completion {
+    // By default persist token to user defaults
+    return [self completeAuthWithURL:url saveAuthTokenToUserDefaults:YES completion:completion];
+}
+
+- (FKDUNetworkOperation *) completeAuthWithURL:(NSURL *)url saveAuthTokenToUserDefaults:(BOOL)persistAuthToken completion:(FKAPIAuthCompletion)completion {
 	
 	if ([FKDUReachability isOffline]) {
 		if (completion) {
@@ -258,7 +263,7 @@
 	}
     
 	NSDictionary *paramsDictionary = @{@"oauth_token": token, @"oauth_verifier": verifier};
-	FKURLBuilder *urlBuilder = [[FKURLBuilder alloc] init];
+	FKURLBuilder *urlBuilder = [[FKURLBuilder alloc] initWithFlickrKit:self];
     NSURL *requestURL = [urlBuilder oauthURLFromBaseURL:[NSURL URLWithString:@"https://www.flickr.com/services/oauth/access_token"] method:FKHttpMethodGET params:paramsDictionary];
     
 	FKDUNetworkOperation *op = [[FKDUNetworkOperation alloc] initWithURL:requestURL];
@@ -294,9 +299,11 @@
 						completion(nil, nil, nil, error);
 					}
 				} else {
-					[[NSUserDefaults standardUserDefaults] setValue:oat forKey:kFKStoredTokenKey];
-					[[NSUserDefaults standardUserDefaults] setValue:oats forKey:kFKStoredTokenSecret];
-					[[NSUserDefaults standardUserDefaults] synchronize];
+                    if (persistAuthToken) {
+                        [[NSUserDefaults standardUserDefaults] setValue:oat forKey:kFKStoredTokenKey];
+                        [[NSUserDefaults standardUserDefaults] setValue:oats forKey:kFKStoredTokenSecret];
+                        [[NSUserDefaults standardUserDefaults] synchronize];
+                    }
 					self.authorized = YES;
 					self.authToken = oat;
 					self.authSecret = oats;
@@ -384,6 +391,14 @@
 	self.beginAuthURL = nil;
 }
 
+#pragma mark - 5. Programatic Login - allow logging in with supplied tokens
+
+- (void) loginWithAuthToken:(NSString *)authToken authSecret:(NSString *)authSecret {
+    self.authorized = YES;
+    self.authToken = authToken;
+    self.authSecret = authSecret;
+}
+
 @end
 
 
@@ -452,16 +467,17 @@
 
 @implementation FlickrKit (PhotoUpload)
 - (FKImageUploadNetworkOperation *) uploadImage:(DUImage *)image args:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion {
-	FKImageUploadNetworkOperation *imageUpload = [[FKImageUploadNetworkOperation alloc] initWithImage:image arguments:args completion:completion];
+    FKImageUploadNetworkOperation *imageUpload = [[FKImageUploadNetworkOperation alloc] initWithFlickrKit:self image:image arguments:args completion:completion];
 	[[FKDUNetworkController sharedController] execute:imageUpload];
     return imageUpload;
 }
 
 #if TARGET_OS_IOS
 - (FKImageUploadNetworkOperation *) uploadAssetURL:(NSURL *)assetURL args:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion {
-    FKImageUploadNetworkOperation *imageUpload = [[FKImageUploadNetworkOperation alloc] initWithAssetURL:assetURL
-                                                                                               arguments:args
-                                                                                              completion:completion];
+    FKImageUploadNetworkOperation *imageUpload = [[FKImageUploadNetworkOperation alloc] initWithFlickrKit:self
+                                                                                                 assetURL:assetURL
+                                                                                                arguments:args
+                                                                                               completion:completion];
     [[FKDUNetworkController sharedController] execute:imageUpload];
     return imageUpload;
 }
