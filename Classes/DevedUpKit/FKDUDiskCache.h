@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 DevedUp Ltd. All rights reserved. http://www.devedup.com
 //
 
+
+#import <Foundation/Foundation.h>
+
 //You can use these as convenience and readability instead of passing a number in maxAgeMinutes
 typedef enum {
 	FKDUMaxAgeNeverCache	= 0,
@@ -16,8 +19,6 @@ typedef enum {
     FKDUMaxAgeOneDay		= 1440,
     FKDUMaxAgeInfinite		= NSIntegerMax
 } FKDUMaxAge;
-
-#import <Foundation/Foundation.h>
 
 @protocol FKDUDiskCache <NSObject>
 

@@ -117,25 +117,13 @@
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 		
         NSData *data = self.receivedData;
-        
-		static NSInteger prefixBytes = -1;
-		static NSInteger suffixBytes = 1;
-		if (-1 == prefixBytes) {
-			NSString *responsePrefix = @"jsonFlickrApi(";
-			prefixBytes = [responsePrefix length];
-		}
-		
-		NSData *subData = nil;
-        if (data.length > prefixBytes) {
-            subData =[data subdataWithRange:NSMakeRange(prefixBytes, data.length - prefixBytes - suffixBytes)];
-        }
 		
 		//Cache the response
 		if (data && data.length > 0) {
 			if (0 != self.maxAgeMinutes) {
-				[self.diskCache storeData:subData forKey:self.cacheKey];
+				[self.diskCache storeData:data forKey:self.cacheKey];
 			}
-            [self processResponseData:subData];
+            [self processResponseData:data];
 		} else {
             NSString *errorString = @"No data was returned from Flickr to process";
 			NSDictionary *userInfo = @{NSLocalizedDescriptionKey: errorString};
@@ -155,6 +143,7 @@
 	NSMutableDictionary *newArgs = self.args ? [NSMutableDictionary dictionaryWithDictionary:self.args] : [NSMutableDictionary dictionary];
 	newArgs[@"method"] = self.apiMethod;
 	newArgs[@"format"] = @"json";
+	newArgs[@"nojsoncallback"] = @"1";
 	
 	FKURLBuilder *urlBuilder = [[FKURLBuilder alloc] init];
 	
