@@ -79,13 +79,33 @@ FlickrKit.sharedFlickrKit().initializeWithAPIKey(apiKey, sharedSecret: secret)
 ```
 
 ######objective-c
-    ```objective-c
+```objective-c
 [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"YOUR_KEY" sharedSecret:@"YOUR_SECRET"];
-    ```
+```
 
 #### Load Interesting Photos - Flickr Explore 
 This example demonstrates using the generated Flickr API Model classes.
 
+######swift
+```swift
+let flickrInteresting = FKFlickrInterestingnessGetList()
+flickrInteresting.per_page = "15"
+FlickrKit.sharedFlickrKit().call(flickrInteresting) { (response, error) -> Void in
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        	if (response != nil) {
+                    // Pull out the photo urls from the results
+                    let topPhotos = response["photos"] as! [NSObject: AnyObject]
+                    let photoArray = topPhotos["photo"] as! [[NSObject: AnyObject]]
+                    for photoDictionary in photoArray {
+                        let photoURL = FlickrKit.sharedFlickrKit().photoURLForSize(FKPhotoSizeSmall240, fromPhotoDictionary: photoDictionary)
+                        self.photoURLs.append(photoURL)
+                    }
+                } 
+       })
+}
+```
+
+######objective-c
 ```objective-c
 FlickrKit *fk = [FlickrKit sharedFlickrKit];
 FKFlickrInterestingnessGetList *interesting = [[FKFlickrInterestingnessGetList alloc] init];
