@@ -73,55 +73,61 @@ Included in the source is a demo project that shows you how to get started. It h
 #### Startup
 You can get an API Key and Secret from your Flickr account. You need these to use the API.
 
-    [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"YOUR_KEY" sharedSecret:@"YOUR_SECRET"];
+```objective-c
+[[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"YOUR_KEY" sharedSecret:@"YOUR_SECRET"];
+```
 
 #### Load Interesting Photos - Flickr Explore 
 This example demonstrates using the generated Flickr API Model classes.
 
-	FlickrKit *fk = [FlickrKit sharedFlickrKit];
-	FKFlickrInterestingnessGetList *interesting = [[FKFlickrInterestingnessGetList alloc] init];
-	[fk call:interesting completion:^(NSDictionary *response, NSError *error) {
-		// Note this is not the main thread!
-		if (response) {				
-			NSMutableArray *photoURLs = [NSMutableArray array];
-			for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
-				NSURL *url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
-				[photoURLs addObject:url];
-			}
-			dispatch_async(dispatch_get_main_queue(), ^{
-				// Any GUI related operations here
-			});
-		}	
-	}];
-	
+```objective-c
+FlickrKit *fk = [FlickrKit sharedFlickrKit];
+FKFlickrInterestingnessGetList *interesting = [[FKFlickrInterestingnessGetList alloc] init];
+[fk call:interesting completion:^(NSDictionary *response, NSError *error) {
+	// Note this is not the main thread!
+	if (response) {				
+		NSMutableArray *photoURLs = [NSMutableArray array];
+		for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
+			NSURL *url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
+			[photoURLs addObject:url];
+		}
+		dispatch_async(dispatch_get_main_queue(), ^{
+			// Any GUI related operations here
+		});
+	}	
+}];
+```
+
 #### Your Photostream Photos
 This example uses the string/dictionary method of calling FlickrKit, and alternative to using the Model classes. It also demonstrates passing a cache time of one hour, meaning if you call this again within the hour - it will hit the cache and not the network. Fast!
 
-	[[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"user_id": self.userID, @"per_page": @"15"} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
-			dispatch_async(dispatch_get_main_queue(), ^{
-				if (response) {
-					// extract images from the response dictionary	
-				} else {
-					// show the error
-				}
-			});			
-		}];
+```objective-c
+[[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"user_id": self.userID, @"per_page": @"15"} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
+	dispatch_async(dispatch_get_main_queue(), ^{
+		if (response) {
+			// extract images from the response dictionary	
+		} else {
+			// show the error
+		}
+	});			
+}];
+```
 
 #### Uploading a Photo
 Uploading a photo and observing its progress. imagePicked comes from the UIImagePickerControllerDelegate, but could be any UIImage.
 
-   ```objective-c
+```objective-c
 self.uploadOp = [[FlickrKit sharedFlickrKit] uploadImage:imagePicked args:uploadArgs completion:^(NSString *imageID, NSError *error) {
-		dispatch_async(dispatch_get_main_queue(), ^{
-			if (error) {
-				// oops!
-			} else {
-				// Image is now in flickr!
-			}            
-        });
-	}];    
-    [self.uploadOp addObserver:self forKeyPath:@"uploadProgress" options:NSKeyValueObservingOptionNew context:NULL];
-   ```
+	dispatch_async(dispatch_get_main_queue(), ^{
+		if (error) {
+			// oops!
+		} else {
+			// Image is now in flickr!
+		}            
+       });
+}];    
+[self.uploadOp addObserver:self forKeyPath:@"uploadProgress" options:NSKeyValueObservingOptionNew context:NULL];
+```
 
 ###Unit Tests
 ---
