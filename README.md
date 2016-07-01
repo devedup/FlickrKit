@@ -73,9 +73,15 @@ Included in the source is a demo project that shows you how to get started. It h
 #### Startup
 You can get an API Key and Secret from your Flickr account. You need these to use the API.
 
-```objective-c
-[[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"YOUR_KEY" sharedSecret:@"YOUR_SECRET"];
+######swift
+```swift
+FlickrKit.sharedFlickrKit().initializeWithAPIKey(apiKey, sharedSecret: secret)
 ```
+
+######objective-c
+    ```objective-c
+[[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"YOUR_KEY" sharedSecret:@"YOUR_SECRET"];
+    ```
 
 #### Load Interesting Photos - Flickr Explore 
 This example demonstrates using the generated Flickr API Model classes.
