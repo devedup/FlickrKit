@@ -2,10 +2,10 @@
 
 FlickrKit is an iOS Objective-C library for accessing the Flickr API written by David Casserly. It is used by [galleryr pro iPad app](https://itunes.apple.com/gb/app/flickr-gallery-pro/id525519823?mt=8).
 
-Master Build Status
+Master build status: 
 --------
+![](https://travis-ci.org/devedup/FlickrKit.svg?branch=master)
 
-https://travis-ci.org/devedup/FlickrKit.svg?branch=master
 
 Features
 --------
