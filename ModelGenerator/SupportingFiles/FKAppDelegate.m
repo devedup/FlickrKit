@@ -6,13 +6,13 @@
 //  Copyright © 2015 DevedUp Ltd. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "FKAppDelegate.h"
 
-@interface AppDelegate ()
+@interface FKAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation FKAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

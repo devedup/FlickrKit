@@ -2,9 +2,13 @@
 
 FlickrKit is an iOS Objective-C library for accessing the Flickr API written by David Casserly. It is used by [galleryr pro iPad app](https://itunes.apple.com/gb/app/flickr-gallery-pro/id525519823?mt=8).
 
+### Master build status: 
+---
+![](https://travis-ci.org/devedup/FlickrKit.svg?branch=master)
 
-Features
---------
+
+###Features
+---
 
 Who needs FlickrKit when we have ObjectiveFlickr? Why not? I used ObjectiveFlickr for a long time, and some of the methods in this library were born from ObjectiveFlickr. However, I sometimes had problems debugging ObjectiveFlickr as the networking code was custom and not familiar to me. Also I go a little further with FlickrKit and I provide a little bit more than ObjectiveFlickr does... read on....
 
@@ -24,32 +28,32 @@ Who needs FlickrKit when we have ObjectiveFlickr? Why not? I used ObjectiveFlick
 I don't support Mac OS X (as I’ve never worked with that ..sorry! - ports welcome!). I don't support the old authentication method or migration - it only uses OAuth - which is almost a year old with Flickr now anyway. It only supports single user authentication - so doesn't support multiple Flickr accounts
 
 
-Requirements
-------------
+###Requirements
+---
 FlickrKit requires iOS 6.0 and above and uses ARC. It may be compatible with older OS's, but I haven't tested this.
 
 If you are using FlickrKit in your non-arc project, you will need to set a `-fobjc-arc` compiler flag on all of the FlickrKit source files. 
 
 To set a compiler flag in Xcode, go to your active target and select the "Build Phases" tab. Now select all FlickrKit source files, press Enter, insert `-fobjc-arc` and then "Done" to enable ARC for FlickrKit.
 
-Cocoapods Installation
--------------
+###Cocoapods Installation
+---
 Add this line to your target in your `Podfile`:
 
     pod 'FlickrKit'
     
 Run `pod install` and you're good to go!
 
-Manual Installation
--------------
+###Manual Installation
+---
 1. Drag FlickrKit.xcodeproj into your project.
 2. In your project target, build phases, target dependencies... add FlickrKit as a depenendency
 3. In your project target, build phases, link binary with library... add libFlickrKit.a
 4. In build settings > header search paths... point to FlickrKit classes directory, recursively
 5. Include SystemConfiguration.framework 
 
-Usage
--------------
+###Usage
+---
 Included in the source is a demo project that shows you how to get started. It has a few example use cases. The UI isn't pretty! - but the important part is the usage of the API in the code.
 
 ##### API Notes
@@ -69,70 +73,103 @@ Included in the source is a demo project that shows you how to get started. It h
 #### Startup
 You can get an API Key and Secret from your Flickr account. You need these to use the API.
 
-    [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"YOUR_KEY" sharedSecret:@"YOUR_SECRET"];
+######swift
+```swift
+FlickrKit.sharedFlickrKit().initializeWithAPIKey(apiKey, sharedSecret: secret)
+```
+
+######objective-c
+```objective-c
+[[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"YOUR_KEY" sharedSecret:@"YOUR_SECRET"];
+```
 
 #### Load Interesting Photos - Flickr Explore 
 This example demonstrates using the generated Flickr API Model classes.
 
-	FlickrKit *fk = [FlickrKit sharedFlickrKit];
-	FKFlickrInterestingnessGetList *interesting = [[FKFlickrInterestingnessGetList alloc] init];
-	[fk call:interesting completion:^(NSDictionary *response, NSError *error) {
-		// Note this is not the main thread!
-		if (response) {				
-			NSMutableArray *photoURLs = [NSMutableArray array];
-			for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
-				NSURL *url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
-				[photoURLs addObject:url];
-			}
-			dispatch_async(dispatch_get_main_queue(), ^{
-				// Any GUI related operations here
-			});
-		}	
-	}];
-	
+######swift
+```swift
+let flickrInteresting = FKFlickrInterestingnessGetList()
+flickrInteresting.per_page = "15"
+FlickrKit.sharedFlickrKit().call(flickrInteresting) { (response, error) -> Void in
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        	if (response != nil) {
+                    // Pull out the photo urls from the results
+                    let topPhotos = response["photos"] as! [NSObject: AnyObject]
+                    let photoArray = topPhotos["photo"] as! [[NSObject: AnyObject]]
+                    for photoDictionary in photoArray {
+                        let photoURL = FlickrKit.sharedFlickrKit().photoURLForSize(FKPhotoSizeSmall240, fromPhotoDictionary: photoDictionary)
+                        self.photoURLs.append(photoURL)
+                    }
+                } 
+       })
+}
+```
+
+######objective-c
+```objective-c
+FlickrKit *fk = [FlickrKit sharedFlickrKit];
+FKFlickrInterestingnessGetList *interesting = [[FKFlickrInterestingnessGetList alloc] init];
+[fk call:interesting completion:^(NSDictionary *response, NSError *error) {
+	// Note this is not the main thread!
+	if (response) {				
+		NSMutableArray *photoURLs = [NSMutableArray array];
+		for (NSDictionary *photoData in [response valueForKeyPath:@"photos.photo"]) {
+			NSURL *url = [fk photoURLForSize:FKPhotoSizeSmall240 fromPhotoDictionary:photoData];
+			[photoURLs addObject:url];
+		}
+		dispatch_async(dispatch_get_main_queue(), ^{
+			// Any GUI related operations here
+		});
+	}	
+}];
+```
+
 #### Your Photostream Photos
 This example uses the string/dictionary method of calling FlickrKit, and alternative to using the Model classes. It also demonstrates passing a cache time of one hour, meaning if you call this again within the hour - it will hit the cache and not the network. Fast!
 
-	[[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"user_id": self.userID, @"per_page": @"15"} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
-			dispatch_async(dispatch_get_main_queue(), ^{
-				if (response) {
-					// extract images from the response dictionary	
-				} else {
-					// show the error
-				}
-			});			
-		}];
+```objective-c
+[[FlickrKit sharedFlickrKit] call:@"flickr.photos.search" args:@{@"user_id": self.userID, @"per_page": @"15"} maxCacheAge:FKDUMaxAgeOneHour completion:^(NSDictionary *response, NSError *error) {
+	dispatch_async(dispatch_get_main_queue(), ^{
+		if (response) {
+			// extract images from the response dictionary	
+		} else {
+			// show the error
+		}
+	});			
+}];
+```
 
 #### Uploading a Photo
 Uploading a photo and observing its progress. imagePicked comes from the UIImagePickerControllerDelegate, but could be any UIImage.
 
-	self.uploadOp = [[FlickrKit sharedFlickrKit] uploadImage:imagePicked args:uploadArgs completion:^(NSString *imageID, NSError *error) {
-		dispatch_async(dispatch_get_main_queue(), ^{
-			if (error) {
-				// oops!
-			} else {
-				// Image is now in flickr!
-			}            
-        });
-	}];    
-    [self.uploadOp addObserver:self forKeyPath:@"uploadProgress" options:NSKeyValueObservingOptionNew context:NULL];
+```objective-c
+self.uploadOp = [[FlickrKit sharedFlickrKit] uploadImage:imagePicked args:uploadArgs completion:^(NSString *imageID, NSError *error) {
+	dispatch_async(dispatch_get_main_queue(), ^{
+		if (error) {
+			// oops!
+		} else {
+			// Image is now in flickr!
+		}            
+       });
+}];    
+[self.uploadOp addObserver:self forKeyPath:@"uploadProgress" options:NSKeyValueObservingOptionNew context:NULL];
+```
+
+###Unit Tests
+---
+There are a few unit tests, but currently you should run the demo projects which cover a few areas of the API in both Swift and Objective-C. Sorry about the lack of tests!
 
 
-Unit Tests
------------
-Unit what? Just kidding. There are a few unit tests - but I'm still working on them - honest!
-
-
-License and Warranty
---------------------
+###License and Warranty
+---
 The license for the code is included with the project; it's basically a BSD license with attribution.
 
 You're welcome to use it in commercial, closed-source, open source, free or any other kind of software, as long as you credit me appropriately.
 
 The FlickrKit code comes with no warranty of any kind. I hope it'll be useful to you (it certainly is to me), but I make no guarantees regarding its functionality or otherwise.
 
-Contact
--------
+###Contact
+---
 I can't answer any questions about how to use the code, but I always welcome emails telling me that you're using it, or just saying thanks.
 
 If you create an app, which uses the code, I'd also love to hear about it. You can find my contact details on my web site, listed below.
@@ -142,9 +179,9 @@ Likewise, if you want to submit a feature request or bug report, feel free to ge
 Enjoy!
 
 Thanks,  
-David Casserly
+#####David Casserly
 
-Me:      http://www.davidjc.com  
-My Work: http://www.devedup.com 
-Twitter: http://twitter.com/devedup  
+Me:      http://www.davidjc.com   
+My Work: http://www.devedup.com   
+Twitter: http://twitter.com/devedup     
 Hire Me: http://linkedin.davidjc.com
