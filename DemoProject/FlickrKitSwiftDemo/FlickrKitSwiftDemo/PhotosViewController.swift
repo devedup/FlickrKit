@@ -11,14 +11,14 @@ import UIKit
 class PhotosViewController: UIViewController {
 
     @IBOutlet weak var imageScrollView: UIScrollView!
-    var photoURLs: [NSURL]!
+    var photoURLs: [URL]!
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         for url in self.photoURLs {
-            let urlRequest = NSURLRequest(URL: url)
-            NSURLConnection.sendAsynchronousRequest(urlRequest, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
+            let urlRequest = URLRequest(url: url)
+            NSURLConnection.sendAsynchronousRequest(urlRequest, queue: OperationQueue.main, completionHandler: { (response, data, error) -> Void in
                 let image = UIImage(data: data!)
                 self.addImageToView(image!)
             })
@@ -26,16 +26,16 @@ class PhotosViewController: UIViewController {
         }
     }
 
-    func addImageToView(image: UIImage) {
+    func addImageToView(_ image: UIImage) {
         let imageView: UIImageView = UIImageView(image: image)
-        let width = CGRectGetWidth(self.imageScrollView.frame)
+        let width = self.imageScrollView.frame.width
         let imageRatio = image.size.width / image.size.height
         let height = width / imageRatio
         let x: CGFloat = 0
         let y = self.imageScrollView.contentSize.height
-        imageView.frame = CGRectMake(x, y, width, height)
+        imageView.frame = CGRect(x: x, y: y, width: width, height: height)
         let newHeight: CGFloat = self.imageScrollView.contentSize.height + height
-        self.imageScrollView.contentSize = CGSizeMake(320, newHeight)
+        self.imageScrollView.contentSize = CGSize(width: 320, height: newHeight)
         self.imageScrollView.addSubview(imageView)
     }
     

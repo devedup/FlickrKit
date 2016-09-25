@@ -11,7 +11,7 @@ import FlickrKitFramework
 
 class ViewController: UIViewController {
 
-    var photoURLs: [NSURL]!
+    var photoURLs: [URL]!
     var completeAuthOp: FKDUNetworkOperation!
     var checkAuthOp: FKDUNetworkOperation!
     var userID: String?
@@ -25,40 +25,42 @@ class ViewController: UIViewController {
         self.checkAuthentication()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     // MARK: Interesting list using Flickr Model Objects
     
-    @IBAction func showTodaysInterestingWasPressed(sender: AnyObject) {
+    @IBAction func showTodaysInterestingWasPressed(_ sender: AnyObject) {
         let flickrInteresting = FKFlickrInterestingnessGetList()
         flickrInteresting.per_page = "15"
         
-        FlickrKit.sharedFlickrKit().call(flickrInteresting) { (response, error) -> Void in
+        FlickrKit.shared().call(flickrInteresting) { (response, error) -> Void in
             
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            DispatchQueue.main.async(execute: { () -> Void in
                 
                 if (response != nil) {
                     // Pull out the photo urls from the results
-                    let topPhotos = response["photos"] as! [NSObject: AnyObject]
-                    let photoArray = topPhotos["photo"] as! [[NSObject: AnyObject]]
+                    let topPhotos = response?["photos"] as! [AnyHashable: Any]
+                    let photoArray = topPhotos["photo"] as! [[AnyHashable: Any]]
                     for photoDictionary in photoArray {
-                        let photoURL = FlickrKit.sharedFlickrKit().photoURLForSize(FKPhotoSizeSmall240, fromPhotoDictionary: photoDictionary)
-                        self.photoURLs.append(photoURL)
+                        let photoURL = FlickrKit.shared().photoURL(for: FKPhotoSizeSmall240, fromPhotoDictionary: photoDictionary)
+                        self.photoURLs.append(photoURL!)
                     }
-                    self.performSegueWithIdentifier("SegueToPhotos", sender: self)
+                    self.performSegue(withIdentifier: "SegueToPhotos", sender: self)
                 } else {
                     // Iterating over specific errors for each service
-                    switch error.code {
-                    case FKFlickrInterestingnessGetListError.ServiceCurrentlyUnavailable.rawValue:
-                        break;
-                    default:
-                        break;
+                    if let error = error as? NSError {
+                        switch error.code {
+                        case FKFlickrInterestingnessGetListError.serviceCurrentlyUnavailable.rawValue:
+                            break;
+                        default:
+                            break;
+                        }
+                        
+                        let alert = UIAlertView(title: "Error", message: error.localizedDescription, delegate: nil, cancelButtonTitle: "OK")
+                        alert.show()
                     }
-                    
-                    let alert = UIAlertView(title: "Error", message: error.localizedDescription, delegate: nil, cancelButtonTitle: "OK")
-                    alert.show()
                 }
             })
         }
@@ -67,17 +69,17 @@ class ViewController: UIViewController {
     
     // MARK: My photos using dictionary calls
     
-    @IBAction func photostreamButtonPressed(sender: AnyObject) {
-        if FlickrKit.sharedFlickrKit().authorized {
-            FlickrKit.sharedFlickrKit().call("flickr.photos.search", args: ["user_id": self.userID!, "per_page": "15"] , maxCacheAge: FKDUMaxAgeNeverCache, completion: { (response, error) -> Void in
+    @IBAction func photostreamButtonPressed(_ sender: AnyObject) {
+        if FlickrKit.shared().isAuthorized {
+            FlickrKit.shared().call("flickr.photos.search", args: ["user_id": self.userID!, "per_page": "15"] , maxCacheAge: FKDUMaxAgeNeverCache, completion: { (response, error) -> Void in
                 
-                let topPhotos = response["photos"] as! [NSObject: AnyObject]
-                let photoArray = topPhotos["photo"] as! [[NSObject: AnyObject]]
+                let topPhotos = response?["photos"] as! [AnyHashable: Any]
+                let photoArray = topPhotos["photo"] as! [[AnyHashable: Any]]
                 for photoDictionary in photoArray {
-                    let photoURL = FlickrKit.sharedFlickrKit().photoURLForSize(FKPhotoSizeSmall240, fromPhotoDictionary: photoDictionary)
-                    self.photoURLs.append(photoURL)
+                    let photoURL = FlickrKit.shared().photoURL(for: FKPhotoSizeSmall240, fromPhotoDictionary: photoDictionary)
+                    self.photoURLs.append(photoURL!)
                 }
-                self.performSegueWithIdentifier("SegueToPhotos", sender: self)
+                self.performSegue(withIdentifier: "SegueToPhotos", sender: self)
             })
         } else {
             let alert = UIAlertView(title: "Error", message: "Please login firs", delegate: nil, cancelButtonTitle: "OK")
@@ -88,37 +90,37 @@ class ViewController: UIViewController {
     // MARK: Authentication
     
     
-    @IBAction func authButtonPressed(sender: AnyObject) {
-        if(FlickrKit.sharedFlickrKit().authorized) {
-            FlickrKit.sharedFlickrKit().logout()
+    @IBAction func authButtonPressed(_ sender: AnyObject) {
+        if(FlickrKit.shared().isAuthorized) {
+            FlickrKit.shared().logout()
             self.userLoggedOut()
         } else {
-            self.performSegueWithIdentifier("SegueToAuth", sender: self)
+            self.performSegue(withIdentifier: "SegueToAuth", sender: self)
         }
     }
     
     
     func checkAuthentication() {
-        NSNotificationCenter.defaultCenter().addObserverForName("UserAuthCallbackNotification", object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
-            let callBackURL: NSURL = notification.object as! NSURL
-            self.completeAuthOp = FlickrKit.sharedFlickrKit().completeAuthWithURL(callBackURL, completion: { (userName, userId, fullName, error) -> Void in
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "UserAuthCallbackNotification"), object: nil, queue: OperationQueue.main) { (notification) -> Void in
+            let callBackURL: URL = notification.object as! URL
+            self.completeAuthOp = FlickrKit.shared().completeAuth(with: callBackURL, completion: { (userName, userId, fullName, error) -> Void in
+                DispatchQueue.main.async(execute: { () -> Void in
                     if ((error == nil)) {
-                        self.userLoggedIn(userName, userID: userId)
+                        self.userLoggedIn(userName!, userID: userId!)
                     } else {
-                        let alert = UIAlertView(title: "Error", message: error.localizedDescription, delegate: nil, cancelButtonTitle: "OK")
+                        let alert = UIAlertView(title: "Error", message: error?.localizedDescription, delegate: nil, cancelButtonTitle: "OK")
                         alert.show()
                     }
-                    self.navigationController?.popToRootViewControllerAnimated(true)
+                    self.navigationController?.popToRootViewController(animated: true)
                 });
             })
         }
         
         // Check if there is a stored token - You should do this once on app launch
-        self.checkAuthOp = FlickrKit.sharedFlickrKit().checkAuthorizationOnCompletion { (userName, userId, fullName, error) -> Void in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        self.checkAuthOp = FlickrKit.shared().checkAuthorization { (userName, userId, fullName, error) -> Void in
+            DispatchQueue.main.async(execute: { () -> Void in
                 if ((error == nil)) {
-                    self.userLoggedIn(userName, userID: userId)
+                    self.userLoggedIn(userName!, userID: userId!)
                 } else {
                     self.userLoggedOut()
                 }
@@ -126,22 +128,22 @@ class ViewController: UIViewController {
         }
     }
     
-    func userLoggedIn(userName: String, userID: String) {
+    func userLoggedIn(_ userName: String, userID: String) {
         self.userID = userID;
-        self.authButton.setTitle("Logout", forState: UIControlState.Normal)
+        self.authButton.setTitle("Logout", for: UIControlState())
         self.authLabel.text = "You are logged in as \(userName)"
     }
     
     func userLoggedOut() {
-        self.authButton.setTitle("Login", forState: UIControlState.Normal)
+        self.authButton.setTitle("Login", for: UIControlState())
         self.authLabel.text = "Login to flickr"
     }
     
     // MARK: Segues
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "SegueToPhotos") {
-            let photosVC: PhotosViewController = segue.destinationViewController as! PhotosViewController
+            let photosVC: PhotosViewController = segue.destination as! PhotosViewController
             photosVC.photoURLs = self.photoURLs
         }
     }
