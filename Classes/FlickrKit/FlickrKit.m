@@ -387,6 +387,18 @@
 @end
 
 
+#pragma mark - Photo Response
+
+@implementation FlickrKit (PhotoResponse)
+
+- (nullable NSArray<NSDictionary<NSString *, id> *> *) photoArrayFromResponse:(nonnull NSDictionary<NSString *, id> *)response {
+    return [response valueForKeyPath:@"photos.photo"];
+}
+
+@end
+
+
+
 #pragma mark - Image URL Methods
 #pragma mark -
 

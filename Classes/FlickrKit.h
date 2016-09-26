@@ -135,6 +135,14 @@ FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
 
 @end
 
+#pragma mark - Photo Response
+
+@interface FlickrKit (PhotoResponse)
+
+- (nullable NSArray<NSDictionary<NSString *, id> *> *) photoArrayFromResponse:(nonnull NSDictionary<NSString *, id> *)response;
+
+@end
+
 
 #pragma mark - Building Photo URLs
 

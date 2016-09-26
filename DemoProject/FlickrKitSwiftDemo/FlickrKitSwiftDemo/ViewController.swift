@@ -38,11 +38,8 @@ class ViewController: UIViewController {
         FlickrKit.shared().call(flickrInteresting) { (response, error) -> Void in
             
             DispatchQueue.main.async(execute: { () -> Void in
-                
-                if let response = response {
+                if let response = response, let photoArray = FlickrKit.shared().photoArray(fromResponse: response) {
                     // Pull out the photo urls from the results
-                    let topPhotos = response["photos"] as! [String: Any]
-                    let photoArray = topPhotos["photo"] as! [[String: Any]]
                     for photoDictionary in photoArray {
                         let photoURL = FlickrKit.shared().photoURL(for: FKPhotoSize.small240, fromPhotoDictionary: photoDictionary)
                         self.photoURLs.append(photoURL)
@@ -74,14 +71,13 @@ class ViewController: UIViewController {
             FlickrKit.shared().call("flickr.photos.search", args: ["user_id": self.userID!, "per_page": "15"] , maxCacheAge: FKDUMaxAge.neverCache, completion: { (response, error) -> Void in
                 
                 DispatchQueue.main.async(execute: { () -> Void in
-                    
-                    let topPhotos = response?["photos"] as! [String: Any]
-                    let photoArray = topPhotos["photo"] as! [[String: Any]]
-                    for photoDictionary in photoArray {
-                        let photoURL = FlickrKit.shared().photoURL(for: FKPhotoSize.small240, fromPhotoDictionary: photoDictionary)
-                        self.photoURLs.append(photoURL)
+                    if let response = response, let photoArray = FlickrKit.shared().photoArray(fromResponse: response) {
+                        for photoDictionary in photoArray {
+                            let photoURL = FlickrKit.shared().photoURL(for: FKPhotoSize.small240, fromPhotoDictionary: photoDictionary)
+                            self.photoURLs.append(photoURL)
+                        }
+                        self.performSegue(withIdentifier: "SegueToPhotos", sender: self)
                     }
-                    self.performSegue(withIdentifier: "SegueToPhotos", sender: self)
                 })
                 
             })
