@@ -24,7 +24,7 @@
 	return sharedManager;
 }
 
-- (id) init {
+- (instancetype) init {
     self = [super init];
     if (self) {
         self.operationQueue = [[NSOperationQueue alloc] init];
@@ -41,7 +41,7 @@
 + (void) networkRequestThreadEntryPoint:(id)object {
     do {
         @autoreleasepool {
-            [[NSThread currentThread] setName:@"DUNetworkThread"];
+            [NSThread currentThread].name = @"DUNetworkThread";
             [[NSRunLoop currentRunLoop] run];
         }
     } while (YES);

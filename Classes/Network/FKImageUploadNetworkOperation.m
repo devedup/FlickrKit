@@ -28,7 +28,7 @@
 
 @implementation FKImageUploadNetworkOperation
 
-- (id) initWithImage:(DUImage *)image arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion; {
+- (instancetype) initWithImage:(DUImage *)image arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion; {
     self = [super init];
     if (self) {
 		self.image = image;
@@ -39,7 +39,7 @@
 }
 
 #if TARGET_OS_IOS
-- (id) initWithAssetURL:(NSURL *)assetURL arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion; {
+- (instancetype) initWithAssetURL:(NSURL *)assetURL arguments:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion; {
     self = [super init];
     if (self) {
 		self.image = nil;
@@ -151,8 +151,8 @@
     NSDictionary *fileInfo = [[NSFileManager defaultManager] attributesOfItemAtPath:tempFileName error:error];
     NSNumber *fileSize = nil;
     if (fileInfo) {
-        fileSize = [fileInfo objectForKey:NSFileSize];
-        self.fileSize = [fileSize integerValue];
+        fileSize = fileInfo[NSFileSize];
+        self.fileSize = fileSize.integerValue;
     } else {
         //we have the error populated
         return nil;
@@ -162,11 +162,11 @@
 	NSInputStream *inputStream = [NSInputStream inputStreamWithFileAtPath:tempFileName];	
 	
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://api.flickr.com/services/upload/"]];
-	[request setHTTPMethod:@"POST"];
-	[request setHTTPBodyStream:inputStream];
+	request.HTTPMethod = @"POST";
+	request.HTTPBodyStream = inputStream;
 	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", multipartBoundary];
 	[request setValue:contentType forHTTPHeaderField:@"Content-Type"];
-    [request setValue:[fileSize stringValue] forHTTPHeaderField:@"Content-Length"];
+    [request setValue:fileSize.stringValue forHTTPHeaderField:@"Content-Length"];
     
     return request;
 }

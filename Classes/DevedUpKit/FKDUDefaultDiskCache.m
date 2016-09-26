@@ -18,7 +18,7 @@
 + (NSString *) cachesDirectory {
     static NSString *cachesFolder = nil;
     if (!cachesFolder) {
-        cachesFolder = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+        cachesFolder = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
     }
 	return cachesFolder;
 }
@@ -34,7 +34,7 @@
     return __sharedManager;
 }
 
-- (id) init {
+- (instancetype) init {
     self = [super init];
     if (self) {
         self.maxDiskCacheSize = 100000000; //That's 100 MB
@@ -68,7 +68,7 @@
 #pragma mark - Data from the cache
 
 - (BOOL) isDate:(NSDate *)date moreThanMinutesAgo:(NSInteger)minutes {
-    NSTimeInterval intervalFromNow = fabs([date timeIntervalSinceNow]);
+    NSTimeInterval intervalFromNow = fabs(date.timeIntervalSinceNow);
     if(intervalFromNow > (minutes * 60)) {
         return YES;
     } else {
@@ -116,7 +116,7 @@
 		if (![[NSFileManager defaultManager] fileExistsAtPath:localPath]) {
 			NSLog(@"ERROR: Could not create file at path: %@", localPath);
 		} else {
-			self.cacheSize += [data length];
+			self.cacheSize += data.length;
 		}
 	}
 }
@@ -145,7 +145,7 @@
 			attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:[cacheDir stringByAppendingPathComponent:file] error:&error];
 			
 			fileSize = attrs[NSFileSize];
-			totalSize += [fileSize integerValue];
+			totalSize += fileSize.integerValue;
 		}
 		
 		self.cacheSize = totalSize;
@@ -184,10 +184,10 @@ NSInteger FKDUdateModifiedSort(id file1, id file2, void *reverse) {
     NSAssert(![NSThread currentThread].isMainThread, @"should be in background");
 	NSUInteger targetBytes = self.maxDiskCacheSize * 0.75;
 	NSLog(@"Checking disk cache size. Limit %lu bytes", (unsigned long)targetBytes);
-	NSString *size = [NSString stringWithFormat:@"%lu", (unsigned long)[self currentSizeOfCache]];
+	NSString *size = [NSString stringWithFormat:@"%lu", (unsigned long)self.currentSizeOfCache];
 	
-	if ([self currentSizeOfCache] > targetBytes) {
-		NSLog(@"Time to clean the cache! size is: %@, %lu", [self cacheDir], (unsigned long)[self currentSizeOfCache]);
+	if (self.currentSizeOfCache > targetBytes) {
+		NSLog(@"Time to clean the cache! size is: %@, %lu", [self cacheDir], (unsigned long)self.currentSizeOfCache);
 		NSError *error = nil;
 		NSArray *dirContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[self cacheDir] error:&error];
 		if (!error) {
@@ -198,10 +198,10 @@ NSInteger FKDUdateModifiedSort(id file1, id file2, void *reverse) {
 			
 			int reverse = YES;
 			NSMutableArray *sortedDirContents = [NSMutableArray arrayWithArray:[filteredArray sortedArrayUsingFunction:FKDUdateModifiedSort context:&reverse]];
-			while (_cacheSize > targetBytes && [sortedDirContents count] > 0) {
+			while (_cacheSize > targetBytes && sortedDirContents.count > 0) {
 				NSLog(@"removing ");
-				self.cacheSize -= [[[NSFileManager defaultManager] attributesOfItemAtPath:[sortedDirContents lastObject] error:nil][NSFileSize] integerValue];
-				[[NSFileManager defaultManager] removeItemAtPath:[sortedDirContents lastObject] error:nil];
+				self.cacheSize -= [[[NSFileManager defaultManager] attributesOfItemAtPath:sortedDirContents.lastObject error:nil][NSFileSize] integerValue];
+				[[NSFileManager defaultManager] removeItemAtPath:sortedDirContents.lastObject error:nil];
 				[sortedDirContents removeLastObject];
 			}
 			NSLog(@"Remaining cache size: %lu, target size: %lu", (unsigned long)self.cacheSize, (unsigned long)targetBytes);

@@ -16,7 +16,7 @@
 + (void) writeMultipartStartString:(NSString *)startString imageStream:(NSInputStream *)imageInputStream toOutputStream:(NSOutputStream *)outputStream closingString:(NSString *)closingString {
     const char *UTF8String;
     size_t writeLength;
-    UTF8String = [startString UTF8String];
+    UTF8String = startString.UTF8String;
     writeLength = strlen(UTF8String);
 	
 	size_t __unused actualWrittenLength;
@@ -30,7 +30,7 @@
     NSAssert(buffer, @"Buffer not created");
 	
     [imageInputStream open];
-    while ([imageInputStream hasBytesAvailable]) {
+    while (imageInputStream.hasBytesAvailable) {
         if (!(readSize = [imageInputStream read:buffer maxLength:bufferSize])) {
             break;
         }        
@@ -44,7 +44,7 @@
     free(buffer);
     
     
-    UTF8String = [closingString UTF8String];
+    UTF8String = closingString.UTF8String;
     writeLength = strlen(UTF8String);
 	actualWrittenLength = [outputStream write:(uint8_t *)UTF8String maxLength:writeLength];
     NSAssert(actualWrittenLength == writeLength, @"Closing string not written");
@@ -63,8 +63,8 @@
     [startStream open];
     
     NSData    *openingData = [startString dataUsingEncoding:NSUTF8StringEncoding];
-    NSInteger startwriteLength = [openingData length];
-    NSInteger startactualWrittenLength = [startStream write:[openingData bytes] maxLength:startwriteLength];
+    NSInteger startwriteLength = openingData.length;
+    NSInteger startactualWrittenLength = [startStream write:openingData.bytes maxLength:startwriteLength];
     
     [startStream close];
     NSAssert(startactualWrittenLength == startwriteLength, @"Start string not writtern");
@@ -119,8 +119,8 @@
     [endStream open];
     
     NSData    *closingData = [closingString dataUsingEncoding:NSUTF8StringEncoding];
-    NSInteger writeLength = [closingData length];
-    NSInteger actualWrittenLength = [endStream write:[closingData bytes] maxLength:writeLength];
+    NSInteger writeLength = closingData.length;
+    NSInteger actualWrittenLength = [endStream write:closingData.bytes maxLength:writeLength];
     
     [endStream close];
     NSAssert(actualWrittenLength == writeLength, @"Closing string not written");

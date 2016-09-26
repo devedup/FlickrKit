@@ -15,14 +15,14 @@
  *
  *  @return The name of the method used by flickr
  */
-- (NSString *) name;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *name;
 
 /**
  *  All the args that you have injected into the object into a dictionary
  *
  *  @return dictionary of args
  */
-- (NSDictionary *) args;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSDictionary *args;
 
 /**
  *  Are the args passed valid?
@@ -47,21 +47,21 @@
  *
  *  @return true if you need to login first
  */
-- (BOOL) needsLogin;
+@property (NS_NONATOMIC_IOSONLY, readonly) BOOL needsLogin;
 
 /**
  *  Do you need to sign this request
  *
  *  @return true if you need to sign this request
  */
-- (BOOL) needsSigning;
+@property (NS_NONATOMIC_IOSONLY, readonly) BOOL needsSigning;
 
 /**
  *  Permissions needed for this request
  *
  *  @return the FkPermission you need to access this request
  */
-- (FKPermission) requiredPerms;
+@property (NS_NONATOMIC_IOSONLY, readonly) FKPermission requiredPerms;
 
 @optional
 

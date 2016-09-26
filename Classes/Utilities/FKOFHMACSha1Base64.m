@@ -32,8 +32,8 @@ static NSData *FKOFSha1(NSData *inData) {
     NSMutableData *result = [NSMutableData dataWithLength:CC_SHA1_DIGEST_LENGTH];
     CC_SHA1_CTX context;
     CC_SHA1_Init(&context);
-    CC_SHA1_Update(&context, [inData bytes], (CC_LONG)[inData length]);
-    CC_SHA1_Final([result mutableBytes], &context);
+    CC_SHA1_Update(&context, inData.bytes, (CC_LONG)inData.length);
+    CC_SHA1_Final(result.mutableBytes, &context);
     return result;
 }
 
@@ -44,12 +44,12 @@ static char *FKNewBase64Encode(const void *buffer, size_t length, bool separateL
 NSString *FKOFHMACSha1Base64(NSString *inKey, NSString *inMessage) {
     NSData *keyData = [inKey dataUsingEncoding:NSUTF8StringEncoding];
     
-    if ([keyData length] > CC_SHA1_BLOCK_BYTES) {
+    if (keyData.length > CC_SHA1_BLOCK_BYTES) {
         keyData = FKOFSha1(keyData);
     }
     
-    if ([keyData length] < CC_SHA1_BLOCK_BYTES) {
-        NSUInteger padSize = CC_SHA1_BLOCK_BYTES - [keyData length];
+    if (keyData.length < CC_SHA1_BLOCK_BYTES) {
+        NSUInteger padSize = CC_SHA1_BLOCK_BYTES - keyData.length;
 		
         NSMutableData *paddedData = [NSMutableData dataWithData:keyData];
         [paddedData appendData:[NSMutableData dataWithLength:padSize]];
@@ -59,9 +59,9 @@ NSString *FKOFHMACSha1Base64(NSString *inKey, NSString *inMessage) {
     NSMutableData *oKeyPad = [NSMutableData dataWithLength:CC_SHA1_BLOCK_BYTES];
     NSMutableData *iKeyPad = [NSMutableData dataWithLength:CC_SHA1_BLOCK_BYTES];
 	
-    const uint8_t *kdPtr = [keyData bytes];
-    uint8_t *okpPtr = [oKeyPad mutableBytes];
-    uint8_t *ikpPtr = [iKeyPad mutableBytes];
+    const uint8_t *kdPtr = keyData.bytes;
+    uint8_t *okpPtr = oKeyPad.mutableBytes;
+    uint8_t *ikpPtr = iKeyPad.mutableBytes;
 	
     memset(okpPtr, 0x5c, CC_SHA1_BLOCK_BYTES);
     memset(ikpPtr, 0x36, CC_SHA1_BLOCK_BYTES);
@@ -85,7 +85,7 @@ NSString *FKOFHMACSha1Base64(NSString *inKey, NSString *inMessage) {
     
     
 	size_t outputLength;
-	char *outputBuffer = FKNewBase64Encode([outerHashedData bytes], [outerHashedData length], true, &outputLength);
+	char *outputBuffer = FKNewBase64Encode(outerHashedData.bytes, outerHashedData.length, true, &outputLength);
 	
 	NSString *result = [[NSString alloc] initWithBytes:outputBuffer length:outputLength encoding:NSASCIIStringEncoding];
 	free(outputBuffer);

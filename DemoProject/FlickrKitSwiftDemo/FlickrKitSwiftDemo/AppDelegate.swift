@@ -29,8 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Initialise FlickrKit with your flickr api key and shared secret
-        let apiKey: String? = "348ea26ca45d5f9d3da7fff4822a7fd1"
-        let secret: String? = "471cc96b04e60f27"
+        let apiKey: String! = "348ea26ca45d5f9d3da7fff4822a7fd1"
+        let secret: String! = "471cc96b04e60f27"
         if (apiKey == nil || secret == nil) {
             print("\n----------------------------------\nYou need to enter your own 'apiKey' and 'secret' in FKAppDelegate for the demo to run. \n\nYou can get these from your Flickr account settings.\n----------------------------------\n");
             exit(0);

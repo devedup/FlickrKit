@@ -21,7 +21,7 @@ class AuthViewController: UIViewController {
         
         // Begin the authentication process
         let url = URL(string: callbackURLString)
-        FlickrKit.shared().beginAuth(withCallbackURL: url, permission: FKPermissionDelete, completion: { (url, error) -> Void in
+        FlickrKit.shared().beginAuth(withCallbackURL: url!, permission: FKPermission.delete, completion: { (url, error) -> Void in
             DispatchQueue.main.async(execute: { () -> Void in
                 if ((error == nil)) {
                     let urlRequest = NSMutableURLRequest(url: url!, cachePolicy: NSURLRequest.CachePolicy.useProtocolCachePolicy, timeoutInterval: 30)

@@ -39,13 +39,13 @@ class ViewController: UIViewController {
             
             DispatchQueue.main.async(execute: { () -> Void in
                 
-                if (response != nil) {
+                if let response = response {
                     // Pull out the photo urls from the results
-                    let topPhotos = response?["photos"] as! [AnyHashable: Any]
-                    let photoArray = topPhotos["photo"] as! [[AnyHashable: Any]]
+                    let topPhotos = response["photos"] as! [String: Any]
+                    let photoArray = topPhotos["photo"] as! [[String: Any]]
                     for photoDictionary in photoArray {
-                        let photoURL = FlickrKit.shared().photoURL(for: FKPhotoSizeSmall240, fromPhotoDictionary: photoDictionary)
-                        self.photoURLs.append(photoURL!)
+                        let photoURL = FlickrKit.shared().photoURL(for: FKPhotoSize.small240, fromPhotoDictionary: photoDictionary)
+                        self.photoURLs.append(photoURL)
                     }
                     self.performSegue(withIdentifier: "SegueToPhotos", sender: self)
                 } else {
@@ -71,15 +71,19 @@ class ViewController: UIViewController {
     
     @IBAction func photostreamButtonPressed(_ sender: AnyObject) {
         if FlickrKit.shared().isAuthorized {
-            FlickrKit.shared().call("flickr.photos.search", args: ["user_id": self.userID!, "per_page": "15"] , maxCacheAge: FKDUMaxAgeNeverCache, completion: { (response, error) -> Void in
+            FlickrKit.shared().call("flickr.photos.search", args: ["user_id": self.userID!, "per_page": "15"] , maxCacheAge: FKDUMaxAge.neverCache, completion: { (response, error) -> Void in
                 
-                let topPhotos = response?["photos"] as! [AnyHashable: Any]
-                let photoArray = topPhotos["photo"] as! [[AnyHashable: Any]]
-                for photoDictionary in photoArray {
-                    let photoURL = FlickrKit.shared().photoURL(for: FKPhotoSizeSmall240, fromPhotoDictionary: photoDictionary)
-                    self.photoURLs.append(photoURL!)
-                }
-                self.performSegue(withIdentifier: "SegueToPhotos", sender: self)
+                DispatchQueue.main.async(execute: { () -> Void in
+                    
+                    let topPhotos = response?["photos"] as! [String: Any]
+                    let photoArray = topPhotos["photo"] as! [[String: Any]]
+                    for photoDictionary in photoArray {
+                        let photoURL = FlickrKit.shared().photoURL(for: FKPhotoSize.small240, fromPhotoDictionary: photoDictionary)
+                        self.photoURLs.append(photoURL)
+                    }
+                    self.performSegue(withIdentifier: "SegueToPhotos", sender: self)
+                })
+                
             })
         } else {
             let alert = UIAlertView(title: "Error", message: "Please login firs", delegate: nil, cancelButtonTitle: "OK")
@@ -111,7 +115,7 @@ class ViewController: UIViewController {
                         let alert = UIAlertView(title: "Error", message: error?.localizedDescription, delegate: nil, cancelButtonTitle: "OK")
                         alert.show()
                     }
-                    self.navigationController?.popToRootViewController(animated: true)
+                    _ = self.navigationController?.popToRootViewController(animated: true)
                 });
             })
         }

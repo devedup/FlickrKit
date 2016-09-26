@@ -42,13 +42,13 @@ FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
 @interface FlickrKit : NSObject
 
 //You can inject your own disk cache if you like, or just use the default one and ignore this
-@property (nonatomic, strong) id<FKDUDiskCache> diskCache;
+@property (nonatomic, strong, nullable) id<FKDUDiskCache> diskCache;
 // Flickr API Key
-@property (nonatomic, strong, readonly) NSString *apiKey;
-@property (nonatomic, strong, readonly) NSString *secret;
+@property (nonatomic, strong, readonly, nullable) NSString *apiKey;
+@property (nonatomic, strong, readonly, nullable) NSString *secret;
 // Auth
-@property (nonatomic, strong, readonly) NSString *authToken;
-@property (nonatomic, strong, readonly) NSString *authSecret;
+@property (nonatomic, strong, readonly, nullable) NSString *authToken;
+@property (nonatomic, strong, readonly, nullable) NSString *authSecret;
 @property (nonatomic, assign, readonly) FKPermission permissionGranted;
 
 /**
@@ -56,7 +56,7 @@ FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
  *
  *  @return the FlickrKit shared singleton
  */
-+ (FlickrKit *) sharedFlickrKit;
++ (nonnull FlickrKit *) sharedFlickrKit;
 
 #pragma mark - Initialisation
 
@@ -66,7 +66,7 @@ FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
  *  @param apiKey Your flickr API key
  *  @param secret Your flickr API secret
  */
-- (void) initializeWithAPIKey:(NSString *)apiKey sharedSecret:(NSString *)secret;
+- (void) initializeWithAPIKey:(nonnull NSString *)apiKey sharedSecret:(nonnull NSString *)secret;
 
 #pragma mark - Flickr Data Requests
 
@@ -79,7 +79,7 @@ FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
  *
  *  @return The FKFlickrNetworkOperation created
  */
-- (FKFlickrNetworkOperation *) call:(NSString * )apiMethod args:(NSDictionary *)requestArgs completion:(FKAPIRequestCompletion)completion;
+- (nonnull FKFlickrNetworkOperation *) call:(nonnull NSString * )apiMethod args:(nullable NSDictionary *)requestArgs completion:(nullable FKAPIRequestCompletion)completion;
 
 /**
  *  Call the Flickr API using a string apiMethod passing any requestArgs
@@ -91,7 +91,7 @@ FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
  *
  *  @return The FKFlickrNetworkOperation created
  */
-- (FKFlickrNetworkOperation *) call:(NSString *)apiMethod args:(NSDictionary *)requestArgs maxCacheAge:(FKDUMaxAge)maxAge completion:(FKAPIRequestCompletion)completion;
+- (nonnull FKFlickrNetworkOperation *) call:(nonnull NSString *)apiMethod args:(nullable NSDictionary *)requestArgs maxCacheAge:(FKDUMaxAge)maxAge completion:(nullable FKAPIRequestCompletion)completion;
 
 /**
  *  Call the Flickr API using the model objects
@@ -101,7 +101,7 @@ FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
  *
  *  @return The FKFlickrNetworkOperation created
  */
-- (FKFlickrNetworkOperation *) call:(id<FKFlickrAPIMethod>)method completion:(FKAPIRequestCompletion)completion;
+- (nonnull FKFlickrNetworkOperation *) call:(nonnull id<FKFlickrAPIMethod>)method completion:(nullable FKAPIRequestCompletion)completion;
 
 /**
  *  Call the Flickr API using the model objects
@@ -112,7 +112,7 @@ FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
  *
  *  @return The FKFlickrNetworkOperation created
  */
-- (FKFlickrNetworkOperation *) call:(id<FKFlickrAPIMethod>)method maxCacheAge:(FKDUMaxAge)maxAge completion:(FKAPIRequestCompletion)completion;
+- (nonnull FKFlickrNetworkOperation *) call:(nonnull id<FKFlickrAPIMethod>)method maxCacheAge:(FKDUMaxAge)maxAge completion:(nullable FKAPIRequestCompletion)completion;
 
 @end
 
@@ -125,11 +125,11 @@ FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
 @property (nonatomic, assign, readonly, getter = isAuthorized) BOOL authorized;
 
 // 1. Begin Authorization, onSuccess display authURL in a UIWebView - the url is a callback into your app with a URL scheme
-- (FKDUNetworkOperation *) beginAuthWithCallbackURL:(NSURL *)url permission:(FKPermission)permission completion:(FKAPIAuthBeginCompletion)completion;
+- (nonnull FKDUNetworkOperation *) beginAuthWithCallbackURL:(nonnull NSURL *)url permission:(FKPermission)permission completion:(nullable FKAPIAuthBeginCompletion)completion;
 // 2. After they login and authorize the app, need to get an auth token - this will happen via your URL scheme - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
-- (FKDUNetworkOperation *) completeAuthWithURL:(NSURL *)url completion:(FKAPIAuthCompletion)completion;
+- (nonnull FKDUNetworkOperation *) completeAuthWithURL:(nonnull NSURL *)url completion:(nullable FKAPIAuthCompletion)completion;
 // 3. On returning to the app, you want to re-log them in automatically - do it here
-- (FKFlickrNetworkOperation *) checkAuthorizationOnCompletion:(FKAPIAuthCompletion)completion;
+- (nonnull FKFlickrNetworkOperation *) checkAuthorizationOnCompletion:(nullable FKAPIAuthCompletion)completion;
 // 4. Logout - just removes all the stored keys
 - (void) logout;
 
@@ -141,10 +141,10 @@ FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
 @interface FlickrKit (ImageURL)
 
 // Build your own from the components required
-- (NSURL *) photoURLForSize:(FKPhotoSize)size photoID:(NSString *)photoID server:(NSString *)server secret:(NSString *)secret farm:(NSString *)farm;
+- (nonnull NSURL *) photoURLForSize:(FKPhotoSize)size photoID:(nonnull NSString *)photoID server:(nonnull NSString *)server secret:(nonnull NSString *)secret farm:(nonnull NSString *)farm;
 // Utility methods to extract the photoID/server/secret/farm from the input
-- (NSURL *) photoURLForSize:(FKPhotoSize)size fromPhotoDictionary:(NSDictionary *)photoDict;
-- (NSURL *) buddyIconURLForUser:(NSString *)userID;
+- (nonnull NSURL *) photoURLForSize:(FKPhotoSize)size fromPhotoDictionary:(nonnull NSDictionary *)photoDict;
+- (nonnull NSURL *) buddyIconURLForUser:(nonnull NSString *)userID;
 
 @end
 
@@ -153,10 +153,10 @@ FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
 
 @interface FlickrKit (PhotoUpload)
 
-- (FKImageUploadNetworkOperation *) uploadImage:(DUImage *)image args:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;
+- (nonnull FKImageUploadNetworkOperation *) uploadImage:(nonnull DUImage *)image args:(nullable NSDictionary *)args completion:(nullable FKAPIImageUploadCompletion)completion;
 
 #if TARGET_OS_IOS
-- (FKImageUploadNetworkOperation *) uploadAssetURL:(NSURL *)assetURL args:(NSDictionary *)args completion:(FKAPIImageUploadCompletion)completion;
+- (nonnull FKImageUploadNetworkOperation *) uploadAssetURL:(nonnull NSURL *)assetURL args:(nullable NSDictionary *)args completion:(nullable FKAPIImageUploadCompletion)completion;
 #endif
 
 @end

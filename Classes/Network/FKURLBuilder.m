@@ -24,7 +24,7 @@
 		[queryArray addObject:[NSString stringWithFormat:@"%@=%@", key, FKEscapedURLStringPlus(newArgs[key])]];
 	}
 	
-    NSString *newURLStringWithQuery = [NSString stringWithFormat:@"%@?%@", [inURL absoluteString], [queryArray componentsJoinedByString:@"&"]];
+    NSString *newURLStringWithQuery = [NSString stringWithFormat:@"%@?%@", inURL.absoluteString, [queryArray componentsJoinedByString:@"&"]];
     
     return [NSURL URLWithString:newURLStringWithQuery];
 }
@@ -46,7 +46,7 @@
 	
     NSMutableDictionary *newArgs = params ? [params mutableCopy] : [NSMutableDictionary dictionary];
     newArgs[@"oauth_nonce"] = [FKGenerateUUID() substringToIndex:8];
-	NSTimeInterval time = [[NSDate date] timeIntervalSince1970];
+	NSTimeInterval time = [NSDate date].timeIntervalSince1970;
     newArgs[@"oauth_timestamp"] = [NSString stringWithFormat:@"%f", time];
     newArgs[@"oauth_version"] = @"1.0";
     newArgs[@"oauth_signature_method"] = @"HMAC-SHA1";
@@ -66,9 +66,9 @@
     NSMutableString *baseString = [NSMutableString string];
     [baseString appendString:httpMethod];
     [baseString appendString:@"&"];
-    [baseString appendString:FKEscapedURLStringPlus([inURL absoluteString])];
+    [baseString appendString:FKEscapedURLStringPlus(inURL.absoluteString)];
     
-    NSArray *sortedKeys = [[newArgs allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    NSArray *sortedKeys = [newArgs.allKeys sortedArrayUsingSelector:@selector(compare:)];
     [baseString appendString:@"&"];
     
 	NSMutableArray *baseStrArgs = [NSMutableArray array];
@@ -106,7 +106,7 @@
 
 	NSMutableArray *argArray = [NSMutableArray array];
 	NSMutableString *sigString = [NSMutableString stringWithString:[FlickrKit sharedFlickrKit].secret ? [FlickrKit sharedFlickrKit].secret  : @""];
-	NSArray *sortedKeys = [[args allKeys] sortedArrayUsingSelector:@selector(compare:)];
+	NSArray *sortedKeys = [args.allKeys sortedArrayUsingSelector:@selector(compare:)];
 	
 	for (NSString *key in sortedKeys) {
 		NSString *value = args[key];
@@ -129,7 +129,7 @@
 		NSMutableDictionary *returnDict = [NSMutableDictionary dictionary];
 		NSArray *signedArgs = [self signedArgumentComponentsFromParameters:params];
 		for (NSArray *comp in signedArgs) {
-			[returnDict setObject:comp[1] forKey:comp[0]];
+			returnDict[comp[0]] = comp[1];
 		}
 		return [returnDict copy];
 	}
