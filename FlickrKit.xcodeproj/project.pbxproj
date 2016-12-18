@@ -5117,6 +5117,7 @@
 		553B853E1BCEB24A00BF59AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DSTROOT = /tmp/FlickrKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -5132,6 +5133,7 @@
 		553B853F1BCEB24A00BF59AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DSTROOT = /tmp/FlickrKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
