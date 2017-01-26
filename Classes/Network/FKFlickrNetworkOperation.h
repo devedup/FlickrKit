@@ -9,7 +9,7 @@
 #import "FKDataTypes.h"
 #import "FKDUConcurrentOperation.h"
 #import "FKDUDiskCache.h"
-#import "FKDUnetworkOperation.h"
+#import "FKDUNetworkOperation.h"
 #import "FKFlickrAPIMethod.h"
 
 @interface FKFlickrNetworkOperation : FKDUNetworkOperation

@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-@import FlickrKit.FKDUnetworkOperation;
+@import FlickrKit.FKDUNetworkOperation;
 @interface ViewController : NSViewController
 @end
 
