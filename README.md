@@ -7,7 +7,7 @@ FlickrKit is an iOS Objective-C library for accessing the Flickr API written by 
 ![](https://travis-ci.org/devedup/FlickrKit.svg?branch=master)
 
 
-###Features
+### Features
 ---
 
 Who needs FlickrKit when we have ObjectiveFlickr? Why not? I used ObjectiveFlickr for a long time, and some of the methods in this library were born from ObjectiveFlickr. However, I sometimes had problems debugging ObjectiveFlickr as the networking code was custom and not familiar to me. Also I go a little further with FlickrKit and I provide a little bit more than ObjectiveFlickr does... read on....
@@ -28,7 +28,7 @@ Who needs FlickrKit when we have ObjectiveFlickr? Why not? I used ObjectiveFlick
 I don't support Mac OS X (as I’ve never worked with that ..sorry! - ports welcome!). I don't support the old authentication method or migration - it only uses OAuth - which is almost a year old with Flickr now anyway. It only supports single user authentication - so doesn't support multiple Flickr accounts
 
 
-###Requirements
+### Requirements
 ---
 FlickrKit requires iOS 6.0 and above and uses ARC. It may be compatible with older OS's, but I haven't tested this.
 
@@ -36,7 +36,7 @@ If you are using FlickrKit in your non-arc project, you will need to set a `-fob
 
 To set a compiler flag in Xcode, go to your active target and select the "Build Phases" tab. Now select all FlickrKit source files, press Enter, insert `-fobjc-arc` and then "Done" to enable ARC for FlickrKit.
 
-###Cocoapods Installation
+### Cocoapods Installation
 ---
 Add this line to your target in your `Podfile`:
 
@@ -44,7 +44,7 @@ Add this line to your target in your `Podfile`:
     
 Run `pod install` and you're good to go!
 
-###Manual Installation
+### Manual Installation
 ---
 1. Drag FlickrKit.xcodeproj into your project.
 2. In your project target, build phases, target dependencies... add FlickrKit as a depenendency
@@ -52,7 +52,7 @@ Run `pod install` and you're good to go!
 4. In build settings > header search paths... point to FlickrKit classes directory, recursively
 5. Include SystemConfiguration.framework 
 
-###Usage
+### Usage
 ---
 Included in the source is a demo project that shows you how to get started. It has a few example use cases. The UI isn't pretty! - but the important part is the usage of the API in the code.
 
@@ -73,12 +73,12 @@ Included in the source is a demo project that shows you how to get started. It h
 #### Startup
 You can get an API Key and Secret from your Flickr account. You need these to use the API.
 
-######swift
+###### swift
 ```swift
 FlickrKit.sharedFlickrKit().initializeWithAPIKey(apiKey, sharedSecret: secret)
 ```
 
-######objective-c
+###### objective-c
 ```objective-c
 [[FlickrKit sharedFlickrKit] initializeWithAPIKey:@"YOUR_KEY" sharedSecret:@"YOUR_SECRET"];
 ```
@@ -86,7 +86,7 @@ FlickrKit.sharedFlickrKit().initializeWithAPIKey(apiKey, sharedSecret: secret)
 #### Load Interesting Photos - Flickr Explore 
 This example demonstrates using the generated Flickr API Model classes.
 
-######swift
+###### swift
 ```swift
 let flickrInteresting = FKFlickrInterestingnessGetList()
 flickrInteresting.per_page = "15"
@@ -105,7 +105,7 @@ FlickrKit.sharedFlickrKit().call(flickrInteresting) { (response, error) -> Void 
 }
 ```
 
-######objective-c
+###### objective-c
 ```objective-c
 FlickrKit *fk = [FlickrKit sharedFlickrKit];
 FKFlickrInterestingnessGetList *interesting = [[FKFlickrInterestingnessGetList alloc] init];
@@ -155,12 +155,12 @@ self.uploadOp = [[FlickrKit sharedFlickrKit] uploadImage:imagePicked args:upload
 [self.uploadOp addObserver:self forKeyPath:@"uploadProgress" options:NSKeyValueObservingOptionNew context:NULL];
 ```
 
-###Unit Tests
+### Unit Tests
 ---
 There are a few unit tests, but currently you should run the demo projects which cover a few areas of the API in both Swift and Objective-C. Sorry about the lack of tests!
 
 
-###License and Warranty
+### License and Warranty
 ---
 The license for the code is included with the project; it's basically a BSD license with attribution.
 
@@ -168,7 +168,7 @@ You're welcome to use it in commercial, closed-source, open source, free or any 
 
 The FlickrKit code comes with no warranty of any kind. I hope it'll be useful to you (it certainly is to me), but I make no guarantees regarding its functionality or otherwise.
 
-###Contact
+### Contact
 ---
 I can't answer any questions about how to use the code, but I always welcome emails telling me that you're using it, or just saying thanks.
 
@@ -179,7 +179,7 @@ Likewise, if you want to submit a feature request or bug report, feel free to ge
 Enjoy!
 
 Thanks,  
-#####David Casserly
+##### David Casserly
 
 Me:      http://www.davidjc.com   
 My Work: http://www.devedup.com   
