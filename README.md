@@ -66,7 +66,9 @@ Included in the source is a demo project that shows you how to get started. It h
 ##### Authentication 
  
  * You start auth using beginAuthWithCallbackURL with the url that Flickr will call back to your app - completion callback gives you a URL that you can present in a webview.
- * Once the user has logged in and Flickr calls back to your app, you can pass this to completeAuthWithURL.
+ * Once the user has logged in and Flickr will redirect back to your app on the callback URL you specified
+ * Remember to include this URL scheme inside your Info.plist of registered URL Schemes. 
+ * In your app delegate handle URL method, you can pass the full callback URL to completeAuthWithURL.
  * We store the auth token in NSUserDefaults - so when you launch your app again, you can call checkAuthorizationOnSuccess to see if the user is already validated.
  * Calling logout will remove all stored tokens and the user will have to authenticate again.
 
