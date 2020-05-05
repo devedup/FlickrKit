@@ -28,6 +28,20 @@ NSString *FKPermissionStringForPermission(FKPermission permission) {
 	}
 }
 
+FKPermission FKPermissionForStringPermission(NSString* string) {
+	// Convert a string permission ("read", "write", or "delete") into an FKPermission enum.
+	// Returns FKPermissionRead if string is nil or not a valid permission value.
+	FKPermission permission = FKPermissionRead;
+	if (string!=nil)
+		{
+		if ([string caseInsensitiveCompare:@"WRITE"]==NSOrderedSame)
+			permission = FKPermissionWrite;
+		else if ([string caseInsensitiveCompare:@"DELETE"]==NSOrderedSame)
+			permission = FKPermissionDelete;
+		}
+	return permission;
+}
+
 NSString *FKIdentifierForSize(FKPhotoSize size) {
 	static NSArray *identifiers = nil;
 	if (!identifiers) {
