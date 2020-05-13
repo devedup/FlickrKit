@@ -446,7 +446,8 @@
 	[URLString appendFormat:@"%@/%@_%@", server, photoID, secret];
 	
 	NSString *sizeKey = FKIdentifierForSize(size);
-	[URLString appendFormat:@"_%@.jpg", sizeKey];
+    if(sizeKey.length > 0)
+        [URLString appendFormat:@"_%@.jpg", sizeKey];
     
 	return [NSURL URLWithString:URLString];
 }
