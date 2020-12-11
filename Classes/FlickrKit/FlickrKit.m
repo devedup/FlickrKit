@@ -269,7 +269,9 @@
 			response = [response stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 			if ([response hasPrefix:@"oauth_problem="]) {
 				self.beginAuthURL = nil;
+				[self willChangeValueForKey:@"authorized"];
 				self.authorized = NO;
+  				[self didChangeValueForKey:@"authorized"];
 				self.authToken = nil;
 				self.authSecret = nil;
 				NSString *response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -297,7 +299,9 @@
 					[[NSUserDefaults standardUserDefaults] setValue:oat forKey:kFKStoredTokenKey];
 					[[NSUserDefaults standardUserDefaults] setValue:oats forKey:kFKStoredTokenSecret];
 					[[NSUserDefaults standardUserDefaults] synchronize];
+					[self willChangeValueForKey:@"authorized"];
 					self.authorized = YES;
+  					[self didChangeValueForKey:@"authorized"];
 					self.authToken = oat;
 					self.authSecret = oats;
 					self.beginAuthURL = nil;
@@ -349,7 +353,9 @@
 				NSString *userid = [response valueForKeyPath:@"oauth.user.nsid"];
 				NSString *fullname = [response valueForKeyPath:@"oauth.user.fullname"];
 				
+				[self willChangeValueForKey:@"authorized"];
 				self.authorized = YES;
+  				[self didChangeValueForKey:@"authorized"];
 				
 				if (completion) {
 					completion(username, userid, fullname, nil);
@@ -378,7 +384,9 @@
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kFKStoredTokenKey];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kFKStoredTokenSecret];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+	[self willChangeValueForKey:@"authorized"];
 	self.authorized = NO;
+  	[self didChangeValueForKey:@"authorized"];
 	self.authSecret = nil;
 	self.authToken = nil;
 	self.beginAuthURL = nil;
