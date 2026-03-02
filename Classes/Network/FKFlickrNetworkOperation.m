@@ -173,7 +173,10 @@
 	NSAssert(data, @"Must have data");
 	
 #ifdef DEBUG
-	//NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", @"-------------------");
+    NSLog(@"%@", [self apiMethod]);
+	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", jsonString);
 #endif
 	
 	NSError *error = nil;
