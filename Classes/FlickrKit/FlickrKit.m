@@ -17,6 +17,7 @@
 
 #define kFKStoredTokenKey @"kFKStoredTokenKey"
 #define kFKStoredTokenSecret @"kFKStoredTokenSecret"
+#define kFKStoredTokenPermission @"kFKStoredTokenPermission"
 
 @interface FlickrKit ()
 @property (nonatomic, strong) NSString *apiKey;
@@ -294,8 +295,9 @@
 						completion(nil, nil, nil, error);
 					}
 				} else {
-					[[NSUserDefaults standardUserDefaults] setValue:oat forKey:kFKStoredTokenKey];
-					[[NSUserDefaults standardUserDefaults] setValue:oats forKey:kFKStoredTokenSecret];
+					[[NSUserDefaults standardUserDefaults] setObject:oat forKey:kFKStoredTokenKey];
+					[[NSUserDefaults standardUserDefaults] setObject:oats forKey:kFKStoredTokenSecret];
+					[[NSUserDefaults standardUserDefaults] setObject:@(self.permissionGranted) forKey:kFKStoredTokenPermission];
 					[[NSUserDefaults standardUserDefaults] synchronize];
 					self.authorized = YES;
 					self.authToken = oat;
@@ -334,7 +336,17 @@
 	
 	NSString *storedToken = [[NSUserDefaults standardUserDefaults] stringForKey:kFKStoredTokenKey];
 	NSString *storedSecret = [[NSUserDefaults standardUserDefaults] stringForKey:kFKStoredTokenSecret];
-	if(storedToken && storedSecret) {
+	NSNumber *storedPermission = [[NSUserDefaults standardUserDefaults] objectForKey:kFKStoredTokenPermission];
+	switch (storedPermission.integerValue) {
+		case FKPermissionRead:
+		case FKPermissionWrite:
+		case FKPermissionDelete:
+			break;
+		default:
+			storedPermission = nil;
+			break;
+	}
+	if(storedToken && storedSecret && storedPermission) {
 		
 		NSDictionary *args = @{@"oauth_token": storedToken};
 		
@@ -344,6 +356,7 @@
 			if (response) {
 				self.authToken = storedToken;
 				self.authSecret = storedSecret;
+				self.permissionGranted = storedPermission.integerValue;
 				
 				NSString *username = [response valueForKeyPath:@"oauth.user.username"];
 				NSString *userid = [response valueForKeyPath:@"oauth.user.nsid"];
@@ -377,6 +390,7 @@
 - (void) logout {
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kFKStoredTokenKey];
 	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kFKStoredTokenSecret];
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:kFKStoredTokenPermission];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	self.authorized = NO;
 	self.authSecret = nil;
