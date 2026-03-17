@@ -157,19 +157,7 @@
 - (NSURL *)userAuthorizationURLWithRequestToken:(NSString *)inRequestToken requestedPermission:(FKPermission)permission {
     NSString *perms = @"";
 	
-	NSString *permissionString = nil;
-	switch (permission) {
-		case FKPermissionRead:
-			permissionString = @"read";
-			break;
-		case FKPermissionWrite:
-			permissionString = @"write";
-			break;
-		case FKPermissionDelete:
-			permissionString = @"delete";
-			break;
-	}
-    
+	NSString *permissionString = FKPermissionStringForPermission(permission).lowercaseString;
 	self.permissionGranted = permission;
 	
 	perms = [NSString stringWithFormat:@"&perms=%@", permissionString];
@@ -212,7 +200,12 @@
 			NSString *oats = params[@"oauth_token_secret"];
 			if (!oat || !oats) {
 				
-				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: response};
+				NSInteger statusCode = -1;
+				if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+					statusCode = ((NSHTTPURLResponse*)response).statusCode;
+				}
+				NSString* errorDescription = [NSString stringWithFormat:@"Unexpected response from server: %d", (int)statusCode];
+				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: errorDescription};
 				NSError *error = [NSError errorWithDomain:FKFlickrKitErrorDomain code:FKErrorAuthenticating userInfo:userInfo];
 				if (completion) {
 					completion(nil, error);
@@ -350,6 +343,7 @@
 				NSString *fullname = [response valueForKeyPath:@"oauth.user.fullname"];
 				
 				self.authorized = YES;
+				self.permissionGranted = FKPermissionForStringPermission([response valueForKeyPath:@"oauth.perms._content"]);
 				
 				if (completion) {
 					completion(username, userid, fullname, nil);

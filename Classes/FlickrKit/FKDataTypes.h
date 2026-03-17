@@ -68,6 +68,7 @@ typedef NS_ENUM(unsigned int, FKPermission) {
 };
 
 NSString *FKPermissionStringForPermission(FKPermission permission);
+FKPermission FKPermissionForStringPermission(NSString* string);
 
 NSString *FKIdentifierForSize(FKPhotoSize size);
 
