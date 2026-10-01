@@ -1,0 +1,15 @@
+name: Swift
+
+on:
+  push:
+    branches: [master, swift]
+  pull_request:
+
+jobs:
+  test:
+    # Swift 6.2 tools need Xcode 26.
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and test
+        run: swift test
