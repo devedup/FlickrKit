@@ -5,3 +5,8 @@ xcuserdata
 project.xcworkspace
 /build/
 .DS_Store
+
+# Swift Package Manager
+/.build/
+/.swiftpm/
+Package.resolved
