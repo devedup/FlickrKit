@@ -1,5 +1,81 @@
 # FlickrKit
 
+## FlickrKit 2.0 (Swift)
+
+FlickrKit 2.0 is a rewrite in Swift: a Swift package with async/await, Swift 6 strict concurrency and no dependencies. It is used by galleryr 3.0. The Objective-C 1.x library described further down stays available on `master` and the `v1.1.0` tag.
+
+**What it does**
+
+* OAuth 1.0a signing (HMAC-SHA1 via CryptoKit) and the full sign-in flow, with an `ASWebAuthenticationSession` wrapper.
+* The session stored in the Keychain behind a `FlickrTokenStore` protocol, with a one-time move of a token saved by FlickrKit 1.x.
+* A `FlickrClient` actor that signs, sends and decodes calls into any `Decodable` type, with typed `FlickrError`s, back-off on 429 and 5xx, at most 4 requests in flight, and a response cache kept per signed-in user.
+* Typed request builders for common methods (`FlickrMethod.Photos.search(...)`, `FlickrMethod.Interestingness.getList()` and so on). Any other method can be called by name.
+* Photo, buddy icon and page URLs.
+
+FlickrKit doesn't define response models: you decode Flickr's JSON into your own types. `FlickrContent` and the lenient `decodeFlickrInt/Double/Bool/StringIfPresent` helpers handle Flickr's `_content` wrappers and its numbers that sometimes arrive as strings.
+
+**Requirements:** iOS 17 or macOS 14, Swift 6.2.
+
+### Installation
+
+In Xcode, choose File › Add Package Dependencies and enter `https://github.com/devedup/FlickrKit`. Or add it to `Package.swift`:
+
+```swift
+.package(url: "https://github.com/devedup/FlickrKit", from: "2.0.0")
+```
+
+### Quick start
+
+```swift
+import FlickrKit
+
+let client = FlickrClient(apiKey: "YOUR_KEY", sharedSecret: "YOUR_SECRET")
+
+// Today's interesting photos, decoded into your own type.
+struct PhotosPage: Decodable, Sendable {
+    struct Photos: Decodable, Sendable { var photo: [Photo] }
+    struct Photo: Decodable, Sendable { var id: String; var title: String; var url_m: String? }
+    var photos: Photos
+}
+
+let page: PhotosPage = try await client.call(
+    FlickrMethod.Interestingness.getList()
+        .page(1, perPage: 100)
+        .extras([FlickrPhotoSize.medium500.extrasKey])
+)
+
+// Any method by name.
+let info: SomeType = try await client.call("flickr.photos.getInfo", args: ["photo_id": "123"])
+```
+
+Signing in, at launch and from a button:
+
+```swift
+// At launch: check the stored token (and move a 1.x token into the Keychain first).
+try KeychainTokenStore().migrateLegacyToken()
+let user = try await client.restoreSession()
+
+// Sign in. The callback URL's scheme is all the session needs; it doesn't have to be registered.
+let authenticator = FlickrWebAuthenticator(client: client)
+let user = try await authenticator.signIn(
+    callbackURL: URL(string: "myapp://flickr-auth")!,
+    permission: .write,
+    anchor: window
+)
+```
+
+Image URLs for Large 1024 and below can be built from a photo's `secret`. Larger sizes and originals have their own secrets, so take their URLs from the `url_h`, `url_k`… extras or `flickr.photos.getSizes`:
+
+```swift
+let url = FlickrPhotoURL.image(photoID: photo.id, server: photo.server, secret: photo.secret, size: .large1024)
+```
+
+The documentation catalog in `Sources/FlickrKit/FlickrKit.docc` covers the rest (Product › Build Documentation in Xcode).
+
+---
+
+## FlickrKit 1.x (Objective-C)
+
 FlickrKit is an iOS Objective-C library for accessing the Flickr API written by David Casserly. It is used by [galleryr pro iPad app](https://itunes.apple.com/gb/app/flickr-gallery-pro/id525519823?mt=8).
 
 ### Master build status: 
