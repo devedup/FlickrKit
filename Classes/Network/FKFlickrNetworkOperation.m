@@ -95,12 +95,18 @@
 #pragma mark - Cache
 
 - (NSString *) generateCacheKey {
-    NSMutableString *cacheString = [[NSMutableString alloc] initWithString:self.apiMethod];
-    for (NSString *key in (self.args).allKeys) {
-        NSString *value = [self.args valueForKey:key];
-        [cacheString appendString:key];
-        [cacheString appendString:value];
+    return [FKFlickrNetworkOperation cacheKeyForAPIMethod:self.apiMethod arguments:self.args];
+}
+
++ (NSString *) cacheKeyForAPIMethod:(NSString *)apiMethod arguments:(NSDictionary *)args {
+    NSMutableString *cacheString = [[NSMutableString alloc] initWithString:apiMethod ?: @""];
+    // Sort so two dictionaries with the same contents always produce the same key; NSDictionary
+    // makes no ordering promise. Values go through %@ because callers sometimes pass NSNumbers.
+    NSArray *sortedKeys = [args.allKeys sortedArrayUsingSelector:@selector(compare:)];
+    for (NSString *key in sortedKeys) {
+        [cacheString appendFormat:@"%@%@", key, args[key]];
     }
+    // The disk cache hashes this before using it as a file name, so length and characters are unconstrained.
     return [NSString stringWithString:cacheString];
 }
 
@@ -193,7 +199,13 @@
 		if ([status isEqualToString:@"fail"]) {
 			if (self.completion) {
 				NSInteger errorCode = [[jsonData valueForKey:@"code"] integerValue];
-				NSString *errorDescription = [jsonData valueForKey:@"message"];				
+				id message = [jsonData valueForKey:@"message"];
+				// Flickr normally sends a message string, but a missing or non-string value must not
+				// crash the dictionary literal below.
+				NSString *errorDescription = [message isKindOfClass:[NSString class]] ? message : nil;
+				if (errorDescription.length == 0) {
+					errorDescription = [NSString stringWithFormat:@"Flickr returned error code %ld", (long)errorCode];
+				}
 				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: errorDescription};
 				NSError *error = [NSError errorWithDomain:FKFlickrAPIErrorDomain code:errorCode userInfo:userInfo];
 				self.completion(nil, error);

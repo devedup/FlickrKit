@@ -22,4 +22,11 @@
 
 - (instancetype) initWithAPIMethod:(id<FKFlickrAPIMethod>)method maxAgeMinutes:(FKDUMaxAge)maxAge diskCache:(id<FKDUDiskCache>)diskCache completion:(FKAPIRequestCompletion)completion;
 
+/**
+ *  The disk-cache key a call to `apiMethod` with `args` is stored under. Use this when you need to
+ *  evict a cached response (for example after adding a comment) so the key matches what the
+ *  operation wrote. Argument order does not matter.
+ */
++ (NSString *) cacheKeyForAPIMethod:(NSString *)apiMethod arguments:(NSDictionary *)args;
+
 @end

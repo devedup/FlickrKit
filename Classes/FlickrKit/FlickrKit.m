@@ -181,6 +181,26 @@
 
 #pragma mark - 1. Begin Authorization
 
+// Builds an NSError for a failed OAuth step. The description is never nil: it prefers the body
+// Flickr returned, then the transport error, then a fixed message, so the userInfo literal is safe.
+static NSError *FKAuthErrorWithData(NSData *data, NSError *underlyingError, NSString *fallback) {
+	NSString *description = nil;
+	if (data.length > 0) {
+		description = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	}
+	if (description.length == 0) {
+		description = underlyingError.localizedDescription;
+	}
+	if (description.length == 0) {
+		description = fallback;
+	}
+	NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithObject:description forKey:NSLocalizedDescriptionKey];
+	if (underlyingError) {
+		userInfo[NSUnderlyingErrorKey] = underlyingError;
+	}
+	return [NSError errorWithDomain:FKFlickrKitErrorDomain code:FKErrorAuthenticating userInfo:userInfo];
+}
+
 - (FKDUNetworkOperation *) beginAuthWithCallbackURL:(NSURL *)url permission:(FKPermission)permission completion:(FKAPIAuthBeginCompletion)completion {
 	
 	if ([FKDUReachability isOffline]) {
@@ -211,9 +231,7 @@
 			NSString *oat = params[@"oauth_token"];
 			NSString *oats = params[@"oauth_token_secret"];
 			if (!oat || !oats) {
-				
-				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: response};
-				NSError *error = [NSError errorWithDomain:FKFlickrKitErrorDomain code:FKErrorAuthenticating userInfo:userInfo];
+				NSError *error = FKAuthErrorWithData(data, nil, @"Flickr did not return a request token");
 				if (completion) {
 					completion(nil, error);
 				}
@@ -247,7 +265,7 @@
 	NSString *token = [result valueForKey:@"oauth_token"];
 	NSString *verifier = [result valueForKey:@"oauth_verifier"];
 	
-	if (!result) {
+	if (!result || !token || !verifier) {
 		NSString *errorString = [NSString stringWithFormat:@"Cannot obtain token/secret from URL: %@", url.absoluteString];
 		NSDictionary *userInfo = @{NSLocalizedDescriptionKey: errorString};
 		NSError *error = [NSError errorWithDomain:FKFlickrKitErrorDomain code:FKErrorURLParsing userInfo:userInfo];
@@ -263,33 +281,32 @@
     
 	FKDUNetworkOperation *op = [[FKDUNetworkOperation alloc] initWithURL:requestURL];
 	[op sendAsyncRequestOnCompletion:^(NSURLResponse *response, NSData *data, NSError *error) {
-		if (response && !error) {
-			
-			NSString *response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-			response = [response stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-			if ([response hasPrefix:@"oauth_problem="]) {
+		if (response && !error && data.length > 0) {
+
+			NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+			// Malformed percent escapes make this return nil; fall back to the raw body so parsing
+			// below sees a string and the error path has something to report.
+			NSString *decodedResponse = [responseString stringByRemovingPercentEncoding] ?: responseString;
+			if ([decodedResponse hasPrefix:@"oauth_problem="]) {
 				self.beginAuthURL = nil;
 				self.authorized = NO;
 				self.authToken = nil;
 				self.authSecret = nil;
-				NSString *response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-				NSDictionary *userInfo = @{NSLocalizedDescriptionKey: response};
-				NSError *error = [NSError errorWithDomain:FKFlickrKitErrorDomain code:FKErrorAuthenticating userInfo:userInfo];
+				NSError *error = FKAuthErrorWithData(data, nil, @"Flickr rejected the login attempt");
 				if (completion) {
 					completion(nil, nil, nil, error);
 				}
-				
+
 			} else {
-				NSDictionary *params = FKQueryParamDictionaryFromQueryString(response);
-				
+				NSDictionary *params = FKQueryParamDictionaryFromQueryString(decodedResponse);
+
 				NSString *fn = params[@"fullname"];
 				NSString *oat = params[@"oauth_token"];
 				NSString *oats = params[@"oauth_token_secret"];
 				NSString *nsid = params[@"user_nsid"];
 				NSString *un = params[@"username"];
 				if (!fn || !oat || !oats || !nsid || !un) {
-					NSDictionary *userInfo = @{NSLocalizedDescriptionKey: response};
-					NSError *error = [NSError errorWithDomain:FKFlickrKitErrorDomain code:FKErrorAuthenticating userInfo:userInfo];
+					NSError *error = FKAuthErrorWithData(data, nil, @"Flickr did not return an access token");
 					if (completion) {
 						completion(nil, nil, nil, error);
 					}
@@ -301,6 +318,7 @@
 					self.authToken = oat;
 					self.authSecret = oats;
 					self.beginAuthURL = nil;
+					[self scopeDiskCacheToUser:nsid];
 					if (completion) {
 						completion(un, nsid, fn, nil);
 					}
@@ -309,16 +327,26 @@
 			
 		} else {
 			self.beginAuthURL = nil;
-			
-			NSString *response = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-			NSDictionary *userInfo = @{NSLocalizedDescriptionKey: response};
-			NSError *error = [NSError errorWithDomain:FKFlickrKitErrorDomain code:FKErrorAuthenticating userInfo:userInfo];
+
+			NSError *authError = FKAuthErrorWithData(data, error, @"Could not complete the login with Flickr");
 			if (completion) {
-				completion(nil, nil, nil, error);
+				completion(nil, nil, nil, authError);
 			}
 		}
 	}];
 	return op;
+}
+
+#pragma mark - 2b. Cancel a login that was begun but never completed
+
+- (void) cancelPendingAuth {
+	self.beginAuthURL = nil;
+	// While a login is pending, authToken/authSecret hold the request token pair. Once authorized they
+	// hold the access token, which must survive a stray cancel.
+	if (!self.authorized) {
+		self.authToken = nil;
+		self.authSecret = nil;
+	}
 }
 
 #pragma mark - 3. On returning to the app, you want to re-log them in automatically - do it here
@@ -351,6 +379,7 @@
 				
 				self.authorized = YES;
 				
+				[self scopeDiskCacheToUser:userid];
 				if (completion) {
 					completion(username, userid, fullname, nil);
 				}
@@ -382,6 +411,18 @@
 	self.authSecret = nil;
 	self.authToken = nil;
 	self.beginAuthURL = nil;
+	[self scopeDiskCacheToUser:nil];
+}
+
+#pragma mark - Cache scope
+
+// Cached responses differ per account (private photos, isfavorite flags, flickr.activity.*), so the
+// default disk cache namespaces its entries by the signed-in user. Anonymous sessions use nil.
+- (void) scopeDiskCacheToUser:(NSString *)nsid {
+	id<FKDUDiskCache> cache = self.diskCache ?: [FKDUDefaultDiskCache sharedDiskCache];
+	if ([cache isKindOfClass:[FKDUDefaultDiskCache class]]) {
+		((FKDUDefaultDiskCache *)cache).scopeIdentifier = nsid;
+	}
 }
 
 @end
@@ -407,7 +448,7 @@
 
 
 - (NSURL *) buddyIconURLForUser:(NSString *)userID {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"http://flickr.com/buddyicons/%@.jpg", userID]];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"https://www.flickr.com/buddyicons/%@.jpg", userID]];
 }
 
 // Utility methods to extract the photoID/server/secret/farm from the input

@@ -128,6 +128,10 @@ FOUNDATION_EXPORT const unsigned char FlickrKitVersionString[];
 - (nonnull FKDUNetworkOperation *) beginAuthWithCallbackURL:(nonnull NSURL *)url permission:(FKPermission)permission completion:(nullable FKAPIAuthBeginCompletion)completion;
 // 2. After they login and authorize the app, need to get an auth token - this will happen via your URL scheme - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 - (nonnull FKDUNetworkOperation *) completeAuthWithURL:(nonnull NSURL *)url completion:(nullable FKAPIAuthCompletion)completion;
+// 2b. Call if the login page was dismissed without completing (user cancelled). Forgets the request
+// token from step 1 so the next beginAuth fetches a fresh one; Flickr treats request tokens as
+// single-use, so re-showing the cached URL lands on an oauth_problem page.
+- (void) cancelPendingAuth;
 // 3. On returning to the app, you want to re-log them in automatically - do it here
 - (nonnull FKFlickrNetworkOperation *) checkAuthorizationOnCompletion:(nullable FKAPIAuthCompletion)completion;
 // 4. Logout - just removes all the stored keys
