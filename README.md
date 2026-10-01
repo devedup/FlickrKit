@@ -2,7 +2,7 @@
 
 ## FlickrKit 2.0 (Swift)
 
-FlickrKit 2.0 is a rewrite in Swift: a Swift package with async/await, Swift 6 strict concurrency and no dependencies. It is used by galleryr 3.0. The Objective-C 1.x library described further down stays available on `master` and the `v1.1.0` tag.
+FlickrKit 2.0 is a rewrite in Swift: a Swift package with async/await, Swift 6 strict concurrency and no dependencies. It is used by galleryr 3.0. The Objective-C 1.x library described further down stays available on the `1.x` branch and the `v1.1.0` tag; CocoaPods installs it from the tag.
 
 **What it does**
 
@@ -77,11 +77,6 @@ The documentation catalog in `Sources/FlickrKit/FlickrKit.docc` covers the rest 
 ## FlickrKit 1.x (Objective-C)
 
 FlickrKit is an iOS Objective-C library for accessing the Flickr API written by David Casserly. It is used by [galleryr pro iPad app](https://itunes.apple.com/gb/app/flickr-gallery-pro/id525519823?mt=8).
-
-### Master build status: 
----
-![](https://travis-ci.org/devedup/FlickrKit.svg?branch=master)
-
 
 ### Features
 ---
