@@ -78,11 +78,13 @@ public struct KeychainTokenStore: FlickrTokenStore {
     }
 }
 
-extension KeychainTokenStore {
+/// The `NSUserDefaults` keys FlickrKit 1.x stored the token and secret under, in plain text.
+public enum FlickrLegacyTokenKeys {
+    public static let token = "kFKStoredTokenKey"
+    public static let secret = "kFKStoredTokenSecret"
+}
 
-    /// The `NSUserDefaults` keys FlickrKit 1.x stored the token and secret under, in plain text.
-    public static let legacyTokenKey = "kFKStoredTokenKey"
-    public static let legacySecretKey = "kFKStoredTokenSecret"
+extension FlickrTokenStore {
 
     /// Moves a FlickrKit 1.x token out of `defaults` into this store, once.
     ///
@@ -94,13 +96,13 @@ extension KeychainTokenStore {
     @discardableResult
     public func migrateLegacyToken(from defaults: UserDefaults = .standard) throws(FlickrError) -> Bool {
         guard try load() == nil,
-              let token = defaults.string(forKey: Self.legacyTokenKey),
-              let secret = defaults.string(forKey: Self.legacySecretKey) else {
+              let token = defaults.string(forKey: FlickrLegacyTokenKeys.token),
+              let secret = defaults.string(forKey: FlickrLegacyTokenKeys.secret) else {
             return false
         }
         try save(FlickrSession(accessToken: FlickrAccessToken(token: token, secret: secret), user: nil, permission: nil))
-        defaults.removeObject(forKey: Self.legacyTokenKey)
-        defaults.removeObject(forKey: Self.legacySecretKey)
+        defaults.removeObject(forKey: FlickrLegacyTokenKeys.token)
+        defaults.removeObject(forKey: FlickrLegacyTokenKeys.secret)
         return true
     }
 }
