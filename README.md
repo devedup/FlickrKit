@@ -2,7 +2,7 @@
 
 ## FlickrKit 2.0 (Swift)
 
-FlickrKit 2.0 is a rewrite in Swift: a Swift package with async/await, Swift 6 strict concurrency and no dependencies. It is used by galleryr 3.0. The Objective-C 1.x library described further down stays available on the `1.x` branch and the `v1.1.0` tag; CocoaPods installs it from the tag.
+FlickrKit 2.0 is a rewrite in Swift: a Swift package with async/await, Swift 6 strict concurrency and no dependencies. It is used by galleryr 3.0. The Objective-C 1.x library described further down stays available from the `v1.1.0` tag, which is what CocoaPods installs.
 
 **What it does**
 
