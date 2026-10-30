@@ -68,7 +68,9 @@ public final class FlickrWebAuthenticator: NSObject {
             self.anchor = nil
         }
         let result: Result<URL, FlickrError> = await withCheckedContinuation { continuation in
-            let session = ASWebAuthenticationSession(url: url, callbackURLScheme: callbackScheme) { callbackURL, error in
+            // `@Sendable`, so not the main actor's as everything else here is: on macOS the session calls back on
+            // its XPC queue, not the main one, and Swift stopped the app for a main-actor closure run there.
+            let session = ASWebAuthenticationSession(url: url, callbackURLScheme: callbackScheme) { @Sendable callbackURL, error in
                 if let callbackURL {
                     continuation.resume(returning: .success(callbackURL))
                 } else if let error = error as? ASWebAuthenticationSessionError, error.code == .canceledLogin {
